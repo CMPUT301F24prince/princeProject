@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "90186939310",
+    "project_id": "princeproject-aaklmn",
+    "storage_bucket": "princeproject-aaklmn.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:90186939310:android:52a6234144cb5b447be63f",
+        "android_client_info": {
+          "package_name": "com.example.princeproject"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQVjb99P1lVScSChhXXAmtj_AXiIqku4M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
