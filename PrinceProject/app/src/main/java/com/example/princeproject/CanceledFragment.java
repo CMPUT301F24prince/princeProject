@@ -11,7 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
 
 public class CanceledFragment extends Fragment {
@@ -22,14 +22,11 @@ public class CanceledFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_list, container, false);
         ListView listView = view.findViewById(R.id.list_view);
 
-        // Sample data
-        List<String> canceledEntrants = Arrays.asList("Entrant 4", "Entrant 5", "Entrant 6");
-
-        // Create an ArrayAdapter
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_list_item_1, canceledEntrants);
-
-        // Set adapter to the ListView
+        List<String> canceledApplicants = new ArrayList<>();
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_list_item_1, canceledApplicants);
         listView.setAdapter(adapter);
+
+        FirestoreQueryHelper.getEntrantListData("declined", canceledApplicants,adapter);
 
         return view;
     }

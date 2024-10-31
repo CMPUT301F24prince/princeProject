@@ -8,126 +8,197 @@
 8        android:minSdkVersion="24"
 9        android:targetSdkVersion="34" />
 10
-11    <permission
-11-->[androidx.core:core:1.13.0] C:\Users\Kyle\.gradle\caches\transforms-4\42dfdf811721b94244c28f65a2afec29\transformed\core-1.13.0\AndroidManifest.xml:22:5-24:47
-12        android:name="com.example.princeproject.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-12-->[androidx.core:core:1.13.0] C:\Users\Kyle\.gradle\caches\transforms-4\42dfdf811721b94244c28f65a2afec29\transformed\core-1.13.0\AndroidManifest.xml:23:9-81
-13        android:protectionLevel="signature" />
-13-->[androidx.core:core:1.13.0] C:\Users\Kyle\.gradle\caches\transforms-4\42dfdf811721b94244c28f65a2afec29\transformed\core-1.13.0\AndroidManifest.xml:24:9-44
-14
-15    <uses-permission android:name="com.example.princeproject.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-15-->[androidx.core:core:1.13.0] C:\Users\Kyle\.gradle\caches\transforms-4\42dfdf811721b94244c28f65a2afec29\transformed\core-1.13.0\AndroidManifest.xml:26:5-97
-15-->[androidx.core:core:1.13.0] C:\Users\Kyle\.gradle\caches\transforms-4\42dfdf811721b94244c28f65a2afec29\transformed\core-1.13.0\AndroidManifest.xml:26:22-94
-16
-17    <application
-17-->C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\main\AndroidManifest.xml:5:5-25:19
-18        android:allowBackup="true"
-18-->C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\main\AndroidManifest.xml:6:9-35
-19        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-19-->[androidx.core:core:1.13.0] C:\Users\Kyle\.gradle\caches\transforms-4\42dfdf811721b94244c28f65a2afec29\transformed\core-1.13.0\AndroidManifest.xml:28:18-86
-20        android:dataExtractionRules="@xml/data_extraction_rules"
-20-->C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\main\AndroidManifest.xml:7:9-65
-21        android:debuggable="true"
-22        android:extractNativeLibs="false"
-23        android:fullBackupContent="@xml/backup_rules"
-23-->C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\main\AndroidManifest.xml:8:9-54
-24        android:icon="@mipmap/ic_launcher"
-24-->C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\main\AndroidManifest.xml:9:9-43
-25        android:label="@string/app_name"
-25-->C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\main\AndroidManifest.xml:10:9-41
-26        android:roundIcon="@mipmap/ic_launcher_round"
-26-->C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\main\AndroidManifest.xml:11:9-54
-27        android:supportsRtl="true"
-27-->C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\main\AndroidManifest.xml:12:9-35
-28        android:testOnly="true"
-29        android:theme="@style/Theme.PrinceProject" >
-29-->C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\main\AndroidManifest.xml:13:9-51
-30        <activity
-30-->C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\main\AndroidManifest.xml:15:9-23:20
-31            android:name="com.example.princeproject.MainActivity"
-31-->C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\main\AndroidManifest.xml:16:13-41
-32            android:exported="true" >
-32-->C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\main\AndroidManifest.xml:17:13-36
-33            <intent-filter>
-33-->C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\main\AndroidManifest.xml:18:13-22:29
-34                <action android:name="android.intent.action.MAIN" />
-34-->C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\main\AndroidManifest.xml:19:17-69
-34-->C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\main\AndroidManifest.xml:19:25-66
-35
-36                <category android:name="android.intent.category.LAUNCHER" />
-36-->C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\main\AndroidManifest.xml:21:17-77
-36-->C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\main\AndroidManifest.xml:21:27-74
-37            </intent-filter>
-38        </activity>
-39        <activity android:name="com.example.princeproject.EntrantListActivity" />
-39-->C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\main\AndroidManifest.xml:24:9-66
-39-->C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\main\AndroidManifest.xml:24:19-54
+11    <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
+12    <!-- <uses-sdk android:minSdkVersion="21" /> -->
+13    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+13-->[com.google.firebase:firebase-firestore:25.1.1] C:\Users\Kyle\.gradle\caches\transforms-4\1451ea590e7b95341c912e4d2921f2b5\transformed\firebase-firestore-25.1.1\AndroidManifest.xml:10:5-79
+13-->[com.google.firebase:firebase-firestore:25.1.1] C:\Users\Kyle\.gradle\caches\transforms-4\1451ea590e7b95341c912e4d2921f2b5\transformed\firebase-firestore-25.1.1\AndroidManifest.xml:10:22-76
+14    <uses-permission android:name="android.permission.INTERNET" />
+14-->[com.google.firebase:firebase-firestore:25.1.1] C:\Users\Kyle\.gradle\caches\transforms-4\1451ea590e7b95341c912e4d2921f2b5\transformed\firebase-firestore-25.1.1\AndroidManifest.xml:11:5-67
+14-->[com.google.firebase:firebase-firestore:25.1.1] C:\Users\Kyle\.gradle\caches\transforms-4\1451ea590e7b95341c912e4d2921f2b5\transformed\firebase-firestore-25.1.1\AndroidManifest.xml:11:22-64
+15
+16    <permission
+16-->[androidx.core:core:1.13.0] C:\Users\Kyle\.gradle\caches\transforms-4\291ee18769876d6327af8a96d6c8ed9e\transformed\core-1.13.0\AndroidManifest.xml:22:5-24:47
+17        android:name="com.example.princeproject.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+17-->[androidx.core:core:1.13.0] C:\Users\Kyle\.gradle\caches\transforms-4\291ee18769876d6327af8a96d6c8ed9e\transformed\core-1.13.0\AndroidManifest.xml:23:9-81
+18        android:protectionLevel="signature" />
+18-->[androidx.core:core:1.13.0] C:\Users\Kyle\.gradle\caches\transforms-4\291ee18769876d6327af8a96d6c8ed9e\transformed\core-1.13.0\AndroidManifest.xml:24:9-44
+19
+20    <uses-permission android:name="com.example.princeproject.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+20-->[androidx.core:core:1.13.0] C:\Users\Kyle\.gradle\caches\transforms-4\291ee18769876d6327af8a96d6c8ed9e\transformed\core-1.13.0\AndroidManifest.xml:26:5-97
+20-->[androidx.core:core:1.13.0] C:\Users\Kyle\.gradle\caches\transforms-4\291ee18769876d6327af8a96d6c8ed9e\transformed\core-1.13.0\AndroidManifest.xml:26:22-94
+21
+22    <application
+22-->C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\main\AndroidManifest.xml:5:5-25:19
+23        android:allowBackup="true"
+23-->C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\main\AndroidManifest.xml:6:9-35
+24        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+24-->[androidx.core:core:1.13.0] C:\Users\Kyle\.gradle\caches\transforms-4\291ee18769876d6327af8a96d6c8ed9e\transformed\core-1.13.0\AndroidManifest.xml:28:18-86
+25        android:dataExtractionRules="@xml/data_extraction_rules"
+25-->C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\main\AndroidManifest.xml:7:9-65
+26        android:debuggable="true"
+27        android:extractNativeLibs="false"
+28        android:fullBackupContent="@xml/backup_rules"
+28-->C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\main\AndroidManifest.xml:8:9-54
+29        android:icon="@mipmap/ic_launcher"
+29-->C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\main\AndroidManifest.xml:9:9-43
+30        android:label="@string/app_name"
+30-->C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\main\AndroidManifest.xml:10:9-41
+31        android:roundIcon="@mipmap/ic_launcher_round"
+31-->C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\main\AndroidManifest.xml:11:9-54
+32        android:supportsRtl="true"
+32-->C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\main\AndroidManifest.xml:12:9-35
+33        android:testOnly="true"
+34        android:theme="@style/Theme.PrinceProject" >
+34-->C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\main\AndroidManifest.xml:13:9-51
+35        <activity
+35-->C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\main\AndroidManifest.xml:15:9-23:20
+36            android:name="com.example.princeproject.MainActivity"
+36-->C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\main\AndroidManifest.xml:16:13-41
+37            android:exported="true" >
+37-->C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\main\AndroidManifest.xml:17:13-36
+38            <intent-filter>
+38-->C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\main\AndroidManifest.xml:18:13-22:29
+39                <action android:name="android.intent.action.MAIN" />
+39-->C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\main\AndroidManifest.xml:19:17-69
+39-->C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\main\AndroidManifest.xml:19:25-66
 40
-41        <provider
-41-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Kyle\.gradle\caches\transforms-4\51f1927f6706bb4e824223b170abb02f\transformed\emoji2-1.3.0\AndroidManifest.xml:24:9-32:20
-42            android:name="androidx.startup.InitializationProvider"
-42-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Kyle\.gradle\caches\transforms-4\51f1927f6706bb4e824223b170abb02f\transformed\emoji2-1.3.0\AndroidManifest.xml:25:13-67
-43            android:authorities="com.example.princeproject.androidx-startup"
-43-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Kyle\.gradle\caches\transforms-4\51f1927f6706bb4e824223b170abb02f\transformed\emoji2-1.3.0\AndroidManifest.xml:26:13-68
-44            android:exported="false" >
-44-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Kyle\.gradle\caches\transforms-4\51f1927f6706bb4e824223b170abb02f\transformed\emoji2-1.3.0\AndroidManifest.xml:27:13-37
-45            <meta-data
-45-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Kyle\.gradle\caches\transforms-4\51f1927f6706bb4e824223b170abb02f\transformed\emoji2-1.3.0\AndroidManifest.xml:29:13-31:52
-46                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-46-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Kyle\.gradle\caches\transforms-4\51f1927f6706bb4e824223b170abb02f\transformed\emoji2-1.3.0\AndroidManifest.xml:30:17-75
-47                android:value="androidx.startup" />
-47-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Kyle\.gradle\caches\transforms-4\51f1927f6706bb4e824223b170abb02f\transformed\emoji2-1.3.0\AndroidManifest.xml:31:17-49
-48            <meta-data
-48-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\Kyle\.gradle\caches\transforms-4\fab565b32d1caf7d32cc0e9c5a768a04\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:29:13-31:52
-49                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-49-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\Kyle\.gradle\caches\transforms-4\fab565b32d1caf7d32cc0e9c5a768a04\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:30:17-78
-50                android:value="androidx.startup" />
-50-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\Kyle\.gradle\caches\transforms-4\fab565b32d1caf7d32cc0e9c5a768a04\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:31:17-49
-51            <meta-data
-51-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Kyle\.gradle\caches\transforms-4\7c6c24dcca5059c7b3ce34791d5d98cd\transformed\profileinstaller-1.3.1\AndroidManifest.xml:29:13-31:52
-52                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-52-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Kyle\.gradle\caches\transforms-4\7c6c24dcca5059c7b3ce34791d5d98cd\transformed\profileinstaller-1.3.1\AndroidManifest.xml:30:17-85
-53                android:value="androidx.startup" />
-53-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Kyle\.gradle\caches\transforms-4\7c6c24dcca5059c7b3ce34791d5d98cd\transformed\profileinstaller-1.3.1\AndroidManifest.xml:31:17-49
-54        </provider>
-55
-56        <receiver
-56-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Kyle\.gradle\caches\transforms-4\7c6c24dcca5059c7b3ce34791d5d98cd\transformed\profileinstaller-1.3.1\AndroidManifest.xml:34:9-52:20
-57            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-57-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Kyle\.gradle\caches\transforms-4\7c6c24dcca5059c7b3ce34791d5d98cd\transformed\profileinstaller-1.3.1\AndroidManifest.xml:35:13-76
-58            android:directBootAware="false"
-58-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Kyle\.gradle\caches\transforms-4\7c6c24dcca5059c7b3ce34791d5d98cd\transformed\profileinstaller-1.3.1\AndroidManifest.xml:36:13-44
-59            android:enabled="true"
-59-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Kyle\.gradle\caches\transforms-4\7c6c24dcca5059c7b3ce34791d5d98cd\transformed\profileinstaller-1.3.1\AndroidManifest.xml:37:13-35
-60            android:exported="true"
-60-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Kyle\.gradle\caches\transforms-4\7c6c24dcca5059c7b3ce34791d5d98cd\transformed\profileinstaller-1.3.1\AndroidManifest.xml:38:13-36
-61            android:permission="android.permission.DUMP" >
-61-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Kyle\.gradle\caches\transforms-4\7c6c24dcca5059c7b3ce34791d5d98cd\transformed\profileinstaller-1.3.1\AndroidManifest.xml:39:13-57
-62            <intent-filter>
-62-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Kyle\.gradle\caches\transforms-4\7c6c24dcca5059c7b3ce34791d5d98cd\transformed\profileinstaller-1.3.1\AndroidManifest.xml:40:13-42:29
-63                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-63-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Kyle\.gradle\caches\transforms-4\7c6c24dcca5059c7b3ce34791d5d98cd\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:17-91
-63-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Kyle\.gradle\caches\transforms-4\7c6c24dcca5059c7b3ce34791d5d98cd\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:25-88
-64            </intent-filter>
-65            <intent-filter>
-65-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Kyle\.gradle\caches\transforms-4\7c6c24dcca5059c7b3ce34791d5d98cd\transformed\profileinstaller-1.3.1\AndroidManifest.xml:43:13-45:29
-66                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-66-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Kyle\.gradle\caches\transforms-4\7c6c24dcca5059c7b3ce34791d5d98cd\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:17-85
-66-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Kyle\.gradle\caches\transforms-4\7c6c24dcca5059c7b3ce34791d5d98cd\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:25-82
-67            </intent-filter>
-68            <intent-filter>
-68-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Kyle\.gradle\caches\transforms-4\7c6c24dcca5059c7b3ce34791d5d98cd\transformed\profileinstaller-1.3.1\AndroidManifest.xml:46:13-48:29
-69                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-69-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Kyle\.gradle\caches\transforms-4\7c6c24dcca5059c7b3ce34791d5d98cd\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:17-88
-69-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Kyle\.gradle\caches\transforms-4\7c6c24dcca5059c7b3ce34791d5d98cd\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:25-85
-70            </intent-filter>
-71            <intent-filter>
-71-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Kyle\.gradle\caches\transforms-4\7c6c24dcca5059c7b3ce34791d5d98cd\transformed\profileinstaller-1.3.1\AndroidManifest.xml:49:13-51:29
-72                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-72-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Kyle\.gradle\caches\transforms-4\7c6c24dcca5059c7b3ce34791d5d98cd\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:17-95
-72-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Kyle\.gradle\caches\transforms-4\7c6c24dcca5059c7b3ce34791d5d98cd\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:25-92
-73            </intent-filter>
-74        </receiver>
-75    </application>
-76
-77</manifest>
+41                <category android:name="android.intent.category.LAUNCHER" />
+41-->C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\main\AndroidManifest.xml:21:17-77
+41-->C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\main\AndroidManifest.xml:21:27-74
+42            </intent-filter>
+43        </activity>
+44        <activity android:name="com.example.princeproject.EntrantListActivity" />
+44-->C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\main\AndroidManifest.xml:24:9-66
+44-->C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\main\AndroidManifest.xml:24:19-54
+45
+46        <service
+46-->[com.google.firebase:firebase-firestore:25.1.1] C:\Users\Kyle\.gradle\caches\transforms-4\1451ea590e7b95341c912e4d2921f2b5\transformed\firebase-firestore-25.1.1\AndroidManifest.xml:14:9-23:19
+47            android:name="com.google.firebase.components.ComponentDiscoveryService"
+47-->[com.google.firebase:firebase-firestore:25.1.1] C:\Users\Kyle\.gradle\caches\transforms-4\1451ea590e7b95341c912e4d2921f2b5\transformed\firebase-firestore-25.1.1\AndroidManifest.xml:15:13-84
+48            android:directBootAware="true"
+48-->[com.google.firebase:firebase-common:21.0.0] C:\Users\Kyle\.gradle\caches\transforms-4\0ea3388ae6df44c53bfe4400fcbd1993\transformed\firebase-common-21.0.0\AndroidManifest.xml:32:13-43
+49            android:exported="false" >
+49-->[com.google.firebase:firebase-firestore:25.1.1] C:\Users\Kyle\.gradle\caches\transforms-4\1451ea590e7b95341c912e4d2921f2b5\transformed\firebase-firestore-25.1.1\AndroidManifest.xml:16:13-37
+50            <meta-data
+50-->[com.google.firebase:firebase-firestore:25.1.1] C:\Users\Kyle\.gradle\caches\transforms-4\1451ea590e7b95341c912e4d2921f2b5\transformed\firebase-firestore-25.1.1\AndroidManifest.xml:17:13-19:85
+51                android:name="com.google.firebase.components:com.google.firebase.firestore.FirebaseFirestoreKtxRegistrar"
+51-->[com.google.firebase:firebase-firestore:25.1.1] C:\Users\Kyle\.gradle\caches\transforms-4\1451ea590e7b95341c912e4d2921f2b5\transformed\firebase-firestore-25.1.1\AndroidManifest.xml:18:17-122
+52                android:value="com.google.firebase.components.ComponentRegistrar" />
+52-->[com.google.firebase:firebase-firestore:25.1.1] C:\Users\Kyle\.gradle\caches\transforms-4\1451ea590e7b95341c912e4d2921f2b5\transformed\firebase-firestore-25.1.1\AndroidManifest.xml:19:17-82
+53            <meta-data
+53-->[com.google.firebase:firebase-firestore:25.1.1] C:\Users\Kyle\.gradle\caches\transforms-4\1451ea590e7b95341c912e4d2921f2b5\transformed\firebase-firestore-25.1.1\AndroidManifest.xml:20:13-22:85
+54                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
+54-->[com.google.firebase:firebase-firestore:25.1.1] C:\Users\Kyle\.gradle\caches\transforms-4\1451ea590e7b95341c912e4d2921f2b5\transformed\firebase-firestore-25.1.1\AndroidManifest.xml:21:17-111
+55                android:value="com.google.firebase.components.ComponentRegistrar" />
+55-->[com.google.firebase:firebase-firestore:25.1.1] C:\Users\Kyle\.gradle\caches\transforms-4\1451ea590e7b95341c912e4d2921f2b5\transformed\firebase-firestore-25.1.1\AndroidManifest.xml:22:17-82
+56            <meta-data
+56-->[com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\Kyle\.gradle\caches\transforms-4\f489cc6dfa34185e0ee6e6f28492ad9d\transformed\firebase-common-ktx-21.0.0\AndroidManifest.xml:12:13-14:85
+57                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonLegacyRegistrar"
+57-->[com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\Kyle\.gradle\caches\transforms-4\f489cc6dfa34185e0ee6e6f28492ad9d\transformed\firebase-common-ktx-21.0.0\AndroidManifest.xml:13:17-116
+58                android:value="com.google.firebase.components.ComponentRegistrar" />
+58-->[com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\Kyle\.gradle\caches\transforms-4\f489cc6dfa34185e0ee6e6f28492ad9d\transformed\firebase-common-ktx-21.0.0\AndroidManifest.xml:14:17-82
+59            <meta-data
+59-->[com.google.firebase:firebase-common:21.0.0] C:\Users\Kyle\.gradle\caches\transforms-4\0ea3388ae6df44c53bfe4400fcbd1993\transformed\firebase-common-21.0.0\AndroidManifest.xml:35:13-37:85
+60                android:name="com.google.firebase.components:com.google.firebase.FirebaseCommonKtxRegistrar"
+60-->[com.google.firebase:firebase-common:21.0.0] C:\Users\Kyle\.gradle\caches\transforms-4\0ea3388ae6df44c53bfe4400fcbd1993\transformed\firebase-common-21.0.0\AndroidManifest.xml:36:17-109
+61                android:value="com.google.firebase.components.ComponentRegistrar" />
+61-->[com.google.firebase:firebase-common:21.0.0] C:\Users\Kyle\.gradle\caches\transforms-4\0ea3388ae6df44c53bfe4400fcbd1993\transformed\firebase-common-21.0.0\AndroidManifest.xml:37:17-82
+62        </service>
+63
+64        <activity
+64-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\Kyle\.gradle\caches\transforms-4\bb07fb78e01a062e92830b5a1de8cb73\transformed\play-services-base-18.0.1\AndroidManifest.xml:20:9-22:45
+65            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+65-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\Kyle\.gradle\caches\transforms-4\bb07fb78e01a062e92830b5a1de8cb73\transformed\play-services-base-18.0.1\AndroidManifest.xml:20:19-85
+66            android:exported="false"
+66-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\Kyle\.gradle\caches\transforms-4\bb07fb78e01a062e92830b5a1de8cb73\transformed\play-services-base-18.0.1\AndroidManifest.xml:22:19-43
+67            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+67-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\Kyle\.gradle\caches\transforms-4\bb07fb78e01a062e92830b5a1de8cb73\transformed\play-services-base-18.0.1\AndroidManifest.xml:21:19-78
+68
+69        <provider
+69-->[com.google.firebase:firebase-common:21.0.0] C:\Users\Kyle\.gradle\caches\transforms-4\0ea3388ae6df44c53bfe4400fcbd1993\transformed\firebase-common-21.0.0\AndroidManifest.xml:23:9-28:39
+70            android:name="com.google.firebase.provider.FirebaseInitProvider"
+70-->[com.google.firebase:firebase-common:21.0.0] C:\Users\Kyle\.gradle\caches\transforms-4\0ea3388ae6df44c53bfe4400fcbd1993\transformed\firebase-common-21.0.0\AndroidManifest.xml:24:13-77
+71            android:authorities="com.example.princeproject.firebaseinitprovider"
+71-->[com.google.firebase:firebase-common:21.0.0] C:\Users\Kyle\.gradle\caches\transforms-4\0ea3388ae6df44c53bfe4400fcbd1993\transformed\firebase-common-21.0.0\AndroidManifest.xml:25:13-72
+72            android:directBootAware="true"
+72-->[com.google.firebase:firebase-common:21.0.0] C:\Users\Kyle\.gradle\caches\transforms-4\0ea3388ae6df44c53bfe4400fcbd1993\transformed\firebase-common-21.0.0\AndroidManifest.xml:26:13-43
+73            android:exported="false"
+73-->[com.google.firebase:firebase-common:21.0.0] C:\Users\Kyle\.gradle\caches\transforms-4\0ea3388ae6df44c53bfe4400fcbd1993\transformed\firebase-common-21.0.0\AndroidManifest.xml:27:13-37
+74            android:initOrder="100" />
+74-->[com.google.firebase:firebase-common:21.0.0] C:\Users\Kyle\.gradle\caches\transforms-4\0ea3388ae6df44c53bfe4400fcbd1993\transformed\firebase-common-21.0.0\AndroidManifest.xml:28:13-36
+75        <provider
+75-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Kyle\.gradle\caches\transforms-4\27251bd5035a27c21b16aebab6a14014\transformed\emoji2-1.3.0\AndroidManifest.xml:24:9-32:20
+76            android:name="androidx.startup.InitializationProvider"
+76-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Kyle\.gradle\caches\transforms-4\27251bd5035a27c21b16aebab6a14014\transformed\emoji2-1.3.0\AndroidManifest.xml:25:13-67
+77            android:authorities="com.example.princeproject.androidx-startup"
+77-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Kyle\.gradle\caches\transforms-4\27251bd5035a27c21b16aebab6a14014\transformed\emoji2-1.3.0\AndroidManifest.xml:26:13-68
+78            android:exported="false" >
+78-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Kyle\.gradle\caches\transforms-4\27251bd5035a27c21b16aebab6a14014\transformed\emoji2-1.3.0\AndroidManifest.xml:27:13-37
+79            <meta-data
+79-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Kyle\.gradle\caches\transforms-4\27251bd5035a27c21b16aebab6a14014\transformed\emoji2-1.3.0\AndroidManifest.xml:29:13-31:52
+80                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+80-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Kyle\.gradle\caches\transforms-4\27251bd5035a27c21b16aebab6a14014\transformed\emoji2-1.3.0\AndroidManifest.xml:30:17-75
+81                android:value="androidx.startup" />
+81-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Kyle\.gradle\caches\transforms-4\27251bd5035a27c21b16aebab6a14014\transformed\emoji2-1.3.0\AndroidManifest.xml:31:17-49
+82            <meta-data
+82-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\Kyle\.gradle\caches\transforms-4\3aed0fe22f897502fd3ce94be5e1f4a1\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:29:13-31:52
+83                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+83-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\Kyle\.gradle\caches\transforms-4\3aed0fe22f897502fd3ce94be5e1f4a1\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:30:17-78
+84                android:value="androidx.startup" />
+84-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\Kyle\.gradle\caches\transforms-4\3aed0fe22f897502fd3ce94be5e1f4a1\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:31:17-49
+85            <meta-data
+85-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Kyle\.gradle\caches\transforms-4\d44b2095b511c752d4b6ff63b3530ae0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:29:13-31:52
+86                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+86-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Kyle\.gradle\caches\transforms-4\d44b2095b511c752d4b6ff63b3530ae0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:30:17-85
+87                android:value="androidx.startup" />
+87-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Kyle\.gradle\caches\transforms-4\d44b2095b511c752d4b6ff63b3530ae0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:31:17-49
+88        </provider>
+89
+90        <meta-data
+90-->[com.google.android.gms:play-services-basement:18.3.0] C:\Users\Kyle\.gradle\caches\transforms-4\1cb4af7e4a8cd519e4854cb686b525eb\transformed\play-services-basement-18.3.0\AndroidManifest.xml:21:9-23:69
+91            android:name="com.google.android.gms.version"
+91-->[com.google.android.gms:play-services-basement:18.3.0] C:\Users\Kyle\.gradle\caches\transforms-4\1cb4af7e4a8cd519e4854cb686b525eb\transformed\play-services-basement-18.3.0\AndroidManifest.xml:22:13-58
+92            android:value="@integer/google_play_services_version" />
+92-->[com.google.android.gms:play-services-basement:18.3.0] C:\Users\Kyle\.gradle\caches\transforms-4\1cb4af7e4a8cd519e4854cb686b525eb\transformed\play-services-basement-18.3.0\AndroidManifest.xml:23:13-66
+93
+94        <receiver
+94-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Kyle\.gradle\caches\transforms-4\d44b2095b511c752d4b6ff63b3530ae0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:34:9-52:20
+95            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+95-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Kyle\.gradle\caches\transforms-4\d44b2095b511c752d4b6ff63b3530ae0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:35:13-76
+96            android:directBootAware="false"
+96-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Kyle\.gradle\caches\transforms-4\d44b2095b511c752d4b6ff63b3530ae0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:36:13-44
+97            android:enabled="true"
+97-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Kyle\.gradle\caches\transforms-4\d44b2095b511c752d4b6ff63b3530ae0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:37:13-35
+98            android:exported="true"
+98-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Kyle\.gradle\caches\transforms-4\d44b2095b511c752d4b6ff63b3530ae0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:38:13-36
+99            android:permission="android.permission.DUMP" >
+99-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Kyle\.gradle\caches\transforms-4\d44b2095b511c752d4b6ff63b3530ae0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:39:13-57
+100            <intent-filter>
+100-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Kyle\.gradle\caches\transforms-4\d44b2095b511c752d4b6ff63b3530ae0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:40:13-42:29
+101                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+101-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Kyle\.gradle\caches\transforms-4\d44b2095b511c752d4b6ff63b3530ae0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:17-91
+101-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Kyle\.gradle\caches\transforms-4\d44b2095b511c752d4b6ff63b3530ae0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:25-88
+102            </intent-filter>
+103            <intent-filter>
+103-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Kyle\.gradle\caches\transforms-4\d44b2095b511c752d4b6ff63b3530ae0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:43:13-45:29
+104                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+104-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Kyle\.gradle\caches\transforms-4\d44b2095b511c752d4b6ff63b3530ae0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:17-85
+104-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Kyle\.gradle\caches\transforms-4\d44b2095b511c752d4b6ff63b3530ae0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:25-82
+105            </intent-filter>
+106            <intent-filter>
+106-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Kyle\.gradle\caches\transforms-4\d44b2095b511c752d4b6ff63b3530ae0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:46:13-48:29
+107                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+107-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Kyle\.gradle\caches\transforms-4\d44b2095b511c752d4b6ff63b3530ae0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:17-88
+107-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Kyle\.gradle\caches\transforms-4\d44b2095b511c752d4b6ff63b3530ae0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:25-85
+108            </intent-filter>
+109            <intent-filter>
+109-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Kyle\.gradle\caches\transforms-4\d44b2095b511c752d4b6ff63b3530ae0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:49:13-51:29
+110                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+110-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Kyle\.gradle\caches\transforms-4\d44b2095b511c752d4b6ff63b3530ae0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:17-95
+110-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Kyle\.gradle\caches\transforms-4\d44b2095b511c752d4b6ff63b3530ae0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:25-92
+111            </intent-filter>
+112        </receiver>
+113    </application>
+114
+115</manifest>

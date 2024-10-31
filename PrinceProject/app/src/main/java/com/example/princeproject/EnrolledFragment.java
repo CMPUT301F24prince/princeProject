@@ -11,7 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
 
 public class EnrolledFragment extends Fragment {
@@ -22,14 +22,11 @@ public class EnrolledFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_list, container, false);
         ListView listView = view.findViewById(R.id.list_view);
 
-        // Sample data
-        List<String> enrolledEntrants = Arrays.asList("Entrant 7", "Entrant 8", "Entrant 9");
-
-        // Create an ArrayAdapter
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_list_item_1, enrolledEntrants);
-
-        // Set adapter to the ListView
+        List<String> enrolledApplicants = new ArrayList<>();
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_list_item_1, enrolledApplicants);
         listView.setAdapter(adapter);
+
+        FirestoreQueryHelper.getEntrantListData("accepted", enrolledApplicants,adapter);
 
         return view;
     }
