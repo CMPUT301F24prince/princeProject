@@ -12,7 +12,19 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        />
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="20sp"
+            android:text="Events"
+            />
+        <ListView
+            android:id="@+id/event_feed"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </ListView>
+
+    </LinearLayout>
 
 
 
