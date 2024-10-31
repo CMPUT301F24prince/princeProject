@@ -1,0 +1,21 @@
+R_DEF: Internal format may change without notice
+local
+color black
+color white
+drawable ic_launcher_background
+drawable ic_launcher_foreground
+id list_view
+id main
+id next_activity
+id tab_layout
+id view_pager
+layout activity_entrant_list
+layout activity_main
+layout fragment_list
+mipmap ic_launcher
+mipmap ic_launcher_round
+string app_name
+style Base.Theme.PrinceProject
+style Theme.PrinceProject
+xml backup_rules
+xml data_extraction_rules
