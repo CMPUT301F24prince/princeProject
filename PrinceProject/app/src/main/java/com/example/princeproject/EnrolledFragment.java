@@ -16,17 +16,28 @@ import java.util.List;
 
 public class EnrolledFragment extends Fragment {
 
+    private static final String EVENT_ID = "event_id";
+
+    public static EnrolledFragment newInstance(String eventId) {
+        EnrolledFragment fragment = new EnrolledFragment();
+        Bundle args = new Bundle();
+        args.putString(EVENT_ID,eventId);
+        fragment.setArguments(args);
+        return fragment;
+    }
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_list, container, false);
         ListView listView = view.findViewById(R.id.list_view);
+        String eventId = getArguments().getString(EVENT_ID);
 
         List<String> enrolledApplicants = new ArrayList<>();
         ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_list_item_1, enrolledApplicants);
         listView.setAdapter(adapter);
 
-        FirestoreQueryHelper.getEntrantListData("accepted", enrolledApplicants,adapter);
+        FirestoreQueryHelper.getEntrantListData("accepted", enrolledApplicants,adapter,eventId);
 
         return view;
     }

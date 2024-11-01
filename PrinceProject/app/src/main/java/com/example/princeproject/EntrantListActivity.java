@@ -1,6 +1,10 @@
 package com.example.princeproject;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
@@ -8,19 +12,47 @@ import androidx.viewpager2.widget.ViewPager2;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class EntrantListActivity extends AppCompatActivity {
+    private Spinner eventSelection;
+    private List<String> events = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_entrant_list);
 
-        TabLayout tabLayout = findViewById(R.id.tab_layout);
-        ViewPager2 viewPager = findViewById(R.id.view_pager);
+        eventSelection = findViewById(R.id.event_spinner);
+        
+        FirestoreQueryHelper.getOrganizerEvents(this,"kyle",events,eventSelection);
 
-        PageAdapter adapter = new PageAdapter(this);
+        eventSelection.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                String eventId = events.get(i);
+                updateFragment(eventId);
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+                String eventId = events.get(0);
+                updateFragment(eventId);
+            }
+        });
+
+
+    }
+
+    private void updateFragment(String eventId) {
+        PageAdapter adapter = new PageAdapter(this, eventId);
+        ViewPager2 viewPager = findViewById(R.id.view_pager);
         viewPager.setAdapter(adapter);
 
+
+        TabLayout tabLayout = findViewById(R.id.tab_layout);
         new TabLayoutMediator(tabLayout, viewPager, (tab, position) -> {
             switch (position) {
                 case 0:

@@ -3316,6 +3316,7 @@ int id endToStart 0x7f0800b3
 int id enterAlways 0x7f0800b4
 int id enterAlwaysCollapsed 0x7f0800b5
 int id escape 0x7f0800b6
+int id event_spinner 0x7f0801ff
 int id exitUntilCollapsed 0x7f0800b7
 int id expand_activities_button 0x7f0800b8
 int id expanded_menu 0x7f0800b9

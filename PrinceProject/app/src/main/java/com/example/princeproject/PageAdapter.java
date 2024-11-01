@@ -7,27 +7,41 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 public class PageAdapter extends FragmentStateAdapter {
 
-    public PageAdapter(@NonNull FragmentActivity fragmentActivity) {
+    private String eventId;
+
+    public PageAdapter(@NonNull FragmentActivity fragmentActivity,String eventId) {
         super(fragmentActivity);
+        this.eventId = eventId;
     }
+
 
     @NonNull
     @Override
     public Fragment createFragment(int position) {
         switch (position) {
             case 0:
-                return new ChosenFragment();
+                return new ChosenFragment().newInstance(eventId);
             case 1:
-                return new CanceledFragment();
+                return new CanceledFragment().newInstance(eventId);
             case 2:
-                return new EnrolledFragment();
+                return new EnrolledFragment().newInstance(eventId);
             default:
-                return new EnrolledFragment();
+                return new EnrolledFragment().newInstance(eventId);
         }
     }
 
     @Override
     public int getItemCount() {
         return 3;
+    }
+
+    @Override
+    public long getItemId(int position) {
+        return position + eventId.hashCode();
+    }
+
+    @Override
+    public boolean containsItem(long itemId) {
+        return true;
     }
 }
