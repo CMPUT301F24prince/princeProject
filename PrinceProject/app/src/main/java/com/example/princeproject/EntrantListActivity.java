@@ -25,7 +25,7 @@ public class EntrantListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_entrant_list);
 
         eventSelection = findViewById(R.id.event_spinner);
-        
+
         FirestoreQueryHelper.getOrganizerEvents(this,"kyle",events,eventSelection);
 
         eventSelection.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {

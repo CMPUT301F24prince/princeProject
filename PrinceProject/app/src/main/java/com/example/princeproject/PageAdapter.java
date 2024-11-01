@@ -35,13 +35,5 @@ public class PageAdapter extends FragmentStateAdapter {
         return 3;
     }
 
-    @Override
-    public long getItemId(int position) {
-        return position + eventId.hashCode();
-    }
 
-    @Override
-    public boolean containsItem(long itemId) {
-        return true;
-    }
 }
