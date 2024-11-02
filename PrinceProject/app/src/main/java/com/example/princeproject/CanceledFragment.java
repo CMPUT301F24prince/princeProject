@@ -18,6 +18,11 @@ public class CanceledFragment extends Fragment {
 
     private static final String EVENT_ID = "event_id";
 
+    /**
+     * Creates a new instance of CanceledFragment with the eventId passed into it
+     * @param eventId the id of the event currently selected
+     * @return returns a new instance of the fragment with the eventID in its arguments
+     */
     public static CanceledFragment newInstance(String eventId) {
         CanceledFragment fragment = new CanceledFragment();
         Bundle args = new Bundle();

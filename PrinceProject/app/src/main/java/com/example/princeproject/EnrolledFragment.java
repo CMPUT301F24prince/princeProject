@@ -18,6 +18,11 @@ public class EnrolledFragment extends Fragment {
 
     private static final String EVENT_ID = "event_id";
 
+    /**
+     * Creates a new instance of EnrolledFragment with the eventId passed into it
+     * @param eventId the id of the event currently selected
+     * @return returns a new instance of the fragment with the eventID in its arguments
+     */
     public static EnrolledFragment newInstance(String eventId) {
         EnrolledFragment fragment = new EnrolledFragment();
         Bundle args = new Bundle();
@@ -31,6 +36,7 @@ public class EnrolledFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_list, container, false);
         ListView listView = view.findViewById(R.id.list_view);
+        // Gets eventId from args
         String eventId = getArguments().getString(EVENT_ID);
 
         List<String> enrolledApplicants = new ArrayList<>();
