@@ -1,9 +1,13 @@
+package com.example.princeproject.EventsPage;
+
+import com.google.firebase.firestore.auth.User;
+
 import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
 public class Event {
-    // Rvent details
+    // Event details
     private String title;
     private String description;
     private Date startDate;
@@ -30,16 +34,95 @@ public class Event {
         this.location = location;
         this.maxParticipants = maxParticipants;
         this.organizer = organizer;
-        this.isOpenForRegistration = isOpenforRegistration;
+        this.isOpenForRegistration = isOpenForRegistration;
     }
 
-    // TODO add getters and setters
+    // Getters and setters for all fields
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Date getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(Date startDate) {
+        this.startDate = startDate;
+    }
+
+    public Date getEndDate() {
+        return endDate;
+    }
+
+    public void setEndDate(Date endDate) {
+        this.endDate = endDate;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public int getMaxParticipants() {
+        return maxParticipants;
+    }
+
+    public void setMaxParticipants(int maxParticipants) {
+        this.maxParticipants = maxParticipants;
+    }
+
+    public User getOrganizer() {
+        return organizer;
+    }
+
+    public void setOrganizer(User organizer) {
+        this.organizer = organizer;
+    }
+
+    public List<User> getWaitingList() {
+        return waitingList;
+    }
+
+    public void setWaitingList(List<User> waitingList) {
+        this.waitingList = waitingList;
+    }
+
+    public List<User> getSelectedParticipants() {
+        return selectedParticipants;
+    }
+
+    public void setSelectedParticipants(List<User> selectedParticipants) {
+        this.selectedParticipants = selectedParticipants;
+    }
+
+    public boolean isOpenForRegistration() {
+        return isOpenForRegistration;
+    }
+
+    public void setOpenForRegistration(boolean openForRegistration) {
+        isOpenForRegistration = openForRegistration;
+    }
 
 
     // Add user to the waiting list
     public void addToWaitingList(User user) {
-        if (!waitingListIds.contains(user)) {
-            waitingListIds.add(user);
+        if (!this.waitingList.contains(user)) {
+            this.waitingList.add(user);
         }
     }
 
@@ -49,14 +132,14 @@ public class Event {
         
         while (this.selectedParticipants.size() < this.maxParticipants) {
             int randUserIndex = rand.nextInt(this.waitingList.size());
-            this.selectedParticipants.add(this.waitingList[randUserIndex]);
+            this.selectedParticipants.add(this.waitingList.get(randUserIndex));
             this.waitingList.remove(randUserIndex);
         }
     }
 
     // Remove a participant
     public void cancelParticipant(User user) {
-        selectedParticipantsIds.remove(user);
+        this.selectedParticipants.remove(user);
 
         this.drawLottery();
     }

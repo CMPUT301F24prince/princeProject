@@ -5,6 +5,7 @@ color white
 drawable filler_image
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+id create_event_button
 id description_text
 id event_feed
 id event_fragment
@@ -24,6 +25,7 @@ layout fragment_profile
 mipmap ic_launcher
 mipmap ic_launcher_round
 string app_name
+string create_event
 string gcm_defaultSenderId
 string google_api_key
 string google_app_id
