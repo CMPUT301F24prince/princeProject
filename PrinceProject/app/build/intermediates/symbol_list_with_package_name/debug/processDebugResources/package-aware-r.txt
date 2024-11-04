@@ -3510,6 +3510,7 @@ id right_icon
 id right_side
 id rounded
 id row_index_key
+id sample_text
 id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
@@ -3570,6 +3571,7 @@ id stop
 id stretch
 id submenuarrow
 id submit_area
+id submit_button
 id supportScrollUp
 id tabMode
 id tab_layout
@@ -3586,6 +3588,7 @@ id tag_transition_group
 id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
 id tag_window_insets_animation_callback
+id test_sample
 id text
 id text2
 id textEnd

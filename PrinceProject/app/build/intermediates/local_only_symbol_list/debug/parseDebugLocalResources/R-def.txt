@@ -8,7 +8,10 @@ id event_spinner
 id list_view
 id main
 id next_activity
+id sample_text
+id submit_button
 id tab_layout
+id test_sample
 id view_pager
 layout activity_entrant_list
 layout activity_main

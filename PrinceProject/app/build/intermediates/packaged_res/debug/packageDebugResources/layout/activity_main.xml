@@ -8,6 +8,7 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/test_sample"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hello World!"
@@ -21,8 +22,26 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Next"
-        tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="16dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/sample_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter the number of entrants you wish to sample"
+        android:inputType="number"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <Button
+        android:id="@+id/submit_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sample_text" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

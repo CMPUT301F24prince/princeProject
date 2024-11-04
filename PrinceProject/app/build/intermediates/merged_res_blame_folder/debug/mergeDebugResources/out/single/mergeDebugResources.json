@@ -12,10 +12,6 @@
         "source": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-main-37:\\mipmap-xhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "com.example.princeproject.app-debug-35:/layout_activity_entrant_list.xml.flat",
-        "source": "com.example.princeproject.app-main-37:/layout/activity_entrant_list.xml"
-    },
-    {
         "merged": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-debug-35:\\xml_data_extraction_rules.xml.flat",
         "source": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-main-37:\\xml\\data_extraction_rules.xml"
     },
@@ -50,6 +46,10 @@
     {
         "merged": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-debug-35:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
         "source": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-main-37:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.example.princeproject.app-debug-35:/layout_activity_main.xml.flat",
+        "source": "com.example.princeproject.app-main-37:/layout/activity_main.xml"
     },
     {
         "merged": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-debug-35:\\drawable_ic_launcher_background.xml.flat",
