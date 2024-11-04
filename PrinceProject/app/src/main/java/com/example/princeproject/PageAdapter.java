@@ -32,13 +32,13 @@ public class PageAdapter extends FragmentStateAdapter {
     public Fragment createFragment(int position) {
         switch (position) {
             case 0:
-                return new ChosenFragment().newInstance(eventId);
+                return new EntrantFragment("chosen").newInstance(eventId);
             case 1:
-                return new CanceledFragment().newInstance(eventId);
+                return new EntrantFragment("declined").newInstance(eventId);
             case 2:
-                return new EnrolledFragment().newInstance(eventId);
+                return new EntrantFragment("accepted").newInstance(eventId);
             default:
-                return new EnrolledFragment().newInstance(eventId);
+                return new EntrantFragment("chosen").newInstance(eventId);
         }
     }
 

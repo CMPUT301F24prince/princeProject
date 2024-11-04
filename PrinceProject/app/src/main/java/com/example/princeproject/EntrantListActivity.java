@@ -66,10 +66,10 @@ public class EntrantListActivity extends AppCompatActivity {
                     tab.setText("Chosen");
                     break;
                 case 1:
-                    tab.setText("Canceled");
+                    tab.setText("Declined");
                     break;
                 case 2:
-                    tab.setText("Enrolled");
+                    tab.setText("Accepted");
                     break;
             }
         }).attach();
