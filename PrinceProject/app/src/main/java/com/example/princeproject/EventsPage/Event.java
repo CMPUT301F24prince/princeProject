@@ -20,7 +20,7 @@ public class Event {
 
     // Pooling system
     private List<User> waitingList;
-    private List<User> selectedParticipants; 
+    private List<User> selectedParticipants;
 
     // Status and check-ins
     private boolean isOpenForRegistration;
@@ -129,7 +129,7 @@ public class Event {
     // Draw lottery for participants
     public void drawLottery() {
         Random rand = new Random();
-        
+
         while (this.selectedParticipants.size() < this.maxParticipants) {
             int randUserIndex = rand.nextInt(this.waitingList.size());
             this.selectedParticipants.add(this.waitingList.get(randUserIndex));
