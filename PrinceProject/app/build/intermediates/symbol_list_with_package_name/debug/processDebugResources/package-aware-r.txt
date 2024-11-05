@@ -3302,6 +3302,7 @@ id dragLeft
 id dragRight
 id dragStart
 id dragUp
+id drawReplacementButton
 id dropdown_menu
 id easeIn
 id easeInOut
@@ -3367,6 +3368,7 @@ id invisible
 id inward
 id italic
 id item_touch_helper_previous_elevation
+id joinWaitingListButton
 id jumpToEnd
 id jumpToStart
 id labeled
@@ -3619,6 +3621,7 @@ id transition_transform
 id triangle
 id unchecked
 id uniform
+id unjoinWaitingListButton
 id unlabeled
 id up
 id useLogo
