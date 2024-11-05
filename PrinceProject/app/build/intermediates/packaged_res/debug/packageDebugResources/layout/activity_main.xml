@@ -7,28 +7,38 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/optOutButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Opt Out of Notifications"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.023"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.923" />
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/root_pager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/main_navigation_bar"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/selectEntrantButton"
-        android:layout_width="wrap_content"
+
+    <com.google.android.material.tabs.TabLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Select Entrant"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.875"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.923" />
+        android:id="@+id/main_navigation_bar"
+        >
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:text="Events"
+            />
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:text="Notifications"
+            />
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:text="My Profile"
+            />
+
+
+    </com.google.android.material.tabs.TabLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
