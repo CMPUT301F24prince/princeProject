@@ -6,6 +6,19 @@
     android:id="@+id/fragment_profile">
 
     <TextView
+        android:id="@+id/my_events"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="My Events"
+        android:textSize="60sp"
+        android:clickable="true"
+        android:focusable="true"
+        >
+
+    </TextView>
+
+    <TextView
         android:id="@+id/wtf"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -15,7 +28,6 @@
         android:textSize="32sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-
     </TextView>
 
 </RelativeLayout>
