@@ -6,7 +6,7 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 import com.example.princeproject.EventsPage.EventsFragment;
-import com.example.princeproject.ProfilePage.NotificationsFragment;
+import com.example.princeproject.NotificationsPage.NotificationsFragment;
 import com.example.princeproject.ProfilePage.ProfileFragment;
 
 public class MainViewPagerAdapter extends FragmentStateAdapter {

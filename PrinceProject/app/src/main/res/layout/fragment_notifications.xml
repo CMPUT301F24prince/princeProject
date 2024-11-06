@@ -5,6 +5,14 @@
     android:layout_height="match_parent"
     android:id="@+id/fragment_profile">
 
+    <ListView
+        android:id="@+id/notification_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </ListView>
+
     <TextView
         android:id="@+id/wtf"
         android:layout_width="wrap_content"

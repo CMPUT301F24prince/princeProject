@@ -3306,6 +3306,7 @@ id dragLeft
 id dragRight
 id dragStart
 id dragUp
+id drawReplacementButton
 id dropdown_menu
 id easeIn
 id easeInOut
@@ -3376,6 +3377,7 @@ id invisible
 id inward
 id italic
 id item_touch_helper_previous_elevation
+id joinWaitingListButton
 id jumpToEnd
 id jumpToStart
 id labeled
@@ -3489,6 +3491,7 @@ id open_search_view_search_prefix
 id open_search_view_status_bar_spacer
 id open_search_view_toolbar
 id open_search_view_toolbar_container
+id optOutButton
 id outline
 id outward
 id overshoot
@@ -3541,6 +3544,7 @@ id search_mag_icon
 id search_plate
 id search_src_text
 id search_voice_btn
+id selectEntrantButton
 id select_dialog_listview
 id selected
 id selection_type
@@ -3635,6 +3639,7 @@ id transition_transform
 id triangle
 id unchecked
 id uniform
+id unjoinWaitingListButton
 id unlabeled
 id up
 id useLogo
@@ -3776,6 +3781,7 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_entrant_list
 layout activity_main
+layout chosen_member
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -3861,6 +3867,7 @@ layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
+layout waiting_list
 mipmap ic_launcher
 mipmap ic_launcher_round
 plurals mtrl_badge_content_description
