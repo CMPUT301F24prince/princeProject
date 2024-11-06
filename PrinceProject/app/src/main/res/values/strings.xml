@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Prince Project</string>
+    <string-array name="accountTypes">
+        <item>User</item>
+        <item>Organizer</item>
+    </string-array>
 </resources>
