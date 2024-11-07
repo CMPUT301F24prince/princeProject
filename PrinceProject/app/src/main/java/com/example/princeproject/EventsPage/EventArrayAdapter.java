@@ -44,6 +44,8 @@ public class EventArrayAdapter extends ArrayAdapter<Event> {
             locationTextView.setText(event.getLocation());
         }
 
+
+
         return view;
     }
 }

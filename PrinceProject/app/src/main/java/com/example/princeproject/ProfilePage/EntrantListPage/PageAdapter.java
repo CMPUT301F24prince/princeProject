@@ -37,6 +37,8 @@ public class PageAdapter extends FragmentStateAdapter {
                 return new EntrantFragment("declined").newInstance(eventId);
             case 2:
                 return new EntrantFragment("accepted").newInstance(eventId);
+            case 3:
+                return new EntrantFragment("waiting").newInstance(eventId);
             default:
                 return new EntrantFragment("chosen").newInstance(eventId);
         }
@@ -44,7 +46,7 @@ public class PageAdapter extends FragmentStateAdapter {
 
     @Override
     public int getItemCount() {
-        return 3;
+        return 4;
     }
 
 }

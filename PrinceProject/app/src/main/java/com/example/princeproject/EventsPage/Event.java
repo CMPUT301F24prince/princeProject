@@ -1,10 +1,9 @@
 package com.example.princeproject.EventsPage;
 
-import com.google.firebase.firestore.auth.User;
-
 import java.util.Date;
 import java.util.List;
 import java.util.Random;
+import com.example.princeproject.User;
 
 public class Event {
     // Event details

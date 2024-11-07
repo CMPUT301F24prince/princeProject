@@ -8,6 +8,7 @@ drawable circle_shape
 drawable filler_image
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+drawable outline_add_comment_24
 id create_event_button
 id description_text
 id editAccountType
@@ -17,11 +18,16 @@ id editTextName
 id editTextPhone
 id emailLabel
 id emailTextView
+id entry_event_description
+id entry_event_location
+id entry_event_title
 id event_feed
 id event_fragment
 id event_image
 id event_spinner
 id fragment_profile
+id invitesButton
+id joinWaitingListButton
 id linearLayout
 id list_view
 id location_text
@@ -48,6 +54,7 @@ id view_pager
 layout activity_entrant_list
 layout activity_main
 layout content_notification
+layout event_list_entry_dialog
 layout eventlist_entry
 layout fragment_edit_profile
 layout fragment_events

@@ -1,13 +1,17 @@
 package com.example.princeproject.EventsPage;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -16,18 +20,29 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 
 import com.example.princeproject.R;
+import com.example.princeproject.User;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
+
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.QuerySnapshot;
 
 public class EventsFragment extends Fragment {
 
     private EventArrayAdapter arrayAdapter;
     private ListView eventFeed;
+    private ImageButton invitesButton;
     private ArrayList<Event> eventList;
+    private FirebaseFirestore db;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -36,14 +51,26 @@ public class EventsFragment extends Fragment {
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        db = FirebaseFirestore.getInstance();
         eventList = new ArrayList<>();
         arrayAdapter = new EventArrayAdapter(view.getContext(), eventList);
+
 
         eventFeed = view.findViewById(R.id.event_feed);
         eventFeed.setAdapter(arrayAdapter);
 
+        eventFeed.setOnItemClickListener((parent, v, position, id) -> {
+                    new EventDialogFragment(arrayAdapter.getItem(position)).show(getActivity().getSupportFragmentManager(), "Event");
+                }
+        );
+
+        invitesButton = view.findViewById(R.id.invitesButton);
+
         Button addEventButton = view.findViewById(R.id.create_event_button);
         addEventButton.setOnClickListener(v -> getUserInput());
+
+        ArrayList<Event> some_events = new ArrayList<Event>();
+        getEvents(some_events);
     }
 
     private void getUserInput() {
@@ -122,5 +149,45 @@ public class EventsFragment extends Fragment {
 
         builder.setNegativeButton("Cancel", (dialog, which) -> dialog.cancel());
         builder.show();
+    }
+
+    private void getEvents (
+            List<Event> events
+    ){
+        CollectionReference eventsRef = this.db.collection("events");
+
+        // finds every event that is organized by the current user
+        eventsRef
+                .get()
+                .addOnSuccessListener(queryDocumentSnapshots -> {
+                    for (QueryDocumentSnapshot doc: queryDocumentSnapshots) {
+                        // gets the eventId and the event name and add the to their respective parallel lists
+                        String event_id = (String) doc.get("eventId");
+                        String event_name = (String) doc.get("name");
+                        String event_desc = (String) doc.get("description");
+                        String event_location = (String) doc.get("location");
+                        int event_max = 20;
+                        String event_organizer = (String) doc.get("organizer");
+                        //more stuff will be added eventually
+
+                        User user = new User(event_organizer, "","","","");
+                        Date date1 = new Date();
+                        Date date2 = new Date();
+                        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+                        try {
+                            date1 = dateFormat.parse("2003-09-20");
+                            date2 = dateFormat.parse("2024-11-07");
+                        }
+                        catch (ParseException e) {
+                        }
+                        Event event = new Event(event_name, event_desc, date1, date2, event_location, event_max, user, true);
+
+                        events.add(event);
+                    }
+                    this.arrayAdapter.addAll(events);
+                    this.arrayAdapter.notifyDataSetChanged();
+                });
+
+
     }
 }

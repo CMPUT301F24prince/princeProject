@@ -3135,6 +3135,7 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable outline_add_comment_24
 drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
@@ -3329,6 +3330,9 @@ id end
 id endToStart
 id enterAlways
 id enterAlwaysCollapsed
+id entry_event_description
+id entry_event_location
+id entry_event_title
 id escape
 id event_feed
 id event_fragment
@@ -3382,9 +3386,11 @@ id included
 id indeterminate
 id info
 id invisible
+id invitesButton
 id inward
 id italic
 id item_touch_helper_previous_elevation
+id joinWaitingListButton
 id jumpToEnd
 id jumpToStart
 id labeled
@@ -3815,6 +3821,7 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout event_list_entry_dialog
 layout eventlist_entry
 layout fragment_edit_profile
 layout fragment_events

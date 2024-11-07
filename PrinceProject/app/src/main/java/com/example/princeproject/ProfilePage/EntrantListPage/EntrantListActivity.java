@@ -3,6 +3,7 @@ package com.example.princeproject.ProfilePage.EntrantListPage;
 import com.example.princeproject.R;
 
 import android.os.Bundle;
+import android.provider.Settings;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -13,6 +14,7 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,6 +22,9 @@ import java.util.List;
 public class EntrantListActivity extends AppCompatActivity {
     private Spinner eventSelection;
     private List<String> events = new ArrayList<>();
+    private FirebaseFirestore db = FirebaseFirestore.getInstance();
+    private String deviceId;
+    private String username;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +32,9 @@ public class EntrantListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_entrant_list);
 
         eventSelection = findViewById(R.id.event_spinner);
+
+        //Find out who the user is
+        deviceId = Settings.Secure.getString(this.getContentResolver(), Settings.Secure.ANDROID_ID);
 
         // gets the list of events for the current organizer
         FirestoreQueryHelper.getOrganizerEvents(this,"kyle",events,eventSelection);
@@ -72,6 +80,9 @@ public class EntrantListActivity extends AppCompatActivity {
                     break;
                 case 2:
                     tab.setText("Accepted");
+                    break;
+                case 3:
+                    tab.setText("Waiting");
                     break;
             }
         }).attach();
