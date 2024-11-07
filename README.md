@@ -6,7 +6,7 @@
 5. Object-Oriented Design:
 6. Product Backlog: A new milestone has been created with the remaining requirements, with assignee decisions to be made after Project Part 3
 7. UI Mockups and Storyboard Sequences: These have been updated based on our current application, as well as to address feedback from Project Part 2
-8. Sprint Planning and Reviews:
+8. Sprint Planning and Reviews: See the princeProject repo for the princeProject - Sprint Planning and Reviews.xlsx file.
 9. Demonstration: Demo to be conducted during the lab after reading week.
 10. Tools: Github (for product backlog, version control, and documentation), Figma (for UI mockups), Google Drawings (for storyboard sequences, CRC cards, and UML), UMLet (for UML), Excel (for sprint planning and review documentation), and Discord (for communication)
 
