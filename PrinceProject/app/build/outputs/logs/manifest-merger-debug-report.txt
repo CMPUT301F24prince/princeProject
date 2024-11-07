@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:2:1-28:12
-INJECTED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:2:1-28:12
-INJECTED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:2:1-28:12
-INJECTED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:2:1-28:12
+ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:2:1-33:12
+INJECTED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:2:1-33:12
+INJECTED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:2:1-33:12
+INJECTED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:2:1-33:12
 MERGED from [com.google.firebase:firebase-firestore:25.1.1] C:\Users\Me\.gradle\caches\transforms-4\1451ea590e7b95341c912e4d2921f2b5\transformed\firebase-firestore-25.1.1\AndroidManifest.xml:2:1-26:12
 MERGED from [com.google.android.material:material:1.12.0] C:\Users\Me\.gradle\caches\transforms-4\cce0ebcf87bed81347bea0323cfd1194\transformed\material-1.12.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\Me\.gradle\caches\transforms-4\a1c5ffbdfc1c6c74d3572ebecc3af90b\transformed\constraintlayout-2.1.4\AndroidManifest.xml:2:1-11:12
@@ -68,8 +68,8 @@ MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] C:\Users\Me\
 	xmlns:android
 		ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:2:11-69
 application
-ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:5:5-26:19
-INJECTED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:5:5-26:19
+ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:5:5-31:19
+INJECTED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:5:5-31:19
 MERGED from [com.google.firebase:firebase-firestore:25.1.1] C:\Users\Me\.gradle\caches\transforms-4\1451ea590e7b95341c912e4d2921f2b5\transformed\firebase-firestore-25.1.1\AndroidManifest.xml:13:5-24:19
 MERGED from [com.google.firebase:firebase-firestore:25.1.1] C:\Users\Me\.gradle\caches\transforms-4\1451ea590e7b95341c912e4d2921f2b5\transformed\firebase-firestore-25.1.1\AndroidManifest.xml:13:5-24:19
 MERGED from [com.google.android.material:material:1.12.0] C:\Users\Me\.gradle\caches\transforms-4\cce0ebcf87bed81347bea0323cfd1194\transformed\material-1.12.0\AndroidManifest.xml:22:5-20
@@ -141,9 +141,13 @@ ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\A
 	android:name
 		ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:21:27-74
 activity#com.example.princeproject.ProfilePage.EntrantListPage.EntrantListActivity
-ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:24:9-25:20
+ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:24:9-26:20
 	android:name
-		ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:24:19-82
+		ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:25:13-76
+activity#com.example.princeproject.NewUserActivity
+ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:27:9-29:20
+	android:name
+		ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:28:13-44
 uses-sdk
 INJECTED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml

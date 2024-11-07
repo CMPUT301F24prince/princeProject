@@ -77,6 +77,7 @@ animator mtrl_fab_hide_motion_spec
 animator mtrl_fab_show_motion_spec
 animator mtrl_fab_transformation_sheet_collapse_spec
 animator mtrl_fab_transformation_sheet_expand_spec
+array accountTypes
 attr SharedValue
 attr SharedValueId
 attr actionBarDivider
@@ -3013,6 +3014,7 @@ drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
+drawable circle_shape
 drawable common_full_open_on_phone
 drawable common_google_signin_btn_icon_dark
 drawable common_google_signin_btn_icon_dark_focused
@@ -3312,6 +3314,10 @@ id easeInOut
 id easeOut
 id east
 id edge
+id editAccountType
+id editTextEmail
+id editTextName
+id editTextPhone
 id edit_query
 id edit_text_id
 id elastic
@@ -3469,6 +3475,10 @@ id noState
 id none
 id normal
 id north
+id notifDetailsText
+id notifNameText
+id notificationList
+id notificationToolbar
 id notification_background
 id notification_main_column
 id notification_main_column_container
@@ -3507,6 +3517,7 @@ id pin
 id position
 id postLayout
 id pressed
+id profileImage
 id progress_circular
 id progress_horizontal
 id radio
@@ -3580,6 +3591,7 @@ id staticPostLayout
 id stop
 id stretch
 id submenuarrow
+id submitButton
 id submit_area
 id supportScrollUp
 id tabMode
@@ -3776,6 +3788,7 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_entrant_list
 layout activity_main
+layout content_notification
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -3850,6 +3863,7 @@ layout mtrl_picker_text_input_date
 layout mtrl_picker_text_input_date_range
 layout mtrl_search_bar
 layout mtrl_search_view
+layout new_user
 layout notification_action
 layout notification_action_tombstone
 layout notification_template_custom_big

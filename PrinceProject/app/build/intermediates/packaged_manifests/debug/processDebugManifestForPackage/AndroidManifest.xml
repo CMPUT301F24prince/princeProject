@@ -43,6 +43,8 @@
         </activity>
         <activity android:name="com.example.princeproject.ProfilePage.EntrantListPage.EntrantListActivity" >
         </activity>
+        <activity android:name="com.example.princeproject.NewUserActivity" >
+        </activity>
 
         <service
             android:name="com.google.firebase.components.ComponentDiscoveryService"

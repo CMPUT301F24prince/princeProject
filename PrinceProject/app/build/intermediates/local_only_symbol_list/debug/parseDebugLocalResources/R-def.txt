@@ -1,13 +1,19 @@
 R_DEF: Internal format may change without notice
 local
+array accountTypes
 color black
 color noticable_grey
 color white
+drawable circle_shape
 drawable filler_image
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 id create_event_button
 id description_text
+id editAccountType
+id editTextEmail
+id editTextName
+id editTextPhone
 id event_feed
 id event_fragment
 id event_image
@@ -18,18 +24,26 @@ id location_text
 id main
 id main_navigation_bar
 id my_events
+id notifDetailsText
+id notifNameText
+id notificationList
+id notificationToolbar
+id profileImage
 id root_pager
+id submitButton
 id tab_layout
 id title_text
 id view_pager
 id wtf
 layout activity_entrant_list
 layout activity_main
+layout content_notification
 layout eventlist_entry
 layout fragment_events
 layout fragment_list
 layout fragment_notifications
 layout fragment_profile
+layout new_user
 layout profile_clickables_entry
 mipmap ic_launcher
 mipmap ic_launcher_round

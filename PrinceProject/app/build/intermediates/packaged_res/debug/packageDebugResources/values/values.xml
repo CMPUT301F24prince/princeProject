@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string-array name="accountTypes">
+        <item>User</item>
+        <item>Organizer</item>
+    </string-array>
     <color name="black">#FF000000</color>
     <color name="noticable_grey">#FFF0F0F0</color>
     <color name="white">#FFFFFFFF</color>

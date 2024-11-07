@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Prince Project</string>
     <string name="create_event">Create Event</string>
+    <string-array name="accountTypes">
+        <item>User</item>
+        <item>Organizer</item>
+    </string-array>
 </resources>

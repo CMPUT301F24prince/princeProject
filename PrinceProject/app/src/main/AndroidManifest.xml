@@ -21,8 +21,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ProfilePage.EntrantListPage.EntrantListActivity" >
+        <activity
+            android:name=".ProfilePage.EntrantListPage.EntrantListActivity" >
         </activity>
+        <activity
+            android:name=".NewUserActivity">
+        </activity>
+
     </application>
 
 </manifest>
