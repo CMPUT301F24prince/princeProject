@@ -40,6 +40,10 @@
         "source": "com.example.princeproject.app-main-37:/layout/profile_clickables_entry.xml"
     },
     {
+        "merged": "com.example.princeproject.app-debug-35:/layout_fragment_edit_profile.xml.flat",
+        "source": "com.example.princeproject.app-main-37:/layout/fragment_edit_profile.xml"
+    },
+    {
         "merged": "com.example.princeproject.app-debug-35:/drawable_circle_shape.xml.flat",
         "source": "com.example.princeproject.app-main-37:/drawable/circle_shape.xml"
     },

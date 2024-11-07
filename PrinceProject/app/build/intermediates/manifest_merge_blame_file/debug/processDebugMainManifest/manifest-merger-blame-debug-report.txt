@@ -29,7 +29,7 @@
 20-->[androidx.core:core:1.13.0] C:\Users\Me\.gradle\caches\transforms-4\291ee18769876d6327af8a96d6c8ed9e\transformed\core-1.13.0\AndroidManifest.xml:26:22-94
 21
 22    <application
-22-->C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:5:5-31:19
+22-->C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:5:5-32:19
 23        android:allowBackup="true"
 23-->C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:6:9-35
 24        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -73,7 +73,7 @@
 44-->C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:25:13-76
 45        </activity>
 46        <activity android:name="com.example.princeproject.NewUserActivity" >
-46-->C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:27:9-29:20
+46-->C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:27:9-30:20
 46-->C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:28:13-44
 47        </activity>
 48

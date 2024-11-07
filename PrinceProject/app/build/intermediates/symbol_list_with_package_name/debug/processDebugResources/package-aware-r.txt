@@ -3315,12 +3315,15 @@ id easeOut
 id east
 id edge
 id editAccountType
+id editProfileButton
 id editTextEmail
 id editTextName
 id editTextPhone
 id edit_query
 id edit_text_id
 id elastic
+id emailLabel
+id emailTextView
 id embed
 id end
 id endToStart
@@ -3393,6 +3396,7 @@ id light
 id line1
 id line3
 id linear
+id linearLayout
 id listMode
 id list_item
 id list_view
@@ -3460,6 +3464,8 @@ id mtrl_picker_title_text
 id mtrl_view_tag_bottom_padding
 id multiply
 id my_events
+id nameLabel
+id nameTextView
 id navigation_bar_item_active_indicator_view
 id navigation_bar_item_icon_container
 id navigation_bar_item_icon_view
@@ -3513,6 +3519,8 @@ id path
 id pathRelative
 id peekHeight
 id percent
+id phoneLabel
+id phoneTextView
 id pin
 id position
 id postLayout
@@ -3668,7 +3676,6 @@ id withinBounds
 id wrap
 id wrap_content
 id wrap_content_constrained
-id wtf
 id x_left
 id x_right
 integer abc_config_activityDefaultDur
@@ -3806,6 +3813,7 @@ layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout eventlist_entry
+layout fragment_edit_profile
 layout fragment_events
 layout fragment_list
 layout fragment_notifications
