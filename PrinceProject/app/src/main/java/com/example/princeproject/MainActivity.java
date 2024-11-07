@@ -1,112 +1,105 @@
 package com.example.princeproject;
 
-import android.app.Activity;
-import android.content.Intent;
-import android.content.Intent;
 import android.os.Bundle;
-import android.provider.Settings;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.viewpager2.widget.ViewPager2;
 
-import com.google.android.gms.tasks.Task;
-import com.google.android.gms.tasks.Tasks;
-import com.google.firebase.firestore.CollectionReference;
+import com.example.princeproject.MainViewPagerAdapter;
+import com.google.android.material.tabs.TabLayout;
+
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QuerySnapshot;
 
 public class MainActivity extends AppCompatActivity {
+    TabLayout mainNavigationBar;
+    ViewPager2 rootPager;
+    MainViewPagerAdapter mainViewPagerAdapter;
 
 
-    //Declaring firestore instance
-    private FirebaseFirestore db = FirebaseFirestore.getInstance();
-    private CollectionReference usersRef;
-    private String deviceId;
-    private User currentUser;
-
-    private Button notifButton;
-    private Button profileButton;
+    private FirebaseFirestore db;
+    private WaitingList WaitingList;
+    private ReplacementApplicantSelector replacementApplicantSelector;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
-        //Is this needed?
-        //ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-        //    Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-        //    v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-        //    return insets;
-        //});
+        db = FirebaseFirestore.getInstance();
+        WaitingList= new WaitingList();
+        replacementApplicantSelector = new ReplacementApplicantSelector();
 
-        //Get the device id
-        deviceId = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
+        Button joinWaitingListButton = findViewById(R.id.joinWaitingListButton);
+        Button unjoinWaitingListButton = findViewById(R.id.unjoinWaitingListButton);
+        Button drawReplacementButton = findViewById(R.id.drawReplacementButton);
 
-        notifButton = findViewById(R.id.notifButton);
-        profileButton = findViewById(R.id.profileButton);
+        String eventId = "1";
+        String applicantName = "John Doe";
 
-        //Check database for existing
-        checkUser();
-
-        //Intent for notifications tab
-        notifButton.setOnClickListener(n ->{
-            Intent intent = new Intent (MainActivity.this, NotificationActivity.class);
-            //Pass the device id
-            intent.putExtra("deviceId", deviceId);
-            startActivity(intent);
-        });
-
-        //Intent for profile tab
-        profileButton.setOnClickListener(p ->{
-           Intent intent = new Intent (MainActivity.this, ProfileActivity.class);
-           //Pass the device id
-            intent.putExtra("deviceId", deviceId);
-            startActivity(intent);
-        });
-
-    }
-
-    private void checkUser(){
-        //Check database for existing
-        db.collection("users")
-                //Check if device id is in database
-                .document(deviceId)
-                .get()
-                .addOnSuccessListener(document -> {
-                    //If device is already enrolled, do nothing
-                    if (document.exists()) {
-                        //User already exists
-                        Toast.makeText(MainActivity.this, "Device already enrolled", Toast.LENGTH_SHORT).show();
-                        currentUser = new User(document.getString("name"),document.getString("email"),document.getString("phone"),document.getString("accountType"), deviceId);
-
-                    }
-                    //Else, open the new user page for users to fill in their details
-                    else {
-                        //Go to new user
-                        Intent intent = new Intent(MainActivity.this, NewUserActivity.class);
-                        newUserLauncher.launch(intent);
-                    }
-                });
-    }
-
-    private final ActivityResultLauncher<Intent> newUserLauncher = registerForActivityResult(
-            new ActivityResultContracts.StartActivityForResult(),
-            result -> {
-                if (result.getResultCode() == Activity.RESULT_OK && result.getData() != null){
-                    currentUser = (User) result.getData().getSerializableExtra("user");
-                }
+        // Set up listeners for each button
+        joinWaitingListButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                WaitingList.joinWaitingList(eventId, applicantName);
             }
-    );
+        });
 
+        unjoinWaitingListButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                WaitingList.unjoinWaitingList(eventId, applicantName);
+            }
+        });
+
+        drawReplacementButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                replacementApplicantSelector.selectReplacementApplicant(eventId);
+            }
+        });
+
+
+
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
+
+        mainNavigationBar = findViewById(R.id.main_navigation_bar);
+        rootPager = findViewById(R.id.root_pager);
+        mainViewPagerAdapter = new MainViewPagerAdapter(this);
+        rootPager.setAdapter(mainViewPagerAdapter);
+
+        mainNavigationBar.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                rootPager.setCurrentItem(tab.getPosition());
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
+
+        rootPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
+            @Override
+            public void onPageSelected(int position) {
+                super.onPageSelected(position);
+                mainNavigationBar.getTabAt(position).select();
+            }
+        });
+    }
 }
