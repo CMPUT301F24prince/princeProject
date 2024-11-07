@@ -1,6 +1,7 @@
 package com.example.princeproject.NotificationsPage;
 
 import android.os.Bundle;
+import android.provider.Settings;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,6 +30,10 @@ public class NotificationsFragment extends Fragment {
     private ArrayList<Notification> notificationDataList;
     private NotificationArrayAdapter notificationAdapter;
     private View thisview;
+    private String targetEventId = "1";
+
+    private NotificationPreferenceManager notificationPreferenceManager;
+    private EventManager eventManager;
 
     private String deviceId;
     private FirebaseFirestore db;
@@ -43,7 +48,7 @@ public class NotificationsFragment extends Fragment {
         super.onCreate(savedInstanceState);
         thisview = view;
         //Get the device ID
-        deviceId = "0";
+        deviceId = Settings.Secure.getString(view.getContext().getContentResolver(), Settings.Secure.ANDROID_ID);
 
         //Initialize the database
         db = FirebaseFirestore.getInstance();
@@ -65,6 +70,11 @@ public class NotificationsFragment extends Fragment {
 
         //Retrieve notifications tied to the deviceId
         getNotifications();
+
+        notificationPreferenceManager = new NotificationPreferenceManager();
+
+        // Find the button and set an onClick listener
+
     }
 
     public void addNotification(Notification notification){
@@ -102,7 +112,7 @@ public class NotificationsFragment extends Fragment {
 
     public void getNotifications(){
         db.collection("notifications")
-                .whereEqualTo("deviceId", deviceId)
+                .whereEqualTo("recipientDeviceId", deviceId)
                 //.orderBy("timestamp", Query.Direction.DESCENDING)
                 .get()
                 .addOnSuccessListener(queryDocumentSnapshots -> {
@@ -110,7 +120,8 @@ public class NotificationsFragment extends Fragment {
                         for (DocumentSnapshot document : queryDocumentSnapshots){
                             String title = document.getString("title");
                             String details = document.getString("details");
-                            Notification notification = new Notification(title, details);
+                            String location = document.getString("location");
+                            Notification notification = new Notification(title, details, location);
                             Toast.makeText(thisview.getContext(), "Notif found: Adding to list", Toast.LENGTH_SHORT).show();
                             notificationDataList.add(notification);
                             notificationAdapter.notifyDataSetChanged();

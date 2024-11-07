@@ -3483,11 +3483,13 @@ id normal
 id north
 id notifDetailsText
 id notifNameText
+id notif_event_image
 id notificationList
 id notificationToolbar
 id notification_background
 id notification_main_column
 id notification_main_column_container
+id notiflocation_text
 id off
 id on
 id onInterceptTouchReturnSwipe
@@ -3505,6 +3507,7 @@ id open_search_view_search_prefix
 id open_search_view_status_bar_spacer
 id open_search_view_toolbar
 id open_search_view_toolbar_container
+id optOutButton
 id outline
 id outward
 id overshoot

@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.content.Context;
+import android.widget.Button;
 import android.widget.TextView;
 import android.app.AlertDialog;
 
@@ -24,6 +25,7 @@ public class NotificationArrayAdapter extends ArrayAdapter<Notification> {
 
     private ArrayList<Notification> notifications;
     private Context context;
+    private NotificationPreferenceManager notificationPreferenceManager = new NotificationPreferenceManager();
 
     public NotificationArrayAdapter(Context context, ArrayList<Notification> notifications){
         super(context, 0 , notifications);
@@ -44,11 +46,25 @@ public class NotificationArrayAdapter extends ArrayAdapter<Notification> {
 
         TextView notificationTitle = view.findViewById(R.id.notifNameText);
         TextView notificationDetails = view.findViewById(R.id.notifDetailsText);
+        TextView notificationLocation = view.findViewById(R.id.notiflocation_text);
 
         notificationTitle.setText(notification.getName());
         notificationDetails.setText(notification.getDetails());
+        notificationLocation.setText(notification.getLocation());
 
         view.setOnClickListener(v -> showNotificationDialog(notification, position));
+
+        Button optOutButton = view.findViewById(R.id.optOutButton);
+        optOutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Replace with actual user ID from Firestore
+                String userId = "9620cce4e7c896f8";
+
+                // Set Allow Notification to false
+                notificationPreferenceManager.setNotificationPreference(userId, false);
+            }
+        });
 
         return view;
     }
