@@ -7,11 +7,10 @@ import java.util.List;
 import java.util.Random;
 import java.util.ArrayList;
 public class EventManager {
-    private FirebaseFirestore db;
-    public EventManager() {
+    private static FirebaseFirestore db;
+
+    public static void selectRandomEntrant(String eventId) {
         db = FirebaseFirestore.getInstance();
-    }
-    public void selectRandomEntrant(String eventId) {
         // Query the events collection for the document with the specified eventId
         Query query = db.collection("events").whereEqualTo("eventId", eventId);
         query.get().addOnSuccessListener(queryDocumentSnapshots -> {

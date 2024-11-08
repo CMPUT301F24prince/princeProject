@@ -31,6 +31,7 @@ id joinWaitingListButton
 id linearLayout
 id list_view
 id location_text
+id lottery_button
 id main
 id main_navigation_bar
 id my_events
@@ -49,6 +50,7 @@ id profileImage
 id root_pager
 id submitButton
 id tab_layout
+id textView
 id title_text
 id view_pager
 layout activity_entrant_list

@@ -3407,6 +3407,7 @@ id listMode
 id list_item
 id list_view
 id location_text
+id lottery_button
 id m3_side_sheet
 id main
 id main_navigation_bar
@@ -3633,6 +3634,7 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textTop
+id textView
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
