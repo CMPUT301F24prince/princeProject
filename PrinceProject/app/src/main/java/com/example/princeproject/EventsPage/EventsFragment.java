@@ -5,6 +5,7 @@ import static android.app.Activity.RESULT_OK;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.util.Base64;
@@ -14,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 
@@ -48,12 +50,15 @@ import com.google.firebase.firestore.CollectionReference;
 
 public class EventsFragment extends Fragment {
 
+    private final int GALLERY_REQ_CODE = 1000;
     private EventArrayAdapter arrayAdapter;
     private ListView eventFeed;
     private ImageButton invitesButton;
     private ArrayList<Event> eventList;
     private FirebaseFirestore db;
     private String username;
+    private ImageView preview;
+    private String poster_encode;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -205,7 +210,7 @@ public class EventsFragment extends Fragment {
                 byte[] byteArray = byteArrayOutputStream.toByteArray();
 
                 String base64String = Base64.encodeToString(byteArray, Base64.DEFAULT);
-                this.new_event_uri = base64String;
+                this.poster_encode = base64String;
             }
 
 
