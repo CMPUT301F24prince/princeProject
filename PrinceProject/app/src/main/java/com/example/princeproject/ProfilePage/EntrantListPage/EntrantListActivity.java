@@ -37,7 +37,7 @@ public class EntrantListActivity extends AppCompatActivity {
         deviceId = Settings.Secure.getString(this.getContentResolver(), Settings.Secure.ANDROID_ID);
 
         // gets the list of events for the current organizer
-        FirestoreQueryHelper.getOrganizerEvents(this,"kyle",events,eventSelection);
+        FirestoreQueryHelper.getOrganizerEvents(this,deviceId,events,eventSelection);
 
         eventSelection.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
