@@ -3336,6 +3336,7 @@ id entry_event_description
 id entry_event_location
 id entry_event_title
 id escape
+id eventTitleTextView
 id event_feed
 id event_fragment
 id event_image
@@ -3409,6 +3410,7 @@ id listMode
 id list_item
 id list_view
 id location_text
+id lottery_button
 id m3_side_sheet
 id main
 id main_navigation_bar
@@ -3497,6 +3499,7 @@ id notificationToolbar
 id notification_background
 id notification_main_column
 id notification_main_column_container
+id notification_toggle
 id notiflocation_text
 id off
 id on
@@ -3542,6 +3545,7 @@ id progress_horizontal
 id radio
 id ratio
 id rectangles
+id removeButton
 id report_drawn
 id reverseSawtooth
 id right
@@ -3635,6 +3639,7 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textTop
+id textView
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -3679,6 +3684,9 @@ id view_tree_saved_state_registry_owner
 id view_tree_view_model_store_owner
 id visible
 id visible_removing_fragment_view_tag
+id waitlistEventsListView
+id waitlistTitle
+id waitlist_view
 id west
 id wide
 id withText
@@ -3806,6 +3814,7 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_entrant_list
 layout activity_main
+layout activity_waitlist_view
 layout content_notification
 layout custom_dialog
 layout design_bottom_navigation_item
@@ -3895,6 +3904,7 @@ layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
+layout waitlist_view_entry
 mipmap ic_launcher
 mipmap ic_launcher_round
 plurals mtrl_badge_content_description
