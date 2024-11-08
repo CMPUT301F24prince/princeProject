@@ -1,5 +1,16 @@
 package com.example.princeproject.EventsPage;
 
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
+import android.os.Environment;
+import android.util.Base64;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import com.example.princeproject.User;
@@ -152,5 +163,32 @@ public class Event {
 
     public String getEventId() {
         return eventId;
+    }
+
+    public android.net.Uri decodeBase64String(Context context) {
+        Calendar calendar = Calendar.getInstance();
+        int hour = calendar.get(Calendar.HOUR_OF_DAY);
+        int minute = calendar.get(Calendar.MINUTE);
+        int second = calendar.get(Calendar.SECOND);
+
+        if (!(this.image_encode == null)) {
+            byte[] decodedBytes = Base64.decode(this.image_encode, Base64.DEFAULT);
+            Bitmap bitmap = BitmapFactory.decodeByteArray(decodedBytes, 0, decodedBytes.length);
+
+            File outputFile = new File(context.getExternalFilesDir(Environment.DIRECTORY_PICTURES), ""+ hour+minute+second);
+            try {
+                FileOutputStream fos = new FileOutputStream(outputFile);
+                bitmap.compress(Bitmap.CompressFormat.PNG, 100, fos);
+            } catch (FileNotFoundException e) {
+            }
+
+            //if (outputFile.exists()) {
+            //    outputFile.delete();
+            //}
+            return Uri.fromFile(outputFile);
+        }
+        else {
+            return null;
+        }
     }
 }
