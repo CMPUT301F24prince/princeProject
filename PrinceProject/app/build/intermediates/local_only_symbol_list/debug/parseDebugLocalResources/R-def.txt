@@ -9,6 +9,7 @@ drawable filler_image
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable outline_add_comment_24
+id acceptButton
 id accountLabel
 id accountTextView
 id create_event_button
@@ -33,6 +34,7 @@ id joinWaitingListButton
 id linearLayout
 id list_view
 id location_text
+id lottery_button
 id main
 id main_navigation_bar
 id my_events
@@ -43,6 +45,7 @@ id notifNameText
 id notif_event_image
 id notificationList
 id notificationToolbar
+id notification_toggle
 id notiflocation_text
 id optOutButton
 id phoneLabel
@@ -51,6 +54,7 @@ id profileImage
 id root_pager
 id submitButton
 id tab_layout
+id textView
 id title_text
 id view_pager
 layout activity_entrant_list
@@ -64,6 +68,7 @@ layout fragment_list
 layout fragment_notifications
 layout fragment_profile
 layout new_user
+layout notification_dialog_fragment
 layout profile_clickables_entry
 mipmap ic_launcher
 mipmap ic_launcher_round

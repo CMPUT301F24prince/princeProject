@@ -3154,6 +3154,7 @@ id SYM
 id TOP_END
 id TOP_START
 id accelerate
+id acceptButton
 id accessibility_action_clickable_span
 id accessibility_custom_action_0
 id accessibility_custom_action_1
@@ -3409,6 +3410,7 @@ id listMode
 id list_item
 id list_view
 id location_text
+id lottery_button
 id m3_side_sheet
 id main
 id main_navigation_bar
@@ -3497,6 +3499,7 @@ id notificationToolbar
 id notification_background
 id notification_main_column
 id notification_main_column_container
+id notification_toggle
 id notiflocation_text
 id off
 id on
@@ -3635,6 +3638,7 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textTop
+id textView
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -3886,6 +3890,7 @@ layout mtrl_search_view
 layout new_user
 layout notification_action
 layout notification_action_tombstone
+layout notification_dialog_fragment
 layout notification_template_custom_big
 layout notification_template_icon_group
 layout notification_template_part_chronometer
