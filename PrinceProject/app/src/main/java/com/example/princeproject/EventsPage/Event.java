@@ -20,6 +20,7 @@ public class Event {
     // Pooling system
     private List<User> waitingList;
     private List<User> selectedParticipants;
+    private String image_encode;
 
     // Status and check-ins
     private boolean isOpenForRegistration;
@@ -52,6 +53,19 @@ public class Event {
         this.maxParticipants = maxParticipants;
         this.organizer = organizer;
         this.isOpenForRegistration = isOpenForRegistration;
+    }
+
+    public Event(String eventId,String title, String description, Date startDate, Date endDate, String location, int maxParticipants, User organizer, boolean isOpenForRegistration, String image_encode) {
+        this.eventId = eventId;
+        this.title = title;
+        this.description = description;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.location = location;
+        this.maxParticipants = maxParticipants;
+        this.organizer = organizer;
+        this.isOpenForRegistration = isOpenForRegistration;
+        this.image_encode = image_encode;
     }
 
     // Getters and setters for all fields

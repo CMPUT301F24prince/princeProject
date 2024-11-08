@@ -165,7 +165,7 @@ public class EventsFragment extends Fragment {
             String eventId = generateEventId();
 
             // Create a new event and add it to the list
-            Event newEvent = new Event(eventId,title, description, startDate, endDate, location, maxParticipants, null, true);
+            Event newEvent = new Event(eventId,title, description, startDate, endDate, location, maxParticipants, null, true, this.poster_encode);
             Map<String, Object> eventDb = new HashMap<>();
             eventDb.put("name",title);
             eventDb.put("description",description);
@@ -180,6 +180,7 @@ public class EventsFragment extends Fragment {
             eventDb.put("declined",emptyList);
             eventDb.put("waiting",emptyList);
             eventDb.put("lotteryDrawn",false);
+            eventDb.put("eventPosterEncode", this.poster_encode);
 
             db.collection("events").document(eventId).set(eventDb);
 
