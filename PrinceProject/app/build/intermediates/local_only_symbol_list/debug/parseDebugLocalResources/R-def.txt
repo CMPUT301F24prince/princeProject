@@ -9,6 +9,8 @@ drawable filler_image
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable outline_add_comment_24
+id accountLabel
+id accountTextView
 id create_event_button
 id description_text
 id editAccountType

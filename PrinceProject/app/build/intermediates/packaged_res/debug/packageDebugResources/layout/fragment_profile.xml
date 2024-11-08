@@ -74,6 +74,22 @@
             android:text="(123) 456-7890"
             android:textSize="16sp" />
 
+        <TextView
+            android:id="@+id/accountLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Account:"
+            android:textStyle="bold"
+            android:paddingBottom="4dp"/>
+
+        <TextView
+            android:id="@+id/accountTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="User"
+            android:textSize="16sp"
+            android:paddingBottom="16dp" />
+
         <Button
             android:id="@+id/editProfileButton"
             android:layout_width="wrap_content"
