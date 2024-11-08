@@ -1,8 +1,22 @@
 package com.example.princeproject.EventsPage;
 
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
+import android.os.Environment;
+import android.text.format.Time;
+import android.util.Base64;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.time.LocalTime;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.List;
-import java.util.Random;
+
 import com.example.princeproject.User;
 
 public class Event {
@@ -13,6 +27,7 @@ public class Event {
     private Date endDate;
     private String location;
     private int maxParticipants;
+    private String imageUriEncoded;
 
     // Organizer info
     private User organizer;
@@ -23,6 +38,7 @@ public class Event {
 
     // Status and check-ins
     private boolean isOpenForRegistration;
+    private String eventId;
 
     // Constructor
     public Event(String title, String description, Date startDate, Date endDate, String location, int maxParticipants, User organizer, boolean isOpenForRegistration) {
@@ -34,6 +50,19 @@ public class Event {
         this.maxParticipants = maxParticipants;
         this.organizer = organizer;
         this.isOpenForRegistration = isOpenForRegistration;
+        this.imageUriEncoded = null;
+    }
+
+    public Event(String title, String description, Date startDate, Date endDate, String location, int maxParticipants, User organizer, boolean isOpenForRegistration, String imageUri) {
+        this.title = title;
+        this.description = description;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.location = location;
+        this.maxParticipants = maxParticipants;
+        this.organizer = organizer;
+        this.isOpenForRegistration = isOpenForRegistration;
+        this.imageUriEncoded = imageUri;
     }
 
     // Getters and setters for all fields
@@ -117,5 +146,34 @@ public class Event {
         isOpenForRegistration = openForRegistration;
     }
 
+    public void setImageUriEncoded(String imageUriEncoded) {
+        this.imageUriEncoded = imageUriEncoded;
+    }
 
+    public android.net.Uri decodeBase64String(Context context) {
+        Calendar calendar = Calendar.getInstance();
+        int hour = calendar.get(Calendar.HOUR_OF_DAY);
+        int minute = calendar.get(Calendar.MINUTE);
+        int second = calendar.get(Calendar.SECOND);
+
+        if (!(this.imageUriEncoded == null)) {
+            byte[] decodedBytes = Base64.decode(this.imageUriEncoded, Base64.DEFAULT);
+            Bitmap bitmap = BitmapFactory.decodeByteArray(decodedBytes, 0, decodedBytes.length);
+
+            File outputFile = new File(context.getExternalFilesDir(Environment.DIRECTORY_PICTURES), ""+ hour+minute+second);
+            try {
+                FileOutputStream fos = new FileOutputStream(outputFile);
+                bitmap.compress(Bitmap.CompressFormat.PNG, 100, fos);
+            } catch (FileNotFoundException e) {
+            }
+
+            //if (outputFile.exists()) {
+            //    outputFile.delete();
+            //}
+            return Uri.fromFile(outputFile);
+        }
+        else {
+            return null;
+        }
+    }
 }

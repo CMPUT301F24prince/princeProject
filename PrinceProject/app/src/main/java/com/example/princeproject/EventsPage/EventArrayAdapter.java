@@ -1,10 +1,14 @@
 package com.example.princeproject.EventsPage;
 
 import android.content.Context;
+import android.net.Uri;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -36,16 +40,35 @@ public class EventArrayAdapter extends ArrayAdapter<Event> {
         TextView titleTextView = view.findViewById(R.id.title_text);
         TextView descriptionTextView = view.findViewById(R.id.description_text);
         TextView locationTextView = view.findViewById(R.id.location_text);
+        ImageView eventPoster = view.findViewById(R.id.event_image);
 
         // Set the text for the TextViews from the Event object
         if (event != null) {
             titleTextView.setText(event.getTitle());
+            String smth = event.getDescription();
             descriptionTextView.setText(event.getDescription());
             locationTextView.setText(event.getLocation());
+
+            Uri poster_uri =  event.decodeBase64String(getContext());
+
+            new Handler(Looper.getMainLooper()).post(new Runnable() {
+                @Override
+                public void run() {
+                    if (!(poster_uri == null)) {
+                        eventPoster.setImageURI(null);
+                        eventPoster.setImageURI(poster_uri);
+                    }
+                }
+            });
+
+
+
         }
 
 
 
         return view;
     }
+
+
 }
