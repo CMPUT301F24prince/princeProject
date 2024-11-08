@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,7 +19,6 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
 import com.example.princeproject.Event;
-import com.example.princeproject.EventsPage.EventArrayAdapter;
 import com.example.princeproject.R;
 import com.example.princeproject.User;
 import com.google.firebase.firestore.CollectionReference;
@@ -56,9 +54,6 @@ public class ProfileFragment extends Fragment implements EditProfileFragment.Edi
     private FirebaseFirestore db;
     private CollectionReference eventsRef;
 
-    private ListView organizedEventsListView;
-    private ArrayList<Event> organizedEventsList;
-    private EventArrayAdapter eventArrayAdapter;
 
     /**
      * Method to initialize the creation of the profile page
@@ -89,10 +84,10 @@ public class ProfileFragment extends Fragment implements EditProfileFragment.Edi
         db = FirebaseFirestore.getInstance();
         eventsRef = db.collection("events");
 
-        organizedEventsListView = view.findViewById(R.id.organized_events_list);
+        /*organizedEventsListView = view.findViewById(R.id.organized_events_list);
         organizedEventsList = new ArrayList<>();
         eventArrayAdapter = new EventArrayAdapter(view.getContext(), organizedEventsList);
-        organizedEventsListView.setAdapter(eventArrayAdapter);
+        organizedEventsListView.setAdapter(eventArrayAdapter);*/
 
         deviceId = Settings.Secure.getString(view.getContext().getContentResolver(), Settings.Secure.ANDROID_ID);
 
@@ -221,10 +216,10 @@ public class ProfileFragment extends Fragment implements EditProfileFragment.Edi
             db.collection("events").document(eventId).set(eventDb);
 
             // Add the event to the list
-            organizedEventsList.add(newEvent);
+            //organizedEventsList.add(newEvent);
 
             // Notify the adapter that the data has changed
-            eventArrayAdapter.notifyDataSetChanged();
+            //eventArrayAdapter.notifyDataSetChanged();
         });
 
         builder.setNegativeButton("Cancel", (dialog, which) -> dialog.cancel());
@@ -260,12 +255,14 @@ public class ProfileFragment extends Fragment implements EditProfileFragment.Edi
                             currentUser = new User(userName, userEmail, userPhone, userAccount, deviceId);
                             currentUser.setOrganizedEventIds(organizedEventIds);
 
+                            updateTextViews();
+
                             // Fetch events the user organized
-                            if (organizedEventIds != null) {
+                            /*if (organizedEventIds != null) {
                                 loadOrganizedEvents(organizedEventIds);
                             } else {
                                 updateTextViews(); // No events, update profile text views
-                            }
+                            }*/
                         }
                     }
                 })
@@ -292,7 +289,7 @@ public class ProfileFragment extends Fragment implements EditProfileFragment.Edi
                 });
     }
 
-    private void loadOrganizedEvents(List<String> eventIds) {
+    /*private void loadOrganizedEvents(List<String> eventIds) {
         db.collection("events")
                 .whereIn("eventId", eventIds) // Query to fetch all events based on event IDs
                 .get()
@@ -318,7 +315,7 @@ public class ProfileFragment extends Fragment implements EditProfileFragment.Edi
                     }
                 })
                 .addOnFailureListener(e -> Log.e("ProfileFragment", "Error retrieving events", e));
-    }
+    }*/
 
     @Override
     public void onDialogPositiveClick(User user) {
