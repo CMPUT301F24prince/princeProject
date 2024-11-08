@@ -1,7 +1,6 @@
 package com.example.princeproject;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 
 /**
  * This is a class that defines a user account for the app
@@ -14,7 +13,6 @@ public class User implements Serializable {
     private String phone;
     private String account; //Account can be user, organizer, or admin
     private String deviceId;
-    private ArrayList<String> organizedEventIds;
 
     /**
      * This is a constructor for creating a user object
@@ -33,7 +31,7 @@ public class User implements Serializable {
         this.phone = phone;
         this.account = account;
         this.deviceId = deviceId;
-        this.organizedEventIds = new ArrayList<>();
+
 
     }
 
@@ -115,16 +113,5 @@ public class User implements Serializable {
 
     public void setDeviceId(String deviceId) {
         this.deviceId = deviceId;
-    }
-
-    public void setOrganizedEventIds(ArrayList<String> organizedEventIds) { this.organizedEventIds = organizedEventIds; }
-
-    public ArrayList<String> getOrganizedEventIds() { return this.organizedEventIds; }
-
-    public void addOrganizedEventID(String eventID) {
-        if (this.organizedEventIds == null) {
-            this.organizedEventIds = new ArrayList<>();
-        }
-        this.organizedEventIds.add(eventID);
     }
 }

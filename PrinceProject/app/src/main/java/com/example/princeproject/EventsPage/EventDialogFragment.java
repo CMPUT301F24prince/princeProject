@@ -13,7 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 
-import com.example.princeproject.Event;
+import com.example.princeproject.ProfilePage.EditProfileFragment;
 import com.example.princeproject.R;
 import com.example.princeproject.User;
 import com.example.princeproject.WaitingList;

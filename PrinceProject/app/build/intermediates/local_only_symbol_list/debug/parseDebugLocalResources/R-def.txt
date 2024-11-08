@@ -46,7 +46,6 @@ id notificationList
 id notificationToolbar
 id notiflocation_text
 id optOutButton
-id organized_events_list
 id phoneLabel
 id phoneTextView
 id profileImage
