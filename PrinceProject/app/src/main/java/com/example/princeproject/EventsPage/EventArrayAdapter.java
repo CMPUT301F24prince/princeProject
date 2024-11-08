@@ -15,6 +15,13 @@ import com.example.princeproject.R;
 import java.util.ArrayList;
 
 public class EventArrayAdapter extends ArrayAdapter<Event> {
+    /**
+     *
+     * @param context
+     * Context of parent fragment/activity
+     * @param events
+     * All events that will showup in list view
+     */
     public EventArrayAdapter(Context context, ArrayList<Event> events) {
         super(context, 0, events);
     }

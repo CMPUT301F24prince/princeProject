@@ -38,7 +38,13 @@ public class EventDialogFragment extends DialogFragment {
     private WaitingList waitingList;
     String deviceId;
 
-
+    /**
+     *
+     * @param event
+     * Event object that fragment will be about
+     * @param username
+     * Name of user
+     */
     public EventDialogFragment(Event event, String username) {
         //I'm gonna change this to take in a user object instead of just the username eventually
         this.event = event;

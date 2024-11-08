@@ -26,6 +26,23 @@ public class Event {
     private boolean isOpenForRegistration;
 
     // Constructor
+
+    /**
+     * Event constructor
+     * @param eventId
+     * Should be unique to every event
+     * @param title
+     * Event name
+     * @param description
+     * Event description
+     * @param startDate
+     * @param endDate
+     * @param location
+     * @param maxParticipants
+     * @param organizer
+     * deviceId of organizer
+     * @param isOpenForRegistration
+     */
     public Event(String eventId,String title, String description, Date startDate, Date endDate, String location, int maxParticipants, User organizer, boolean isOpenForRegistration) {
         this.eventId = eventId;
         this.title = title;
