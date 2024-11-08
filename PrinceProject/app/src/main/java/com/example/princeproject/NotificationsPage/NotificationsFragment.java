@@ -5,7 +5,6 @@ import android.provider.Settings;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.Switch;
 import android.widget.Toast;
 
@@ -15,7 +14,6 @@ import androidx.fragment.app.Fragment;
 import android.widget.ListView;
 import androidx.appcompat.widget.Toolbar;
 
-import com.example.princeproject.EventsPage.EventArrayAdapter;
 import com.example.princeproject.R;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;

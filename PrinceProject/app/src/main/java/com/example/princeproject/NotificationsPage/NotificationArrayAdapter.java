@@ -15,7 +15,6 @@ import androidx.annotation.Nullable;
 
 import com.example.princeproject.R;
 
-import com.google.firebase.Firebase;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 

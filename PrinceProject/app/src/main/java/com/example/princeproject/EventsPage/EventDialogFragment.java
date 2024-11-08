@@ -2,20 +2,19 @@ package com.example.princeproject.EventsPage;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
-import android.content.ContentResolver;
 import android.content.Context;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 
-import com.example.princeproject.ProfilePage.EditProfileFragment;
 import com.example.princeproject.R;
 import com.example.princeproject.User;
 import com.example.princeproject.WaitingList;
@@ -46,7 +45,6 @@ public class EventDialogFragment extends DialogFragment {
      * Name of user
      */
     public EventDialogFragment(Event event, String username) {
-        //I'm gonna change this to take in a user object instead of just the username eventually
         this.event = event;
         this.username = username;
     }
@@ -75,6 +73,14 @@ public class EventDialogFragment extends DialogFragment {
         View view = LayoutInflater.from(getContext()).inflate(R.layout.event_list_entry_dialog, null);
         waitingList = new WaitingList();
         joinWaitingListButton = view.findViewById(R.id.joinWaitingListButton);
+
+        TextView eventName = view.findViewById(R.id.entry_event_title);
+        TextView eventDescription = view.findViewById(R.id.entry_event_description);
+        TextView eventLocation = view.findViewById(R.id.entry_event_location);
+
+        eventName.setText(event.getTitle());
+        eventDescription.setText(event.getDescription());
+        eventLocation.setText(event.getLocation());
 
         joinWaitingListButton.setOnClickListener(new View.OnClickListener() {
             @Override
