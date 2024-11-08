@@ -1,9 +1,0 @@
-<?xml version='1.0' encoding='UTF-8' ?>
-<testsuite name="com.example.princeproject.EntrantListActivityTest" tests="1" failures="0" errors="0" skipped="0" time="2.924" timestamp="2024-11-08T07:45:42" hostname="localhost">
-  <properties>
-    <property name="device" value="Medium_Phone_API_35(AVD) - 15" />
-    <property name="flavor" value="" />
-    <property name="project" value=":app" />
-  </properties>
-  <testcase name="testEventSelectionSpinner" classname="com.example.princeproject.EntrantListActivityTest" time="2.261" />
-</testsuite>
