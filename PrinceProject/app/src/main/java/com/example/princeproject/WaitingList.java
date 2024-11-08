@@ -19,6 +19,13 @@ public class WaitingList {
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     CollectionReference eventsRef = db.collection("events");
 
+    /**
+     * Adds apecified user to a waiting list
+     * @param eventId
+     * event whose waiting list will be added to
+     * @param userId
+     * user id that will be added to list
+     */
     public void joinWaitingList(String eventId, String userId) {
         // Query to find the event document with the specific eventId field value
         eventsRef.whereEqualTo("eventId", eventId)
@@ -44,6 +51,13 @@ public class WaitingList {
                 });
     }
 
+    /**
+     * Removes a user from their waiting list
+     * @param eventId
+     * Event whose list will be removed from
+     * @param userName
+     * User that will be removed
+     */
     public void unjoinWaitingList(String eventId, String userName) {
         // Query to find the event document with the specific eventId field value
         eventsRef.whereEqualTo("eventId", eventId)

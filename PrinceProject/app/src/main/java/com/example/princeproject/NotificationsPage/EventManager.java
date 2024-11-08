@@ -12,6 +12,11 @@ import java.util.ArrayList;
 public class EventManager {
     private static FirebaseFirestore db = FirebaseFirestore.getInstance();
 
+    /**
+     * Uploads a notification to the database,
+     * @param userId
+     * deviceId of the
+     */
     public static void sendNotification(String userId) {
         // Create the notification details
         Map<String, Object> notificationData = new HashMap<>();
@@ -30,6 +35,10 @@ public class EventManager {
                 });
     }
 
+    /**
+     * Selects a random user in the waiting list and moves them to the chosen list. They recieve a notification
+     * @param eventId
+     */
     public static void selectRandomEntrant(String eventId) {
         db = FirebaseFirestore.getInstance();
         Query query = db.collection("events").whereEqualTo("eventId", eventId);
