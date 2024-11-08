@@ -1,19 +1,18 @@
 package com.example.princeproject.ProfilePage;
 
-import android.app.Activity;
+
 import android.app.AlertDialog;
-//import android.app.Dialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
-import android.provider.Settings;
+
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.view.LayoutInflater;
-import android.content.ContentResolver;
+
 import android.widget.Spinner;
 
 import androidx.annotation.NonNull;
@@ -29,8 +28,6 @@ import org.jetbrains.annotations.NotNull;
 
 import com.example.princeproject.R;
 
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * This is a class that implements the Edit Profile functinality.

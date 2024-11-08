@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -15,7 +17,6 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.viewpager2.widget.ViewPager2;
 
-import com.example.princeproject.MainViewPagerAdapter;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -56,6 +57,16 @@ public class MainActivity extends AppCompatActivity {
         rootPager = findViewById(R.id.root_pager);
         mainViewPagerAdapter = new MainViewPagerAdapter(this);
         rootPager.setAdapter(mainViewPagerAdapter);
+
+        Button waitlistButton = findViewById(R.id.waitlist_view);
+
+        waitlistButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), WaitlistViewActivity.class);
+                startActivity(intent);
+            }
+        });
 
         mainNavigationBar.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override

@@ -10,6 +10,10 @@ import com.example.princeproject.NotificationsPage.NotificationsFragment;
 import com.example.princeproject.ProfilePage.ProfileFragment;
 
 public class MainViewPagerAdapter extends FragmentStateAdapter {
+    /**
+     * Constructor for the adapter
+     * @param fragmentActivity fragmentActivity reference
+     */
     public MainViewPagerAdapter(@NonNull FragmentActivity fragmentActivity) {
         super(fragmentActivity);
     }

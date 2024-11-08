@@ -1,7 +1,6 @@
 package com.example.princeproject.NotificationsPage;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.DocumentSnapshot;
 
 import java.util.HashMap;

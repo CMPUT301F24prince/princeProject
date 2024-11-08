@@ -24,6 +24,7 @@ id emailTextView
 id entry_event_description
 id entry_event_location
 id entry_event_title
+id eventTitleTextView
 id event_feed
 id event_fragment
 id event_image
@@ -51,14 +52,19 @@ id optOutButton
 id phoneLabel
 id phoneTextView
 id profileImage
+id removeButton
 id root_pager
 id submitButton
 id tab_layout
 id textView
 id title_text
 id view_pager
+id waitlistEventsListView
+id waitlistTitle
+id waitlist_view
 layout activity_entrant_list
 layout activity_main
+layout activity_waitlist_view
 layout content_notification
 layout event_list_entry_dialog
 layout eventlist_entry
@@ -70,6 +76,7 @@ layout fragment_profile
 layout new_user
 layout notification_dialog_fragment
 layout profile_clickables_entry
+layout waitlist_view_entry
 mipmap ic_launcher
 mipmap ic_launcher_round
 string app_name
