@@ -29,13 +29,17 @@ public class EventDialogFragment extends DialogFragment {
     private Event event;
     private static final String ARG_USER = "user";
     private User user;
+    //username will be removed once we implement User
+    private String username;
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private EventDialogFragment.EventDialogListener listener;
     private Button joinWaitingListButton;
     private WaitingList waitingList;
 
-    public EventDialogFragment(Event event) {
+    public EventDialogFragment(Event event, String username) {
+        //I'm gonna change this to take in a user object instead of just the username eventually
         this.event = event;
+        this.username = username;
     }
 
     @Override
@@ -66,7 +70,8 @@ public class EventDialogFragment extends DialogFragment {
             @Override
             public void onClick(View v) {
                 //These values shouldn't be hard coded, but they are until other things are completed
-                waitingList.joinWaitingList("(event)", "Leander Lopez");
+                waitingList.joinWaitingList(event.getTitle(), username);
+                dismiss();
             }
         });
 
