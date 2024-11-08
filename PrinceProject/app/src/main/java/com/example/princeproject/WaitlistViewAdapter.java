@@ -19,7 +19,7 @@ public class WaitlistViewAdapter extends ArrayAdapter<String> {
 
     private List<String> events;
     private List<String> eventIds;
-    private FirebaseFirestore db;
+    FirebaseFirestore db;
     private String userId;
 
     /**
