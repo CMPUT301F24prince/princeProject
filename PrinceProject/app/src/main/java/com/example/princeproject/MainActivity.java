@@ -109,6 +109,9 @@ public class MainActivity extends AppCompatActivity {
                 });
     }
 
+    /**
+     * If the deviceId is not in the database, the user is sent to form to create an account
+     */
     private final ActivityResultLauncher<Intent> newUserLauncher = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
             result -> {

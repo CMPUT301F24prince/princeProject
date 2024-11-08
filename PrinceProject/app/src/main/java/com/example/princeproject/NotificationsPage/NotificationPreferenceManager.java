@@ -5,12 +5,17 @@ import com.google.firebase.firestore.FirebaseFirestore;
 public class NotificationPreferenceManager {
     private FirebaseFirestore db;
 
+
     public NotificationPreferenceManager() {
         // Initialize Firestore instance
         db = FirebaseFirestore.getInstance();
     }
 
-    // Method to update notification preference
+    /**
+     * Changes the notification preference of the user
+     * @param userId
+     * @param allowNotifications
+     */
     public void setNotificationPreference(String userId, boolean allowNotifications) {
         db.collection("users").document(userId)
                 .update("Allow Notification", allowNotifications)
