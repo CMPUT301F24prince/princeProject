@@ -14,7 +14,6 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FieldValue;
 
 import java.util.List;
-import java.util.Map;
 
 public class WaitlistViewAdapter extends ArrayAdapter<String> {
 

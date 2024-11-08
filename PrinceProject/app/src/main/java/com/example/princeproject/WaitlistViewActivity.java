@@ -1,26 +1,21 @@
 package com.example.princeproject;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.provider.Settings;
-import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
+
 import android.widget.ListView;
-import android.widget.Toast;
+
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.Query;
 
 import java.util.ArrayList;
-import java.util.HashMap;
+
 import java.util.List;
-import java.util.Map;
+
 
 public class WaitlistViewActivity extends AppCompatActivity {
 
