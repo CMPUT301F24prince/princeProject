@@ -79,6 +79,9 @@ public class EventsFragment extends Fragment {
         getEvents(some_events);
     }
 
+    /**
+     * Creates fragment for creating events, adds it to the database
+     */
     private void getUserInput() {
         // Create input fields for event details
         final EditText titleEditText = new EditText(getContext());
@@ -177,6 +180,10 @@ public class EventsFragment extends Fragment {
         builder.show();
     }
 
+    /**
+     * Generates a random event id
+     * @return Randomized event id
+     */
     private String generateEventId() {
         String chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
         SecureRandom random = new SecureRandom();
@@ -189,6 +196,11 @@ public class EventsFragment extends Fragment {
         return eventId.toString();
     }
 
+    /**
+     * Gets events in the database
+     * @param events
+     * Output parameter (for some reason), should be a blank array that will be passed to array adapter
+     */
     private void getEvents (List<Event> events)
     {
         CollectionReference eventsRef = this.db.collection("events");
@@ -228,6 +240,9 @@ public class EventsFragment extends Fragment {
 
     }
 
+    /**
+     * Gets username associated with the device id
+     */
     private void getUsername() {
         CollectionReference UserRef = this.db.collection("users");
         UserRef.whereEqualTo("deviceId", Settings.Secure.getString(this.getContext().getContentResolver(), Settings.Secure.ANDROID_ID))
