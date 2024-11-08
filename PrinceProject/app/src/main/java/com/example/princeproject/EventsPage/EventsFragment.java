@@ -165,7 +165,6 @@ public class EventsFragment extends Fragment {
             eventDb.put("chosen",emptyList);
             eventDb.put("declined",emptyList);
             eventDb.put("waiting",emptyList);
-            eventDb.put("lotteryDrawn",false);
 
             db.collection("events").document(eventId).set(eventDb);
 
