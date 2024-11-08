@@ -1,7 +1,13 @@
 package com.example.princeproject.EventsPage;
 
+import static android.app.Activity.RESULT_OK;
+
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,9 +26,13 @@ import androidx.fragment.app.Fragment;
 
 import com.example.princeproject.R;
 import com.example.princeproject.User;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 
+import java.io.ByteArrayOutputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.security.SecureRandom;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -174,6 +184,58 @@ public class EventsFragment extends Fragment {
 
         builder.setNegativeButton("Cancel", (dialog, which) -> dialog.cancel());
         builder.show();
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode==RESULT_OK) {
+            if (requestCode==GALLERY_REQ_CODE) {
+                android.net.Uri imageUri = data.getData();
+                preview.setImageURI(imageUri);
+
+                InputStream imageStream = null;
+                try {
+                    imageStream = getContext().getContentResolver().openInputStream(imageUri);
+                } catch (FileNotFoundException e) {
+                }
+                Bitmap bitmap = BitmapFactory.decodeStream(imageStream);
+                ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+                bitmap.compress(Bitmap.CompressFormat.PNG, 100, byteArrayOutputStream);
+                byte[] byteArray = byteArrayOutputStream.toByteArray();
+
+                String base64String = Base64.encodeToString(byteArray, Base64.DEFAULT);
+                this.new_event_uri = base64String;
+            }
+
+
+        }
+    }
+
+    public void addEventPoster(String imageBase64, String eventId) {
+        // Query to find the event document with the specific eventId field value
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        CollectionReference eventsRef = db.collection("events");
+        eventsRef.whereEqualTo("eventId", eventId)
+                .get()
+                .addOnSuccessListener(queryDocumentSnapshots -> {
+                    if (!queryDocumentSnapshots.isEmpty()) {
+                        DocumentReference eventRef = queryDocumentSnapshots.getDocuments().get(0).getReference();
+
+                        eventRef.update("eventPosterEncode", imageBase64)
+                                .addOnSuccessListener(aVoid -> {
+                                    System.out.println("User added to waiting list successfully!");
+                                })
+                                .addOnFailureListener(e -> {
+                                    System.err.println("Error adding user to waiting list: " + e.getMessage());
+                                });
+                    } else {
+                        System.err.println("No event found with eventId: " + eventId);
+                    }
+                })
+                .addOnFailureListener(e -> {
+                    System.err.println("Error fetching event document: " + e.getMessage());
+                });
     }
 
     /**
