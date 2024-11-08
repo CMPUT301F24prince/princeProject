@@ -60,6 +60,10 @@
         "source": "com.example.princeproject.app-main-37:/layout/fragment_list.xml"
     },
     {
+        "merged": "com.example.princeproject.app-debug-35:/layout_notification_dialog_fragment.xml.flat",
+        "source": "com.example.princeproject.app-main-37:/layout/notification_dialog_fragment.xml"
+    },
+    {
         "merged": "com.example.princeproject.app-debug-35:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
         "source": "com.example.princeproject.app-main-37:/mipmap-xxxhdpi/ic_launcher_round.webp"
     },
