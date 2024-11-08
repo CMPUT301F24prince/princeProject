@@ -1,22 +1,8 @@
 package com.example.princeproject.EventsPage;
 
-import static android.Manifest.permission.READ_MEDIA_IMAGES;
-import static android.app.Activity.RESULT_OK;
-import static android.content.Context.STORAGE_SERVICE;
-
-import static androidx.core.content.ContextCompat.getSystemService;
-
 import android.content.Context;
-import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.os.storage.StorageManager;
-import android.os.storage.StorageVolume;
-import android.provider.MediaStore;
 import android.provider.Settings;
-import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,7 +10,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Spinner;
@@ -33,21 +18,13 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
-import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 
 import com.example.princeproject.R;
 import com.example.princeproject.User;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.InputStream;
 import java.security.SecureRandom;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -64,18 +41,13 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QuerySnapshot;
 
 public class EventsFragment extends Fragment {
-    private final int GALLERY_REQ_CODE = 1000;
+
     private EventArrayAdapter arrayAdapter;
     private ListView eventFeed;
     private ImageButton invitesButton;
     private ArrayList<Event> eventList;
     private FirebaseFirestore db;
-    //Bottom 4 are for new events, will be moved later
-    private Boolean waiting_for_image = false;
-    private String eventId;
-    private String new_event_uri;
-
-    private ImageView preview;
+    private String username;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -84,9 +56,8 @@ public class EventsFragment extends Fragment {
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        ActivityCompat.requestPermissions(this.getActivity(), new String[] {READ_MEDIA_IMAGES}, PackageManager.PERMISSION_GRANTED);
-
         db = FirebaseFirestore.getInstance();
+        getUsername();
         eventList = new ArrayList<>();
         arrayAdapter = new EventArrayAdapter(view.getContext(), eventList);
 
@@ -95,7 +66,7 @@ public class EventsFragment extends Fragment {
         eventFeed.setAdapter(arrayAdapter);
 
         eventFeed.setOnItemClickListener((parent, v, position, id) -> {
-                    new EventDialogFragment(arrayAdapter.getItem(position)).show(getActivity().getSupportFragmentManager(), "Event");
+                    new EventDialogFragment(arrayAdapter.getItem(position), username).show(getActivity().getSupportFragmentManager(), "Event");
                 }
         );
 
@@ -129,20 +100,6 @@ public class EventsFragment extends Fragment {
         maxParticipantsEditText.setHint("Enter Max Participants");
         maxParticipantsEditText.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
 
-        preview = new ImageView(getContext());
-
-        final Button uploadImage = new Button(getContext());
-        uploadImage.setText("Upload Event Poster");
-        uploadImage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                waiting_for_image = true;
-                Intent iGallery = new Intent(Intent.ACTION_PICK) ;
-                iGallery.setData(MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                startActivityForResult(iGallery, GALLERY_REQ_CODE);
-            }
-        });
-
         // Create a layout to hold the input fields
         LinearLayout layout = new LinearLayout(getContext());
         layout.setOrientation(LinearLayout.VERTICAL);
@@ -152,13 +109,10 @@ public class EventsFragment extends Fragment {
         layout.addView(endDateEditText);
         layout.addView(locationEditText);
         layout.addView(maxParticipantsEditText);
-        layout.addView(uploadImage);
-        layout.addView(preview);
 
         AlertDialog.Builder builder = new AlertDialog.Builder(requireContext());
         builder.setTitle("Add New Event");
         builder.setView(layout);
-
 
         builder.setPositiveButton("Add", (dialog, which) -> {
             String title = titleEditText.getText().toString().trim();
@@ -194,10 +148,10 @@ public class EventsFragment extends Fragment {
             }
             String organizer = Settings.Secure.getString(requireContext().getContentResolver(), Settings.Secure.ANDROID_ID);
             List<String> emptyList = new ArrayList<>();
-            eventId = generateEventId();
+            String eventId = generateEventId();
 
             // Create a new event and add it to the list
-            Event newEvent = new Event(title, description, startDate, endDate, location, maxParticipants, null, true);
+            Event newEvent = new Event(eventId,title, description, startDate, endDate, location, maxParticipants, null, true);
             Map<String, Object> eventDb = new HashMap<>();
             eventDb.put("name",title);
             eventDb.put("description",description);
@@ -211,10 +165,9 @@ public class EventsFragment extends Fragment {
             eventDb.put("chosen",emptyList);
             eventDb.put("declined",emptyList);
             eventDb.put("waiting",emptyList);
-            eventDb.put("eventPosterEncode", new_event_uri);
+            eventDb.put("lotteryDrawn",false);
 
             db.collection("events").document(eventId).set(eventDb);
-
 
             eventList.add(newEvent);
             arrayAdapter.notifyDataSetChanged();
@@ -222,66 +175,6 @@ public class EventsFragment extends Fragment {
 
         builder.setNegativeButton("Cancel", (dialog, which) -> dialog.cancel());
         builder.show();
-    }
-
-    public void buttonFileToInputStream(View view) {
-        //StorageManager storageManager = (StorageManager) getContext().getSystemService(STORAGE_SERVICE);
-        //StorageVolume storageVolume = storageManager.getStorageVolumes().get(0);
-        //File fileInputImage = new File(storageVolume.getDirectory().getPath() + "/Download")
-
-    }
-
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode==RESULT_OK) {
-            if (requestCode==GALLERY_REQ_CODE) {
-                android.net.Uri imageUri = data.getData();
-                preview.setImageURI(imageUri);
-
-                InputStream imageStream = null;
-                try {
-                    imageStream = getContext().getContentResolver().openInputStream(imageUri);
-                } catch (FileNotFoundException e) {
-                }
-                Bitmap bitmap = BitmapFactory.decodeStream(imageStream);
-                ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-                bitmap.compress(Bitmap.CompressFormat.PNG, 100, byteArrayOutputStream);
-                byte[] byteArray = byteArrayOutputStream.toByteArray();
-
-                String base64String = Base64.encodeToString(byteArray, Base64.DEFAULT);
-                this.new_event_uri = base64String;
-            }
-
-
-        }
-    }
-
-    public void addEventPoster(String imageBase64, String eventId) {
-        // Query to find the event document with the specific eventId field value
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
-        CollectionReference eventsRef = db.collection("events");
-        eventsRef.whereEqualTo("eventId", eventId)
-                .get()
-                .addOnSuccessListener(queryDocumentSnapshots -> {
-                    if (!queryDocumentSnapshots.isEmpty()) {
-                        DocumentReference eventRef = queryDocumentSnapshots.getDocuments().get(0).getReference();
-
-                        // Add the user to the waiting list array
-                        eventRef.update("waiting", imageBase64)
-                                .addOnSuccessListener(aVoid -> {
-                                    System.out.println("User added to waiting list successfully!");
-                                })
-                                .addOnFailureListener(e -> {
-                                    System.err.println("Error adding user to waiting list: " + e.getMessage());
-                                });
-                    } else {
-                        System.err.println("No event found with eventId: " + eventId);
-                    }
-                })
-                .addOnFailureListener(e -> {
-                    System.err.println("Error fetching event document: " + e.getMessage());
-                });
     }
 
     private String generateEventId() {
@@ -296,10 +189,11 @@ public class EventsFragment extends Fragment {
         return eventId.toString();
     }
 
-    private void getEvents (
-            List<Event> events
-    ){
+    private void getEvents (List<Event> events)
+    {
         CollectionReference eventsRef = this.db.collection("events");
+
+        // finds every event that is organized by the current user
         eventsRef
                 .get()
                 .addOnSuccessListener(queryDocumentSnapshots -> {
@@ -309,7 +203,6 @@ public class EventsFragment extends Fragment {
                         String event_name = (String) doc.get("name");
                         String event_desc = (String) doc.get("description");
                         String event_location = (String) doc.get("location");
-                        String event_uri_encode = (String) doc.get("eventPosterEncode");
                         int event_max = 20;
                         String event_organizer = (String) doc.get("organizer");
                         //more stuff will be added eventually
@@ -324,7 +217,7 @@ public class EventsFragment extends Fragment {
                         }
                         catch (ParseException e) {
                         }
-                        Event event = new Event(event_name, event_desc, date1, date2, event_location, event_max, user, true, event_uri_encode);
+                        Event event = new Event(event_id,event_name, event_desc, date1, date2, event_location, event_max, user, true);
 
                         events.add(event);
                     }
@@ -332,6 +225,18 @@ public class EventsFragment extends Fragment {
                     this.arrayAdapter.notifyDataSetChanged();
                 });
 
+
+    }
+
+    private void getUsername() {
+        CollectionReference UserRef = this.db.collection("users");
+        UserRef.whereEqualTo("deviceId", Settings.Secure.getString(this.getContext().getContentResolver(), Settings.Secure.ANDROID_ID))
+                .get().addOnSuccessListener(queryDocumentSnapshots -> {
+                    for (QueryDocumentSnapshot doc: queryDocumentSnapshots) {
+                        // gets the eventId and the event name and add the to their respective parallel lists
+                        this.username = (String) doc.get("name");
+                    }
+                });
 
     }
 }

@@ -2,12 +2,13 @@ package com.example.princeproject.EventsPage;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -30,13 +31,18 @@ public class EventDialogFragment extends DialogFragment {
     private Event event;
     private static final String ARG_USER = "user";
     private User user;
+    private String username;
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private EventDialogFragment.EventDialogListener listener;
     private Button joinWaitingListButton;
     private WaitingList waitingList;
+    String deviceId;
 
-    public EventDialogFragment(Event event) {
+
+    public EventDialogFragment(Event event, String username) {
+        //I'm gonna change this to take in a user object instead of just the username eventually
         this.event = event;
+        this.username = username;
     }
 
     @Override
@@ -59,6 +65,7 @@ public class EventDialogFragment extends DialogFragment {
     @NonNull
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
+        deviceId = Settings.Secure.getString(requireContext().getContentResolver(), Settings.Secure.ANDROID_ID);
         View view = LayoutInflater.from(getContext()).inflate(R.layout.event_list_entry_dialog, null);
         waitingList = new WaitingList();
         joinWaitingListButton = view.findViewById(R.id.joinWaitingListButton);
@@ -66,8 +73,8 @@ public class EventDialogFragment extends DialogFragment {
         joinWaitingListButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //These values shouldn't be hard coded, but they are until other things are completed
-                waitingList.joinWaitingList("(event)", "Leander Lopez");
+                waitingList.joinWaitingList(event.getEventId(), deviceId);
+                dismiss();
             }
         });
 

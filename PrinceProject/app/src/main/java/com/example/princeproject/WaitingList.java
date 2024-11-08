@@ -19,16 +19,16 @@ public class WaitingList {
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     CollectionReference eventsRef = db.collection("events");
 
-    public void joinWaitingList(String eventId, String userName) {
+    public void joinWaitingList(String eventId, String userId) {
         // Query to find the event document with the specific eventId field value
-        eventsRef.whereEqualTo("name", eventId)
+        eventsRef.whereEqualTo("eventId", eventId)
                 .get()
                 .addOnSuccessListener(queryDocumentSnapshots -> {
                     if (!queryDocumentSnapshots.isEmpty()) {
                         DocumentReference eventRef = queryDocumentSnapshots.getDocuments().get(0).getReference();
 
                         // Add the user to the waiting list array
-                        eventRef.update("waiting", FieldValue.arrayUnion(userName))
+                        eventRef.update("waiting", FieldValue.arrayUnion(userId))
                                 .addOnSuccessListener(aVoid -> {
                                     System.out.println("User added to waiting list successfully!");
                                 })

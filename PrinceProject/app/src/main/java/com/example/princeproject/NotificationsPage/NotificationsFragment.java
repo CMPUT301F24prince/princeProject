@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Switch;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -60,43 +61,36 @@ public class NotificationsFragment extends Fragment {
 
     /**
      * Method to handle the notification page
-     * @param view 
+     * @param view
      *      The notification view
      * @param savedInstanceState
      *      The current state of the view
      * */
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        thisview = view;
-        //Get the device ID
+        super.onViewCreated(view, savedInstanceState);
+
+        // Get the device ID
         deviceId = Settings.Secure.getString(view.getContext().getContentResolver(), Settings.Secure.ANDROID_ID);
 
-        //Initialize the database
+        // Initialize Firestore and Notification Preference Manager
         db = FirebaseFirestore.getInstance();
+        notificationPreferenceManager = new NotificationPreferenceManager();
 
-        //I'm not sure if I do this here
-        //setContentView(R.layout.activity_notifications);
-
-        //Show the toolbar
+        // Set up the toolbar
         Toolbar toolbar = view.findViewById(R.id.notificationToolbar);
         ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
         ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("Notifications");
 
-
-        //Set the view of the notification list and initialize the adapter
+        // Initialize the ListView and adapter
         notificationList = view.findViewById(R.id.notificationList);
         notificationDataList = new ArrayList<>();
         notificationAdapter = new NotificationArrayAdapter(this.getContext(), notificationDataList);
         notificationList.setAdapter(notificationAdapter);
 
-        //Retrieve notifications tied to the deviceId
+        // Set up the notification toggle and retrieve notifications
+        setupNotificationToggle(view);
         getNotifications();
-
-        notificationPreferenceManager = new NotificationPreferenceManager();
-
-        // Find the button and set an onClick listener
-
     }
 
     /**
@@ -142,30 +136,49 @@ public class NotificationsFragment extends Fragment {
                 });
     }
 
-    public void getNotifications(){
+    private String getCurrentUserId() {
+        return Settings.Secure.getString(requireContext().getContentResolver(), Settings.Secure.ANDROID_ID);
+    }
+
+    private void setupNotificationToggle(View view) {
+        Switch notificationToggle = view.findViewById(R.id.notification_toggle);
+
+        // Set up listener for the toggle
+        notificationToggle.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            String userId = getCurrentUserId();
+            notificationPreferenceManager.setNotificationPreference(userId, isChecked);
+
+            // Display feedback message to the user
+            String message = isChecked ? "Notifications Enabled" : "Notifications Disabled";
+            Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
+        });
+    }
+
+    private void getNotifications() {
         db.collection("notifications")
-                .whereEqualTo("recipientDeviceId", deviceId)
-                //.orderBy("timestamp", Query.Direction.DESCENDING)
-                .get()
-                .addOnSuccessListener(queryDocumentSnapshots -> {
-                    if (!queryDocumentSnapshots.isEmpty()){
-                        for (DocumentSnapshot document : queryDocumentSnapshots){
+                .whereEqualTo("userId", deviceId)
+                .orderBy("timestamp", Query.Direction.DESCENDING)
+                .addSnapshotListener((queryDocumentSnapshots, e) -> {
+                    if (e != null) {
+                        System.err.println("Listen failed: " + e);
+                        return;
+                    }
+
+                    // Clear the current list and update it with new data
+                    notificationDataList.clear();
+                    if (queryDocumentSnapshots != null) {
+                        for (DocumentSnapshot document : queryDocumentSnapshots.getDocuments()) {
                             String title = document.getString("title");
                             String details = document.getString("details");
                             String location = document.getString("location");
+
                             Notification notification = new Notification(title, details, location);
-                            Toast.makeText(thisview.getContext(), "Notif found: Adding to list", Toast.LENGTH_SHORT).show();
                             notificationDataList.add(notification);
-                            notificationAdapter.notifyDataSetChanged();
                         }
+                        notificationAdapter.notifyDataSetChanged();
                     }
                 });
     }
-
-    private void testNotifs(){
-        notificationDataList.add((new Notification("Test Name 1","Test Details 1")));
-        notificationDataList.add((new Notification("Test Name 2","Test Details 2")));
-        notificationDataList.add((new Notification("Test Name 3","Test Details 3")));
-    }
+    
 
 }
