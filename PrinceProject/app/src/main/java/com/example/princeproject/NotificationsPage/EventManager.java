@@ -38,6 +38,7 @@ public class EventManager {
      * Selects a random user in the waiting list and moves them to the chosen list. They recieve a notification
      * @param eventId
      */
+    // From chatgpt, openai, "write a java implementation of selecting a random entrant from waitlist and remove them from waitlist and put them in chosen list attach is the image of the db, 2024-11-08
     public static void selectRandomEntrant(String eventId) {
         db = FirebaseFirestore.getInstance();
         Query query = db.collection("events").whereEqualTo("eventId", eventId);
