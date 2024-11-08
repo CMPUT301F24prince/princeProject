@@ -55,6 +55,7 @@ dependencies {
     implementation(libs.constraintlayout)
     implementation(libs.firebase.storage)
     testImplementation(libs.junit)
+    testImplementation(libs.junit.jupiter)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
 }

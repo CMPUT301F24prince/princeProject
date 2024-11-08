@@ -48,7 +48,12 @@ import java.util.Map;
 
 import com.google.firebase.firestore.CollectionReference;
 
-
+/**
+ * The {@code EventsFragment} class represents a UI fragment in an Android app where users can view,
+ * create, and interact with events. It retrieves events from a Firestore database and displays them
+ * in a {@link ListView}, allowing users to add new events with details such as title, date, location,
+ * and image.
+ */
 public class EventsFragment extends Fragment {
 
     private final int GALLERY_REQ_CODE = 1000;
@@ -92,7 +97,8 @@ public class EventsFragment extends Fragment {
     }
 
     /**
-     * Creates fragment for creating events, adds it to the database
+     * Opens a dialog for user input to create a new event. Captures details such as title, description,
+     * date, location, max participants, and an optional event image, and saves the event to Firestore.
      */
     private void getUserInput() {
         // Create input fields for event details
@@ -233,6 +239,12 @@ public class EventsFragment extends Fragment {
         }
     }
 
+    /**
+     * Adds an event poster image to a specified event document in Firestore by encoding it in Base64.
+     *
+     * @param imageBase64 The encoded image as a Base64 string.
+     * @param eventId The unique ID of the event to update.
+     */
     public void addEventPoster(String imageBase64, String eventId) {
         // Query to find the event document with the specific eventId field value
         FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -261,6 +273,7 @@ public class EventsFragment extends Fragment {
 
     /**
      * Generates a random event id
+     * 
      * @return Randomized event id
      */
     private String generateEventId() {
