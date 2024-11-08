@@ -24,6 +24,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * This is a class that handles the notifications page for the user. Here, the user will see any
+ * notifications relevant to them regarding events they have signed up for
+ * */
 public class NotificationsFragment extends Fragment {
 
     private ListView notificationList;
@@ -38,11 +42,29 @@ public class NotificationsFragment extends Fragment {
     private String deviceId;
     private FirebaseFirestore db;
 
+    /**
+     * Method to initialize the creation of the Notification page
+     * @param inflater
+     *      LayoutInflator to get the notification fragment view
+     * @param container
+     *      Parameter to inflate the notification fragment view
+     * @param savedInstanceState
+     *      The current state of the view
+     * @return
+     *      The notification view
+     * */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_notifications, container, false);
     }
 
+    /**
+     * Method to handle the notification page
+     * @param view 
+     *      The notification view
+     * @param savedInstanceState
+     *      The current state of the view
+     * */
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -77,6 +99,11 @@ public class NotificationsFragment extends Fragment {
 
     }
 
+    /**
+     * Method to handle adding a notification to the listview of a user.
+     * @param notification
+     *      The notification to add
+     * */
     public void addNotification(Notification notification){
         //Add notification to local array
         notificationDataList.add(notification);
@@ -91,6 +118,11 @@ public class NotificationsFragment extends Fragment {
         db.collection("notifications").add(notif);
     }
 
+    /**
+     * Method to handle the deletion of a notification from the listview.
+     * @param notification
+     *      The notification to deleted
+     * */
     public void deleteNotification(Notification notification){
         notificationDataList.remove(notification);
         notificationAdapter.notifyDataSetChanged();

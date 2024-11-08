@@ -32,6 +32,11 @@ import com.example.princeproject.R;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * This is a class that implements the Edit Profile functinality.
+ * When a user wants to edit their details, a dialog will pop up for users
+ * to change the details.
+ * */
 public class EditProfileFragment extends DialogFragment{
 
     private static final String ARG_USER = "user";
@@ -51,6 +56,11 @@ public class EditProfileFragment extends DialogFragment{
 
     private EditProfileDialogListener listener;
 
+    /**
+     * Method to attach the dialog to the user profile
+     * @param context
+     *      The current context of the profile
+     * */
     @Override
     public void onAttach(@NotNull Context context){
         super.onAttach(context);
@@ -60,6 +70,11 @@ public class EditProfileFragment extends DialogFragment{
         }
     }
 
+    /**
+     * Method to handle the initialization of the dialog by taking in the passed User object
+     * @param savedInstanceState
+     *      The current state of the profile view
+     * */
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -68,9 +83,15 @@ public class EditProfileFragment extends DialogFragment{
         }
     }
 
+    /**
+     * Method to handle the creation of the dialog to edit the profile
+     * @param savedInstanceState
+     *      The current state of the profile view
+     * */
     @NonNull
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState){
+        //Initialize the views and the edit text fields
         View view = LayoutInflater.from(getContext()).inflate(R.layout.fragment_edit_profile, null);
         editName = view.findViewById(R.id.editTextName);
         editName.setText(user.getName());
@@ -79,6 +100,7 @@ public class EditProfileFragment extends DialogFragment{
         editPhone = view.findViewById(R.id.editTextPhone);
         editPhone.setText(user.getPhone());
 
+        //Initialize the dropdown to choose account type
         accountTypeDropdown = view.findViewById(R.id.editAccountType);
         ArrayAdapter<CharSequence> accTypeAdapter = ArrayAdapter.createFromResource(view.getContext(), R.array.accountTypes, android.R.layout.simple_spinner_item);
         accTypeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -86,7 +108,7 @@ public class EditProfileFragment extends DialogFragment{
         int spinnerPosition = accTypeAdapter.getPosition(user.getAccount());
         accountTypeDropdown.setSelection(spinnerPosition);
 
-
+        //Builder to build the dialog
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
         builder
                 .setView(view)
@@ -103,6 +125,7 @@ public class EditProfileFragment extends DialogFragment{
                 String email = editEmail.getText().toString();
                 String phone = editPhone.getText().toString();
 
+                //Setting the listener to the account type dropdown
                 accountTypeDropdown.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                     @Override
                     public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
@@ -117,20 +140,20 @@ public class EditProfileFragment extends DialogFragment{
 
                 });
 
-
+                //Check if fields are valid, then set the changed user info in the database
                 if (validateFields()){
                     user.setName(name);
                     user.setEmail(email);
                     user.setPhone(phone);
-                    user.setAccount(account);
+                    user.setAccount(accountTypeDropdown.getSelectedItem().toString());
 
                     DocumentReference docRef = db.collection("users").document(user.getDeviceId());
                     docRef.update("name", name);
                     docRef.update("email", email);
                     docRef.update("phone", phone);
-                    docRef.update("accountType", account);
+                    docRef.update("accountType", accountTypeDropdown.getSelectedItem().toString());
                 }
-
+                //Notify listener that profile has been updated, and to update info on main activity
                 listener.setEditProfile(user);
                 dialog.dismiss();
             });
@@ -139,6 +162,11 @@ public class EditProfileFragment extends DialogFragment{
         return dialog;
     }
 
+    /**
+     * Method to validate that the name and email fields are inputted
+     * @return
+     *      True if the name and email fields are filled, false otherwise
+     * */
     private boolean validateFields(){
         String name = editName.getText().toString();
         String email = editEmail.getText().toString();
@@ -146,11 +174,13 @@ public class EditProfileFragment extends DialogFragment{
 
         boolean valid = true;
 
+        //Set error if name is empty
         if (name.isEmpty()){
             editName.setError("Please enter a valid name");
             valid = false;
         }
 
+        //Set error if email is empty
         if (email.isEmpty()){
             editName.setError("Please enter a valid email");
             valid = false;
@@ -159,6 +189,13 @@ public class EditProfileFragment extends DialogFragment{
         return valid;
     }
 
+    /**
+     * Method to get the passed User object from ProfileActivity
+     * @param user
+     *      The user object being passed to the fragment
+     * @return
+     *      True if the name and email fields are filled, false otherwise
+     * */
     public static EditProfileFragment newInstance(User user){
         Bundle args = new Bundle();
         args.putSerializable("user",user);

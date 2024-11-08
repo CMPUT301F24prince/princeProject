@@ -5,6 +5,7 @@
       <SelectionState runConfigName="app">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
+<<<<<<< HEAD
 <<<<<<< Updated upstream
       <SelectionState runConfigName="app.main">
         <option name="selectionMode" value="DROPDOWN" />
@@ -19,6 +20,8 @@
       </SelectionState>
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> main
     </selectionStates>
   </component>
 </project>

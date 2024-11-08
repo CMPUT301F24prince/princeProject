@@ -39,11 +39,16 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
+/**
+ * This is a class that handles the profile page for the user, where they can view their
+ * inputted details.
+ * */
 public class ProfileFragment extends Fragment implements EditProfileFragment.EditProfileDialogListener {
 
     private TextView nameTextView;
     private TextView emailTextView;
     private TextView phoneTextView;
+    private TextView accountTextView;
     private Button editProfile;
     private Button createEventButton;
 
@@ -56,11 +61,29 @@ public class ProfileFragment extends Fragment implements EditProfileFragment.Edi
     private ArrayList<Event> organizedEventsList;
     private EventArrayAdapter eventArrayAdapter;
 
+    /**
+     * Method to initialize the creation of the profile page
+     * @param inflater
+     *      LayoutInflator to get the profile fragment view
+     * @param container
+     *      Parameter to inflate the profile fragment view
+     * @param savedInstanceState
+     *      The current state of the view
+     * @return
+     *      The profile view
+     * */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_profile, container, false);
     }
 
+    /**
+     * Method to handle the profile page
+     * @param view
+     *      The profile view
+     * @param savedInstanceState
+     *      The current state of the view
+     * */
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         // Set up database
@@ -83,6 +106,7 @@ public class ProfileFragment extends Fragment implements EditProfileFragment.Edi
         nameTextView = view.findViewById(R.id.nameTextView);
         emailTextView = view.findViewById(R.id.emailTextView);
         phoneTextView = view.findViewById(R.id.phoneTextView);
+        accountTextView = view.findViewById(R.id.accountTextView);
         editProfile = view.findViewById(R.id.editProfileButton);
 
         getUserInfo();  // Initialize currentUser asynchronously
@@ -92,6 +116,7 @@ public class ProfileFragment extends Fragment implements EditProfileFragment.Edi
             fragment.show(getChildFragmentManager(), "Edit Profile");
         });
 
+<<<<<<< HEAD
         // Initialize Create Event button and set its listener
         createEventButton = view.findViewById(R.id.create_event_button);
         createEventButton.setOnClickListener(v -> createEvent());
@@ -250,17 +275,52 @@ public class ProfileFragment extends Fragment implements EditProfileFragment.Edi
                     Toast.makeText(getContext(), "Error fetching user data", Toast.LENGTH_SHORT).show();
                     Log.e("Firestore Error", "Failed to fetch user data: " + e.getMessage());
                 });
+=======
+        myEventsButton = view.findViewById(R.id.my_events);
+
+        db.collection("events").whereEqualTo("organizer",deviceId)
+                .get()
+                .addOnSuccessListener(queryDocumentSnapshots -> {
+                   if (!queryDocumentSnapshots.isEmpty()) {
+                       myEventsButton.setOnClickListener(new View.OnClickListener() {
+                           @Override
+                           public void onClick(View view) {
+                               Intent intent = new Intent(view.getContext(), EntrantListActivity.class);
+                               startActivity(intent);
+                           }
+                       });
+                   } else {
+                       myEventsButton.setVisibility(View.INVISIBLE);
+                   }
+                });
+
+
+>>>>>>> main
     }
 
+    /**
+     * Method to edit the profile of the user when a user chooses to
+     * @param user
+     *      The user object being modified
+     * */
     @Override
     public void setEditProfile(User user) {
         nameTextView.setText(user.getName());
         emailTextView.setText(user.getEmail());
         phoneTextView.setText(user.getPhone());
+        accountTextView.setText(user.getAccount());
     }
 
+<<<<<<< HEAD
     public void updateUserInfo(User user) {
         // Get the Firestore collection where user data is stored
+=======
+    /**
+     * Method to retrieve user information from the database via the device ID
+     * */
+    private void getUserInfo(){
+        Toast.makeText(thisview.getContext(), "Retrieving data", Toast.LENGTH_SHORT).show();
+>>>>>>> main
         db.collection("users")
                 .whereEqualTo("deviceId", user.getDeviceId())
                 .get()
@@ -278,6 +338,7 @@ public class ProfileFragment extends Fragment implements EditProfileFragment.Edi
                             updatedUserData.put("accountType", user.getAccount());
                             updatedUserData.put("organizedEventIds", user.getOrganizedEventIds());
 
+<<<<<<< HEAD
                             // Update the user document in Firestore
                             DocumentReference userDocRef = db.collection("users").document(userId);
                             userDocRef.update(updatedUserData)
@@ -285,6 +346,12 @@ public class ProfileFragment extends Fragment implements EditProfileFragment.Edi
                                         // Handle the failure
                                         Toast.makeText(getContext(), "Error updating user information", Toast.LENGTH_SHORT).show();
                                     });
+=======
+                            nameTextView.setText(userName);
+                            emailTextView.setText(userEmail);
+                            phoneTextView.setText(userPhone);
+                            accountTextView.setText(userAccType);
+>>>>>>> main
                         }
                     } else {
                         // If no matching user was found, handle appropriately

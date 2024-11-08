@@ -117,28 +117,4 @@ public class Event {
     }
 
 
-    // Add user to the waiting list
-    public void addToWaitingList(User user) {
-        if (!this.waitingList.contains(user)) {
-            this.waitingList.add(user);
-        }
-    }
-
-    // Draw lottery for participants
-    public void drawLottery() {
-        Random rand = new Random();
-
-        while (this.selectedParticipants.size() < this.maxParticipants) {
-            int randUserIndex = rand.nextInt(this.waitingList.size());
-            this.selectedParticipants.add(this.waitingList.get(randUserIndex));
-            this.waitingList.remove(randUserIndex);
-        }
-    }
-
-    // Remove a participant
-    public void cancelParticipant(User user) {
-        this.selectedParticipants.remove(user);
-
-        this.drawLottery();
-    }
 }
