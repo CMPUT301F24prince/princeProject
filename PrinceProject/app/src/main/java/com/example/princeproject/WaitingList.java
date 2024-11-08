@@ -19,6 +19,7 @@ public class WaitingList {
      * @param userId
      * user id that will be added to list
      */
+    //From chatgpt, openai, "write a java implementation of a function that put a person in the waitlist attach is the image of the db use eventId to decide which event to join ", 2024-11-08
     public void joinWaitingList(String eventId, String userId) {
         // Query to find the event document with the specific eventId field value
         eventsRef.whereEqualTo("eventId", eventId)
