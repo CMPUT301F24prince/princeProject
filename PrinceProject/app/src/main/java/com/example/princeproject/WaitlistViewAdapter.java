@@ -23,6 +23,13 @@ public class WaitlistViewAdapter extends ArrayAdapter<String> {
     private FirebaseFirestore db;
     private String userId;
 
+    /**
+     * Constructor to create the adapter
+     * @param context context of the adapter
+     * @param events list of events by name
+     * @param eventIds list of events by ids
+     * @param userId id of the current user
+     */
     public WaitlistViewAdapter(Context context, List<String> events,List<String> eventIds, String userId) {
         super(context, 0, eventIds);
         this.events = events;
@@ -56,6 +63,10 @@ public class WaitlistViewAdapter extends ArrayAdapter<String> {
         return convertView;
     }
 
+    /**
+     * Removes the user from the selected waitlist
+     * @param eventId id of the event in which the user is to be removed from
+     */
     private void removeUserFromWaitlist(String eventId) {
         db.collection("events").document(eventId)
                 .update("waiting", FieldValue.arrayRemove(userId))

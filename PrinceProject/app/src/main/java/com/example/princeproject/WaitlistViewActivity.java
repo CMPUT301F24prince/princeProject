@@ -48,6 +48,9 @@ public class WaitlistViewActivity extends AppCompatActivity {
         loadWaitlistedEvents();
     }
 
+    /**
+     * Loads the all the events waitlisted by the current user
+     */
     private void loadWaitlistedEvents() {
         db.collection("events")
                 .whereArrayContains("waiting", userId)
