@@ -7,6 +7,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.provider.Settings;
 import android.util.Base64;
 import android.view.LayoutInflater;
@@ -113,6 +114,18 @@ public class EventsFragment extends Fragment {
         final EditText maxParticipantsEditText = new EditText(getContext());
         maxParticipantsEditText.setHint("Enter Max Participants");
         maxParticipantsEditText.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
+        final Button uploadImage = new Button(getContext());
+        preview = new ImageView(getContext());
+
+        uploadImage.setText("Upload Event Poster");
+        uploadImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent iGallery = new Intent(Intent.ACTION_PICK) ;
+                iGallery.setData(MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                startActivityForResult(iGallery, GALLERY_REQ_CODE);
+            }
+        });
 
         // Create a layout to hold the input fields
         LinearLayout layout = new LinearLayout(getContext());
@@ -123,6 +136,8 @@ public class EventsFragment extends Fragment {
         layout.addView(endDateEditText);
         layout.addView(locationEditText);
         layout.addView(maxParticipantsEditText);
+        layout.addView(uploadImage);
+        layout.addView(preview);
 
         AlertDialog.Builder builder = new AlertDialog.Builder(requireContext());
         builder.setTitle("Add New Event");
