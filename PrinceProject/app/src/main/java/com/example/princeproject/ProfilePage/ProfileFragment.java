@@ -44,10 +44,6 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
-/**
- * This is a class that handles the profile page for the user, where they can view their
- * inputted details.
- * */
 public class ProfileFragment extends Fragment implements EditProfileFragment.EditProfileDialogListener {
 
     View thisview;
@@ -61,36 +57,17 @@ public class ProfileFragment extends Fragment implements EditProfileFragment.Edi
     private TextView nameTextView;
     private TextView emailTextView;
     private TextView phoneTextView;
-    private TextView accountTextView;
     private Button editProfile;
 
     private String deviceId;
     private User currentUser;
     private FirebaseFirestore db;
 
-    /**
-     * Method to initialize the creation of the profile page
-     * @param inflater
-     *      LayoutInflator to get the profile fragment view
-     * @param container
-     *      Parameter to inflate the profile fragment view
-     * @param savedInstanceState
-     *      The current state of the view
-     * @return
-     *      The profile view
-     * */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_profile, container, false);
     }
 
-    /**
-     * Method to handle the profile page
-     * @param view
-     *      The profile view
-     * @param savedInstanceState
-     *      The current state of the view
-     * */
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
 
@@ -109,7 +86,6 @@ public class ProfileFragment extends Fragment implements EditProfileFragment.Edi
         nameTextView = view.findViewById(R.id.nameTextView);
         emailTextView = view.findViewById(R.id.emailTextView);
         phoneTextView = view.findViewById(R.id.phoneTextView);
-        accountTextView = view.findViewById(R.id.accountTextView);
         editProfile = view.findViewById(R.id.editProfileButton);
 
         getUserInfo();
@@ -120,42 +96,22 @@ public class ProfileFragment extends Fragment implements EditProfileFragment.Edi
         });
 
         myEventsButton = view.findViewById(R.id.my_events);
-
-        db.collection("events").whereEqualTo("organizer",deviceId)
-                .get()
-                .addOnSuccessListener(queryDocumentSnapshots -> {
-                   if (!queryDocumentSnapshots.isEmpty()) {
-                       myEventsButton.setOnClickListener(new View.OnClickListener() {
-                           @Override
-                           public void onClick(View view) {
-                               Intent intent = new Intent(view.getContext(), EntrantListActivity.class);
-                               startActivity(intent);
-                           }
-                       });
-                   } else {
-                       myEventsButton.setVisibility(View.INVISIBLE);
-                   }
-                });
-
-
+        myEventsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), EntrantListActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
-    /**
-     * Method to edit the profile of the user when a user chooses to
-     * @param user
-     *      The user object being modified
-     * */
     @Override
     public void setEditProfile(User user){
         nameTextView.setText(user.getName());
         emailTextView.setText(user.getEmail());
         phoneTextView.setText(user.getPhone());
-        accountTextView.setText(user.getAccount());
     }
 
-    /**
-     * Method to retrieve user information from the database via the device ID
-     * */
     private void getUserInfo(){
         Toast.makeText(thisview.getContext(), "Retrieving data", Toast.LENGTH_SHORT).show();
         db.collection("users")
@@ -175,7 +131,6 @@ public class ProfileFragment extends Fragment implements EditProfileFragment.Edi
                             nameTextView.setText(userName);
                             emailTextView.setText(userEmail);
                             phoneTextView.setText(userPhone);
-                            accountTextView.setText(userAccType);
                         }
                     }
                 });
