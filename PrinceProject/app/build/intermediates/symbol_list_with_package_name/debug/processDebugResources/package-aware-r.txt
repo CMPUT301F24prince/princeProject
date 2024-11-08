@@ -3407,6 +3407,7 @@ id listMode
 id list_item
 id list_view
 id location_text
+id lottery_button
 id m3_side_sheet
 id main
 id main_navigation_bar

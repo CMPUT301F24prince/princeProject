@@ -31,6 +31,7 @@ id joinWaitingListButton
 id linearLayout
 id list_view
 id location_text
+id lottery_button
 id main
 id main_navigation_bar
 id my_events
