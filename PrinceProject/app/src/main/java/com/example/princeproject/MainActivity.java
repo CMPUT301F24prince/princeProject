@@ -33,6 +33,11 @@ public class MainActivity extends AppCompatActivity {
     private User currentUser;
 
 
+    /**
+     * Method to initialize the main activity view
+     * @param savedInstanceState
+     *      The current state of the view
+     * */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -78,6 +83,9 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Method to check if the device/user exists in the database
+     * */
     public void checkUser(){
         //Check database for existing
         db.collection("users")
