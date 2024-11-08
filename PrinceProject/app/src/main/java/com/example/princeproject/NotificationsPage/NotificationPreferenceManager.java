@@ -16,6 +16,7 @@ public class NotificationPreferenceManager {
      * @param userId
      * @param allowNotifications
      */
+    // From chatgpt, openai, "write a java implementation of function that set the user notification preference attach is the image of the db", 2024-11-08
     public void setNotificationPreference(String userId, boolean allowNotifications) {
         db.collection("users").document(userId)
                 .update("Allow Notification", allowNotifications)
