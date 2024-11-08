@@ -2,6 +2,7 @@ package com.example.princeproject.EventsPage;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,12 +25,15 @@ import com.example.princeproject.User;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 
+import java.security.SecureRandom;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.EventListener;
@@ -140,15 +144,46 @@ public class EventsFragment extends Fragment {
                 Toast.makeText(getContext(), "Dates must be in the format yyyy-MM-dd", Toast.LENGTH_SHORT).show();
                 return;
             }
+            String organizer = Settings.Secure.getString(requireContext().getContentResolver(), Settings.Secure.ANDROID_ID);
+            List<String> emptyList = new ArrayList<>();
+            String eventId = generateEventId();
 
             // Create a new event and add it to the list
             Event newEvent = new Event(title, description, startDate, endDate, location, maxParticipants, null, true);
+            Map<String, Object> eventDb = new HashMap<>();
+            eventDb.put("name",title);
+            eventDb.put("description",description);
+            eventDb.put("startDate",startDate);
+            eventDb.put("endDate",endDate);
+            eventDb.put("location",location);
+            eventDb.put("maxParticipants",maxParticipants);
+            eventDb.put("organizer",organizer);
+            eventDb.put("eventId",eventId);
+            eventDb.put("accepted",emptyList);
+            eventDb.put("chosen",emptyList);
+            eventDb.put("declined",emptyList);
+            eventDb.put("waiting",emptyList);
+
+            db.collection("events").document(eventId).set(eventDb);
+
             eventList.add(newEvent);
             arrayAdapter.notifyDataSetChanged();
         });
 
         builder.setNegativeButton("Cancel", (dialog, which) -> dialog.cancel());
         builder.show();
+    }
+
+    private String generateEventId() {
+        String chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        SecureRandom random = new SecureRandom();
+
+        StringBuilder eventId = new StringBuilder(20);
+        for(int i = 0; i < 20; i++) {
+            int index = random.nextInt(chars.length());
+            eventId.append(chars.charAt(index));
+        }
+        return eventId.toString();
     }
 
     private void getEvents (

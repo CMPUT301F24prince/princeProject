@@ -96,13 +96,24 @@ public class ProfileFragment extends Fragment implements EditProfileFragment.Edi
         });
 
         myEventsButton = view.findViewById(R.id.my_events);
-        myEventsButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(), EntrantListActivity.class);
-                startActivity(intent);
-            }
-        });
+
+        db.collection("events").whereEqualTo("organizer",deviceId)
+                .get()
+                .addOnSuccessListener(queryDocumentSnapshots -> {
+                   if (!queryDocumentSnapshots.isEmpty()) {
+                       myEventsButton.setOnClickListener(new View.OnClickListener() {
+                           @Override
+                           public void onClick(View view) {
+                               Intent intent = new Intent(view.getContext(), EntrantListActivity.class);
+                               startActivity(intent);
+                           }
+                       });
+                   } else {
+                       myEventsButton.setVisibility(View.INVISIBLE);
+                   }
+                });
+
+
     }
 
     @Override
