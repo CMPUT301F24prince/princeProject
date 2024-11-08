@@ -5,6 +5,7 @@
     android:orientation="vertical"
     android:id="@+id/fragment_profile">
 
+    <!-- Toolbar for notifications -->
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/notificationToolbar"
         android:layout_width="match_parent"
@@ -12,9 +13,21 @@
         android:background="?attr/colorPrimary"
         android:title="Notifications"
         android:titleTextColor="@android:color/black" />
+
+    <!-- List of notifications -->
     <ListView
         android:id="@+id/notificationList"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    </ListView>
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <!-- Toggle switch for notifications -->
+    <Switch
+        android:id="@+id/notification_toggle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Allow Notifications"
+        android:layout_marginTop="16dp"
+        android:layout_gravity="center_horizontal" />
+
 </LinearLayout>
