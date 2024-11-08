@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.princeproject.app-mergeDebugResources-33:/values-xlarge-v4/values-xlarge-v4.xml",
+            "outputFile": "com.example.princeproject.app-mergeDebugResources-39:/values-xlarge-v4/values-xlarge-v4.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Me\\.gradle\\caches\\transforms-4\\adfe6e16ea27b5505aeb52b7a606612f\\transformed\\appcompat-1.7.0\\res\\values-xlarge-v4\\values-xlarge-v4.xml",
+                    "source": "C:\\Users\\Kyle\\.gradle\\caches\\transforms-4\\adfe6e16ea27b5505aeb52b7a606612f\\transformed\\appcompat-1.7.0\\res\\values-xlarge-v4\\values-xlarge-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7",
                         "startColumns": "4,4,4,4,4,4",

@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.princeproject.app-mergeDebugResources-33:/values-port/values-port.xml",
+            "outputFile": "com.example.princeproject.app-mergeDebugResources-39:/values-port/values-port.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Me\\.gradle\\caches\\transforms-4\\adfe6e16ea27b5505aeb52b7a606612f\\transformed\\appcompat-1.7.0\\res\\values-port\\values-port.xml",
+                    "source": "C:\\Users\\Kyle\\.gradle\\caches\\transforms-4\\adfe6e16ea27b5505aeb52b7a606612f\\transformed\\appcompat-1.7.0\\res\\values-port\\values-port.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

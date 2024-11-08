@@ -82,7 +82,7 @@ public class EntrantListActivity extends AppCompatActivity {
      * @param eventId Id of the given event
      * @param callback callback to enable updating of lotteryDrawn
      */
-    private void getLotteryDrawnStatus(String eventId, getLotteryStatusCallback callback) {
+    public void getLotteryDrawnStatus(String eventId, getLotteryStatusCallback callback) {
         db.collection("events").whereEqualTo("eventId", eventId).get()
                 .addOnSuccessListener(queryDocumentSnapshots -> {
                     if (!queryDocumentSnapshots.isEmpty()) {
@@ -101,7 +101,7 @@ public class EntrantListActivity extends AppCompatActivity {
      * based on the value of lotteryDrawn
      * @param lotteryButton the button being set up
      */
-    private void setupButton(Button lotteryButton) {
+    public void setupButton(Button lotteryButton) {
         if (!lotteryDrawn) {
             lotteryButton.setText("Draw Lottery");
             lotteryButton.setOnClickListener(view -> {

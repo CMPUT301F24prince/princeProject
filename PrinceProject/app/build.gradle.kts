@@ -35,6 +35,20 @@ android {
 dependencies {
     implementation(platform("com.google.firebase:firebase-bom:33.5.0"))
     implementation("com.google.firebase:firebase-firestore")
+
+
+    implementation ("com.google.protobuf:protobuf-javalite:3.21.12")
+
+    testImplementation("junit:junit:4.13.2")
+    androidTestImplementation("androidx.test.ext:junit:1.1.5")
+    androidTestImplementation ("androidx.test.espresso:espresso-core:3.4.0")
+    androidTestImplementation ("androidx.test.espresso:espresso-intents:3.4.0")
+    androidTestImplementation ("androidx.test.espresso:espresso-contrib:3.4.0")
+
+    debugImplementation ("androidx.fragment:fragment-testing:1.3.6")
+
+    testImplementation ("org.mockito:mockito-core:3.12.4")
+    testImplementation ("org.mockito:mockito-inline:3.12.4")
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)
