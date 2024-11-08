@@ -187,12 +187,16 @@ public class ProfileFragment extends Fragment implements EditProfileFragment.Edi
                 Toast.makeText(getContext(), "Dates must be in the format yyyy-MM-dd", Toast.LENGTH_SHORT).show();
                 return;
             }
+
             String organizer = Settings.Secure.getString(requireContext().getContentResolver(), Settings.Secure.ANDROID_ID);
             List<String> emptyList = new ArrayList<>();
             String eventId = generateEventId();
 
             // Create a new event and add it to the list
             Event newEvent = new Event(title, description, startDate, endDate, location, maxParticipants, currentUser, true);
+            if (currentUser.getAccount() == null) {
+                currentUser.setAccount("User");
+            }
             if (currentUser.getAccount().equals("User")) {
                 currentUser.setAccount("Organizer");
             }
@@ -250,9 +254,18 @@ public class ProfileFragment extends Fragment implements EditProfileFragment.Edi
                             String userEmail = document.getString("email");
                             String userPhone = document.getString("phone");
                             String userAccount = document.getString("account");
+                            ArrayList<String> organizedEventIds = (ArrayList<String>) document.get("organizedEventIds");
 
+                            // Set current user info
                             currentUser = new User(userName, userEmail, userPhone, userAccount, deviceId);
-                            updateTextViews();
+                            currentUser.setOrganizedEventIds(organizedEventIds);
+
+                            // Fetch events the user organized
+                            if (organizedEventIds != null) {
+                                loadOrganizedEvents(organizedEventIds);
+                            } else {
+                                updateTextViews(); // No events, update profile text views
+                            }
                         }
                     }
                 })
@@ -279,6 +292,34 @@ public class ProfileFragment extends Fragment implements EditProfileFragment.Edi
                 });
     }
 
+    private void loadOrganizedEvents(List<String> eventIds) {
+        db.collection("events")
+                .whereIn("eventId", eventIds) // Query to fetch all events based on event IDs
+                .get()
+                .addOnSuccessListener(queryDocumentSnapshots -> {
+                    if (!queryDocumentSnapshots.isEmpty()) {
+                        organizedEventsList.clear(); // Clear the list first
+                        for (DocumentSnapshot document : queryDocumentSnapshots) {
+                            String title = document.getString("name");
+                            String description = document.getString("description");
+                            Date startDate = document.getDate("startDate");
+                            Date endDate = document.getDate("endDate");
+                            String location = document.getString("location");
+                            int maxParticipants = document.getLong("maxParticipants").intValue();
+                            String organizer = document.getString("organizer");
+
+                            // Add the event to the list
+                            Event event = new Event(title, description, startDate, endDate, location, maxParticipants, currentUser, true);
+                            organizedEventsList.add(event);
+                        }
+
+                        // Update the ListView with the events
+                        eventArrayAdapter.notifyDataSetChanged();
+                    }
+                })
+                .addOnFailureListener(e -> Log.e("ProfileFragment", "Error retrieving events", e));
+    }
+
     @Override
     public void onDialogPositiveClick(User user) {
         updateUserInfo(user);
@@ -290,4 +331,3 @@ public class ProfileFragment extends Fragment implements EditProfileFragment.Edi
 
     }
 }
-
