@@ -36,7 +36,7 @@ public class Event {
     // Status and check-ins
     private boolean isOpenForRegistration;
 
-    // Constructor
+    // Constructors
 
     /**
      * Event constructor
@@ -66,6 +66,20 @@ public class Event {
         this.isOpenForRegistration = isOpenForRegistration;
     }
 
+    /**
+     * Constructs a new Event with the specified details, registration status, and image.
+     *
+     * @param eventId               A unique identifier for the event.
+     * @param title                 The title of the event.
+     * @param description           A brief description of the event.
+     * @param startDate             The start date and time of the event.
+     * @param endDate               The end date and time of the event.
+     * @param location              The location where the event will take place.
+     * @param maxParticipants       The maximum number of participants allowed for the event.
+     * @param organizer             The User object representing the event's organizer.
+     * @param isOpenForRegistration Whether the event is currently open for participant registration.
+     * @param image_encode          A Base64 encoded string of the event's image.
+     */
     public Event(String eventId,String title, String description, Date startDate, Date endDate, String location, int maxParticipants, User organizer, boolean isOpenForRegistration, String image_encode) {
         this.eventId = eventId;
         this.title = title;
@@ -165,6 +179,12 @@ public class Event {
         return eventId;
     }
 
+    /**
+     * Decodes the Base64 encoded image string into a Bitmap and stores it as a file.
+     * 
+     * @param context The application context used to access file storage.
+     * @return A Uri object pointing to the saved image file, or null if there is no encoded image.
+     */
     public android.net.Uri decodeBase64String(Context context) {
         Calendar calendar = Calendar.getInstance();
         int hour = calendar.get(Calendar.HOUR_OF_DAY);
