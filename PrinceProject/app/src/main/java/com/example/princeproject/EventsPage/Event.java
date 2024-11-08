@@ -1,5 +1,16 @@
 package com.example.princeproject.EventsPage;
 
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
+import android.os.Environment;
+import android.util.Base64;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import com.example.princeproject.User;
@@ -20,6 +31,7 @@ public class Event {
     // Pooling system
     private List<User> waitingList;
     private List<User> selectedParticipants;
+    private String image_encode;
 
     // Status and check-ins
     private boolean isOpenForRegistration;
@@ -52,6 +64,19 @@ public class Event {
         this.maxParticipants = maxParticipants;
         this.organizer = organizer;
         this.isOpenForRegistration = isOpenForRegistration;
+    }
+
+    public Event(String eventId,String title, String description, Date startDate, Date endDate, String location, int maxParticipants, User organizer, boolean isOpenForRegistration, String image_encode) {
+        this.eventId = eventId;
+        this.title = title;
+        this.description = description;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.location = location;
+        this.maxParticipants = maxParticipants;
+        this.organizer = organizer;
+        this.isOpenForRegistration = isOpenForRegistration;
+        this.image_encode = image_encode;
     }
 
     // Getters and setters for all fields
@@ -138,5 +163,32 @@ public class Event {
 
     public String getEventId() {
         return eventId;
+    }
+
+    public android.net.Uri decodeBase64String(Context context) {
+        Calendar calendar = Calendar.getInstance();
+        int hour = calendar.get(Calendar.HOUR_OF_DAY);
+        int minute = calendar.get(Calendar.MINUTE);
+        int second = calendar.get(Calendar.SECOND);
+
+        if (!(this.image_encode == null)) {
+            byte[] decodedBytes = Base64.decode(this.image_encode, Base64.DEFAULT);
+            Bitmap bitmap = BitmapFactory.decodeByteArray(decodedBytes, 0, decodedBytes.length);
+
+            File outputFile = new File(context.getExternalFilesDir(Environment.DIRECTORY_PICTURES), ""+ hour+minute+second);
+            try {
+                FileOutputStream fos = new FileOutputStream(outputFile);
+                bitmap.compress(Bitmap.CompressFormat.PNG, 100, fos);
+            } catch (FileNotFoundException e) {
+            }
+
+            //if (outputFile.exists()) {
+            //    outputFile.delete();
+            //}
+            return Uri.fromFile(outputFile);
+        }
+        else {
+            return null;
+        }
     }
 }
