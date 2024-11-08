@@ -30,6 +30,10 @@
             android:name=".NewUserActivity">
 
         </activity>
+        <activity
+            android:name=".WaitlistViewActivity">
+
+        </activity>
 
     </application>
 
