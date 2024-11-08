@@ -51,8 +51,6 @@ public class EditProfileFragment extends DialogFragment{
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     interface EditProfileDialogListener{
-        void onDialogPositiveClick(User user);
-
         void setEditProfile(User user);
     }
 

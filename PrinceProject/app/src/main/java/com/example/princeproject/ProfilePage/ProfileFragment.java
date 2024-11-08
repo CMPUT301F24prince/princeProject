@@ -1,5 +1,6 @@
 package com.example.princeproject.ProfilePage;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.util.Log;
@@ -115,6 +116,7 @@ public class ProfileFragment extends Fragment implements EditProfileFragment.Edi
             fragment.show(getChildFragmentManager(), "Edit Profile");
         });
 
+<<<<<<< HEAD
         // Initialize Create Event button and set its listener
         createEventButton = view.findViewById(R.id.create_event_button);
         createEventButton.setOnClickListener(v -> createEvent());
@@ -249,45 +251,150 @@ public class ProfileFragment extends Fragment implements EditProfileFragment.Edi
                             String userName = document.getString("name");
                             String userEmail = document.getString("email");
                             String userPhone = document.getString("phone");
-                            String userAccount = document.getString("account");
+                            String userAccType = document.getString("accountType");
+                            ArrayList<String> organizedEventIds = (ArrayList<String>) document.get("organizedEventIds");
 
-                            currentUser = new User(userName, userEmail, userPhone, userAccount, deviceId);
-                            updateTextViews();
+                            currentUser = new User(userName, userEmail, userPhone, userAccType, deviceId);
+                            currentUser.setOrganizedEventIds(organizedEventIds);
+
+                            // Update UI with user info
+                            nameTextView.setText(userName);
+                            emailTextView.setText(userEmail);
+                            phoneTextView.setText(userPhone);
+
+                            // Now that currentUser is initialized, retrieve organized events
+                            if (organizedEventIds != null) {
+                                getOrganizedEvents(organizedEventIds);
+                            }
                         }
+                    } else {
+                        Toast.makeText(getContext(), "User not found", Toast.LENGTH_SHORT).show();
                     }
                 })
-                .addOnFailureListener(e -> Log.e("ProfileFragment", "Error retrieving user data", e));
+                .addOnFailureListener(e -> {
+                    Toast.makeText(getContext(), "Error fetching user data", Toast.LENGTH_SHORT).show();
+                    Log.e("Firestore Error", "Failed to fetch user data: " + e.getMessage());
+                });
+=======
+        myEventsButton = view.findViewById(R.id.my_events);
+
+        db.collection("events").whereEqualTo("organizer",deviceId)
+                .get()
+                .addOnSuccessListener(queryDocumentSnapshots -> {
+                   if (!queryDocumentSnapshots.isEmpty()) {
+                       myEventsButton.setOnClickListener(new View.OnClickListener() {
+                           @Override
+                           public void onClick(View view) {
+                               Intent intent = new Intent(view.getContext(), EntrantListActivity.class);
+                               startActivity(intent);
+                           }
+                       });
+                   } else {
+                       myEventsButton.setVisibility(View.INVISIBLE);
+                   }
+                });
+
+
+>>>>>>> main
     }
 
-    private void updateTextViews() {
-        nameTextView.setText(currentUser.getName());
-        emailTextView.setText(currentUser.getEmail());
-        phoneTextView.setText(currentUser.getPhone());
-        accountTextView.setText(currentUser.getAccount());
+    /**
+     * Method to edit the profile of the user when a user chooses to
+     * @param user
+     *      The user object being modified
+     * */
+    @Override
+    public void setEditProfile(User user) {
+        nameTextView.setText(user.getName());
+        emailTextView.setText(user.getEmail());
+        phoneTextView.setText(user.getPhone());
+        accountTextView.setText(user.getAccount());
     }
 
-    private void updateUserInfo(User user) {
+<<<<<<< HEAD
+    public void updateUserInfo(User user) {
+        // Get the Firestore collection where user data is stored
+=======
+    /**
+     * Method to retrieve user information from the database via the device ID
+     * */
+    private void getUserInfo(){
+        Toast.makeText(thisview.getContext(), "Retrieving data", Toast.LENGTH_SHORT).show();
+>>>>>>> main
         db.collection("users")
-                .whereEqualTo("deviceId", deviceId)
+                .whereEqualTo("deviceId", user.getDeviceId())
                 .get()
                 .addOnSuccessListener(queryDocumentSnapshots -> {
                     if (!queryDocumentSnapshots.isEmpty()) {
-                        DocumentSnapshot document = queryDocumentSnapshots.getDocuments().get(0);
-                        DocumentReference userRef = document.getReference();
-                        userRef.set(user);
+                        // User document found, get the document reference
+                        for (DocumentSnapshot document : queryDocumentSnapshots) {
+                            String userId = document.getId();  // Get the document ID for updating
+
+                            // Create a map of updated user fields
+                            Map<String, Object> updatedUserData = new HashMap<>();
+                            updatedUserData.put("name", user.getName());
+                            updatedUserData.put("email", user.getEmail());
+                            updatedUserData.put("phone", user.getPhone());
+                            updatedUserData.put("accountType", user.getAccount());
+                            updatedUserData.put("organizedEventIds", user.getOrganizedEventIds());
+
+<<<<<<< HEAD
+                            // Update the user document in Firestore
+                            DocumentReference userDocRef = db.collection("users").document(userId);
+                            userDocRef.update(updatedUserData)
+                                    .addOnFailureListener(e -> {
+                                        // Handle the failure
+                                        Toast.makeText(getContext(), "Error updating user information", Toast.LENGTH_SHORT).show();
+                                    });
+=======
+                            nameTextView.setText(userName);
+                            emailTextView.setText(userEmail);
+                            phoneTextView.setText(userPhone);
+                            accountTextView.setText(userAccType);
+>>>>>>> main
+                        }
+                    } else {
+                        // If no matching user was found, handle appropriately
+                        Toast.makeText(getContext(), "User not found", Toast.LENGTH_SHORT).show();
                     }
+                })
+                .addOnFailureListener(e -> {
+                    // Handle the failure
+                    Toast.makeText(getContext(), "Error fetching user data", Toast.LENGTH_SHORT).show();
                 });
     }
 
-    @Override
-    public void onDialogPositiveClick(User user) {
-        updateUserInfo(user);
-        updateTextViews();
-    }
+    private void getOrganizedEvents(List<String> eventIds) {
+        // Clear the event list before adding new events
+        organizedEventsList.clear();
 
-    @Override
-    public void setEditProfile(User user) {
+        // Query Firestore for events that the user is organizing
+        for (String eventId : eventIds) {
+            eventsRef.document(eventId).get()
+                    .addOnSuccessListener(documentSnapshot -> {
+                        if (documentSnapshot.exists()) {
+                            String eventName = documentSnapshot.getString("name");
+                            String eventDesc = documentSnapshot.getString("description");
+                            String eventLocation = documentSnapshot.getString("location");
+                            Date startDate = documentSnapshot.getDate("startDate");
+                            Date endDate = documentSnapshot.getDate("endDate");
+                            int maxParticipants = documentSnapshot.getLong("maxParticipants").intValue();
+                            String organizer = documentSnapshot.getString("organizer");
 
+                            // Create Event object
+                            Event event = new Event(eventName, eventDesc, startDate, endDate, eventLocation, maxParticipants, new User(organizer, "", "", "", ""), true);
+
+                            // Add the event to the list
+                            organizedEventsList.add(event);
+
+                            // Notify the adapter that the data has changed
+                            eventArrayAdapter.notifyDataSetChanged();
+                        }
+                    })
+                    .addOnFailureListener(e -> {
+                        Toast.makeText(getContext(), "Error fetching event details", Toast.LENGTH_SHORT).show();
+                        Log.e("Firestore Error", "Failed to fetch event: " + e.getMessage());
+                    });
+        }
     }
 }
-

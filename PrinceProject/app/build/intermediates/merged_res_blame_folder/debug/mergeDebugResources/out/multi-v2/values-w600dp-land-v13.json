@@ -4,7 +4,11 @@
             "outputFile": "com.example.princeproject.app-mergeDebugResources-33:/values-w600dp-land-v13/values-w600dp-land-v13.xml",
             "map": [
                 {
+<<<<<<< HEAD
                     "source": "C:\\Users\\Nate\\.gradle\\caches\\transforms-4\\cce0ebcf87bed81347bea0323cfd1194\\transformed\\material-1.12.0\\res\\values-w600dp-land-v13\\values-w600dp-land-v13.xml",
+=======
+                    "source": "C:\\Users\\Kyle\\.gradle\\caches\\transforms-4\\cce0ebcf87bed81347bea0323cfd1194\\transformed\\material-1.12.0\\res\\values-w600dp-land-v13\\values-w600dp-land-v13.xml",
+>>>>>>> main
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
