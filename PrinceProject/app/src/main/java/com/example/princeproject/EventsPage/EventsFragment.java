@@ -296,6 +296,7 @@ public class EventsFragment extends Fragment {
                         String event_location = (String) doc.get("location");
                         int event_max = 20;
                         String event_organizer = (String) doc.get("organizer");
+                        String event_poster_encoded = (String) doc.get("eventPosterEncode");
                         //more stuff will be added eventually
 
                         User user = new User(event_organizer, "","","","");
@@ -308,7 +309,7 @@ public class EventsFragment extends Fragment {
                         }
                         catch (ParseException e) {
                         }
-                        Event event = new Event(event_id,event_name, event_desc, date1, date2, event_location, event_max, user, true);
+                        Event event = new Event(event_id,event_name, event_desc, date1, date2, event_location, event_max, user, true, event_poster_encoded);
 
                         events.add(event);
                     }
