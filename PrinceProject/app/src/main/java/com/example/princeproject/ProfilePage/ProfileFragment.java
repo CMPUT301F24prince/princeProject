@@ -109,7 +109,7 @@ public class ProfileFragment extends Fragment implements EditProfileFragment.Edi
         nameTextView = view.findViewById(R.id.nameTextView);
         emailTextView = view.findViewById(R.id.emailTextView);
         phoneTextView = view.findViewById(R.id.phoneTextView);
-        accountTextView = findViewById(R.id.accountTextView);
+        accountTextView = view.findViewById(R.id.accountTextView);
         editProfile = view.findViewById(R.id.editProfileButton);
 
         getUserInfo();
