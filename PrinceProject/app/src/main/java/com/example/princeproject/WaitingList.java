@@ -22,7 +22,7 @@ public class WaitingList {
     public void joinWaitingList(String eventId, String userName) {
         // We should change it to querry by event id rather than name, because events can share names
         // Query to find the event document with the specific eventId field value
-        eventsRef.whereEqualTo("name", eventId)
+        eventsRef.whereEqualTo("eventId", eventId)
                 .get()
                 .addOnSuccessListener(queryDocumentSnapshots -> {
                     if (!queryDocumentSnapshots.isEmpty()) {
