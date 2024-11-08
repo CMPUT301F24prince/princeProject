@@ -51,6 +51,31 @@ public class WaitingList {
                 });
     }
 
+    public void joinChosenList(String eventId, String userId) {
+        // Query to find the event document with the specific eventId field value
+        eventsRef.whereEqualTo("eventId", eventId)
+                .get()
+                .addOnSuccessListener(queryDocumentSnapshots -> {
+                    if (!queryDocumentSnapshots.isEmpty()) {
+                        DocumentReference eventRef = queryDocumentSnapshots.getDocuments().get(0).getReference();
+
+                        // Add the user to the waiting list array
+                        eventRef.update("chosen", FieldValue.arrayUnion(userId))
+                                .addOnSuccessListener(aVoid -> {
+                                    System.out.println("User added to waiting list successfully!");
+                                })
+                                .addOnFailureListener(e -> {
+                                    System.err.println("Error adding user to waiting list: " + e.getMessage());
+                                });
+                    } else {
+                        System.err.println("No event found with eventId: " + eventId);
+                    }
+                })
+                .addOnFailureListener(e -> {
+                    System.err.println("Error fetching event document: " + e.getMessage());
+                });
+    }
+
     /**
      * Removes a user from their waiting list
      * @param eventId

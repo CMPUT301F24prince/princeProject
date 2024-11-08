@@ -88,6 +88,9 @@ public class NotificationsFragment extends Fragment {
         notificationAdapter = new NotificationArrayAdapter(this.getContext(), notificationDataList);
         notificationList.setAdapter(notificationAdapter);
 
+        notificationList.setOnItemClickListener((parent, v, position, id) -> {
+                    new NotificationListFragment(notificationAdapter.getItem(position)).show(getActivity().getSupportFragmentManager(), "Details");
+                });
         // Set up the notification toggle and retrieve notifications
         setupNotificationToggle(view);
         getNotifications();
@@ -171,8 +174,10 @@ public class NotificationsFragment extends Fragment {
                             String title = document.getString("title");
                             String details = document.getString("details");
                             String location = document.getString("location");
+                            String userId = Settings.Secure.getString(getContext().getContentResolver(), Settings.Secure.ANDROID_ID);
+                            String eventId = document.getString("eventId");
 
-                            Notification notification = new Notification(title, details, location);
+                            Notification notification = new Notification(title, details, location, userId, eventId);
                             notificationDataList.add(notification);
                         }
                         notificationAdapter.notifyDataSetChanged();

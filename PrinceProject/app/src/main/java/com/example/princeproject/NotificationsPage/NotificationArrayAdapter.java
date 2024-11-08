@@ -75,20 +75,6 @@ public class NotificationArrayAdapter extends ArrayAdapter<Notification> {
         notificationDetails.setText(notification.getDetails());
         notificationLocation.setText(notification.getLocation());
 
-        view.setOnClickListener(v -> showNotificationDialog(notification, position));
-
-        Button optOutButton = view.findViewById(R.id.optOutButton);
-        optOutButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Replace with actual user ID from Firestore
-                String userId = "9620cce4e7c896f8";
-
-                // Set Allow Notification to false
-                notificationPreferenceManager.setNotificationPreference(userId, false);
-            }
-        });
-
         return view;
     }
 

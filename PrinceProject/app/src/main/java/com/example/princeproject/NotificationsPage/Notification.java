@@ -9,6 +9,9 @@ public class Notification {
 
     private String location;
 
+    public String deviceId;
+
+    public String EventId;
     /**
      * Constructor for the notification object
      * @param name
@@ -30,10 +33,19 @@ public class Notification {
      * @param location
      *      Location details of the notification
      * */
-    public Notification(String name, String details, String location) {
+    public Notification(String name, String details, String location, String userDeviceId) {
         this.name = name;
         this.details = details;
         this.location = location;
+        this.deviceId = userDeviceId;
+    }
+
+    public Notification(String name, String details, String location, String userDeviceId, String EventId) {
+        this.name = name;
+        this.details = details;
+        this.location = location;
+        this.deviceId = userDeviceId;
+        this.EventId = EventId;
     }
 
     /**

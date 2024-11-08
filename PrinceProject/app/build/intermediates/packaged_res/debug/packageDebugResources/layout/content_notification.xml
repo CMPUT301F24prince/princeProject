@@ -45,13 +45,6 @@
         app:layout_constraintStart_toEndOf="@+id/notif_event_image"
         app:layout_constraintTop_toBottomOf="@+id/notiflocation_text" />
 
-    <Button
-        android:id="@+id/optOutButton"
-        android:layout_width="wrap_content"
-        android:layout_height="35dp"
-        android:text="Opt Out Notifications"
-        app:layout_constraintBottom_toBottomOf="@+id/notif_event_image"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/notifDetailsText" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
