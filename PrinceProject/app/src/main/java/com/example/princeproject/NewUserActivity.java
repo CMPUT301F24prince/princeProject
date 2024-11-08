@@ -14,7 +14,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class NewUserActivity extends AppCompatActivity {
@@ -82,12 +84,14 @@ public class NewUserActivity extends AppCompatActivity {
             else {
                 //Add user to the database
                 newUser = new User(userName, email, phone, accType, deviceId);
+                List<String> emptyList = new ArrayList<>();
                 Map<String, Object> userDb = new HashMap<>();
                 userDb.put("deviceId", deviceId);
                 userDb.put("name", userName);
                 userDb.put("email", email);
                 userDb.put("phone", phone);
                 userDb.put("accountType", accType);
+                userDb.put("organizedEventIds", emptyList);
                 db.collection("users").document(deviceId).set(userDb);
             }
             finish();

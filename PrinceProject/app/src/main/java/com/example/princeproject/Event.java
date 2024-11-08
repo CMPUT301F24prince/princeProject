@@ -1,9 +1,8 @@
-package com.example.princeproject.EventsPage;
+package com.example.princeproject;
 
 import java.util.Date;
 import java.util.List;
 import java.util.Random;
-import com.example.princeproject.User;
 
 public class Event {
     // Event details

@@ -5,6 +5,7 @@
       <SelectionState runConfigName="app">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
+<<<<<<< Updated upstream
       <SelectionState runConfigName="app.main">
         <option name="selectionMode" value="DROPDOWN" />
         <DropdownSelection timestamp="2024-11-05T06:11:58.196983700Z">
@@ -16,6 +17,8 @@
         </DropdownSelection>
         <DialogSelection />
       </SelectionState>
+=======
+>>>>>>> Stashed changes
     </selectionStates>
   </component>
 </project>
