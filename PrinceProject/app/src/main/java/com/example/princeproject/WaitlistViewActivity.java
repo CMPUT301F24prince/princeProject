@@ -24,7 +24,7 @@ public class WaitlistViewActivity extends AppCompatActivity {
     private List<String> waitlistEvents; // Map of eventId to eventTitle
     private List<String> eventIds;              // List of eventIds for ordering
     private FirebaseFirestore db;
-    private String userId;
+    String userId;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -46,7 +46,7 @@ public class WaitlistViewActivity extends AppCompatActivity {
     /**
      * Loads the all the events waitlisted by the current user
      */
-    private void loadWaitlistedEvents() {
+    void loadWaitlistedEvents() {
         db.collection("events")
                 .whereArrayContains("waiting", userId)
                 .get()
