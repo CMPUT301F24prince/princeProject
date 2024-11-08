@@ -109,6 +109,7 @@ public class EntrantListActivity extends AppCompatActivity {
                 if (lotterySuccess) {
                     lotteryDrawn = true;
                     db.collection("events").document(eventId).update("lotteryDrawn", true);
+                    lotteryButton.setVisibility(View.INVISIBLE);
                 }
             });
         } else {
