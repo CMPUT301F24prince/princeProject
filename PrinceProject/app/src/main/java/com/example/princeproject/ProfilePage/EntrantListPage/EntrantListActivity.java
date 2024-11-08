@@ -169,7 +169,7 @@ public class EntrantListActivity extends AppCompatActivity {
         ViewPager2 viewPager = findViewById(R.id.view_pager);
         viewPager.setAdapter(adapter);
 
-        
+
         TabLayout tabLayout = findViewById(R.id.tab_layout);
         new TabLayoutMediator(tabLayout, viewPager, (tab, position) -> {
             switch (position) {

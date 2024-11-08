@@ -47,6 +47,7 @@ public class EventsFragment extends Fragment {
     private ImageButton invitesButton;
     private ArrayList<Event> eventList;
     private FirebaseFirestore db;
+    private String username;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -56,6 +57,7 @@ public class EventsFragment extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         db = FirebaseFirestore.getInstance();
+        getUsername();
         eventList = new ArrayList<>();
         arrayAdapter = new EventArrayAdapter(view.getContext(), eventList);
 
@@ -64,7 +66,7 @@ public class EventsFragment extends Fragment {
         eventFeed.setAdapter(arrayAdapter);
 
         eventFeed.setOnItemClickListener((parent, v, position, id) -> {
-                    new EventDialogFragment(arrayAdapter.getItem(position)).show(getActivity().getSupportFragmentManager(), "Event");
+                    new EventDialogFragment(arrayAdapter.getItem(position), username).show(getActivity().getSupportFragmentManager(), "Event");
                 }
         );
 
@@ -187,9 +189,8 @@ public class EventsFragment extends Fragment {
         return eventId.toString();
     }
 
-    private void getEvents (
-            List<Event> events
-    ){
+    private void getEvents (List<Event> events)
+    {
         CollectionReference eventsRef = this.db.collection("events");
 
         // finds every event that is organized by the current user
@@ -224,6 +225,18 @@ public class EventsFragment extends Fragment {
                     this.arrayAdapter.notifyDataSetChanged();
                 });
 
+
+    }
+
+    private void getUsername() {
+        CollectionReference UserRef = this.db.collection("users");
+        UserRef.whereEqualTo("deviceId", Settings.Secure.getString(this.getContext().getContentResolver(), Settings.Secure.ANDROID_ID))
+                .get().addOnSuccessListener(queryDocumentSnapshots -> {
+                    for (QueryDocumentSnapshot doc: queryDocumentSnapshots) {
+                        // gets the eventId and the event name and add the to their respective parallel lists
+                        this.username = (String) doc.get("name");
+                    }
+                });
 
     }
 }
