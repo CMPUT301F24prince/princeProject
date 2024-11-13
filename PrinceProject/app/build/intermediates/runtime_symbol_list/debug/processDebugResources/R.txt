@@ -3214,6 +3214,12 @@ int id activity_chooser_view_content 0x7f090048
 int id add 0x7f090049
 int id adjust_height 0x7f09004a
 int id adjust_width 0x7f09004b
+int id admin_button 0x7f09022f
+int id admin_events 0x7f090233
+int id admin_facilities 0x7f090234
+int id admin_images 0x7f090235
+int id admin_profile 0x7f090231
+int id admin_qrcodes 0x7f090236
 int id alertTitle 0x7f09004c
 int id aligned 0x7f09004d
 int id all 0x7f09004e
@@ -3476,6 +3482,7 @@ int id multiply 0x7f09014e
 int id my_events 0x7f09014f
 int id nameLabel 0x7f090150
 int id nameTextView 0x7f090151
+int id navigation_bar 0x7f090232
 int id navigation_bar_item_active_indicator_view 0x7f090152
 int id navigation_bar_item_icon_container 0x7f090153
 int id navigation_bar_item_icon_view 0x7f090154
@@ -3640,6 +3647,9 @@ int id textSpacerNoTitle 0x7f0901f2
 int id textStart 0x7f0901f3
 int id textTop 0x7f0901f4
 int id textView 0x7f0901f5
+int id textView2 0x7f090230
+int id textView3 0x7f090237
+int id textView4 0x7f090238
 int id text_input_end_icon 0x7f0901f6
 int id text_input_error_icon 0x7f0901f7
 int id text_input_start_icon 0x7f0901f8
@@ -3812,6 +3822,7 @@ int layout abc_search_dropdown_item_icons_2line 0x7f0c0018
 int layout abc_search_view 0x7f0c0019
 int layout abc_select_dialog_material 0x7f0c001a
 int layout abc_tooltip 0x7f0c001b
+int layout activity_admin 0x7f0c007a
 int layout activity_entrant_list 0x7f0c001c
 int layout activity_main 0x7f0c001d
 int layout activity_waitlist_view 0x7f0c001e
@@ -3834,6 +3845,11 @@ int layout design_text_input_end_icon 0x7f0c002e
 int layout design_text_input_start_icon 0x7f0c002f
 int layout event_list_entry_dialog 0x7f0c0030
 int layout eventlist_entry 0x7f0c0031
+int layout fragment_admin_events 0x7f0c007c
+int layout fragment_admin_facilities 0x7f0c007d
+int layout fragment_admin_images 0x7f0c007e
+int layout fragment_admin_profile 0x7f0c007b
+int layout fragment_admin_qrcodes 0x7f0c007f
 int layout fragment_edit_profile 0x7f0c0032
 int layout fragment_events 0x7f0c0033
 int layout fragment_list 0x7f0c0034

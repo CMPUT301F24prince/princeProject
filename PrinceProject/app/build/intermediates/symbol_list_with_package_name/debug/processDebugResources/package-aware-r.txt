@@ -3215,6 +3215,12 @@ id activity_chooser_view_content
 id add
 id adjust_height
 id adjust_width
+id admin_button
+id admin_events
+id admin_facilities
+id admin_images
+id admin_profile
+id admin_qrcodes
 id alertTitle
 id aligned
 id all
@@ -3477,6 +3483,7 @@ id multiply
 id my_events
 id nameLabel
 id nameTextView
+id navigation_bar
 id navigation_bar_item_active_indicator_view
 id navigation_bar_item_icon_container
 id navigation_bar_item_icon_view
@@ -3641,6 +3648,9 @@ id textSpacerNoTitle
 id textStart
 id textTop
 id textView
+id textView2
+id textView3
+id textView4
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -3813,6 +3823,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_admin
 layout activity_entrant_list
 layout activity_main
 layout activity_waitlist_view
@@ -3835,6 +3846,11 @@ layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout event_list_entry_dialog
 layout eventlist_entry
+layout fragment_admin_events
+layout fragment_admin_facilities
+layout fragment_admin_images
+layout fragment_admin_profile
+layout fragment_admin_qrcodes
 layout fragment_edit_profile
 layout fragment_events
 layout fragment_list

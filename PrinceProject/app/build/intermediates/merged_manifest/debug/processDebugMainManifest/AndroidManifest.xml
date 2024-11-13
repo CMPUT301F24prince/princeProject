@@ -48,6 +48,8 @@
         </activity>
         <activity android:name="com.example.princeproject.WaitlistViewActivity" >
         </activity>
+        <activity android:name="com.example.princeproject.AdminActivity" >
+        </activity>
         <activity
             android:name="androidx.test.core.app.InstrumentationActivityInvoker$BootstrapActivity"
             android:exported="false"
