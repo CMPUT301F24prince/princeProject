@@ -85,9 +85,9 @@
 49-->C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\main\AndroidManifest.xml:33:9-36:20
 49-->C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\main\AndroidManifest.xml:34:13-49
 50        </activity>
-51        <activity android:name="com.example.princeproject.AdminActivity" >
+51        <activity android:name="com.example.princeproject.AdminPage.AdminActivity" >
 51-->C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\main\AndroidManifest.xml:37:9-39:20
-51-->C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\main\AndroidManifest.xml:38:13-42
+51-->C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\main\AndroidManifest.xml:38:13-52
 52        </activity>
 53        <activity
 53-->C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\main\AndroidManifest.xml:41:9-45:20

@@ -19,6 +19,7 @@ id admin_images
 id admin_profile
 id admin_qrcodes
 id create_event_button
+id delete_button
 id description_text
 id editAccountType
 id editProfileButton
@@ -68,6 +69,10 @@ id textView2
 id textView3
 id textView4
 id title_text
+id user_email_text
+id user_list_view
+id user_name_text
+id user_role_text
 id view_pager
 id waitlistEventsListView
 id waitlistTitle
@@ -92,6 +97,7 @@ layout fragment_profile
 layout new_user
 layout notification_dialog_fragment
 layout profile_clickables_entry
+layout profile_item
 layout waitlist_view_entry
 mipmap ic_launcher
 mipmap ic_launcher_round
