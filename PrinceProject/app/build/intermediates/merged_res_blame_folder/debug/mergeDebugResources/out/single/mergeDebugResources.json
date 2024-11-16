@@ -12,10 +12,6 @@
         "source": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-main-43:\\mipmap-xxxhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "com.example.princeproject.app-debug-41:/layout_profile_item.xml.flat",
-        "source": "com.example.princeproject.app-main-43:/layout/profile_item.xml"
-    },
-    {
         "merged": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-debug-41:\\layout_event_list_entry_dialog.xml.flat",
         "source": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-main-43:\\layout\\event_list_entry_dialog.xml"
     },
@@ -34,6 +30,10 @@
     {
         "merged": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-debug-41:\\drawable-mdpi_filler_image.png.flat",
         "source": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-main-43:\\drawable-mdpi\\filler_image.png"
+    },
+    {
+        "merged": "com.example.princeproject.app-debug-41:/layout_admin_event_item.xml.flat",
+        "source": "com.example.princeproject.app-main-43:/layout/admin_event_item.xml"
     },
     {
         "merged": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-debug-41:\\layout_eventlist_entry.xml.flat",
@@ -110,6 +110,10 @@
     {
         "merged": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-debug-41:\\mipmap-mdpi_ic_launcher_round.webp.flat",
         "source": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-main-43:\\mipmap-mdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.princeproject.app-debug-41:/layout_fragment_admin_events.xml.flat",
+        "source": "com.example.princeproject.app-main-43:/layout/fragment_admin_events.xml"
     },
     {
         "merged": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-debug-41:\\layout_profile_item.xml.flat",

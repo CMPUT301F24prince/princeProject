@@ -3294,6 +3294,7 @@ int id decelerateAndComplete 0x7f090092
 int id decor_content_parent 0x7f090093
 int id default_activity_button 0x7f090094
 int id delete_button 0x7f09023a
+int id delete_button_event 0x7f09023e
 int id deltaRelative 0x7f090095
 int id dependency_ordering 0x7f090096
 int id description_text 0x7f090097
@@ -3347,6 +3348,7 @@ int id eventTitleTextView 0x7f0900c6
 int id event_feed 0x7f0900c7
 int id event_fragment 0x7f0900c8
 int id event_image 0x7f0900c9
+int id event_list_view 0x7f09023f
 int id event_spinner 0x7f0900ca
 int id exitUntilCollapsed 0x7f0900cb
 int id expand_activities_button 0x7f0900cc
@@ -3831,6 +3833,7 @@ int layout activity_admin 0x7f0c007a
 int layout activity_entrant_list 0x7f0c001c
 int layout activity_main 0x7f0c001d
 int layout activity_waitlist_view 0x7f0c001e
+int layout admin_event_item 0x7f0c0081
 int layout content_notification 0x7f0c001f
 int layout custom_dialog 0x7f0c0020
 int layout design_bottom_navigation_item 0x7f0c0021

@@ -3295,6 +3295,7 @@ id decelerateAndComplete
 id decor_content_parent
 id default_activity_button
 id delete_button
+id delete_button_event
 id deltaRelative
 id dependency_ordering
 id description_text
@@ -3348,6 +3349,7 @@ id eventTitleTextView
 id event_feed
 id event_fragment
 id event_image
+id event_list_view
 id event_spinner
 id exitUntilCollapsed
 id expand_activities_button
@@ -3832,6 +3834,7 @@ layout activity_admin
 layout activity_entrant_list
 layout activity_main
 layout activity_waitlist_view
+layout admin_event_item
 layout content_notification
 layout custom_dialog
 layout design_bottom_navigation_item

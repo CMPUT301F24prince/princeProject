@@ -20,6 +20,7 @@ id admin_profile
 id admin_qrcodes
 id create_event_button
 id delete_button
+id delete_button_event
 id description_text
 id editAccountType
 id editProfileButton
@@ -35,6 +36,7 @@ id eventTitleTextView
 id event_feed
 id event_fragment
 id event_image
+id event_list_view
 id event_spinner
 id fragment_profile
 id invitesButton
@@ -81,6 +83,7 @@ layout activity_admin
 layout activity_entrant_list
 layout activity_main
 layout activity_waitlist_view
+layout admin_event_item
 layout content_notification
 layout event_list_entry_dialog
 layout eventlist_entry
