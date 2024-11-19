@@ -1,32 +1,56 @@
 package com.example.princeproject.ProfilePage;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.view.LayoutInflater;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Button;
 import android.widget.Toast;
 
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import androidx.fragment.app.Fragment;
 
+import com.example.princeproject.EventsPage.Event;
+import com.example.princeproject.EventsPage.EventArrayAdapter;
 import com.example.princeproject.ProfilePage.EntrantListPage.EntrantListActivity;
 import com.example.princeproject.R;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import com.example.princeproject.User;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+
+import com.google.zxing.BarcodeFormat;
+import com.google.zxing.WriterException;
+import com.google.zxing.common.BitMatrix;
+import com.google.zxing.qrcode.QRCodeWriter;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
 
 
 /**
@@ -52,6 +76,10 @@ public class ProfileFragment extends Fragment implements EditProfileFragment.Edi
     private String deviceId;
     private User currentUser;
     private FirebaseFirestore db;
+
+    private ArrayList<Event> organizedEvents;
+    private ListView organizedEventsListView;
+    private EventArrayAdapter arrayAdapter;
 
     /**
      * Method to initialize the creation of the profile page
@@ -105,6 +133,11 @@ public class ProfileFragment extends Fragment implements EditProfileFragment.Edi
         });
 
         myEventsButton = view.findViewById(R.id.my_events);
+        organizedEventsListView = view.findViewById(R.id.organized_events_listview);
+
+        organizedEvents = new ArrayList<>();
+        arrayAdapter = new EventArrayAdapter(view.getContext(), organizedEvents);
+        organizedEventsListView.setAdapter(arrayAdapter);
 
         db.collection("events").whereEqualTo("organizer",deviceId)
                 .get()
@@ -122,7 +155,18 @@ public class ProfileFragment extends Fragment implements EditProfileFragment.Edi
                    }
                 });
 
+        organizedEventsListView.setOnItemClickListener((parent, v, position, id) -> {
+            Event event = organizedEvents.get(position);
+            showPopupMenu(v, event);
+        });
 
+        loadOrganizedEvents();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        loadOrganizedEvents();  // Reload events whenever the fragment is resumed
     }
 
     /**
@@ -164,5 +208,119 @@ public class ProfileFragment extends Fragment implements EditProfileFragment.Edi
                         }
                     }
                 });
+    }
+
+    /**
+     * Method to load and display events organized by the current user
+     */
+    private void loadOrganizedEvents() {
+        organizedEvents.clear(); // Clear any previous events to reload
+        db.collection("events")
+                .whereEqualTo("organizer", deviceId)
+                .get()
+                .addOnSuccessListener(queryDocumentSnapshots -> {
+                    if (!queryDocumentSnapshots.isEmpty()) {
+                        for (QueryDocumentSnapshot document : queryDocumentSnapshots) {
+                            String eventId = document.getString("eventId");
+                            String title = document.getString("name");
+                            String description = document.getString("description");
+                            Date startDate = document.getDate("startDate");
+                            Date endDate = document.getDate("endDate");
+                            String location = document.getString("location");
+                            int maxParticipants = document.getLong("maxParticipants").intValue();
+                            String eventPosterEncode = document.getString("eventPosterEncode");
+
+                            Event event = new Event(eventId, title, description, startDate, endDate, location, maxParticipants, null, true, eventPosterEncode);
+                            organizedEvents.add(event);
+                        }
+
+                        arrayAdapter.notifyDataSetChanged(); // Update the adapter after loading data
+                    } else {
+                        Toast.makeText(getContext(), "No events found", Toast.LENGTH_SHORT).show();
+                    }
+                })
+                .addOnFailureListener(e -> {
+                    Toast.makeText(getContext(), "Error fetching events: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                });
+    }
+
+    /**
+     * Method that displays a pop up menu. Called when an event is pressed
+     *
+     * @param view
+     * @param event
+     */
+    private void showPopupMenu(View view, Event event) {
+        PopupMenu popupMenu = new PopupMenu(getContext(), view);
+        MenuInflater inflater = popupMenu.getMenuInflater();
+        inflater.inflate(R.menu.popup_menu, popupMenu.getMenu());
+
+        // Show the menu
+        popupMenu.show();
+
+        // Set click listener for the "Generate QR Code" button in the menu
+        popupMenu.setOnMenuItemClickListener(item -> {
+            if (item.getItemId() == R.id.generate_qr_code) {
+                generateQRCode(event.getEventId());  // Generate QR code for the event
+                return true;
+            }
+            return false;
+        });
+    }
+
+    /**
+     * Method that generates a qrcode from an events eventId
+     *
+     * @param eventId
+     */
+    private void generateQRCode(String eventId) {
+        QRCodeWriter writer = new QRCodeWriter();
+        try {
+            // Generate QR Code from event ID
+            BitMatrix bitMatrix = writer.encode(eventId, BarcodeFormat.QR_CODE, 512, 512);
+
+            // Create a Bitmap from the BitMatrix
+            Bitmap bitmap = Bitmap.createBitmap(512, 512, Bitmap.Config.RGB_565);
+            for (int x = 0; x < 512; x++) {
+                for (int y = 0; y < 512; y++) {
+                    bitmap.setPixel(x, y, bitMatrix.get(x, y) ? Color.BLACK : Color.WHITE);
+                }
+            }
+
+            // Show the QR code in a dialog
+            showQRCodeDialog(bitmap, eventId);
+
+        } catch (WriterException e) {
+            e.printStackTrace();
+            Toast.makeText(getContext(), "Error generating QR code", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    /**
+     * Method shows a generated QRcode
+     *
+     * @param qrCodeBitmap
+     */
+    private void showQRCodeDialog(Bitmap qrCodeBitmap, String eventId) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+        builder.setTitle("QR Code")
+                .setMessage("Scan this QR code to access the event.")
+                .setCancelable(true)
+                .setPositiveButton("Close", (dialog, which) -> dialog.dismiss())
+                .setNeutralButton("View Hash Data", (dialog, which) -> {
+                    // Display the hash data in a new dialog
+                    new AlertDialog.Builder(getContext())
+                            .setTitle("QR Code Hash Data")
+                            .setMessage("Event ID: " + eventId)  // Display the hash or encoded data here
+                            .setPositiveButton("Close", null)
+                            .show();
+                });
+
+        // Set the image view to display the QR code
+        ImageView qrImageView = new ImageView(getContext());
+        qrImageView.setImageBitmap(qrCodeBitmap);
+        builder.setView(qrImageView);
+
+        builder.create().show();
     }
 }

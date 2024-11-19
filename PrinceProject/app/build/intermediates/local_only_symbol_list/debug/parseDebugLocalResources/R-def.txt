@@ -30,6 +30,7 @@ id event_fragment
 id event_image
 id event_spinner
 id fragment_profile
+id generate_qr_code
 id invitesButton
 id joinWaitingListButton
 id linearLayout
@@ -49,11 +50,13 @@ id notificationToolbar
 id notification_toggle
 id notiflocation_text
 id optOutButton
+id organized_events_listview
 id phoneLabel
 id phoneTextView
 id profileImage
 id removeButton
 id root_pager
+id scan_qr_utton
 id submitButton
 id tab_layout
 id textView
@@ -77,6 +80,7 @@ layout new_user
 layout notification_dialog_fragment
 layout profile_clickables_entry
 layout waitlist_view_entry
+menu popup_menu
 mipmap ic_launcher
 mipmap ic_launcher_round
 string app_name

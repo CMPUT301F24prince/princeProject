@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.provider.Settings;
 import android.util.Base64;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,6 +47,10 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
+import com.journeyapps.barcodescanner.CaptureActivity;
+import com.google.zxing.integration.android.IntentIntegrator;
+import com.google.zxing.integration.android.IntentResult;
+
 import com.google.firebase.firestore.CollectionReference;
 
 /**
@@ -57,6 +62,7 @@ import com.google.firebase.firestore.CollectionReference;
 public class EventsFragment extends Fragment {
 
     private final int GALLERY_REQ_CODE = 1000;
+    private static final int QR_SCAN_REQ_CODE = 1001;
     private EventArrayAdapter arrayAdapter;
     private ListView eventFeed;
     private ImageButton invitesButton;
@@ -86,6 +92,9 @@ public class EventsFragment extends Fragment {
                     new EventDialogFragment(arrayAdapter.getItem(position), username).show(getActivity().getSupportFragmentManager(), "Event");
                 }
         );
+
+        Button scanQrButton = view.findViewById(R.id.scan_qr_utton);
+        scanQrButton.setOnClickListener(v -> startQrScanner());
 
         invitesButton = view.findViewById(R.id.invitesButton);
 
@@ -233,11 +242,22 @@ public class EventsFragment extends Fragment {
 
                 String base64String = Base64.encodeToString(byteArray, Base64.DEFAULT);
                 this.poster_encode = base64String;
+            } else if (requestCode == QR_SCAN_REQ_CODE) {
+                if (data != null && data.getExtras() != null) {
+                    String scannedData = data.getStringExtra("SCAN_RESULT");
+                    if (scannedData != null) {
+                        Toast.makeText(getContext(), "QR Code scanned: " + scannedData, Toast.LENGTH_SHORT).show();
+                        openEventDialog(scannedData);
+                    } else {
+                        Toast.makeText(getContext(), "No data found in the QR code", Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    Toast.makeText(getContext(), "No data received from scanner", Toast.LENGTH_SHORT).show();
+                }
             }
-
-
         }
     }
+
 
     /**
      * Adds an event poster image to a specified event document in Firestore by encoding it in Base64.
@@ -346,5 +366,21 @@ public class EventsFragment extends Fragment {
                     }
                 });
 
+    }
+
+    private void startQrScanner() {
+        Intent intent = new Intent(getContext(), CaptureActivity.class);
+        startActivityForResult(intent, 1001);
+    }
+
+    private void openEventDialog(String scannedData) {
+        for (Event event : eventList) {
+            if (event.getEventId().equals(scannedData)) {
+                new EventDialogFragment(event, username)
+                        .show(getActivity().getSupportFragmentManager(), "Event");
+                return;
+            }
+        }
+        Toast.makeText(getContext(), "Event not found", Toast.LENGTH_SHORT).show();
     }
 }

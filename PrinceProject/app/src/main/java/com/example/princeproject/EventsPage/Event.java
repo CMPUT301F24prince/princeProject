@@ -93,6 +93,10 @@ public class Event {
         this.image_encode = image_encode;
     }
 
+    //No-argument constructor
+    public Event() {
+    }
+
     // Getters and setters for all fields
     public String getTitle() {
         return title;
