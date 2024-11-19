@@ -1,154 +1,190 @@
 [
     {
-        "merged": "com.example.princeproject.app-debug-41:/layout_fragment_notifications.xml.flat",
-        "source": "com.example.princeproject.app-main-43:/layout/fragment_notifications.xml"
+        "merged": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-debug-41:\\drawable-xhdpi_filler_image.png.flat",
+        "source": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-main-43:\\drawable-xhdpi\\filler_image.png"
     },
     {
-        "merged": "com.example.princeproject.app-debug-41:/layout_waitlist_view_entry.xml.flat",
-        "source": "com.example.princeproject.app-main-43:/layout/waitlist_view_entry.xml"
+        "merged": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-debug-41:\\drawable_outline_add_comment_24.xml.flat",
+        "source": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-main-43:\\drawable\\outline_add_comment_24.xml"
     },
     {
-        "merged": "com.example.princeproject.app-debug-41:/layout_notification_dialog_fragment.xml.flat",
-        "source": "com.example.princeproject.app-main-43:/layout/notification_dialog_fragment.xml"
+        "merged": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-debug-41:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-main-43:\\mipmap-xxxhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "com.example.princeproject.app-debug-41:/mipmap-mdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.princeproject.app-main-43:/mipmap-mdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-debug-41:\\layout_event_list_entry_dialog.xml.flat",
+        "source": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-main-43:\\layout\\event_list_entry_dialog.xml"
     },
     {
-        "merged": "com.example.princeproject.app-debug-41:/layout_fragment_edit_profile.xml.flat",
-        "source": "com.example.princeproject.app-main-43:/layout/fragment_edit_profile.xml"
+        "merged": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-debug-41:\\layout_fragment_events.xml.flat",
+        "source": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-main-43:\\layout\\fragment_events.xml"
     },
     {
-        "merged": "com.example.princeproject.app-debug-41:/layout_activity_entrant_list.xml.flat",
-        "source": "com.example.princeproject.app-main-43:/layout/activity_entrant_list.xml"
+        "merged": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-debug-41:\\layout_fragment_edit_profile.xml.flat",
+        "source": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-main-43:\\layout\\fragment_edit_profile.xml"
     },
     {
-        "merged": "com.example.princeproject.app-debug-41:/xml_data_extraction_rules.xml.flat",
-        "source": "com.example.princeproject.app-main-43:/xml/data_extraction_rules.xml"
+        "merged": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-debug-41:\\drawable-xxhdpi_filler_image.png.flat",
+        "source": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-main-43:\\drawable-xxhdpi\\filler_image.png"
     },
     {
-        "merged": "com.example.princeproject.app-debug-41:/drawable_ic_launcher_foreground.xml.flat",
-        "source": "com.example.princeproject.app-main-43:/drawable/ic_launcher_foreground.xml"
+        "merged": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-debug-41:\\drawable-mdpi_filler_image.png.flat",
+        "source": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-main-43:\\drawable-mdpi\\filler_image.png"
     },
     {
-        "merged": "com.example.princeproject.app-debug-41:/layout_profile_clickables_entry.xml.flat",
-        "source": "com.example.princeproject.app-main-43:/layout/profile_clickables_entry.xml"
+        "merged": "com.example.princeproject.app-debug-41:/layout_admin_event_item.xml.flat",
+        "source": "com.example.princeproject.app-main-43:/layout/admin_event_item.xml"
     },
     {
-        "merged": "com.example.princeproject.app-debug-41:/drawable-hdpi_filler_image.png.flat",
-        "source": "com.example.princeproject.app-main-43:/drawable-hdpi/filler_image.png"
+        "merged": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-debug-41:\\layout_eventlist_entry.xml.flat",
+        "source": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-main-43:\\layout\\eventlist_entry.xml"
     },
     {
-        "merged": "com.example.princeproject.app-debug-41:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "com.example.princeproject.app-main-43:/mipmap-anydpi-v26/ic_launcher_round.xml"
+        "merged": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-debug-41:\\mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-main-43:\\mipmap-hdpi\\ic_launcher.webp"
     },
     {
-        "merged": "com.example.princeproject.app-debug-41:/mipmap-mdpi_ic_launcher.webp.flat",
-        "source": "com.example.princeproject.app-main-43:/mipmap-mdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-debug-41:\\mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-main-43:\\mipmap-hdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.princeproject.app-debug-41:/layout_content_notification.xml.flat",
-        "source": "com.example.princeproject.app-main-43:/layout/content_notification.xml"
+        "merged": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-debug-41:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-main-43:\\layout\\activity_main.xml"
     },
     {
-        "merged": "com.example.princeproject.app-debug-41:/layout_eventlist_entry.xml.flat",
-        "source": "com.example.princeproject.app-main-43:/layout/eventlist_entry.xml"
+        "merged": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-debug-41:\\drawable_circle_shape.xml.flat",
+        "source": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-main-43:\\drawable\\circle_shape.xml"
     },
     {
-        "merged": "com.example.princeproject.app-debug-41:/drawable-xhdpi_filler_image.png.flat",
-        "source": "com.example.princeproject.app-main-43:/drawable-xhdpi/filler_image.png"
+        "merged": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-debug-41:\\layout_waitlist_view_entry.xml.flat",
+        "source": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-main-43:\\layout\\waitlist_view_entry.xml"
     },
     {
-        "merged": "com.example.princeproject.app-debug-41:/layout_activity_waitlist_view.xml.flat",
-        "source": "com.example.princeproject.app-main-43:/layout/activity_waitlist_view.xml"
+        "merged": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-debug-41:\\drawable_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-main-43:\\drawable\\ic_launcher_foreground.xml"
     },
     {
-        "merged": "com.example.princeproject.app-debug-41:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.princeproject.app-main-43:/mipmap-xxhdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-debug-41:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-main-43:\\mipmap-xxhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.princeproject.app-debug-41:/mipmap-xhdpi_ic_launcher.webp.flat",
-        "source": "com.example.princeproject.app-main-43:/mipmap-xhdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-debug-41:\\mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-main-43:\\mipmap-mdpi\\ic_launcher.webp"
     },
     {
-        "merged": "com.example.princeproject.app-debug-41:/layout_fragment_events.xml.flat",
-        "source": "com.example.princeproject.app-main-43:/layout/fragment_events.xml"
+        "merged": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-debug-41:\\xml_backup_rules.xml.flat",
+        "source": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-main-43:\\xml\\backup_rules.xml"
     },
     {
-        "merged": "com.example.princeproject.app-debug-41:/mipmap-hdpi_ic_launcher.webp.flat",
-        "source": "com.example.princeproject.app-main-43:/mipmap-hdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-debug-41:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-main-43:\\drawable\\ic_launcher_background.xml"
     },
     {
-        "merged": "com.example.princeproject.app-debug-41:/layout_fragment_profile.xml.flat",
-        "source": "com.example.princeproject.app-main-43:/layout/fragment_profile.xml"
+        "merged": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-debug-41:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-main-43:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.princeproject.app-debug-41:/drawable-mdpi_filler_image.png.flat",
-        "source": "com.example.princeproject.app-main-43:/drawable-mdpi/filler_image.png"
+        "merged": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-debug-41:\\layout_fragment_admin_profile.xml.flat",
+        "source": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-main-43:\\layout\\fragment_admin_profile.xml"
     },
     {
-        "merged": "com.example.princeproject.app-debug-41:/drawable_ic_launcher_background.xml.flat",
-        "source": "com.example.princeproject.app-main-43:/drawable/ic_launcher_background.xml"
+        "merged": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-debug-41:\\layout_fragment_admin_qrcodes.xml.flat",
+        "source": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-main-43:\\layout\\fragment_admin_qrcodes.xml"
     },
     {
-        "merged": "com.example.princeproject.app-debug-41:/layout_activity_main.xml.flat",
-        "source": "com.example.princeproject.app-main-43:/layout/activity_main.xml"
+        "merged": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-debug-41:\\layout_activity_waitlist_view.xml.flat",
+        "source": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-main-43:\\layout\\activity_waitlist_view.xml"
     },
     {
-        "merged": "com.example.princeproject.app-debug-41:/layout_new_user.xml.flat",
-        "source": "com.example.princeproject.app-main-43:/layout/new_user.xml"
+        "merged": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-debug-41:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-main-43:\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
     {
-        "merged": "com.example.princeproject.app-debug-41:/mipmap-hdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.princeproject.app-main-43:/mipmap-hdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-debug-41:\\drawable-xxxhdpi_filler_image.png.flat",
+        "source": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-main-43:\\drawable-xxxhdpi\\filler_image.png"
     },
     {
-        "merged": "com.example.princeproject.app-debug-41:/mipmap-xxxhdpi_ic_launcher.webp.flat",
-        "source": "com.example.princeproject.app-main-43:/mipmap-xxxhdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-debug-41:\\layout_fragment_admin_facilities.xml.flat",
+        "source": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-main-43:\\layout\\fragment_admin_facilities.xml"
     },
     {
-        "merged": "com.example.princeproject.app-debug-41:/drawable_outline_add_comment_24.xml.flat",
-        "source": "com.example.princeproject.app-main-43:/drawable/outline_add_comment_24.xml"
+        "merged": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-debug-41:\\mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-main-43:\\mipmap-mdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.princeproject.app-debug-41:/mipmap-xhdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.princeproject.app-main-43:/mipmap-xhdpi/ic_launcher_round.webp"
+        "merged": "com.example.princeproject.app-debug-41:/layout_fragment_admin_events.xml.flat",
+        "source": "com.example.princeproject.app-main-43:/layout/fragment_admin_events.xml"
     },
     {
-        "merged": "com.example.princeproject.app-debug-41:/xml_backup_rules.xml.flat",
-        "source": "com.example.princeproject.app-main-43:/xml/backup_rules.xml"
+        "merged": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-debug-41:\\layout_profile_item.xml.flat",
+        "source": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-main-43:\\layout\\profile_item.xml"
     },
     {
-        "merged": "com.example.princeproject.app-debug-41:/drawable-xxxhdpi_filler_image.png.flat",
-        "source": "com.example.princeproject.app-main-43:/drawable-xxxhdpi/filler_image.png"
+        "merged": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-debug-41:\\layout_fragment_profile.xml.flat",
+        "source": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-main-43:\\layout\\fragment_profile.xml"
     },
     {
-        "merged": "com.example.princeproject.app-debug-41:/mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "com.example.princeproject.app-main-43:/mipmap-anydpi-v26/ic_launcher.xml"
+        "merged": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-debug-41:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-main-43:\\mipmap-xhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.princeproject.app-debug-41:/layout_event_list_entry_dialog.xml.flat",
-        "source": "com.example.princeproject.app-main-43:/layout/event_list_entry_dialog.xml"
+        "merged": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-debug-41:\\layout_fragment_notifications.xml.flat",
+        "source": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-main-43:\\layout\\fragment_notifications.xml"
     },
     {
-        "merged": "com.example.princeproject.app-debug-41:/layout_fragment_list.xml.flat",
-        "source": "com.example.princeproject.app-main-43:/layout/fragment_list.xml"
+        "merged": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-debug-41:\\layout_activity_entrant_list.xml.flat",
+        "source": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-main-43:\\layout\\activity_entrant_list.xml"
     },
     {
-        "merged": "com.example.princeproject.app-debug-41:/mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "com.example.princeproject.app-main-43:/mipmap-xxhdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-debug-41:\\layout_activity_admin.xml.flat",
+        "source": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-main-43:\\layout\\activity_admin.xml"
     },
     {
-        "merged": "com.example.princeproject.app-debug-41:/drawable_circle_shape.xml.flat",
-        "source": "com.example.princeproject.app-main-43:/drawable/circle_shape.xml"
+        "merged": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-debug-41:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-main-43:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
     },
     {
-        "merged": "com.example.princeproject.app-debug-41:/drawable-xxhdpi_filler_image.png.flat",
-        "source": "com.example.princeproject.app-main-43:/drawable-xxhdpi/filler_image.png"
+        "merged": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-debug-41:\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-main-43:\\mipmap-xxhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "com.example.princeproject.app-debug-41:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.princeproject.app-main-43:/mipmap-xxxhdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-debug-41:\\layout_new_user.xml.flat",
+        "source": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-main-43:\\layout\\new_user.xml"
+    },
+    {
+        "merged": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-debug-41:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-main-43:\\xml\\data_extraction_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-debug-41:\\mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-main-43:\\mipmap-xhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-debug-41:\\layout_fragment_admin_events.xml.flat",
+        "source": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-main-43:\\layout\\fragment_admin_events.xml"
+    },
+    {
+        "merged": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-debug-41:\\drawable-hdpi_filler_image.png.flat",
+        "source": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-main-43:\\drawable-hdpi\\filler_image.png"
+    },
+    {
+        "merged": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-debug-41:\\layout_content_notification.xml.flat",
+        "source": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-main-43:\\layout\\content_notification.xml"
+    },
+    {
+        "merged": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-debug-41:\\layout_profile_clickables_entry.xml.flat",
+        "source": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-main-43:\\layout\\profile_clickables_entry.xml"
+    },
+    {
+        "merged": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-debug-41:\\layout_fragment_list.xml.flat",
+        "source": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-main-43:\\layout\\fragment_list.xml"
+    },
+    {
+        "merged": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-debug-41:\\layout_notification_dialog_fragment.xml.flat",
+        "source": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-main-43:\\layout\\notification_dialog_fragment.xml"
+    },
+    {
+        "merged": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-debug-41:\\layout_fragment_admin_images.xml.flat",
+        "source": "C:\\Users\\Kyle\\.gradle\\daemon\\8.7\\com.example.princeproject.app-main-43:\\layout\\fragment_admin_images.xml"
     }
 ]

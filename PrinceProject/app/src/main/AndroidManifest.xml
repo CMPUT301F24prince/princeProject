@@ -34,6 +34,9 @@
             android:name=".WaitlistViewActivity">
 
         </activity>
+        <activity
+            android:name=".AdminPage.AdminActivity">
+        </activity>
 
         <activity
             android:name="androidx.test.core.app.InstrumentationActivityInvoker$BootstrapActivity"

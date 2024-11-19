@@ -93,6 +93,13 @@ public class Event {
         this.image_encode = image_encode;
     }
 
+    public Event(String eventId,String title,String description, String location) {
+        this.eventId = eventId;
+        this.title = title;
+        this.description = description;
+        this.location = location;
+    }
+
     // Getters and setters for all fields
     public String getTitle() {
         return title;
