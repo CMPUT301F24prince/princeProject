@@ -62,6 +62,9 @@ id optOutButton
 id phoneLabel
 id phoneTextView
 id profileImage
+id profile_image
+id profile_image_preview
+id profile_image_upload
 id removeButton
 id root_pager
 id submitButton

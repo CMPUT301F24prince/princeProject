@@ -3551,6 +3551,9 @@ id position
 id postLayout
 id pressed
 id profileImage
+id profile_image
+id profile_image_preview
+id profile_image_upload
 id progress_circular
 id progress_horizontal
 id radio
