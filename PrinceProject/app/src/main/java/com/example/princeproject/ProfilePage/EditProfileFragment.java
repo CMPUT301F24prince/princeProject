@@ -111,6 +111,8 @@ public class EditProfileFragment extends DialogFragment{
         editEmail.setText(user.getEmail());
         editPhone = view.findViewById(R.id.editTextPhone);
         editPhone.setText(user.getPhone());
+        profile_preview = view.findViewById(R.id.profile_image_preview);
+        profile_preview.setImageURI(user.decodeBase64String(getContext()));
 
         //Initialize the dropdown to choose account type
         accountTypeDropdown = view.findViewById(R.id.editAccountType);
