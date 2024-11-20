@@ -3,6 +3,17 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/profile_image_preview"
+        android:layout_width="100dp"
+        android:layout_height="100dp" />
+    
+    <Button
+        android:id="@+id/profile_image_upload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
     <EditText
         android:id="@+id/editTextName"
         android:layout_width="match_parent"
@@ -30,4 +41,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/editTextPhone"
         android:layout_marginTop="10dp" />
+
+
 </LinearLayout>
