@@ -93,7 +93,7 @@ public class EditProfileFragment extends DialogFragment{
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState){
         //Initialize the views and the edit text fields
         View view = LayoutInflater.from(getContext()).inflate(R.layout.fragment_edit_profile, null);
-        editName = view.findViewById(R.id.editTextName);
+        editName = view.findViewById(R.id.editEditTextName);
         editName.setText(user.getName());
         editEmail = view.findViewById(R.id.editTextEmail);
         editEmail.setText(user.getEmail());

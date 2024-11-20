@@ -1,5 +1,5 @@
-com.example.princeproject.test.app-core-1.6.1-0 C:\Users\Me\.gradle\caches\transforms-4\e60516bd2506a534934c8daab9479d4a\transformed\core-1.6.1\res
-com.example.princeproject.test.app-androidTest-1 C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\build\generated\res\resValues\androidTest\debug
-com.example.princeproject.test.app-mergeDebugAndroidTestResources-2 C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
-com.example.princeproject.test.app-mergeDebugAndroidTestResources-3 C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
-com.example.princeproject.test.app-debugAndroidTest-4 C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\build\intermediates\merged_res\debugAndroidTest\mergeDebugAndroidTestResources
+com.example.princeproject.test.app-core-1.6.1-0 C:\Users\mikha\.gradle\caches\transforms-4\e60516bd2506a534934c8daab9479d4a\transformed\core-1.6.1\res
+com.example.princeproject.test.app-androidTest-1 C:\Users\mikha\AndroidStudioProjects\princeProject1\PrinceProject\app\build\generated\res\resValues\androidTest\debug
+com.example.princeproject.test.app-mergeDebugAndroidTestResources-2 C:\Users\mikha\AndroidStudioProjects\princeProject1\PrinceProject\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
+com.example.princeproject.test.app-mergeDebugAndroidTestResources-3 C:\Users\mikha\AndroidStudioProjects\princeProject1\PrinceProject\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
+com.example.princeproject.test.app-debugAndroidTest-4 C:\Users\mikha\AndroidStudioProjects\princeProject1\PrinceProject\app\build\intermediates\merged_res\debugAndroidTest\mergeDebugAndroidTestResources
