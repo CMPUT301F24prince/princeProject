@@ -1,0 +1,45 @@
+INFO: Constructing runner from config.
+INFO: Configuring Android Instrumentation driver: android_instrumentation_runtime {
+  instrumentation_info {
+    app_package: "com.example.princeproject"
+    test_package: "com.example.princeproject.test"
+    test_runner_class: "androidx.test.runner.AndroidJUnitRunner"
+  }
+  instrumentation_args {
+    args_map {
+      key: "additionalTestOutputDir"
+      value: "/sdcard/Android/media/com.example.princeproject/additional_test_output"
+    }
+    args_map {
+      key: "class"
+      value: "com.example.princeproject.MainActivityTest#testEditProfile"
+    }
+  }
+}
+am_instrument_timeout: 31536000
+
+INFO: Configuring AndroidTestApkInstallerPlugin: apks_to_install {
+  apk_paths: "C:\\Users\\mikha\\AndroidStudioProjects\\princeProject1\\PrinceProject\\app\\build\\intermediates\\apk\\debug\\app-debug.apk"
+  install_options {
+  }
+  uninstall_after_test: true
+}
+apks_to_install {
+  apk_paths: "C:\\Users\\mikha\\AndroidStudioProjects\\princeProject1\\PrinceProject\\app\\build\\intermediates\\apk\\androidTest\\debug\\app-debug-androidTest.apk"
+  install_options {
+  }
+  uninstall_after_test: true
+}
+
+INFO: No installables found in test fixture. Nothing to install.
+INFO: Installing [C:\Users\mikha\AndroidStudioProjects\princeProject1\PrinceProject\app\build\intermediates\apk\debug\app-debug.apk] on device R38N702M0AD.
+SEVERE: Test execution failed with fatal error!
+INFO: Copying files from device to host: /sdcard/Android/media/com.example.princeproject/additional_test_output to C:\Users\mikha\AndroidStudioProjects\princeProject1\PrinceProject\app\build\outputs\connected_android_test_additional_output\debugAndroidTest\connected\SM-G973W - 12
+INFO: /sdcard/Android/media/com.example.princeproject/additional_test_output is not a directory
+INFO: Stop logcat streaming.
+INFO: Uninstalling com.example.princeproject for device R38N702M0AD.
+WARNING: Device R38N702M0AD failed to uninstall test APK com.example.princeproject.
+[Failure [DELETE_FAILED_INTERNAL_ERROR]]
+INFO: Uninstalling com.example.princeproject.test for device R38N702M0AD.
+WARNING: Device R38N702M0AD failed to uninstall test APK com.example.princeproject.test.
+[Failure [DELETE_FAILED_INTERNAL_ERROR]]
