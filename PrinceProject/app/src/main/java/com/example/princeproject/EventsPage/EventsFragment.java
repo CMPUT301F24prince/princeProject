@@ -231,8 +231,11 @@ public class EventsFragment extends Fragment {
                 bitmap.compress(Bitmap.CompressFormat.PNG, 100, byteArrayOutputStream);
                 byte[] byteArray = byteArrayOutputStream.toByteArray();
 
-                this.poster_encode = Base64.encodeToString(byteArray, Base64.DEFAULT);
+                String base64String = Base64.encodeToString(byteArray, Base64.DEFAULT);
+                this.poster_encode = base64String;
             }
+
+
         }
     }
 

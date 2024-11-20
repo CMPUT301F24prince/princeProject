@@ -42,6 +42,8 @@ public class User implements Serializable {
         this.phone = phone;
         this.account = account;
         this.deviceId = deviceId;
+
+
     }
 
     /**
