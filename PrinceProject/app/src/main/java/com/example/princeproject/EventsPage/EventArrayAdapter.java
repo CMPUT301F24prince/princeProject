@@ -54,7 +54,9 @@ public class EventArrayAdapter extends ArrayAdapter<Event> {
             titleTextView.setText(event.getTitle());
             descriptionTextView.setText(event.getDescription());
             locationTextView.setText(event.getLocation());
+        }
 
+        if (event != null) {
             titleTextView.setText(event.getTitle());
             String smth = event.getDescription();
             descriptionTextView.setText(event.getDescription());
@@ -71,6 +73,9 @@ public class EventArrayAdapter extends ArrayAdapter<Event> {
                     }
                 }
             });
+
+
+
         }
 
 
