@@ -100,6 +100,10 @@ public class Event {
         this.location = location;
     }
 
+    //Blank Constructor
+    public Event() {
+    }
+
     // Getters and setters for all fields
     public String getTitle() {
         return title;
@@ -188,28 +192,25 @@ public class Event {
 
     /**
      * Decodes the Base64 encoded image string into a Bitmap and stores it as a file.
-     * 
+     *
      * @param context The application context used to access file storage.
      * @return A Uri object pointing to the saved image file, or null if there is no encoded image.
      */
     public android.net.Uri decodeBase64String(Context context) {
         Calendar calendar = Calendar.getInstance();
-        String hour = Integer.toString(calendar.get(Calendar.HOUR_OF_DAY));
-        String minute = Integer.toString(calendar.get(Calendar.MINUTE));
-        String second = Integer.toString(calendar.get(Calendar.SECOND));
-        String milisecond = Integer.toString(calendar.get(Calendar.MILLISECOND));
+        int hour = calendar.get(Calendar.HOUR_OF_DAY);
+        int minute = calendar.get(Calendar.MINUTE);
+        int second = calendar.get(Calendar.SECOND);
 
         if (!(this.image_encode == null)) {
             byte[] decodedBytes = Base64.decode(this.image_encode, Base64.DEFAULT);
             Bitmap bitmap = BitmapFactory.decodeByteArray(decodedBytes, 0, decodedBytes.length);
 
-            File outputFile = new File(context.getExternalFilesDir(Environment.DIRECTORY_PICTURES), "IMG_"+hour+minute+second+milisecond+".png");
+            File outputFile = new File(context.getExternalFilesDir(Environment.DIRECTORY_PICTURES), ""+ hour+minute+second);
             try {
                 FileOutputStream fos = new FileOutputStream(outputFile);
                 bitmap.compress(Bitmap.CompressFormat.PNG, 100, fos);
-                fos.close();
-            } catch (Exception e) {
-                e.printStackTrace();
+            } catch (FileNotFoundException e) {
             }
 
             //if (outputFile.exists()) {
