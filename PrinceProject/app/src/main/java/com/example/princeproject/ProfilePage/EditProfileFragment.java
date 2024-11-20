@@ -1,11 +1,18 @@
 package com.example.princeproject.ProfilePage;
 
 
+import static android.app.Activity.RESULT_OK;
+
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 
+import android.provider.MediaStore;
+import android.util.Base64;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -13,6 +20,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.view.LayoutInflater;
 
+import android.widget.ImageView;
 import android.widget.Spinner;
 
 import androidx.annotation.NonNull;
@@ -27,6 +35,10 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import org.jetbrains.annotations.NotNull;
 
 import com.example.princeproject.R;
+
+import java.io.ByteArrayOutputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 
 
 /**
@@ -44,6 +56,9 @@ public class EditProfileFragment extends DialogFragment{
     private EditText editPhone;
     private Spinner accountTypeDropdown;
     private String account;
+    private ImageView profile_preview;
+    private Button uploadButton;
+    private final int GALLERY_REQ_CODE = 1000;
 
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
 
@@ -113,9 +128,22 @@ public class EditProfileFragment extends DialogFragment{
                 .setNegativeButton("Cancel", null)
                 .setPositiveButton("Confirm", null);
 
+        this.uploadButton = view.findViewById(R.id.profile_image_upload);
+        this.profile_preview = view.findViewById((R.id.profile_image_preview));
+
         AlertDialog dialog = builder.create();
 
         dialog.setOnShowListener(dialogInterface -> {
+
+            uploadButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent iGallery = new Intent(Intent.ACTION_PICK) ;
+                    iGallery.setData(MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                    startActivityForResult(iGallery, GALLERY_REQ_CODE);
+                }
+            });
+
             Button confirm = dialog.getButton(AlertDialog.BUTTON_POSITIVE);
             confirm.setOnClickListener(v ->{
                 String name = editName.getText().toString();
@@ -149,6 +177,7 @@ public class EditProfileFragment extends DialogFragment{
                     docRef.update("email", email);
                     docRef.update("phone", phone);
                     docRef.update("accountType", accountTypeDropdown.getSelectedItem().toString());
+                    docRef.update("profilePicture", user.getProfilePictureEncode());
                 }
                 //Notify listener that profile has been updated, and to update info on main activity
                 listener.setEditProfile(user);
@@ -156,7 +185,34 @@ public class EditProfileFragment extends DialogFragment{
             });
         });
 
+
         return dialog;
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode==RESULT_OK) {
+            if (requestCode==GALLERY_REQ_CODE) {
+                android.net.Uri imageUri = data.getData();
+                profile_preview.setImageURI(imageUri);
+
+                InputStream imageStream = null;
+                try {
+                    imageStream = getContext().getContentResolver().openInputStream(imageUri);
+                } catch (FileNotFoundException e) {
+                }
+                Bitmap bitmap = BitmapFactory.decodeStream(imageStream);
+                ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+                bitmap.compress(Bitmap.CompressFormat.PNG, 100, byteArrayOutputStream);
+                byte[] byteArray = byteArrayOutputStream.toByteArray();
+
+                String base64String = Base64.encodeToString(byteArray, Base64.DEFAULT);
+                this.user.setProfilePictureEncode(base64String);
+            }
+
+
+        }
     }
 
     /**

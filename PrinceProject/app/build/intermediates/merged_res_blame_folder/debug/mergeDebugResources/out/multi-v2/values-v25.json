@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.princeproject.app-mergeDebugResources-40:/values-v25/values-v25.xml",
+            "outputFile": "com.example.princeproject.app-mergeDebugResources-39:/values-v25/values-v25.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Nate\\.gradle\\caches\\transforms-4\\79e415325a83e6838e37677fb6149aa5\\transformed\\appcompat-1.7.0\\res\\values-v25\\values-v25.xml",
+                    "source": "C:\\Users\\Kyle\\.gradle\\caches\\transforms-4\\79e415325a83e6838e37677fb6149aa5\\transformed\\appcompat-1.7.0\\res\\values-v25\\values-v25.xml",
                     "from": {
                         "startLines": "2,3,4,6",
                         "startColumns": "4,4,4,4",

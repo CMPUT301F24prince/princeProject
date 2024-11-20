@@ -17,6 +17,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.viewpager2.widget.ViewPager2;
 
+import com.example.princeproject.AdminPage.AdminActivity;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.android.material.tabs.TabLayout;
@@ -51,7 +52,6 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-
 
         deviceId = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
         checkUser();

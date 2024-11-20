@@ -93,7 +93,14 @@ public class Event {
         this.image_encode = image_encode;
     }
 
-    //No-argument constructor
+    public Event(String eventId,String title,String description, String location) {
+        this.eventId = eventId;
+        this.title = title;
+        this.description = description;
+        this.location = location;
+    }
+
+    //Blank Constructor
     public Event() {
     }
 
@@ -185,7 +192,7 @@ public class Event {
 
     /**
      * Decodes the Base64 encoded image string into a Bitmap and stores it as a file.
-     * 
+     *
      * @param context The application context used to access file storage.
      * @return A Uri object pointing to the saved image file, or null if there is no encoded image.
      */
