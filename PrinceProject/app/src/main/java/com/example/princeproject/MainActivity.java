@@ -18,6 +18,8 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.princeproject.AdminPage.AdminActivity;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -65,15 +67,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(view.getContext(), WaitlistViewActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        Button adminButton = findViewById(R.id.admin_button);
-        adminButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(), AdminActivity.class);
                 startActivity(intent);
             }
         });
