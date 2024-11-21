@@ -80,7 +80,7 @@ public class ProfileFragment extends Fragment implements EditProfileFragment.Edi
     private ArrayList<Event> organizedEvents;
     private ListView organizedEventsListView;
     private EventArrayAdapter arrayAdapter;
-
+    private ImageView profilePicture;
     /**
      * Method to initialize the creation of the profile page
      * @param inflater
@@ -124,6 +124,7 @@ public class ProfileFragment extends Fragment implements EditProfileFragment.Edi
         phoneTextView = view.findViewById(R.id.phoneTextView);
         accountTextView = view.findViewById(R.id.accountTextView);
         editProfile = view.findViewById(R.id.editProfileButton);
+        profilePicture = view.findViewById(R.id.profile_image);
 
         getUserInfo();
 
@@ -180,6 +181,7 @@ public class ProfileFragment extends Fragment implements EditProfileFragment.Edi
         emailTextView.setText(user.getEmail());
         phoneTextView.setText(user.getPhone());
         accountTextView.setText(user.getAccount());
+        profilePicture.setImageURI(currentUser.decodeBase64String(getContext()));
     }
 
     /**
@@ -197,14 +199,17 @@ public class ProfileFragment extends Fragment implements EditProfileFragment.Edi
                             String userEmail = document.getString("email");
                             String userPhone = document.getString("phone");
                             String userAccType = document.getString("accountType");
+                            String profileImageEncode = document.getString("profilePicture");
 
                             currentUser = new User(userName, userEmail, userPhone, userAccType, deviceId);
+                            currentUser.setProfilePictureEncode(profileImageEncode);
                             Toast.makeText(thisview.getContext(), userName, Toast.LENGTH_SHORT).show();
 
                             nameTextView.setText(userName);
                             emailTextView.setText(userEmail);
                             phoneTextView.setText(userPhone);
                             accountTextView.setText(userAccType);
+                            profilePicture.setImageURI(currentUser.decodeBase64String(getContext()));
                         }
                     }
                 });

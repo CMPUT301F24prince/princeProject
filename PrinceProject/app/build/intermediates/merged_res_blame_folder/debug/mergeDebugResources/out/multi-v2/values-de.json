@@ -1,8 +1,25 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.princeproject.app-mergeDebugResources-39:/values-de/values-de.xml",
+            "outputFile": "com.example.princeproject.app-mergeDebugResources-40:/values-de/values-de.xml",
             "map": [
+                {
+                    "source": "C:\\Users\\Me\\.gradle\\caches\\8.9\\transforms\\fa9da66a4b89b00e72bc30385608d607\\transformed\\zxing-android-embedded-4.3.0\\res\\values-de\\values-de.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,114,161,333",
+                        "endColumns": "58,46,171,108",
+                        "endOffsets": "109,156,328,437"
+                    },
+                    "to": {
+                        "startLines": "135,136,137,138",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "12427,12486,12533,12705",
+                        "endColumns": "58,46,171,108",
+                        "endOffsets": "12481,12528,12700,12809"
+                    }
+                },
                 {
                     "source": "C:\\Users\\Me\\.gradle\\caches\\8.9\\transforms\\e4b908d5461e1154807615fd3110eb50\\transformed\\material-1.12.0\\res\\values-de\\values-de.xml",
                     "from": {

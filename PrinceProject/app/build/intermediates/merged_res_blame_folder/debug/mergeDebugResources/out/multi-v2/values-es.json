@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.princeproject.app-mergeDebugResources-39:/values-es/values-es.xml",
+            "outputFile": "com.example.princeproject.app-mergeDebugResources-40:/values-es/values-es.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Me\\.gradle\\caches\\8.9\\transforms\\1072534e6892e47927faa3f68f00b015\\transformed\\appcompat-1.7.0\\res\\values-es\\values-es.xml",
@@ -71,6 +71,23 @@
                         "startOffsets": "3503,3602,3704,3804,3902,4009,4115,12392",
                         "endColumns": "98,101,99,97,106,105,119,100",
                         "endOffsets": "3597,3699,3799,3897,4004,4110,4230,12488"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Me\\.gradle\\caches\\8.9\\transforms\\fa9da66a4b89b00e72bc30385608d607\\transformed\\zxing-android-embedded-4.3.0\\res\\values-es\\values-es.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,114,161,331",
+                        "endColumns": "58,46,169,135",
+                        "endOffsets": "109,156,326,462"
+                    },
+                    "to": {
+                        "startLines": "135,136,137,138",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "12493,12552,12599,12769",
+                        "endColumns": "58,46,169,135",
+                        "endOffsets": "12547,12594,12764,12900"
                     }
                 },
                 {

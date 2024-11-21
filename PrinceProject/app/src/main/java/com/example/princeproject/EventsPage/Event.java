@@ -198,15 +198,16 @@ public class Event {
      */
     public android.net.Uri decodeBase64String(Context context) {
         Calendar calendar = Calendar.getInstance();
-        int hour = calendar.get(Calendar.HOUR_OF_DAY);
-        int minute = calendar.get(Calendar.MINUTE);
-        int second = calendar.get(Calendar.SECOND);
+        String hour = Integer.toString( calendar.get(Calendar.HOUR_OF_DAY));
+        String minute = Integer.toString( calendar.get(Calendar.MINUTE));
+        String second = Integer.toString( calendar.get(Calendar.SECOND));
+        String milisecond = Integer.toString( calendar.get(Calendar.MILLISECOND));
 
         if (!(this.image_encode == null)) {
             byte[] decodedBytes = Base64.decode(this.image_encode, Base64.DEFAULT);
             Bitmap bitmap = BitmapFactory.decodeByteArray(decodedBytes, 0, decodedBytes.length);
 
-            File outputFile = new File(context.getExternalFilesDir(Environment.DIRECTORY_PICTURES), ""+ hour+minute+second);
+            File outputFile = new File(context.getExternalFilesDir(Environment.DIRECTORY_PICTURES), "IMG_"+ hour+minute+second+milisecond+".png");
             try {
                 FileOutputStream fos = new FileOutputStream(outputFile);
                 bitmap.compress(Bitmap.CompressFormat.PNG, 100, fos);
