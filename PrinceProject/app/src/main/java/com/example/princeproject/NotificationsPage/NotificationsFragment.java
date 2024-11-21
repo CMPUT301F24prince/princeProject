@@ -1,5 +1,6 @@
 package com.example.princeproject.NotificationsPage;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.view.LayoutInflater;
@@ -14,7 +15,10 @@ import androidx.fragment.app.Fragment;
 import android.widget.ListView;
 import androidx.appcompat.widget.Toolbar;
 
+import com.example.princeproject.MainActivity;
+import com.example.princeproject.NewUserActivity;
 import com.example.princeproject.R;
+import com.example.princeproject.User;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
@@ -37,9 +41,11 @@ public class NotificationsFragment extends Fragment {
 
     private NotificationPreferenceManager notificationPreferenceManager;
     private EventManager eventManager;
+    private Switch notificationToggle;
 
     private String deviceId;
     private FirebaseFirestore db;
+    private User user;
 
     /**
      * Method to initialize the creation of the Notification page
@@ -67,12 +73,15 @@ public class NotificationsFragment extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        db = FirebaseFirestore.getInstance();
 
+        notificationToggle = view.findViewById(R.id.notification_toggle);
+        getUser(view);
         // Get the device ID
         deviceId = Settings.Secure.getString(view.getContext().getContentResolver(), Settings.Secure.ANDROID_ID);
 
         // Initialize Firestore and Notification Preference Manager
-        db = FirebaseFirestore.getInstance();
+
         notificationPreferenceManager = new NotificationPreferenceManager();
 
         // Set up the toolbar
@@ -87,11 +96,10 @@ public class NotificationsFragment extends Fragment {
         notificationList.setAdapter(notificationAdapter);
 
         notificationList.setOnItemClickListener((parent, v, position, id) -> {
-                    new NotificationListFragment(notificationAdapter.getItem(position)).show(getActivity().getSupportFragmentManager(), "Details");
-                });
+            new NotificationListFragment(notificationAdapter.getItem(position)).show(getActivity().getSupportFragmentManager(), "Details");
+        });
         // Set up the notification toggle and retrieve notifications
-        setupNotificationToggle(view);
-        getNotifications();
+
     }
 
     /**
@@ -142,8 +150,6 @@ public class NotificationsFragment extends Fragment {
     }
 
     private void setupNotificationToggle(View view) {
-        Switch notificationToggle = view.findViewById(R.id.notification_toggle);
-
         // Set up listener for the toggle
         notificationToggle.setOnCheckedChangeListener((buttonView, isChecked) -> {
             String userId = getCurrentUserId();
@@ -157,7 +163,7 @@ public class NotificationsFragment extends Fragment {
 
     private void getNotifications() {
         db.collection("notifications")
-                .whereEqualTo("userId", deviceId)
+                .whereEqualTo("userId", user.getDeviceId())
                 .orderBy("timestamp", Query.Direction.DESCENDING)
                 .addSnapshotListener((queryDocumentSnapshots, e) -> {
                     if (e != null) {
@@ -182,6 +188,27 @@ public class NotificationsFragment extends Fragment {
                     }
                 });
     }
-    
+
+    private void getUser(View view) {
+        deviceId = Settings.Secure.getString(view.getContext().getContentResolver(), Settings.Secure.ANDROID_ID);
+        db.collection("users")
+                //Check if device id is in database
+                .document(deviceId)
+                .get()
+                .addOnSuccessListener(document -> {
+                    //If device is already enrolled, do nothing
+                    if (document.exists()) {
+                        //User already exists
+                        user = new User(document.getString("name"),document.getString("email"),document.getString("phone"),document.getString("accountType"), deviceId);
+                        notificationToggle.setChecked(document.getBoolean("Allow Notification"));
+                    }
+                    setupNotificationToggle(view);
+
+                    if (notificationToggle.isChecked()) {
+                        getNotifications();
+                    }
+                });
+    }
+
 
 }
