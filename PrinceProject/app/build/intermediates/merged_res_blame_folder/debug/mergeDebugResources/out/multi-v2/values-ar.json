@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.princeproject.app-mergeDebugResources-39:/values-ar/values-ar.xml",
+            "outputFile": "com.example.princeproject.app-mergeDebugResources-40:/values-ar/values-ar.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Me\\.gradle\\caches\\8.9\\transforms\\cd79027a51d6cbcf247b74dab79ec07d\\transformed\\play-services-basement-18.3.0\\res\\values-ar\\values.xml",
@@ -88,6 +88,23 @@
                         "startOffsets": "3582,3675,3777,3872,3975,4078,4180,12092",
                         "endColumns": "92,101,94,102,102,101,113,100",
                         "endOffsets": "3670,3772,3867,3970,4073,4175,4289,12188"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Me\\.gradle\\caches\\8.9\\transforms\\fa9da66a4b89b00e72bc30385608d607\\transformed\\zxing-android-embedded-4.3.0\\res\\values-ar\\values-ar.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,117,167,300",
+                        "endColumns": "61,49,132,109",
+                        "endOffsets": "112,162,295,405"
+                    },
+                    "to": {
+                        "startLines": "139,140,141,142",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "12193,12255,12305,12438",
+                        "endColumns": "61,49,132,109",
+                        "endOffsets": "12250,12300,12433,12543"
                     }
                 }
             ]

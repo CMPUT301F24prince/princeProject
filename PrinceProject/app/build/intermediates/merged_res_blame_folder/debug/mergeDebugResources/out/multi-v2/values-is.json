@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.princeproject.app-mergeDebugResources-39:/values-is/values-is.xml",
+            "outputFile": "com.example.princeproject.app-mergeDebugResources-40:/values-is/values-is.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Me\\.gradle\\caches\\8.9\\transforms\\1f5ea3c57db58345f39b9f4fb33e673f\\transformed\\play-services-base-18.1.0\\res\\values-is\\values.xml",
