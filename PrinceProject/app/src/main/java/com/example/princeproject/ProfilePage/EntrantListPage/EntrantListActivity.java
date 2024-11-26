@@ -118,7 +118,7 @@ public class EntrantListActivity extends AppCompatActivity {
             lotteryButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    EventManager.selectRandomEntrant(eventId);
+                    EventManager.selectRandomEntrant(eventId, EntrantListActivity.this);
                 }
             });
         }
@@ -146,7 +146,7 @@ public class EntrantListActivity extends AppCompatActivity {
                             Handler handler = new Handler(Looper.getMainLooper());
                             for (int i = 0; i < iterations; i++) {
                                 int delay = i * 500;
-                                handler.postDelayed(() -> EventManager.selectRandomEntrant(eventId), delay);
+                                handler.postDelayed(() -> EventManager.selectRandomEntrant(eventId, EntrantListActivity.this), delay);
                             }
 
                             Toast.makeText(context, "Successfully sampled " + iterations + " entrants!", Toast.LENGTH_SHORT).show();

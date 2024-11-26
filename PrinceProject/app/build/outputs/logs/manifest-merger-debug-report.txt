@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:2:1-59:12
-INJECTED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:2:1-59:12
-INJECTED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:2:1-59:12
-INJECTED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:2:1-59:12
+ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:2:1-60:12
+INJECTED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:2:1-60:12
+INJECTED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:2:1-60:12
+INJECTED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:2:1-60:12
 MERGED from [androidx.fragment:fragment-testing:1.3.6] C:\Users\Me\.gradle\caches\8.9\transforms\8da8a666f87acefc2bc4525f43665546\transformed\fragment-testing-1.3.6\AndroidManifest.xml:17:1-40:12
 MERGED from [com.google.firebase:firebase-firestore:25.1.1] C:\Users\Me\.gradle\caches\8.9\transforms\8e5af72e85a378b509e59f608372744c\transformed\firebase-firestore-25.1.1\AndroidManifest.xml:2:1-26:12
 MERGED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Me\.gradle\caches\8.9\transforms\fa9da66a4b89b00e72bc30385608d607\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:17:1-56:12
@@ -83,9 +83,13 @@ uses-permission#android.permission.READ_MEDIA_IMAGES
 ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:5:5-75
 	android:name
 		ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:5:22-73
+uses-permission#android.permission.POST_NOTIFICATIONS
+ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:6:5-76
+	android:name
+		ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:6:22-74
 application
-ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:7:5-57:19
-INJECTED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:7:5-57:19
+ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:8:5-58:19
+INJECTED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:8:5-58:19
 MERGED from [androidx.fragment:fragment-testing:1.3.6] C:\Users\Me\.gradle\caches\8.9\transforms\8da8a666f87acefc2bc4525f43665546\transformed\fragment-testing-1.3.6\AndroidManifest.xml:27:5-38:19
 MERGED from [androidx.fragment:fragment-testing:1.3.6] C:\Users\Me\.gradle\caches\8.9\transforms\8da8a666f87acefc2bc4525f43665546\transformed\fragment-testing-1.3.6\AndroidManifest.xml:27:5-38:19
 MERGED from [com.google.firebase:firebase-firestore:25.1.1] C:\Users\Me\.gradle\caches\8.9\transforms\8e5af72e85a378b509e59f608372744c\transformed\firebase-firestore-25.1.1\AndroidManifest.xml:13:5-24:19
@@ -133,85 +137,85 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Me
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.13.0] C:\Users\Me\.gradle\caches\8.9\transforms\6eb4f6d51695d6e3177123789596f4cc\transformed\core-1.13.0\AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:14:9-35
+		ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:15:9-35
 	android:label
-		ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:12:9-41
+		ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:13:9-41
 	android:fullBackupContent
-		ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:10:9-54
+		ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:11:9-54
 	android:roundIcon
-		ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:13:9-54
+		ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:14:9-54
 	tools:targetApi
-		ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:16:9-29
+		ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:17:9-29
 	android:icon
-		ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:11:9-43
+		ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:12:9-43
 	android:allowBackup
-		ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:8:9-35
+		ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:9:9-35
 	android:theme
-		ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:15:9-51
+		ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:16:9-51
 	android:dataExtractionRules
-		ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:9:9-65
+		ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:10:9-65
 activity#com.example.princeproject.MainActivity
-ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:17:9-25:20
+ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:18:9-26:20
 	android:exported
-		ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:19:13-36
+		ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:20:13-36
 	android:name
-		ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:18:13-41
+		ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:19:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:20:13-24:29
+ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:21:13-25:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:21:17-69
+ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:22:17-69
 	android:name
-		ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:21:25-66
+		ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:22:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:23:17-77
+ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:24:17-77
 	android:name
-		ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:23:27-74
+		ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:24:27-74
 activity#com.example.princeproject.ProfilePage.EntrantListPage.EntrantListActivity
-ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:26:9-28:20
+ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:27:9-29:20
 	android:name
-		ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:27:13-76
+		ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:28:13-76
 activity#com.example.princeproject.NewUserActivity
-ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:29:9-32:20
+ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:30:9-33:20
 	android:name
-		ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:30:13-44
+		ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:31:13-44
 activity#com.example.princeproject.WaitlistViewActivity
-ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:33:9-36:20
+ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:34:9-37:20
 	android:name
-		ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:34:13-49
+		ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:35:13-49
 activity#com.example.princeproject.AdminPage.AdminActivity
-ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:37:9-39:20
+ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:38:9-40:20
 	android:name
-		ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:38:13-52
+		ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:39:13-52
 activity#androidx.test.core.app.InstrumentationActivityInvoker$BootstrapActivity
-ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:41:9-45:20
+ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:42:9-46:20
 MERGED from [androidx.test:core:1.3.0] C:\Users\Me\.gradle\caches\8.9\transforms\a3a6716a076eb787901fb5b59caec6ba\transformed\core-1.3.0\AndroidManifest.xml:27:9-33:20
 MERGED from [androidx.test:core:1.3.0] C:\Users\Me\.gradle\caches\8.9\transforms\a3a6716a076eb787901fb5b59caec6ba\transformed\core-1.3.0\AndroidManifest.xml:27:9-33:20
 	android:exported
-		ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:43:13-37
+		ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:44:13-37
 	android:theme
 		ADDED from [androidx.test:core:1.3.0] C:\Users\Me\.gradle\caches\8.9\transforms\a3a6716a076eb787901fb5b59caec6ba\transformed\core-1.3.0\AndroidManifest.xml:29:13-49
 	android:name
-		ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:42:13-99
+		ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:43:13-99
 activity#androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity
-ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:46:9-50:20
+ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:47:9-51:20
 MERGED from [androidx.test:core:1.3.0] C:\Users\Me\.gradle\caches\8.9\transforms\a3a6716a076eb787901fb5b59caec6ba\transformed\core-1.3.0\AndroidManifest.xml:34:9-40:20
 MERGED from [androidx.test:core:1.3.0] C:\Users\Me\.gradle\caches\8.9\transforms\a3a6716a076eb787901fb5b59caec6ba\transformed\core-1.3.0\AndroidManifest.xml:34:9-40:20
 	android:exported
-		ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:48:13-37
+		ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:49:13-37
 	android:theme
 		ADDED from [androidx.test:core:1.3.0] C:\Users\Me\.gradle\caches\8.9\transforms\a3a6716a076eb787901fb5b59caec6ba\transformed\core-1.3.0\AndroidManifest.xml:36:13-49
 	android:name
-		ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:47:13-95
+		ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:48:13-95
 activity#androidx.test.core.app.InstrumentationActivityInvoker$EmptyFloatingActivity
-ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:51:9-55:20
+ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:52:9-56:20
 MERGED from [androidx.test:core:1.3.0] C:\Users\Me\.gradle\caches\8.9\transforms\a3a6716a076eb787901fb5b59caec6ba\transformed\core-1.3.0\AndroidManifest.xml:41:9-47:20
 MERGED from [androidx.test:core:1.3.0] C:\Users\Me\.gradle\caches\8.9\transforms\a3a6716a076eb787901fb5b59caec6ba\transformed\core-1.3.0\AndroidManifest.xml:41:9-47:20
 	android:exported
-		ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:53:13-37
+		ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:54:13-37
 	android:theme
 		ADDED from [androidx.test:core:1.3.0] C:\Users\Me\.gradle\caches\8.9\transforms\a3a6716a076eb787901fb5b59caec6ba\transformed\core-1.3.0\AndroidManifest.xml:43:13-56
 	android:name
-		ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:52:13-103
+		ADDED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml:53:13-103
 uses-sdk
 INJECTED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Me\Desktop\Prince\princeProject\PrinceProject\app\src\main\AndroidManifest.xml

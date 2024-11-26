@@ -4022,6 +4022,8 @@ int string call_notification_hang_up_action 0x7f120028
 int string call_notification_incoming_text 0x7f120029
 int string call_notification_ongoing_text 0x7f12002a
 int string call_notification_screening_text 0x7f12002b
+int string channel_description 0x7f1200cf
+int string channel_name 0x7f1200d0
 int string character_counter_content_description 0x7f12002c
 int string character_counter_overflowed_content_description 0x7f12002d
 int string character_counter_pattern 0x7f12002e

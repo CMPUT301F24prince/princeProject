@@ -1,4 +1,13 @@
 package com.example.princeproject.NotificationsPage;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
+import android.content.Intent;
+
+import androidx.core.app.NotificationCompat;
+
+import com.example.princeproject.R;
+import com.example.princeproject.MainActivity;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -11,12 +20,31 @@ import java.util.ArrayList;
 public class EventManager {
     private static FirebaseFirestore db = FirebaseFirestore.getInstance();
 
+    public static void sendPushNotification(Context context, String channelId, int id) {
+        NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(context, channelId);
+        notificationBuilder.setAutoCancel(true);
+
+        notificationBuilder.setSmallIcon(R.drawable.filler_image);
+        notificationBuilder.setTicker("This is a ticker");
+        notificationBuilder.setWhen(System.currentTimeMillis());
+        notificationBuilder.setContentTitle("Title");
+        notificationBuilder.setContentText("Here is the text");
+
+        Intent intent = new Intent(context, com.example.princeproject.MainActivity.class);
+
+        PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_ONE_SHOT | PendingIntent.FLAG_IMMUTABLE);
+        notificationBuilder.setContentIntent(pendingIntent);
+
+        NotificationManager nm = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+        nm.notify(id, notificationBuilder.build());
+    }
+
     /**
      * Uploads a notification to the database,
      * @param userId
      * deviceId of the
      */
-    public static void sendNotification(String userId) {
+    public static void sendNotification(String userId, Context context) {
         // Create the notification details
         Map<String, Object> notificationData = new HashMap<>();
         notificationData.put("userId", userId);
@@ -32,6 +60,9 @@ public class EventManager {
                 .addOnFailureListener(e -> {
                     System.err.println("Failed to send notification: " + e.getMessage());
                 });
+
+        //This may cause a problem with notifications hacing the same id
+        sendPushNotification(context, "prince_notifications", notificationData.hashCode());
     }
 
     /**
@@ -39,7 +70,7 @@ public class EventManager {
      * @param eventId
      */
     // From chatgpt, openai, "write a java implementation of selecting a random entrant from waitlist and remove them from waitlist and put them in chosen list attach is the image of the db, 2024-11-08
-    public static void selectRandomEntrant(String eventId) {
+    public static void selectRandomEntrant(String eventId, Context context) {
         db = FirebaseFirestore.getInstance();
         Query query = db.collection("events").whereEqualTo("eventId", eventId);
         query.get().addOnSuccessListener(queryDocumentSnapshots -> {
@@ -58,7 +89,7 @@ public class EventManager {
                     String selectedEntrant = waitingList.get(randomIndex);
 
                     // Send a notification to the selected entrant
-                    sendNotification(selectedEntrant);
+                    sendNotification(selectedEntrant, context);
 
                     waitingList.remove(randomIndex);
                     chosenList.add(selectedEntrant);
