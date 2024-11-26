@@ -68,6 +68,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/editAccountType"
         android:layout_marginTop="10dp"
-        android:text="Switch" />
+        android:text="Allow Notifications" />
 
 </RelativeLayout>
