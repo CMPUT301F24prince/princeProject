@@ -57,8 +57,17 @@
         android:id="@+id/submitButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/editAccountType"
+        android:layout_below="@+id/notification_switch"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:text="Submit" />
+
+    <Switch
+        android:id="@+id/notification_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editAccountType"
+        android:layout_marginTop="10dp"
+        android:text="Switch" />
+
 </RelativeLayout>

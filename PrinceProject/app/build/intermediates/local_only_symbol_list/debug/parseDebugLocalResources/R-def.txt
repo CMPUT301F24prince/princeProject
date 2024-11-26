@@ -57,6 +57,7 @@ id notifNameText
 id notif_event_image
 id notificationList
 id notificationToolbar
+id notification_switch
 id notification_toggle
 id notiflocation_text
 id optOutButton
