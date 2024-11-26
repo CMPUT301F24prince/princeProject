@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Switch;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -25,6 +26,8 @@ public class NewUserActivity extends AppCompatActivity {
 
     private EditText nameEditText, emailEditText, phoneEditText;
     private Spinner accountTypeDropdown;
+    private Switch notification_switch;
+    private boolean notification = false;
     private String userName, email, phone, accType;
     //private ImageView profilePicture;
     private Button confirmButton;
@@ -50,6 +53,7 @@ public class NewUserActivity extends AppCompatActivity {
         nameEditText = findViewById(R.id.editTextName);
         emailEditText = findViewById(R.id.editTextEmail);
         phoneEditText = findViewById(R.id.editTextPhone);
+        notification_switch = findViewById(R.id.notification_switch);
 
         //Initialize the account type dropdown
         accountTypeDropdown = findViewById(R.id.editAccountType);
@@ -70,6 +74,10 @@ public class NewUserActivity extends AppCompatActivity {
 
             }
 
+        });
+
+        notification_switch.setOnCheckedChangeListener((buttonView,isChecked) -> {
+            notification = isChecked;
         });
 
         //Set up the on click listener for the confirm button on the new user view
@@ -101,6 +109,7 @@ public class NewUserActivity extends AppCompatActivity {
                 userDb.put("email", email);
                 userDb.put("phone", phone);
                 userDb.put("accountType", accType);
+                userDb.put("Allow Notification",notification);
                 db.collection("users").document(deviceId).set(userDb);
             }
             finish();

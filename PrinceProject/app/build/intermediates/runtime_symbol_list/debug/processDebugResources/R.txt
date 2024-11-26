@@ -3530,6 +3530,7 @@ int id notificationToolbar 0x7f090170
 int id notification_background 0x7f090171
 int id notification_main_column 0x7f090172
 int id notification_main_column_container 0x7f090173
+int id notification_switch 0x7f090253
 int id notification_toggle 0x7f090174
 int id notiflocation_text 0x7f090175
 int id off 0x7f090176

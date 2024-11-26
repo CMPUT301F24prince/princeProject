@@ -98,7 +98,6 @@ public class NotificationsFragment extends Fragment {
         notificationList.setOnItemClickListener((parent, v, position, id) -> {
             new NotificationListFragment(notificationAdapter.getItem(position)).show(getActivity().getSupportFragmentManager(), "Details");
         });
-        // Set up the notification toggle and retrieve notifications
 
     }
 

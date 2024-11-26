@@ -71,6 +71,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Button adminPageButton = findViewById(R.id.admin_button);
+
+        adminPageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), AdminActivity.class);
+                startActivity(intent);
+            }
+        });
+
         mainNavigationBar.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {

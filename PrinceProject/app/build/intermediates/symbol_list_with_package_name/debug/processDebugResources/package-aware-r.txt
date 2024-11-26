@@ -3531,6 +3531,7 @@ id notificationToolbar
 id notification_background
 id notification_main_column
 id notification_main_column_container
+id notification_switch
 id notification_toggle
 id notiflocation_text
 id off
