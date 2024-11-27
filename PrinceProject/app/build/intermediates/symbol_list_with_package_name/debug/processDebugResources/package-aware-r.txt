@@ -3303,7 +3303,7 @@ id coordinator
 id cos
 id counterclockwise
 id cradle
-id create_event_button
+id create_event_facility_button
 id currentState
 id custom
 id customPanel
@@ -3351,6 +3351,7 @@ id editProfileButton
 id editTextEmail
 id editTextName
 id editTextPhone
+id edit_facility_button
 id edit_query
 id edit_text_id
 id elastic
@@ -3374,6 +3375,12 @@ id event_spinner
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
+id facility_description
+id facility_description_text
+id facility_location
+id facility_location_text
+id facility_name
+id facility_name_text
 id fade
 id fill
 id fill_horizontal
@@ -3415,6 +3422,7 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
+id imageView
 id immediateStop
 id included
 id indeterminate
@@ -3445,6 +3453,7 @@ id lottery_button
 id m3_side_sheet
 id main
 id main_navigation_bar
+id manage_facility_button
 id marquee
 id masked
 id match_constraint
@@ -3681,6 +3690,8 @@ id textView
 id textView2
 id textView3
 id textView4
+id textView7
+id textView8
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -3872,6 +3883,7 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_admin
 layout activity_entrant_list
+layout activity_facility
 layout activity_main
 layout activity_waitlist_view
 layout admin_event_item
@@ -3894,6 +3906,7 @@ layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout event_list_entry_dialog
 layout eventlist_entry
+layout facility_dialog_fragment
 layout fragment_admin_events
 layout fragment_admin_facilities
 layout fragment_admin_images

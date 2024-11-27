@@ -2,6 +2,7 @@ package com.example.princeproject.EventsPage;
 
 import static android.app.Activity.RESULT_OK;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -28,6 +29,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 
+import com.example.princeproject.Facility;
 import com.example.princeproject.R;
 import com.example.princeproject.User;
 import com.google.firebase.firestore.DocumentReference;
@@ -71,6 +73,7 @@ public class EventsFragment extends Fragment {
     private String username;
     private ImageView preview;
     private String poster_encode;
+    private String deviceId;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -79,6 +82,7 @@ public class EventsFragment extends Fragment {
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        deviceId = Settings.Secure.getString(view.getContext().getContentResolver(), Settings.Secure.ANDROID_ID);
         db = FirebaseFirestore.getInstance();
         getUsername();
         eventList = new ArrayList<>();
@@ -98,11 +102,69 @@ public class EventsFragment extends Fragment {
 
         invitesButton = view.findViewById(R.id.invitesButton);
 
-        Button addEventButton = view.findViewById(R.id.create_event_button);
-        addEventButton.setOnClickListener(v -> getUserInput());
+        Button addEventFacilityButton = view.findViewById(R.id.create_event_facility_button);
+
+        checkFacilityStatus(addEventFacilityButton);
 
         ArrayList<Event> some_events = new ArrayList<Event>();
         getEvents(some_events);
+    }
+
+    private void checkFacilityStatus(Button button) {
+        db.collection("facilities").document(deviceId).get()
+                .addOnSuccessListener(documentSnapshot -> {
+                    if (documentSnapshot.exists()) {
+                        button.setText("Create Event");
+                        button.setOnClickListener(v -> getUserInput());
+                    } else {
+                        button.setText("Create Facility");
+                        button.setOnClickListener(v -> createFacility(button));
+                    }
+                });
+    }
+
+    private void createFacility(Button button) {
+        LayoutInflater inflater = LayoutInflater.from(requireContext());
+        View dialogView = inflater.inflate(R.layout.facility_dialog_fragment, null);
+
+        EditText facilityName = dialogView.findViewById(R.id.facility_name);
+        EditText facilityLocation = dialogView.findViewById(R.id.facility_location);
+        EditText facilityDescription = dialogView.findViewById(R.id.facility_description);
+
+        new AlertDialog.Builder(requireContext())
+                .setTitle("Create Facility")
+                .setView(dialogView)
+                .setPositiveButton("Save", (dialog, which) -> {
+                    String name = facilityName.getText().toString().trim();
+                    String location = facilityLocation.getText().toString().trim();
+                    String description = facilityDescription.getText().toString().trim();
+
+                    if (name.isEmpty() || location.isEmpty()) {
+                        Toast.makeText(requireContext(), "Please fill in all required fields!", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Facility facility = new Facility(deviceId,location,name,description);
+                        addFacilityToDatabase(facility,button);
+                        dialog.dismiss();
+                    }
+                })
+                .setNegativeButton("Cancel", (dialog, which) -> dialog.dismiss())
+                .create()
+                .show();
+    }
+
+    private void addFacilityToDatabase(Facility facility, Button button) {
+        Map<String, Object> facilityDb = new HashMap<>();
+
+        facilityDb.put("organizer_id",facility.getOrganizer_id());
+        facilityDb.put("location",facility.getLocation());
+        facilityDb.put("name",facility.getName());
+        facilityDb.put("description",facility.getDescription());
+
+        db.collection("facilities").document(facility.getOrganizer_id()).set(facilityDb)
+                .addOnSuccessListener(x -> {
+                    checkFacilityStatus(button);
+                });
+
     }
 
     /**
@@ -122,9 +184,6 @@ public class EventsFragment extends Fragment {
 
         final EditText endDateEditText = new EditText(getContext());
         endDateEditText.setHint("Enter End Date (yyyy-MM-dd)");
-
-        final EditText locationEditText = new EditText(getContext());
-        locationEditText.setHint("Enter Location");
 
         final EditText maxParticipantsEditText = new EditText(getContext());
         maxParticipantsEditText.setHint("Enter Max Participants");
@@ -149,7 +208,6 @@ public class EventsFragment extends Fragment {
         layout.addView(descriptionEditText);
         layout.addView(startDateEditText);
         layout.addView(endDateEditText);
-        layout.addView(locationEditText);
         layout.addView(maxParticipantsEditText);
         layout.addView(uploadImage);
         layout.addView(preview);
@@ -163,11 +221,10 @@ public class EventsFragment extends Fragment {
             String description = descriptionEditText.getText().toString().trim();
             String startDateStr = startDateEditText.getText().toString().trim();
             String endDateStr = endDateEditText.getText().toString().trim();
-            String location = locationEditText.getText().toString().trim();
             String maxParticipantsStr = maxParticipantsEditText.getText().toString().trim();
 
             if (title.isEmpty() || description.isEmpty() || startDateStr.isEmpty() || endDateStr.isEmpty() ||
-                    location.isEmpty() || maxParticipantsStr.isEmpty()) {
+                    maxParticipantsStr.isEmpty()) {
                 Toast.makeText(getContext(), "All fields must be filled", Toast.LENGTH_SHORT).show();
                 return;
             }
@@ -194,6 +251,12 @@ public class EventsFragment extends Fragment {
             List<String> emptyList = new ArrayList<>();
             String eventId = generateEventId();
 
+
+            db.collection("facilities").document(deviceId).get()
+                    .addOnSuccessListener(documentSnapshot -> {
+                       String location = (String) documentSnapshot.get("location");
+
+
             // Create a new event and add it to the list
             Event newEvent = new Event(eventId,title, description, startDate, endDate, location, maxParticipants, null, true, this.poster_encode);
             Map<String, Object> eventDb = new HashMap<>();
@@ -212,10 +275,12 @@ public class EventsFragment extends Fragment {
             eventDb.put("lotteryDrawn",false);
             eventDb.put("eventPosterEncode", this.poster_encode);
 
+
             db.collection("events").document(eventId).set(eventDb);
 
             eventList.add(newEvent);
             arrayAdapter.notifyDataSetChanged();
+            });
         });
 
         builder.setNegativeButton("Cancel", (dialog, which) -> dialog.cancel());
