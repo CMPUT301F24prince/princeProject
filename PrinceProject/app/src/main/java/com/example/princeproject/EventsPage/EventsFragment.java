@@ -2,6 +2,7 @@ package com.example.princeproject.EventsPage;
 
 import static android.app.Activity.RESULT_OK;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -28,6 +29,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 
+import com.example.princeproject.Facility;
 import com.example.princeproject.R;
 import com.example.princeproject.User;
 import com.google.firebase.firestore.DocumentReference;
@@ -71,6 +73,7 @@ public class EventsFragment extends Fragment {
     private String username;
     private ImageView preview;
     private String poster_encode;
+    private String deviceId;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -79,6 +82,7 @@ public class EventsFragment extends Fragment {
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        deviceId = Settings.Secure.getString(view.getContext().getContentResolver(), Settings.Secure.ANDROID_ID);
         db = FirebaseFirestore.getInstance();
         getUsername();
         eventList = new ArrayList<>();
@@ -98,11 +102,68 @@ public class EventsFragment extends Fragment {
 
         invitesButton = view.findViewById(R.id.invitesButton);
 
-        Button addEventButton = view.findViewById(R.id.create_event_button);
-        addEventButton.setOnClickListener(v -> getUserInput());
+        Button addEventFacilityButton = view.findViewById(R.id.create_event_facility_button);
+
+        checkFacilityStatus(addEventFacilityButton);
 
         ArrayList<Event> some_events = new ArrayList<Event>();
         getEvents(some_events);
+    }
+
+    private void checkFacilityStatus(Button button) {
+        db.collection("facilities").document(deviceId).get()
+                .addOnSuccessListener(documentSnapshot -> {
+                    if (documentSnapshot.exists()) {
+                        button.setText("Create Event");
+                        button.setOnClickListener(v -> getUserInput());
+                        //createFacility.setVisibility(View.GONE);
+                    } else {
+                        button.setText("Create Facility");
+                        button.setOnClickListener(v -> createFacility(button));
+                        //createFacility.setVisibility(View.VISIBLE);
+                    }
+                });
+    }
+
+    private void createFacility(Button button) {
+        LayoutInflater inflater = LayoutInflater.from(requireContext());
+        View dialogView = inflater.inflate(R.layout.facility_dialog_fragment, null);
+
+        EditText facilityName = dialogView.findViewById(R.id.facility_name);
+        EditText facilityLocation = dialogView.findViewById(R.id.facility_location);
+
+        new AlertDialog.Builder(requireContext())
+                .setTitle("Create Facility")
+                .setView(dialogView)
+                .setPositiveButton("Save", (dialog, which) -> {
+                    String name = facilityName.getText().toString().trim();
+                    String location = facilityLocation.getText().toString().trim();
+
+                    if (name.isEmpty() || location.isEmpty()) {
+                        Toast.makeText(requireContext(), "Please fill in all fields!", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Facility facility = new Facility(deviceId,location,name);
+                        addFacilityToDatabase(facility,button);
+                        dialog.dismiss();
+                    }
+                })
+                .setNegativeButton("Cancel", (dialog, which) -> dialog.dismiss())
+                .create()
+                .show();
+    }
+
+    private void addFacilityToDatabase(Facility facility, Button button) {
+        Map<String, Object> facilityDb = new HashMap<>();
+
+        facilityDb.put("organizer_id",facility.getOrganizer_id());
+        facilityDb.put("location",facility.getLocation());
+        facilityDb.put("name",facility.getName());
+
+        db.collection("facilities").document(facility.getOrganizer_id()).set(facilityDb)
+                .addOnSuccessListener(x -> {
+                    checkFacilityStatus(button);
+                });
+
     }
 
     /**

@@ -3304,6 +3304,7 @@ id cos
 id counterclockwise
 id cradle
 id create_event_button
+id create_facility
 id currentState
 id custom
 id customPanel
@@ -3374,6 +3375,8 @@ id event_spinner
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
+id facility_location
+id facility_name
 id fade
 id fill
 id fill_horizontal
@@ -3894,6 +3897,7 @@ layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout event_list_entry_dialog
 layout eventlist_entry
+layout facility_dialog_fragment
 layout fragment_admin_events
 layout fragment_admin_facilities
 layout fragment_admin_images
