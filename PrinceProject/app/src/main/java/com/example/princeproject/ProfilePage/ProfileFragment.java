@@ -24,20 +24,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.example.princeproject.EventsPage.Event;
 import com.example.princeproject.EventsPage.EventArrayAdapter;
+import com.example.princeproject.FacilityActivity;
 import com.example.princeproject.ProfilePage.EntrantListPage.EntrantListActivity;
 import com.example.princeproject.R;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
 import com.example.princeproject.User;
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -49,8 +47,6 @@ import com.google.zxing.common.BitMatrix;
 import com.google.zxing.qrcode.QRCodeWriter;
 
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
 
 
 /**
@@ -72,6 +68,7 @@ public class ProfileFragment extends Fragment implements EditProfileFragment.Edi
     private TextView phoneTextView;
     private TextView accountTextView;
     private Button editProfile;
+    private Button manageFacility;
 
     private String deviceId;
     private User currentUser;
@@ -125,6 +122,12 @@ public class ProfileFragment extends Fragment implements EditProfileFragment.Edi
         accountTextView = view.findViewById(R.id.accountTextView);
         editProfile = view.findViewById(R.id.editProfileButton);
         profilePicture = view.findViewById(R.id.profile_image);
+        manageFacility = view.findViewById(R.id.manage_facility_button);
+
+        manageFacility.setOnClickListener(x -> {
+            Intent intent = new Intent(getContext(), FacilityActivity.class);
+            startActivity(intent);
+        });
 
         getUserInfo();
 

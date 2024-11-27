@@ -5,11 +5,13 @@ public class Facility {
     private String organizer_id;
     private String location;
     private String name;
+    private String description;
 
-    public Facility(String organizer_id, String location, String name) {
+    public Facility(String organizer_id, String location, String name, String description) {
         this.organizer_id = organizer_id;
         this.location = location;
         this.name = name;
+        this.description = description;
     }
 
     public String getLocation() {
@@ -34,5 +36,13 @@ public class Facility {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

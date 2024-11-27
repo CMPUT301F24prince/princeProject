@@ -129,6 +129,7 @@ public class EventsFragment extends Fragment {
 
         EditText facilityName = dialogView.findViewById(R.id.facility_name);
         EditText facilityLocation = dialogView.findViewById(R.id.facility_location);
+        EditText facilityDescription = dialogView.findViewById(R.id.facility_description);
 
         new AlertDialog.Builder(requireContext())
                 .setTitle("Create Facility")
@@ -136,11 +137,12 @@ public class EventsFragment extends Fragment {
                 .setPositiveButton("Save", (dialog, which) -> {
                     String name = facilityName.getText().toString().trim();
                     String location = facilityLocation.getText().toString().trim();
+                    String description = facilityDescription.getText().toString().trim();
 
                     if (name.isEmpty() || location.isEmpty()) {
-                        Toast.makeText(requireContext(), "Please fill in all fields!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(requireContext(), "Please fill in all required fields!", Toast.LENGTH_SHORT).show();
                     } else {
-                        Facility facility = new Facility(deviceId,location,name);
+                        Facility facility = new Facility(deviceId,location,name,description);
                         addFacilityToDatabase(facility,button);
                         dialog.dismiss();
                     }
@@ -156,6 +158,7 @@ public class EventsFragment extends Fragment {
         facilityDb.put("organizer_id",facility.getOrganizer_id());
         facilityDb.put("location",facility.getLocation());
         facilityDb.put("name",facility.getName());
+        facilityDb.put("description",facility.getDescription());
 
         db.collection("facilities").document(facility.getOrganizer_id()).set(facilityDb)
                 .addOnSuccessListener(x -> {

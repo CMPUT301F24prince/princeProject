@@ -3350,6 +3350,7 @@ int id editProfileButton 0x7f0900bc
 int id editTextEmail 0x7f0900bd
 int id editTextName 0x7f0900be
 int id editTextPhone 0x7f0900bf
+int id edit_facility_button 0x7f090259
 int id edit_query 0x7f0900c0
 int id edit_text_id 0x7f0900c1
 int id elastic 0x7f0900c2
@@ -3373,8 +3374,12 @@ int id event_spinner 0x7f0900d3
 int id exitUntilCollapsed 0x7f0900d4
 int id expand_activities_button 0x7f0900d5
 int id expanded_menu 0x7f0900d6
+int id facility_description 0x7f09025a
+int id facility_description_text 0x7f09025b
 int id facility_location 0x7f090255
+int id facility_location_text 0x7f09025c
 int id facility_name 0x7f090256
+int id facility_name_text 0x7f09025d
 int id fade 0x7f0900d7
 int id fill 0x7f0900d8
 int id fill_horizontal 0x7f0900d9
@@ -3416,6 +3421,7 @@ int id ifRoom 0x7f0900fc
 int id ignore 0x7f0900fd
 int id ignoreRequest 0x7f0900fe
 int id image 0x7f0900ff
+int id imageView 0x7f09025e
 int id immediateStop 0x7f090100
 int id included 0x7f090101
 int id indeterminate 0x7f090102
@@ -3446,6 +3452,7 @@ int id lottery_button 0x7f09011a
 int id m3_side_sheet 0x7f09011b
 int id main 0x7f09011c
 int id main_navigation_bar 0x7f09011d
+int id manage_facility_button 0x7f09025f
 int id marquee 0x7f09011e
 int id masked 0x7f09011f
 int id match_constraint 0x7f090120
@@ -3682,6 +3689,8 @@ int id textView 0x7f090206
 int id textView2 0x7f090207
 int id textView3 0x7f090208
 int id textView4 0x7f090209
+int id textView7 0x7f090260
+int id textView8 0x7f090261
 int id text_input_end_icon 0x7f09020a
 int id text_input_error_icon 0x7f09020b
 int id text_input_start_icon 0x7f09020c
@@ -3873,6 +3882,7 @@ int layout abc_select_dialog_material 0x7f0c001a
 int layout abc_tooltip 0x7f0c001b
 int layout activity_admin 0x7f0c001c
 int layout activity_entrant_list 0x7f0c001d
+int layout activity_facility 0x7f0c0085
 int layout activity_main 0x7f0c001e
 int layout activity_waitlist_view 0x7f0c001f
 int layout admin_event_item 0x7f0c0020

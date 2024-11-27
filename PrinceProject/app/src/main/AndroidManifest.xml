@@ -37,6 +37,10 @@
         <activity
             android:name=".AdminPage.AdminActivity">
         </activity>
+        <activity
+            android:name=".FacilityActivity">
+        </activity>
+
 
         <activity
             android:name="androidx.test.core.app.InstrumentationActivityInvoker$BootstrapActivity"
