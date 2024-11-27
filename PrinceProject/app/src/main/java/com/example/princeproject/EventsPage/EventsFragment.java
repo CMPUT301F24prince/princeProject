@@ -116,11 +116,9 @@ public class EventsFragment extends Fragment {
                     if (documentSnapshot.exists()) {
                         button.setText("Create Event");
                         button.setOnClickListener(v -> getUserInput());
-                        //createFacility.setVisibility(View.GONE);
                     } else {
                         button.setText("Create Facility");
                         button.setOnClickListener(v -> createFacility(button));
-                        //createFacility.setVisibility(View.VISIBLE);
                     }
                 });
     }
@@ -184,9 +182,6 @@ public class EventsFragment extends Fragment {
         final EditText endDateEditText = new EditText(getContext());
         endDateEditText.setHint("Enter End Date (yyyy-MM-dd)");
 
-        final EditText locationEditText = new EditText(getContext());
-        locationEditText.setHint("Enter Location");
-
         final EditText maxParticipantsEditText = new EditText(getContext());
         maxParticipantsEditText.setHint("Enter Max Participants");
         maxParticipantsEditText.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
@@ -210,7 +205,6 @@ public class EventsFragment extends Fragment {
         layout.addView(descriptionEditText);
         layout.addView(startDateEditText);
         layout.addView(endDateEditText);
-        layout.addView(locationEditText);
         layout.addView(maxParticipantsEditText);
         layout.addView(uploadImage);
         layout.addView(preview);
@@ -224,11 +218,10 @@ public class EventsFragment extends Fragment {
             String description = descriptionEditText.getText().toString().trim();
             String startDateStr = startDateEditText.getText().toString().trim();
             String endDateStr = endDateEditText.getText().toString().trim();
-            String location = locationEditText.getText().toString().trim();
             String maxParticipantsStr = maxParticipantsEditText.getText().toString().trim();
 
             if (title.isEmpty() || description.isEmpty() || startDateStr.isEmpty() || endDateStr.isEmpty() ||
-                    location.isEmpty() || maxParticipantsStr.isEmpty()) {
+                    maxParticipantsStr.isEmpty()) {
                 Toast.makeText(getContext(), "All fields must be filled", Toast.LENGTH_SHORT).show();
                 return;
             }
@@ -255,6 +248,12 @@ public class EventsFragment extends Fragment {
             List<String> emptyList = new ArrayList<>();
             String eventId = generateEventId();
 
+
+            db.collection("facilities").document(deviceId).get()
+                    .addOnSuccessListener(documentSnapshot -> {
+                       String location = (String) documentSnapshot.get("location");
+
+
             // Create a new event and add it to the list
             Event newEvent = new Event(eventId,title, description, startDate, endDate, location, maxParticipants, null, true, this.poster_encode);
             Map<String, Object> eventDb = new HashMap<>();
@@ -273,10 +272,12 @@ public class EventsFragment extends Fragment {
             eventDb.put("lotteryDrawn",false);
             eventDb.put("eventPosterEncode", this.poster_encode);
 
+
             db.collection("events").document(eventId).set(eventDb);
 
             eventList.add(newEvent);
             arrayAdapter.notifyDataSetChanged();
+            });
         });
 
         builder.setNegativeButton("Cancel", (dialog, which) -> dialog.cancel());

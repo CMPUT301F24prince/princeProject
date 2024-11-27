@@ -3303,8 +3303,7 @@ id coordinator
 id cos
 id counterclockwise
 id cradle
-id create_event_button
-id create_facility
+id create_event_facility_button
 id currentState
 id custom
 id customPanel
