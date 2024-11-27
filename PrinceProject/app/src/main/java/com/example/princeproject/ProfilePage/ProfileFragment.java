@@ -124,6 +124,15 @@ public class ProfileFragment extends Fragment implements EditProfileFragment.Edi
         profilePicture = view.findViewById(R.id.profile_image);
         manageFacility = view.findViewById(R.id.manage_facility_button);
 
+        db.collection("facilities").document(deviceId).get()
+                .addOnSuccessListener(documentSnapshot -> {
+                    if (!documentSnapshot.exists()){
+                        manageFacility.setVisibility(View.INVISIBLE);
+                    } else {
+                        manageFacility.setVisibility(View.VISIBLE);
+                    }
+                });
+
         manageFacility.setOnClickListener(x -> {
             Intent intent = new Intent(getContext(), FacilityActivity.class);
             startActivity(intent);
