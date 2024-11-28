@@ -4,6 +4,7 @@ import com.example.princeproject.R;
 import com.example.princeproject.NotificationsPage.EventManager;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -46,6 +47,8 @@ public class EntrantListActivity extends AppCompatActivity {
         // Fetch events for the organizer
         FirestoreQueryHelper.getOrganizerEvents(this, deviceId, events, eventSelection);
 
+        Button manageEventButton = findViewById(R.id.manage_event_button);
+
         // Set up event selection spinner
         eventSelection.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -68,6 +71,17 @@ public class EntrantListActivity extends AppCompatActivity {
                 });
             }
         });
+
+        manageEventButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(EntrantListActivity.this, ManageEventsActivity.class);
+                intent.putExtra("EVENT_ID",eventId);
+                startActivity(intent);
+            }
+        });
+
+
     }
 
     /**
