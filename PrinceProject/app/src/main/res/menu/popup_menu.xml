@@ -3,4 +3,7 @@
     <item
         android:id="@+id/generate_qr_code"
         android:title="Generate QR Code" />
+    <item
+        android:id="@+id/open_map"
+        android:title="View Map" />
 </menu>

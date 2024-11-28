@@ -3059,6 +3059,7 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable edmonton_map
 drawable filler_image
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
@@ -3351,9 +3352,6 @@ id editProfileButton
 id editTextEmail
 id editTextName
 id editTextPhone
-id edit_event_description
-id edit_event_max_participants
-id edit_event_name
 id edit_facility_button
 id edit_query
 id edit_text_id
@@ -3370,13 +3368,10 @@ id entry_event_location
 id entry_event_title
 id escape
 id eventTitleTextView
-id event_description_text
 id event_feed
 id event_fragment
 id event_image
 id event_list_view
-id event_maxParticipants_text
-id event_name_text
 id event_spinner
 id exitUntilCollapsed
 id expand_activities_button
@@ -3429,7 +3424,6 @@ id ignore
 id ignoreRequest
 id image
 id imageView
-id imageView2
 id immediateStop
 id included
 id indeterminate
@@ -3460,9 +3454,8 @@ id lottery_button
 id m3_side_sheet
 id main
 id main_navigation_bar
-id manage_event_button
-id manage_events_button
 id manage_facility_button
+id mapImageView
 id marquee
 id masked
 id match_constraint
@@ -3555,6 +3548,7 @@ id notiflocation_text
 id off
 id on
 id onInterceptTouchReturnSwipe
+id open_map
 id open_search_bar_text_view
 id open_search_view_background
 id open_search_view_clear_button
@@ -3696,11 +3690,9 @@ id textSpacerNoTitle
 id textStart
 id textTop
 id textView
-id textView10
 id textView2
 id textView3
 id textView4
-id textView6
 id textView7
 id textView8
 id text_input_end_icon
@@ -3896,7 +3888,6 @@ layout activity_admin
 layout activity_entrant_list
 layout activity_facility
 layout activity_main
-layout activity_manage_events
 layout activity_waitlist_view
 layout admin_event_item
 layout content_notification
@@ -3936,7 +3927,7 @@ layout m3_alert_dialog_actions
 layout m3_alert_dialog_title
 layout m3_auto_complete_simple_item
 layout m3_side_sheet_dialog
-layout manage_event_dialog
+layout map_fragment
 layout material_chip_input_combo
 layout material_clock_display
 layout material_clock_display_divider

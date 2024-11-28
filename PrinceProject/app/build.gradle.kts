@@ -41,6 +41,7 @@ dependencies {
 
 
     implementation ("com.google.protobuf:protobuf-javalite:3.21.12")
+    implementation(libs.play.services.location)
 
     testImplementation("junit:junit:4.13.2")
     testImplementation(libs.ext.junit)
