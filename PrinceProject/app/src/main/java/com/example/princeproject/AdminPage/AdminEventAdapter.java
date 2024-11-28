@@ -1,6 +1,9 @@
 package com.example.princeproject.AdminPage;
 
 import android.content.Context;
+import android.net.Uri;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -44,11 +47,24 @@ public class AdminEventAdapter extends ArrayAdapter<Event> {
         TextView descriptionTextView = convertView.findViewById(R.id.description_text);
         TextView locationTextView = convertView.findViewById(R.id.location_text);
         Button deleteButton = convertView.findViewById(R.id.delete_button_event);
+        ImageView eventPoster = convertView.findViewById(R.id.event_image);
 
         Event event = events.get(position);
         titleTextView.setText(event.getTitle());
         descriptionTextView.setText(event.getDescription());
         locationTextView.setText(event.getLocation());
+
+        Uri poster_uri =  event.decodeBase64String(getContext());
+
+        new Handler(Looper.getMainLooper()).post(new Runnable() {
+            @Override
+            public void run() {
+                if (!(poster_uri == null)) {
+                    eventPoster.setImageURI(null);
+                    eventPoster.setImageURI(poster_uri);
+                }
+            }
+        });
 
         deleteButton.setOnClickListener(new View.OnClickListener() {
             @Override

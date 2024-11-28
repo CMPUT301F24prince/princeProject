@@ -41,7 +41,7 @@
         android:id="@+id/manage_event_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
+        android:layout_marginEnd="28dp"
         android:layout_marginBottom="2dp"
         android:text="Manage Event"
         app:layout_constraintBottom_toTopOf="@+id/lottery_button"

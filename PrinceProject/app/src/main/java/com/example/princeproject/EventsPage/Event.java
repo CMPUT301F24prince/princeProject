@@ -93,11 +93,12 @@ public class Event {
         this.image_encode = image_encode;
     }
 
-    public Event(String eventId,String title,String description, String location) {
+    public Event(String eventId,String title,String description, String location, String image_encode) {
         this.eventId = eventId;
         this.title = title;
         this.description = description;
         this.location = location;
+        this.image_encode = image_encode;
     }
 
     //Blank Constructor
