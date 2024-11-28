@@ -56,8 +56,9 @@ public class AdminEventFragment extends Fragment {
                         String event_title = (String) doc.get("name");
                         String event_desc = (String) doc.get("description");
                         String event_location = (String) doc.get("location");
+                        String image_encode = (String) doc.get("eventPosterEncode");
 
-                        Event event = new Event(event_id,event_title,event_desc,event_location);
+                        Event event = new Event(event_id,event_title,event_desc,event_location,image_encode);
                         events.add(event);
                     }
                     adminEventAdapter.notifyDataSetChanged();
