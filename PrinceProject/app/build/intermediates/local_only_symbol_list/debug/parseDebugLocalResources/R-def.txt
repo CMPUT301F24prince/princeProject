@@ -27,6 +27,9 @@ id editProfileButton
 id editTextEmail
 id editTextName
 id editTextPhone
+id edit_event_description
+id edit_event_max_participants
+id edit_event_name
 id edit_facility_button
 id emailLabel
 id emailTextView
@@ -34,10 +37,13 @@ id entry_event_description
 id entry_event_location
 id entry_event_title
 id eventTitleTextView
+id event_description_text
 id event_feed
 id event_fragment
 id event_image
 id event_list_view
+id event_maxParticipants_text
+id event_name_text
 id event_spinner
 id facility_description
 id facility_description_text
@@ -48,6 +54,7 @@ id facility_name_text
 id fragment_profile
 id generate_qr_code
 id imageView
+id imageView2
 id invitesButton
 id joinWaitingListButton
 id linearLayout
@@ -56,6 +63,8 @@ id location_text
 id lottery_button
 id main
 id main_navigation_bar
+id manage_event_button
+id manage_events_button
 id manage_facility_button
 id my_events
 id nameLabel
@@ -83,9 +92,11 @@ id scan_qr_utton
 id submitButton
 id tab_layout
 id textView
+id textView10
 id textView2
 id textView3
 id textView4
+id textView6
 id textView7
 id textView8
 id title_text
@@ -101,6 +112,7 @@ layout activity_admin
 layout activity_entrant_list
 layout activity_facility
 layout activity_main
+layout activity_manage_events
 layout activity_waitlist_view
 layout admin_event_item
 layout content_notification
@@ -117,6 +129,7 @@ layout fragment_events
 layout fragment_list
 layout fragment_notifications
 layout fragment_profile
+layout manage_event_dialog
 layout new_user
 layout notification_dialog_fragment
 layout profile_clickables_entry

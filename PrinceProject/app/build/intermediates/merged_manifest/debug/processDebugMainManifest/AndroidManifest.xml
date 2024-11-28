@@ -72,6 +72,8 @@
         </activity>
         <activity android:name="com.example.princeproject.FacilityActivity" >
         </activity>
+        <activity android:name="com.example.princeproject.ProfilePage.EntrantListPage.ManageEventsActivity" >
+        </activity>
         <activity
             android:name="androidx.test.core.app.InstrumentationActivityInvoker$BootstrapActivity"
             android:exported="false"

@@ -40,6 +40,10 @@
         <activity
             android:name=".FacilityActivity">
         </activity>
+        <activity
+            android:name=".ProfilePage.EntrantListPage.ManageEventsActivity">
+        </activity>
+
 
 
         <activity

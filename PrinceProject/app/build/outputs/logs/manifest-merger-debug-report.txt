@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\main\AndroidManifest.xml:2:1-63:12
-INJECTED from C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\main\AndroidManifest.xml:2:1-63:12
-INJECTED from C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\main\AndroidManifest.xml:2:1-63:12
-INJECTED from C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\main\AndroidManifest.xml:2:1-63:12
+ADDED from C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\main\AndroidManifest.xml:2:1-67:12
+INJECTED from C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\main\AndroidManifest.xml:2:1-67:12
+INJECTED from C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\main\AndroidManifest.xml:2:1-67:12
+INJECTED from C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\main\AndroidManifest.xml:2:1-67:12
 MERGED from [androidx.fragment:fragment-testing:1.3.6] C:\Users\Kyle\.gradle\caches\8.9\transforms\8da8a666f87acefc2bc4525f43665546\transformed\fragment-testing-1.3.6\AndroidManifest.xml:17:1-40:12
 MERGED from [com.google.firebase:firebase-firestore:25.1.1] C:\Users\Kyle\.gradle\caches\8.9\transforms\8e5af72e85a378b509e59f608372744c\transformed\firebase-firestore-25.1.1\AndroidManifest.xml:2:1-26:12
 MERGED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Kyle\.gradle\caches\8.9\transforms\fa9da66a4b89b00e72bc30385608d607\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:17:1-56:12
@@ -84,8 +84,8 @@ ADDED from C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\m
 	android:name
 		ADDED from C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\main\AndroidManifest.xml:5:22-73
 application
-ADDED from C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\main\AndroidManifest.xml:7:5-61:19
-INJECTED from C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\main\AndroidManifest.xml:7:5-61:19
+ADDED from C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\main\AndroidManifest.xml:7:5-65:19
+INJECTED from C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\main\AndroidManifest.xml:7:5-65:19
 MERGED from [androidx.fragment:fragment-testing:1.3.6] C:\Users\Kyle\.gradle\caches\8.9\transforms\8da8a666f87acefc2bc4525f43665546\transformed\fragment-testing-1.3.6\AndroidManifest.xml:27:5-38:19
 MERGED from [androidx.fragment:fragment-testing:1.3.6] C:\Users\Kyle\.gradle\caches\8.9\transforms\8da8a666f87acefc2bc4525f43665546\transformed\fragment-testing-1.3.6\AndroidManifest.xml:27:5-38:19
 MERGED from [com.google.firebase:firebase-firestore:25.1.1] C:\Users\Kyle\.gradle\caches\8.9\transforms\8e5af72e85a378b509e59f608372744c\transformed\firebase-firestore-25.1.1\AndroidManifest.xml:13:5-24:19
@@ -186,36 +186,40 @@ activity#com.example.princeproject.FacilityActivity
 ADDED from C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\main\AndroidManifest.xml:40:9-42:20
 	android:name
 		ADDED from C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\main\AndroidManifest.xml:41:13-45
+activity#com.example.princeproject.ProfilePage.EntrantListPage.ManageEventsActivity
+ADDED from C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\main\AndroidManifest.xml:43:9-45:20
+	android:name
+		ADDED from C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\main\AndroidManifest.xml:44:13-77
 activity#androidx.test.core.app.InstrumentationActivityInvoker$BootstrapActivity
-ADDED from C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\main\AndroidManifest.xml:45:9-49:20
+ADDED from C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\main\AndroidManifest.xml:49:9-53:20
 MERGED from [androidx.test:core:1.3.0] C:\Users\Kyle\.gradle\caches\8.9\transforms\a3a6716a076eb787901fb5b59caec6ba\transformed\core-1.3.0\AndroidManifest.xml:27:9-33:20
 MERGED from [androidx.test:core:1.3.0] C:\Users\Kyle\.gradle\caches\8.9\transforms\a3a6716a076eb787901fb5b59caec6ba\transformed\core-1.3.0\AndroidManifest.xml:27:9-33:20
 	android:exported
-		ADDED from C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\main\AndroidManifest.xml:47:13-37
+		ADDED from C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\main\AndroidManifest.xml:51:13-37
 	android:theme
 		ADDED from [androidx.test:core:1.3.0] C:\Users\Kyle\.gradle\caches\8.9\transforms\a3a6716a076eb787901fb5b59caec6ba\transformed\core-1.3.0\AndroidManifest.xml:29:13-49
 	android:name
-		ADDED from C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\main\AndroidManifest.xml:46:13-99
+		ADDED from C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\main\AndroidManifest.xml:50:13-99
 activity#androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity
-ADDED from C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\main\AndroidManifest.xml:50:9-54:20
+ADDED from C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\main\AndroidManifest.xml:54:9-58:20
 MERGED from [androidx.test:core:1.3.0] C:\Users\Kyle\.gradle\caches\8.9\transforms\a3a6716a076eb787901fb5b59caec6ba\transformed\core-1.3.0\AndroidManifest.xml:34:9-40:20
 MERGED from [androidx.test:core:1.3.0] C:\Users\Kyle\.gradle\caches\8.9\transforms\a3a6716a076eb787901fb5b59caec6ba\transformed\core-1.3.0\AndroidManifest.xml:34:9-40:20
 	android:exported
-		ADDED from C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\main\AndroidManifest.xml:52:13-37
+		ADDED from C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\main\AndroidManifest.xml:56:13-37
 	android:theme
 		ADDED from [androidx.test:core:1.3.0] C:\Users\Kyle\.gradle\caches\8.9\transforms\a3a6716a076eb787901fb5b59caec6ba\transformed\core-1.3.0\AndroidManifest.xml:36:13-49
 	android:name
-		ADDED from C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\main\AndroidManifest.xml:51:13-95
+		ADDED from C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\main\AndroidManifest.xml:55:13-95
 activity#androidx.test.core.app.InstrumentationActivityInvoker$EmptyFloatingActivity
-ADDED from C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\main\AndroidManifest.xml:55:9-59:20
+ADDED from C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\main\AndroidManifest.xml:59:9-63:20
 MERGED from [androidx.test:core:1.3.0] C:\Users\Kyle\.gradle\caches\8.9\transforms\a3a6716a076eb787901fb5b59caec6ba\transformed\core-1.3.0\AndroidManifest.xml:41:9-47:20
 MERGED from [androidx.test:core:1.3.0] C:\Users\Kyle\.gradle\caches\8.9\transforms\a3a6716a076eb787901fb5b59caec6ba\transformed\core-1.3.0\AndroidManifest.xml:41:9-47:20
 	android:exported
-		ADDED from C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\main\AndroidManifest.xml:57:13-37
+		ADDED from C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\main\AndroidManifest.xml:61:13-37
 	android:theme
 		ADDED from [androidx.test:core:1.3.0] C:\Users\Kyle\.gradle\caches\8.9\transforms\a3a6716a076eb787901fb5b59caec6ba\transformed\core-1.3.0\AndroidManifest.xml:43:13-56
 	android:name
-		ADDED from C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\main\AndroidManifest.xml:56:13-103
+		ADDED from C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\main\AndroidManifest.xml:60:13-103
 uses-sdk
 INJECTED from C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\src\main\AndroidManifest.xml

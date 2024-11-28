@@ -3350,6 +3350,9 @@ int id editProfileButton 0x7f0900bc
 int id editTextEmail 0x7f0900bd
 int id editTextName 0x7f0900be
 int id editTextPhone 0x7f0900bf
+int id edit_event_description 0x7f09026b
+int id edit_event_max_participants 0x7f09026c
+int id edit_event_name 0x7f09026d
 int id edit_facility_button 0x7f090259
 int id edit_query 0x7f0900c0
 int id edit_text_id 0x7f0900c1
@@ -3366,10 +3369,13 @@ int id entry_event_location 0x7f0900cb
 int id entry_event_title 0x7f0900cc
 int id escape 0x7f0900cd
 int id eventTitleTextView 0x7f0900ce
+int id event_description_text 0x7f090264
 int id event_feed 0x7f0900cf
 int id event_fragment 0x7f0900d0
 int id event_image 0x7f0900d1
 int id event_list_view 0x7f0900d2
+int id event_maxParticipants_text 0x7f090265
+int id event_name_text 0x7f090266
 int id event_spinner 0x7f0900d3
 int id exitUntilCollapsed 0x7f0900d4
 int id expand_activities_button 0x7f0900d5
@@ -3422,6 +3428,7 @@ int id ignore 0x7f0900fd
 int id ignoreRequest 0x7f0900fe
 int id image 0x7f0900ff
 int id imageView 0x7f09025e
+int id imageView2 0x7f090267
 int id immediateStop 0x7f090100
 int id included 0x7f090101
 int id indeterminate 0x7f090102
@@ -3452,6 +3459,8 @@ int id lottery_button 0x7f09011a
 int id m3_side_sheet 0x7f09011b
 int id main 0x7f09011c
 int id main_navigation_bar 0x7f09011d
+int id manage_event_button 0x7f090263
+int id manage_events_button 0x7f090268
 int id manage_facility_button 0x7f09025f
 int id marquee 0x7f09011e
 int id masked 0x7f09011f
@@ -3686,9 +3695,11 @@ int id textSpacerNoTitle 0x7f090203
 int id textStart 0x7f090204
 int id textTop 0x7f090205
 int id textView 0x7f090206
+int id textView10 0x7f090269
 int id textView2 0x7f090207
 int id textView3 0x7f090208
 int id textView4 0x7f090209
+int id textView6 0x7f09026a
 int id textView7 0x7f090260
 int id textView8 0x7f090261
 int id text_input_end_icon 0x7f09020a
@@ -3884,6 +3895,7 @@ int layout activity_admin 0x7f0c001c
 int layout activity_entrant_list 0x7f0c001d
 int layout activity_facility 0x7f0c0085
 int layout activity_main 0x7f0c001e
+int layout activity_manage_events 0x7f0c0086
 int layout activity_waitlist_view 0x7f0c001f
 int layout admin_event_item 0x7f0c0020
 int layout content_notification 0x7f0c0021
@@ -3923,6 +3935,7 @@ int layout m3_alert_dialog_actions 0x7f0c0041
 int layout m3_alert_dialog_title 0x7f0c0042
 int layout m3_auto_complete_simple_item 0x7f0c0043
 int layout m3_side_sheet_dialog 0x7f0c0044
+int layout manage_event_dialog 0x7f0c0087
 int layout material_chip_input_combo 0x7f0c0045
 int layout material_clock_display 0x7f0c0046
 int layout material_clock_display_divider 0x7f0c0047
