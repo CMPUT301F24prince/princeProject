@@ -220,7 +220,7 @@ public class NotificationsFragment extends Fragment {
         NotificationManager mNotificationManager;
 
         NotificationCompat.Builder mBuilder =
-                new NotificationCompat.Builder(context.getApplicationContext(), "notify_001");
+                new NotificationCompat.Builder(context.getApplicationContext(), channelId);
         Intent ii = new Intent(context.getApplicationContext(), MainActivity.class);
         PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, ii, PendingIntent.FLAG_IMMUTABLE);
 
