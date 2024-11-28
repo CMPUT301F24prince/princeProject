@@ -1,8 +1,13 @@
 package com.example.princeproject.ProfilePage;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.view.LayoutInflater;
@@ -23,11 +28,13 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import androidx.core.app.NotificationCompat;
 import androidx.fragment.app.Fragment;
 
 import com.example.princeproject.EventsPage.Event;
 import com.example.princeproject.EventsPage.EventArrayAdapter;
 import com.example.princeproject.FacilityActivity;
+import com.example.princeproject.MainActivity;
 import com.example.princeproject.ProfilePage.EntrantListPage.EntrantListActivity;
 import com.example.princeproject.R;
 
