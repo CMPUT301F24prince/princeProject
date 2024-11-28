@@ -5,6 +5,7 @@ color black
 color noticable_grey
 color white
 drawable circle_shape
+drawable edmonton_map
 drawable filler_image
 drawable ic_launcher_background
 drawable ic_launcher_foreground
@@ -57,6 +58,7 @@ id lottery_button
 id main
 id main_navigation_bar
 id manage_facility_button
+id mapImageView
 id my_events
 id nameLabel
 id nameTextView
@@ -69,6 +71,7 @@ id notificationToolbar
 id notification_switch
 id notification_toggle
 id notiflocation_text
+id open_map
 id optOutButton
 id organized_events_listview
 id phoneLabel
@@ -117,6 +120,7 @@ layout fragment_events
 layout fragment_list
 layout fragment_notifications
 layout fragment_profile
+layout map_fragment
 layout new_user
 layout notification_dialog_fragment
 layout profile_clickables_entry

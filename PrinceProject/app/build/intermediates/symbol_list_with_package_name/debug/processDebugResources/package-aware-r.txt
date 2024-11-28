@@ -3059,6 +3059,7 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable edmonton_map
 drawable filler_image
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
@@ -3454,6 +3455,7 @@ id m3_side_sheet
 id main
 id main_navigation_bar
 id manage_facility_button
+id mapImageView
 id marquee
 id masked
 id match_constraint
@@ -3546,6 +3548,7 @@ id notiflocation_text
 id off
 id on
 id onInterceptTouchReturnSwipe
+id open_map
 id open_search_bar_text_view
 id open_search_view_background
 id open_search_view_clear_button
@@ -3924,6 +3927,7 @@ layout m3_alert_dialog_actions
 layout m3_alert_dialog_title
 layout m3_auto_complete_simple_item
 layout m3_side_sheet_dialog
+layout map_fragment
 layout material_chip_input_combo
 layout material_clock_display
 layout material_clock_display_divider

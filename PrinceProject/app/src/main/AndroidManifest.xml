@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.READ_MEDIA_IMAGES"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -40,7 +42,9 @@
         <activity
             android:name=".FacilityActivity">
         </activity>
-
+        <activity
+            android:name=".ProfilePage.MapActivity">
+        </activity>
 
         <activity
             android:name="androidx.test.core.app.InstrumentationActivityInvoker$BootstrapActivity"
@@ -57,6 +61,7 @@
             android:exported="false">
 
         </activity>
+
 
     </application>
 

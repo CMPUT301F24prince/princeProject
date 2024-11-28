@@ -24,7 +24,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 
 import com.example.princeproject.EventsPage.Event;
 import com.example.princeproject.EventsPage.EventArrayAdapter;
@@ -176,6 +175,9 @@ public class ProfileFragment extends Fragment implements EditProfileFragment.Edi
         loadOrganizedEvents();
     }
 
+    /**
+     * Method to handle resuming the fragment after doing another activity
+     * */
     @Override
     public void onResume() {
         super.onResume();
@@ -281,6 +283,11 @@ public class ProfileFragment extends Fragment implements EditProfileFragment.Edi
                 generateQRCode(event.getEventId());  // Generate QR code for the event
                 return true;
             }
+            //Adding functionality to view map
+            if (item.getItemId() == R.id.open_map) {
+                openMap(event.getEventId());
+                return true;
+            }
             return false;
         });
     }
@@ -339,5 +346,20 @@ public class ProfileFragment extends Fragment implements EditProfileFragment.Edi
         builder.setView(qrImageView);
 
         builder.create().show();
+    }
+
+    /**
+     * Method to open the map for an event, to see the locations
+     * where users joined the waiting list.
+     *
+     * @param eventId
+     *      The id of the event being clicked
+     * */
+    private void openMap(String eventId){
+        //Create map fragment object
+        Intent intent = new Intent(getContext(), MapActivity.class);
+        intent.putExtra("eventId",eventId);
+        startActivity(intent);
+
     }
 }
