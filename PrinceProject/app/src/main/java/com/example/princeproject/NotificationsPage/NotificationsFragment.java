@@ -188,6 +188,7 @@ public class NotificationsFragment extends Fragment {
 
                             Notification notification = new Notification(title, details, location, userId, eventId);
                             notificationDataList.add(notification);
+                            sendPushNotification(getContext(), "PRINCE_CHANNEL_ID_NOTIFICATION", notification.hashCode());
                         }
                         notificationAdapter.notifyDataSetChanged();
                     }
@@ -250,6 +251,5 @@ public class NotificationsFragment extends Fragment {
 
         mNotificationManager.notify(id, mBuilder.build());
     }
-
 
 }
