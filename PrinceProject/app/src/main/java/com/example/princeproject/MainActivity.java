@@ -61,25 +61,7 @@ public class MainActivity extends AppCompatActivity {
         mainViewPagerAdapter = new MainViewPagerAdapter(this);
         rootPager.setAdapter(mainViewPagerAdapter);
 
-        Button waitlistButton = findViewById(R.id.waitlist_view);
 
-        waitlistButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(), WaitlistViewActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        Button adminPageButton = findViewById(R.id.admin_button);
-
-        adminPageButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(), AdminActivity.class);
-                startActivity(intent);
-            }
-        });
 
         mainNavigationBar.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override

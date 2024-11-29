@@ -1,4 +1,7 @@
 package com.example.princeproject.NotificationsPage;
+import android.content.Context;
+import android.widget.Toast;
+
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -39,9 +42,10 @@ public class EventManager {
      * @param eventId
      */
     // From chatgpt, openai, "write a java implementation of selecting a random entrant from waitlist and remove them from waitlist and put them in chosen list attach is the image of the db, 2024-11-08
-    public static void selectRandomEntrant(String eventId) {
-        db = FirebaseFirestore.getInstance();
+    public static void selectRandomEntrant(Context context, String eventId) {
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
         Query query = db.collection("events").whereEqualTo("eventId", eventId);
+
         query.get().addOnSuccessListener(queryDocumentSnapshots -> {
             if (!queryDocumentSnapshots.isEmpty()) {
                 DocumentSnapshot documentSnapshot = queryDocumentSnapshots.getDocuments().get(0);
@@ -64,14 +68,21 @@ public class EventManager {
                     chosenList.add(selectedEntrant);
 
                     documentSnapshot.getReference().update("waiting", waitingList, "chosen", chosenList)
-                            .addOnSuccessListener(aVoid -> System.out.println("Entrant moved successfully."))
-                            .addOnFailureListener(e -> System.err.println("Error moving entrant: " + e.getMessage()));
+                            .addOnSuccessListener(aVoid -> {
+                                Toast.makeText(context, "Entrant moved successfully.", Toast.LENGTH_SHORT).show();
+                            })
+                            .addOnFailureListener(e -> {
+                                Toast.makeText(context, "Error moving entrant: " + e.getMessage(), Toast.LENGTH_LONG).show();
+                            });
                 } else {
-                    System.out.println("Waiting list is empty.");
+                    Toast.makeText(context, "Waiting list is empty.", Toast.LENGTH_SHORT).show();
                 }
             } else {
-                System.out.println("No document found with eventId: " + eventId);
+                Toast.makeText(context, "No document found with eventId: " + eventId, Toast.LENGTH_SHORT).show();
             }
-        }).addOnFailureListener(e -> System.err.println("Failed to fetch event data: " + e.getMessage()));
+        }).addOnFailureListener(e -> {
+            Toast.makeText(context, "Failed to fetch event data: " + e.getMessage(), Toast.LENGTH_LONG).show();
+        });
     }
+
 }

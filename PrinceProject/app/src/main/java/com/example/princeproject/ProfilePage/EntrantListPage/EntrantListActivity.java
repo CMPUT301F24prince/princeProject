@@ -32,7 +32,6 @@ public class EntrantListActivity extends AppCompatActivity {
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private String deviceId;
     private String eventId;
-    private boolean lotteryDrawn = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,20 +54,14 @@ public class EntrantListActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 eventId = events.get(i);
                 updateFragment(eventId);
-                getLotteryDrawnStatus(eventId, status -> {
-                    lotteryDrawn = status;
-                    setupButton(lotteryButton);
-                });
+                checkLotteryStatus(lotteryButton,eventId);
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
                 eventId = events.get(0);
                 updateFragment(eventId);
-                getLotteryDrawnStatus(eventId, status -> {
-                    lotteryDrawn = status;
-                    setupButton(lotteryButton);
-                });
+                checkLotteryStatus(lotteryButton,eventId);
             }
         });
 
@@ -81,69 +74,29 @@ public class EntrantListActivity extends AppCompatActivity {
             }
         });
 
-
     }
 
-    /**
-     * Interface to handle callbacks to get the lottery status, enables proper updating of lotteryDrawn
-     */
-    private interface getLotteryStatusCallback {
-        void onGetLotteryStatus(boolean status);
-    }
-
-    /**
-     * Gets the status of the lottery for the given event
-     * @param eventId Id of the given event
-     * @param callback callback to enable updating of lotteryDrawn
-     */
-    public void getLotteryDrawnStatus(String eventId, getLotteryStatusCallback callback) {
-        db.collection("events").whereEqualTo("eventId", eventId).get()
-                .addOnSuccessListener(queryDocumentSnapshots -> {
-                    if (!queryDocumentSnapshots.isEmpty()) {
-                        DocumentSnapshot doc = queryDocumentSnapshots.getDocuments().get(0);
-                        Boolean lotteryDrawnValue = doc.getBoolean("lotteryDrawn");
-                        callback.onGetLotteryStatus(lotteryDrawnValue != null && lotteryDrawnValue);
+    private void checkLotteryStatus(Button button, String eventId) {
+        db.collection("events").document(eventId).get()
+                .addOnSuccessListener(documentSnapshot -> {
+                    boolean lotteryDrawn = documentSnapshot.getBoolean("lotteryDrawn");
+                    if(lotteryDrawn) {
+                        button.setText("Draw Replacement");
+                        button.setOnClickListener(v -> EventManager.selectRandomEntrant(getApplicationContext(), eventId));
                     } else {
-                        callback.onGetLotteryStatus(false);
+                        button.setText("Draw Lottery");
+                        button.setOnClickListener(v -> SampleLottery(EntrantListActivity.this,button));
                     }
                 });
 
     }
 
-    /**
-     * Sets up the button to change behaviour from drawing the lottery to drawing a replacement
-     * based on the value of lotteryDrawn
-     * @param lotteryButton the button being set up
-     */
-    public void setupButton(Button lotteryButton) {
-        if (!lotteryDrawn) {
-            lotteryButton.setText("Draw Lottery");
-            lotteryButton.setOnClickListener(view -> {
-                boolean lotterySuccess = SampleLottery(EntrantListActivity.this);
-                if (lotterySuccess) {
-                    lotteryDrawn = true;
-                    db.collection("events").document(eventId).update("lotteryDrawn", true);
-                    lotteryButton.setVisibility(View.INVISIBLE);
-                }
-            });
-        } else {
-            lotteryButton.setText("Draw Replacement");
-            lotteryButton.setTextSize(14);
-            lotteryButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    EventManager.selectRandomEntrant(eventId);
-                }
-            });
-        }
-    }
 
     /**
      * Performs the lottery selection and updates the database accordingly.
      * @param context current context
-     * @return returns true if the lottery was a success, false otherwise
      */
-    public boolean SampleLottery(Context context) {
+    public void SampleLottery(Context context, Button button) {
         db.collection("events").whereEqualTo("eventId", eventId).get()
                 .addOnSuccessListener(queryDocumentSnapshots -> {
                     if (!queryDocumentSnapshots.isEmpty()) {
@@ -160,11 +113,12 @@ public class EntrantListActivity extends AppCompatActivity {
                             Handler handler = new Handler(Looper.getMainLooper());
                             for (int i = 0; i < iterations; i++) {
                                 int delay = i * 500;
-                                handler.postDelayed(() -> EventManager.selectRandomEntrant(eventId), delay);
+                                handler.postDelayed(() -> EventManager.selectRandomEntrant(context,eventId), delay);
                             }
 
                             Toast.makeText(context, "Successfully sampled " + iterations + " entrants!", Toast.LENGTH_SHORT).show();
                             db.collection("events").document(eventId).update("lotteryDrawn", true);
+                            checkLotteryStatus(button,eventId);
                         }
                     } else {
                         Toast.makeText(context, "No document found with eventId: " + eventId, Toast.LENGTH_SHORT).show();
@@ -172,7 +126,6 @@ public class EntrantListActivity extends AppCompatActivity {
                 })
                 .addOnFailureListener(e -> Toast.makeText(context, "Failed to fetch event data: " + e.getMessage(), Toast.LENGTH_LONG).show());
 
-        return true;
     }
 
     /**
