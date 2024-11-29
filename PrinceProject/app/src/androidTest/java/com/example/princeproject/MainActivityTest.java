@@ -49,7 +49,7 @@ public class MainActivityTest {
         onView(withText("Edit Profile")).perform(click());
         //Wait for the fragment to open up
         onView(withText("Edit Profile Details")).check(matches(isDisplayed()));
-        onView(withId(R.id.editEditTextName)).check(matches(isDisplayed()));
+        onView(withId(R.id.editTextName)).check(matches(isDisplayed()));
         //Change the name to testing name
         onView(withId(R.id.editTextName)).perform(ViewActions.typeText("Testing Name"));
         //Click on the confirm button
