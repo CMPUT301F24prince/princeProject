@@ -1,13 +1,19 @@
 package com.example.princeproject;
 
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.provider.Settings;
 import android.text.TextUtils;
+import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,6 +25,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.io.ByteArrayOutputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -30,6 +39,10 @@ public class FacilityActivity extends AppCompatActivity {
     private TextView facilityDescription;
     private TextView facilityLocation;
     private Button editFacilityButton;
+
+    private ImageView profile_preview;
+    private Button uploadButton;
+    private final int GALLERY_REQ_CODE = 1000;
 
 
     @Override
@@ -51,6 +64,38 @@ public class FacilityActivity extends AppCompatActivity {
             showEditFacilityDialog();
         });
 
+        this.uploadButton = this.findViewById(R.id.facility_image_upload);
+        this.profile_preview = this.findViewById((R.id.facility_image_preview));
+
+        uploadButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent iGallery = new Intent(Intent.ACTION_PICK) ;
+                iGallery.setData(MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                startActivityForResult(iGallery, GALLERY_REQ_CODE);
+            }
+        });
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode==RESULT_OK) {
+            if (requestCode==GALLERY_REQ_CODE) {
+                android.net.Uri imageUri = data.getData();
+                profile_preview.setImageURI(imageUri);
+
+                InputStream imageStream = null;
+                try {
+                    imageStream = this.getContentResolver().openInputStream(imageUri);
+                } catch (FileNotFoundException e) {
+                }
+                Bitmap bitmap = BitmapFactory.decodeStream(imageStream);
+                ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+                bitmap.compress(Bitmap.CompressFormat.PNG, 100, byteArrayOutputStream);
+                byte[] byteArray = byteArrayOutputStream.toByteArray();
+            }
+        }
     }
 
     private void getFacilityDetails() {

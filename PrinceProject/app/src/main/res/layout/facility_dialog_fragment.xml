@@ -23,4 +23,18 @@
         android:layout_height="wrap_content"
         android:hint="Enter Facility Description (optional)" />
 
+    <Button
+        android:id="@+id/facility_image_upload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Upload Photo"
+        />
+
+    <ImageView
+        android:id="@+id/facility_image_preview"
+        android:layout_width="100dp"
+        android:layout_height="100dp" />
+
+
+
 </LinearLayout>

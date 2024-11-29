@@ -3390,6 +3390,8 @@ id expanded_menu
 id facility_description
 id facility_description_text
 id facility_image
+id facility_image_preview
+id facility_image_upload
 id facility_list_view
 id facility_location
 id facility_location_text
