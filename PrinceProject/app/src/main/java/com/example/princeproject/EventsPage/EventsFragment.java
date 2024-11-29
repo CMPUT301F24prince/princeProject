@@ -20,6 +20,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -27,9 +28,11 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 
+import com.example.princeproject.AdminPage.AdminActivity;
 import com.example.princeproject.Facility;
 import com.example.princeproject.R;
 import com.example.princeproject.User;
+import com.example.princeproject.WaitlistViewActivity;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
@@ -51,6 +54,8 @@ import java.util.Map;
 import com.journeyapps.barcodescanner.CaptureActivity;
 
 import com.google.firebase.firestore.CollectionReference;
+
+import org.w3c.dom.Text;
 
 /**
  * The {@code EventsFragment} class represents a UI fragment in an Android app where users can view,
@@ -94,10 +99,37 @@ public class EventsFragment extends Fragment {
                 }
         );
 
+        Button waitlistButton = view.findViewById(R.id.waitlist_view);
+
+        waitlistButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), WaitlistViewActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button adminPageButton = view.findViewById(R.id.admin_button);
+
+        db.collection("users").document(deviceId).get()
+                .addOnSuccessListener(documentSnapshot -> {
+                    String accountType = documentSnapshot.getString("accountType");
+                    if (!accountType.equals("Admin")) {
+                        adminPageButton.setVisibility(View.INVISIBLE);
+                    }
+                });
+
+        adminPageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), AdminActivity.class);
+                startActivity(intent);
+            }
+        });
+
         Button scanQrButton = view.findViewById(R.id.scan_qr_utton);
         scanQrButton.setOnClickListener(v -> startQrScanner());
 
-        invitesButton = view.findViewById(R.id.invitesButton);
 
         Button addEventFacilityButton = view.findViewById(R.id.create_event_facility_button);
 
@@ -176,52 +208,55 @@ public class EventsFragment extends Fragment {
         final EditText descriptionEditText = new EditText(getContext());
         descriptionEditText.setHint("Enter Description");
 
-        final EditText registerDateEditText = new EditText(getContext());
-        registerDateEditText.setHint("Select Register Deadline");
+        // Register Date TextView
+        final TextView registerDateTextView = new TextView(getContext());
+        registerDateTextView.setText("Select Register Deadline");
+        registerDateTextView.setPadding(20, 20, 20, 20);
+        registerDateTextView.setTextSize(16);
+
         final Calendar registerDateCalendar = Calendar.getInstance();
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
 
-        registerDateEditText.setOnClickListener(v -> {
+        registerDateTextView.setOnClickListener(v -> {
             new DatePickerDialog(requireContext(), (view, year, month, dayOfMonth) -> {
                 registerDateCalendar.set(year, month, dayOfMonth);
-                registerDateEditText.setText(dateFormat.format(registerDateCalendar.getTime()));
+                registerDateTextView.setText(dateFormat.format(registerDateCalendar.getTime()));
             },
                     registerDateCalendar.get(Calendar.YEAR),
                     registerDateCalendar.get(Calendar.MONTH),
                     registerDateCalendar.get(Calendar.DAY_OF_MONTH)).show();
         });
 
-        final EditText eventDateEditText = new EditText(getContext());
-        eventDateEditText.setHint("Select Event Date");
+        // Event Date TextView
+        final TextView eventDateTextView = new TextView(getContext());
+        eventDateTextView.setText("Select Event Date");
+        eventDateTextView.setPadding(20, 20, 20, 20);
+        eventDateTextView.setTextSize(16);
         final Calendar eventDateCalendar = Calendar.getInstance();
 
-        eventDateEditText.setOnClickListener(v -> {
+        eventDateTextView.setOnClickListener(v -> {
             new DatePickerDialog(requireContext(), (view, year, month, dayOfMonth) -> {
                 eventDateCalendar.set(year, month, dayOfMonth);
-                eventDateEditText.setText(dateFormat.format(eventDateCalendar.getTime()));
+                eventDateTextView.setText(dateFormat.format(eventDateCalendar.getTime()));
             },
                     eventDateCalendar.get(Calendar.YEAR),
                     eventDateCalendar.get(Calendar.MONTH),
                     eventDateCalendar.get(Calendar.DAY_OF_MONTH)).show();
         });
 
-
         final EditText maxParticipantsEditText = new EditText(getContext());
         maxParticipantsEditText.setHint("Enter Max Participants");
         maxParticipantsEditText.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
+
         final Button uploadImage = new Button(getContext());
         preview = new ImageView(getContext());
 
-
         uploadImage.setText("Upload Event Poster");
-        uploadImage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent iGallery = new Intent(Intent.ACTION_PICK) ;
-                iGallery.setData(MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                startActivityForResult(iGallery, GALLERY_REQ_CODE);
-            }
+        uploadImage.setOnClickListener(v -> {
+            Intent iGallery = new Intent(Intent.ACTION_PICK);
+            iGallery.setData(MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+            startActivityForResult(iGallery, GALLERY_REQ_CODE);
         });
 
         // Create a layout to hold the input fields
@@ -229,9 +264,9 @@ public class EventsFragment extends Fragment {
         layout.setOrientation(LinearLayout.VERTICAL);
         layout.addView(titleEditText);
         layout.addView(descriptionEditText);
-        layout.addView(registerDateEditText);
-        layout.addView(eventDateEditText);
         layout.addView(maxParticipantsEditText);
+        layout.addView(registerDateTextView);
+        layout.addView(eventDateTextView);
         layout.addView(uploadImage);
         layout.addView(preview);
 
@@ -242,12 +277,12 @@ public class EventsFragment extends Fragment {
         builder.setPositiveButton("Add", (dialog, which) -> {
             String title = titleEditText.getText().toString().trim();
             String description = descriptionEditText.getText().toString().trim();
-            String startDateStr = registerDateEditText.getText().toString().trim();
-            String endDateStr = eventDateEditText.getText().toString().trim();
+            String registerDateStr = registerDateTextView.getText().toString().trim();
+            String eventDateStr = eventDateTextView.getText().toString().trim();
             String maxParticipantsStr = maxParticipantsEditText.getText().toString().trim();
 
-            if (title.isEmpty() || description.isEmpty() || startDateStr.isEmpty() || endDateStr.isEmpty() ||
-                    maxParticipantsStr.isEmpty()) {
+            if (title.isEmpty() || description.isEmpty() || registerDateStr.equals("Select Register Deadline") ||
+                    eventDateStr.equals("Select Event Date") || maxParticipantsStr.isEmpty()) {
                 Toast.makeText(getContext(), "All fields must be filled", Toast.LENGTH_SHORT).show();
                 return;
             }
@@ -263,51 +298,48 @@ public class EventsFragment extends Fragment {
             Date registerDate = registerDateCalendar.getTime();
             Date eventDate = eventDateCalendar.getTime();
 
-            if(registerDate.after(eventDate)){
-                Toast.makeText(getContext(),"Registration deadline must be before the event date.",Toast.LENGTH_SHORT).show();
+            if (registerDate.after(eventDate)) {
+                Toast.makeText(getContext(), "Registration deadline must be before the event date.", Toast.LENGTH_SHORT).show();
                 return;
             }
-
 
             String organizer = Settings.Secure.getString(requireContext().getContentResolver(), Settings.Secure.ANDROID_ID);
             List<String> emptyList = new ArrayList<>();
             String eventId = generateEventId();
 
-
             db.collection("facilities").document(deviceId).get()
                     .addOnSuccessListener(documentSnapshot -> {
-                       String location = (String) documentSnapshot.get("location");
+                        String location = (String) documentSnapshot.get("location");
 
+                        // Create a new event and add it to the list
+                        Event newEvent = new Event(eventId, title, description, registerDate, eventDate, location, maxParticipants, null, true, this.poster_encode);
+                        Map<String, Object> eventDb = new HashMap<>();
+                        eventDb.put("name", title);
+                        eventDb.put("description", description);
+                        eventDb.put("registerDate", registerDate);
+                        eventDb.put("eventDate", eventDate);
+                        eventDb.put("location", location);
+                        eventDb.put("maxParticipants", maxParticipants);
+                        eventDb.put("organizer", organizer);
+                        eventDb.put("eventId", eventId);
+                        eventDb.put("accepted", emptyList);
+                        eventDb.put("chosen", emptyList);
+                        eventDb.put("declined", emptyList);
+                        eventDb.put("waiting", emptyList);
+                        eventDb.put("lotteryDrawn", false);
+                        eventDb.put("eventPosterEncode", this.poster_encode);
 
-            // Create a new event and add it to the list
-            Event newEvent = new Event(eventId,title, description, registerDate, eventDate, location, maxParticipants, null, true, this.poster_encode);
-            Map<String, Object> eventDb = new HashMap<>();
-            eventDb.put("name",title);
-            eventDb.put("description",description);
-            eventDb.put("registerDate",registerDate);
-            eventDb.put("eventDate",eventDate);
-            eventDb.put("location",location);
-            eventDb.put("maxParticipants",maxParticipants);
-            eventDb.put("organizer",organizer);
-            eventDb.put("eventId",eventId);
-            eventDb.put("accepted",emptyList);
-            eventDb.put("chosen",emptyList);
-            eventDb.put("declined",emptyList);
-            eventDb.put("waiting",emptyList);
-            eventDb.put("lotteryDrawn",false);
-            eventDb.put("eventPosterEncode", this.poster_encode);
+                        db.collection("events").document(eventId).set(eventDb);
 
-
-            db.collection("events").document(eventId).set(eventDb);
-
-            eventList.add(newEvent);
-            arrayAdapter.notifyDataSetChanged();
-            });
+                        eventList.add(newEvent);
+                        arrayAdapter.notifyDataSetChanged();
+                    });
         });
 
         builder.setNegativeButton("Cancel", (dialog, which) -> dialog.cancel());
         builder.show();
     }
+
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
