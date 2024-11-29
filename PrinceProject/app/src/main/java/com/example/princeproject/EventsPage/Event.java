@@ -19,8 +19,8 @@ public class Event {
     // Event details
     private String title;
     private String description;
-    private Date startDate;
-    private Date endDate;
+    private Date registerDate;
+    private Date eventDate;
     private String location;
     private int maxParticipants;
     private String eventId;
@@ -46,20 +46,20 @@ public class Event {
      * Event name
      * @param description
      * Event description
-     * @param startDate
-     * @param endDate
+     * @param registerDate
+     * @param eventDate
      * @param location
      * @param maxParticipants
      * @param organizer
      * deviceId of organizer
      * @param isOpenForRegistration
      */
-    public Event(String eventId,String title, String description, Date startDate, Date endDate, String location, int maxParticipants, User organizer, boolean isOpenForRegistration) {
+    public Event(String eventId,String title, String description, Date registerDate, Date eventDate, String location, int maxParticipants, User organizer, boolean isOpenForRegistration) {
         this.eventId = eventId;
         this.title = title;
         this.description = description;
-        this.startDate = startDate;
-        this.endDate = endDate;
+        this.registerDate = registerDate;
+        this.eventDate = eventDate;
         this.location = location;
         this.maxParticipants = maxParticipants;
         this.organizer = organizer;
@@ -72,20 +72,20 @@ public class Event {
      * @param eventId               A unique identifier for the event.
      * @param title                 The title of the event.
      * @param description           A brief description of the event.
-     * @param startDate             The start date and time of the event.
-     * @param endDate               The end date and time of the event.
+     * @param registerDate             The start date and time of the event.
+     * @param eventDate               The end date and time of the event.
      * @param location              The location where the event will take place.
      * @param maxParticipants       The maximum number of participants allowed for the event.
      * @param organizer             The User object representing the event's organizer.
      * @param isOpenForRegistration Whether the event is currently open for participant registration.
      * @param image_encode          A Base64 encoded string of the event's image.
      */
-    public Event(String eventId,String title, String description, Date startDate, Date endDate, String location, int maxParticipants, User organizer, boolean isOpenForRegistration, String image_encode) {
+    public Event(String eventId,String title, String description, Date registerDate, Date eventDate, String location, int maxParticipants, User organizer, boolean isOpenForRegistration, String image_encode) {
         this.eventId = eventId;
         this.title = title;
         this.description = description;
-        this.startDate = startDate;
-        this.endDate = endDate;
+        this.registerDate = registerDate;
+        this.eventDate = eventDate;
         this.location = location;
         this.maxParticipants = maxParticipants;
         this.organizer = organizer;
@@ -122,20 +122,20 @@ public class Event {
         this.description = description;
     }
 
-    public Date getStartDate() {
-        return startDate;
+    public Date getregisterDate() {
+        return registerDate;
     }
 
-    public void setStartDate(Date startDate) {
-        this.startDate = startDate;
+    public void setregisterDate(Date registerDate) {
+        this.registerDate = registerDate;
     }
 
-    public Date getEndDate() {
-        return endDate;
+    public Date geteventDate() {
+        return eventDate;
     }
 
-    public void setEndDate(Date endDate) {
-        this.endDate = endDate;
+    public void seteventDate(Date eventDate) {
+        this.eventDate = eventDate;
     }
 
     public String getLocation() {

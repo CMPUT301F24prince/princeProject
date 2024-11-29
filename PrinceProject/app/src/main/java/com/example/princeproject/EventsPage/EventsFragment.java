@@ -2,16 +2,14 @@ package com.example.princeproject.EventsPage;
 
 import static android.app.Activity.RESULT_OK;
 
-import android.app.Dialog;
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.provider.Settings;
 import android.util.Base64;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -43,6 +41,7 @@ import java.security.SecureRandom;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -50,8 +49,6 @@ import java.util.Locale;
 import java.util.Map;
 
 import com.journeyapps.barcodescanner.CaptureActivity;
-import com.google.zxing.integration.android.IntentIntegrator;
-import com.google.zxing.integration.android.IntentResult;
 
 import com.google.firebase.firestore.CollectionReference;
 
@@ -179,17 +176,43 @@ public class EventsFragment extends Fragment {
         final EditText descriptionEditText = new EditText(getContext());
         descriptionEditText.setHint("Enter Description");
 
-        final EditText startDateEditText = new EditText(getContext());
-        startDateEditText.setHint("Enter Start Date (yyyy-MM-dd)");
+        final EditText registerDateEditText = new EditText(getContext());
+        registerDateEditText.setHint("Select Register Deadline");
+        final Calendar registerDateCalendar = Calendar.getInstance();
 
-        final EditText endDateEditText = new EditText(getContext());
-        endDateEditText.setHint("Enter End Date (yyyy-MM-dd)");
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+
+        registerDateEditText.setOnClickListener(v -> {
+            new DatePickerDialog(requireContext(), (view, year, month, dayOfMonth) -> {
+                registerDateCalendar.set(year, month, dayOfMonth);
+                registerDateEditText.setText(dateFormat.format(registerDateCalendar.getTime()));
+            },
+                    registerDateCalendar.get(Calendar.YEAR),
+                    registerDateCalendar.get(Calendar.MONTH),
+                    registerDateCalendar.get(Calendar.DAY_OF_MONTH)).show();
+        });
+
+        final EditText eventDateEditText = new EditText(getContext());
+        eventDateEditText.setHint("Select Event Date");
+        final Calendar eventDateCalendar = Calendar.getInstance();
+
+        eventDateEditText.setOnClickListener(v -> {
+            new DatePickerDialog(requireContext(), (view, year, month, dayOfMonth) -> {
+                eventDateCalendar.set(year, month, dayOfMonth);
+                eventDateEditText.setText(dateFormat.format(eventDateCalendar.getTime()));
+            },
+                    eventDateCalendar.get(Calendar.YEAR),
+                    eventDateCalendar.get(Calendar.MONTH),
+                    eventDateCalendar.get(Calendar.DAY_OF_MONTH)).show();
+        });
+
 
         final EditText maxParticipantsEditText = new EditText(getContext());
         maxParticipantsEditText.setHint("Enter Max Participants");
         maxParticipantsEditText.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
         final Button uploadImage = new Button(getContext());
         preview = new ImageView(getContext());
+
 
         uploadImage.setText("Upload Event Poster");
         uploadImage.setOnClickListener(new View.OnClickListener() {
@@ -206,8 +229,8 @@ public class EventsFragment extends Fragment {
         layout.setOrientation(LinearLayout.VERTICAL);
         layout.addView(titleEditText);
         layout.addView(descriptionEditText);
-        layout.addView(startDateEditText);
-        layout.addView(endDateEditText);
+        layout.addView(registerDateEditText);
+        layout.addView(eventDateEditText);
         layout.addView(maxParticipantsEditText);
         layout.addView(uploadImage);
         layout.addView(preview);
@@ -219,8 +242,8 @@ public class EventsFragment extends Fragment {
         builder.setPositiveButton("Add", (dialog, which) -> {
             String title = titleEditText.getText().toString().trim();
             String description = descriptionEditText.getText().toString().trim();
-            String startDateStr = startDateEditText.getText().toString().trim();
-            String endDateStr = endDateEditText.getText().toString().trim();
+            String startDateStr = registerDateEditText.getText().toString().trim();
+            String endDateStr = eventDateEditText.getText().toString().trim();
             String maxParticipantsStr = maxParticipantsEditText.getText().toString().trim();
 
             if (title.isEmpty() || description.isEmpty() || startDateStr.isEmpty() || endDateStr.isEmpty() ||
@@ -237,16 +260,15 @@ public class EventsFragment extends Fragment {
                 return;
             }
 
-            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
-            Date startDate;
-            Date endDate;
-            try {
-                startDate = dateFormat.parse(startDateStr);
-                endDate = dateFormat.parse(endDateStr);
-            } catch (ParseException e) {
-                Toast.makeText(getContext(), "Dates must be in the format yyyy-MM-dd", Toast.LENGTH_SHORT).show();
+            Date registerDate = registerDateCalendar.getTime();
+            Date eventDate = eventDateCalendar.getTime();
+
+            if(registerDate.after(eventDate)){
+                Toast.makeText(getContext(),"Registration deadline must be before the event date.",Toast.LENGTH_SHORT).show();
                 return;
             }
+
+
             String organizer = Settings.Secure.getString(requireContext().getContentResolver(), Settings.Secure.ANDROID_ID);
             List<String> emptyList = new ArrayList<>();
             String eventId = generateEventId();
@@ -258,12 +280,12 @@ public class EventsFragment extends Fragment {
 
 
             // Create a new event and add it to the list
-            Event newEvent = new Event(eventId,title, description, startDate, endDate, location, maxParticipants, null, true, this.poster_encode);
+            Event newEvent = new Event(eventId,title, description, registerDate, eventDate, location, maxParticipants, null, true, this.poster_encode);
             Map<String, Object> eventDb = new HashMap<>();
             eventDb.put("name",title);
             eventDb.put("description",description);
-            eventDb.put("startDate",startDate);
-            eventDb.put("endDate",endDate);
+            eventDb.put("registerDate",registerDate);
+            eventDb.put("eventDate",eventDate);
             eventDb.put("location",location);
             eventDb.put("maxParticipants",maxParticipants);
             eventDb.put("organizer",organizer);
@@ -398,18 +420,18 @@ public class EventsFragment extends Fragment {
                         //more stuff will be added eventually
 
                         User user = new User(event_organizer, "","","","");
-                        Date date1 = new Date();
-                        Date date2 = new Date();
-                        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
-                        try {
-                            date1 = dateFormat.parse("2003-09-20");
-                            date2 = dateFormat.parse("2024-11-07");
-                        }
-                        catch (ParseException e) {
-                        }
-                        Event event = new Event(event_id,event_name, event_desc, date1, date2, event_location, event_max, user, true, event_poster_encoded);
 
-                        events.add(event);
+
+                        Date registerDate = ((com.google.firebase.Timestamp) doc.get("registerDate")).toDate();
+                        Date eventDate = ((com.google.firebase.Timestamp) doc.get("eventDate")).toDate();
+
+                        Date currentDate = new Date();
+
+                        if (currentDate.before(registerDate)){
+                            Event event = new Event(event_id,event_name, event_desc, registerDate, eventDate, event_location, event_max, user, true, event_poster_encoded);
+                            events.add(event);
+                        }
+
                     }
                     this.arrayAdapter.addAll(events);
                     this.arrayAdapter.notifyDataSetChanged();
