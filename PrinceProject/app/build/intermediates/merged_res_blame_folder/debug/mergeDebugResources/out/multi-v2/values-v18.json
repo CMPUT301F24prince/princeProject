@@ -4,7 +4,11 @@
             "outputFile": "com.example.princeproject.app-mergeDebugResources-41:/values-v18/values-v18.xml",
             "map": [
                 {
+<<<<<<< HEAD
+                    "source": "C:\\Users\\Kyle\\.gradle\\caches\\8.9\\transforms\\468730fa166204b5b924b6a9e3818896\\transformed\\appcompat-1.7.0\\res\\values-v18\\values-v18.xml",
+=======
                     "source": "C:\\Users\\Alina Shahid\\.gradle\\caches\\8.9\\transforms\\468730fa166204b5b924b6a9e3818896\\transformed\\appcompat-1.7.0\\res\\values-v18\\values-v18.xml",
+>>>>>>> ab63713cbe333c29395f1689eb570083f016a58a
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

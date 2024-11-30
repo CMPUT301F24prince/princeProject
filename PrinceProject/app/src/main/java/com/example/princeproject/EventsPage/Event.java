@@ -101,6 +101,11 @@ public class Event {
         this.image_encode = image_encode;
     }
 
+    public Event(String image_encode, String eventId) {
+        this.eventId = eventId;
+        this.image_encode = image_encode;
+    }
+
     //Blank Constructor
     public Event() {
     }
@@ -186,12 +191,17 @@ public class Event {
         isOpenForRegistration = openForRegistration;
     }
 
+    public String getImageEncode() {return image_encode;}
+
+    public void setImageEncode(String image_encode){
+        this.image_encode = image_encode;
+    }
+
 
     public String getEventId() {
         return eventId;
     }
-
-    public String getImageEncode(){return image_encode;}
+    
 
     /**
      * Decodes the Base64 encoded image string into a Bitmap and stores it as a file.
