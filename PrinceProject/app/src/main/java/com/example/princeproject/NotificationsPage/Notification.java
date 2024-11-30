@@ -1,5 +1,20 @@
 package com.example.princeproject.NotificationsPage;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
+import android.content.Intent;
+import android.os.Build;
+
+import androidx.core.app.NotificationCompat;
+
+import com.example.princeproject.MainActivity;
+import com.example.princeproject.R;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
 /**
  * This is a class that defines a notification object
  * */
@@ -106,5 +121,54 @@ public class Notification {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public void changeRecievedStatus(Boolean newval) {
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        DocumentReference docRef = db.collection("notifications").document(this.id);
+
+        docRef.update("received", newval)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override public void onSuccess(Void aVoid) {
+
+                    }
+
+        });
+    }
+
+    public void sendAndroidNotification(Context context) {
+        NotificationManager mNotificationManager;
+
+        NotificationCompat.Builder mBuilder =
+                new NotificationCompat.Builder(context.getApplicationContext(), "PrinceProject");
+        Intent ii = new Intent(context.getApplicationContext(), MainActivity.class);
+        PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, ii, PendingIntent.FLAG_IMMUTABLE);
+
+        NotificationCompat.BigTextStyle bigText = new NotificationCompat.BigTextStyle();
+        bigText.bigText("You've been invited!");
+        bigText.setBigContentTitle(this.name);
+        bigText.setSummaryText(this.details);
+
+        mBuilder.setContentIntent(pendingIntent);
+        mBuilder.setSmallIcon(R.mipmap.ic_launcher_round);
+        mBuilder.setContentTitle("You've been invited!");
+        mBuilder.setContentText(this.details);
+        mBuilder.setPriority(android.app.Notification.PRIORITY_MAX);
+        mBuilder.setStyle(bigText);
+
+        mNotificationManager =
+                (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
+        {
+            NotificationChannel channel = new NotificationChannel(
+                    "PrinceProject",
+                    "Channel human readable title",
+                    NotificationManager.IMPORTANCE_HIGH);
+            mNotificationManager.createNotificationChannel(channel);
+            mBuilder.setChannelId("PrinceProject");
+        }
+
+        mNotificationManager.notify(this.hashCode(), mBuilder.build());
     }
 }

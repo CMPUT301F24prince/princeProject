@@ -184,10 +184,14 @@ public class NotificationsFragment extends Fragment {
                             String location = document.getString("location");
                             String eventId = document.getString("eventId");
                             String userId = document.getString("userId");
+                            Boolean recieved = document.getBoolean("recieved");
 
 
                             Notification notification = new Notification(id,title, details, location, userId, eventId);
                             notificationDataList.add(notification);
+                            //if (Boolean.FALSE.equals(recieved)) {
+                            //    notification.sendAndroidNotification(getContext());
+                            //}
                         }
                         notificationAdapter.notifyDataSetChanged();
                     }

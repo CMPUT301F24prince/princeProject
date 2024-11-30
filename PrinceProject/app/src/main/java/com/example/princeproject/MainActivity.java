@@ -4,9 +4,11 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+import android.os.Handler;
 
 import androidx.activity.EdgeToEdge;
 import androidx.activity.result.ActivityResultLauncher;
@@ -18,11 +20,14 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.princeproject.AdminPage.AdminActivity;
+import com.example.princeproject.NotificationsPage.Notification;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.android.material.tabs.TabLayout;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreSettings;
+import com.google.firebase.firestore.Query;
 
 public class MainActivity extends AppCompatActivity {
     //UI properties
@@ -36,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
     //User properties
     private String deviceId;
     private User currentUser;
+    private Handler handler = new Handler();
+    private Runnable runnable;
 
 
     /**
@@ -64,8 +71,6 @@ public class MainActivity extends AppCompatActivity {
         mainViewPagerAdapter = new MainViewPagerAdapter(this);
         rootPager.setAdapter(mainViewPagerAdapter);
 
-
-
         mainNavigationBar.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
@@ -90,6 +95,15 @@ public class MainActivity extends AppCompatActivity {
                 mainNavigationBar.getTabAt(position).select();
             }
         });
+
+        runnable = new Runnable() {
+            @Override
+            public void run() {
+                getNotifications();
+                handler.postDelayed(this, 5000);
+            }
+        };
+        handler.postDelayed(runnable, 5000);
     }
 
     /**
@@ -129,4 +143,35 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
     );
+
+
+    private void getNotifications() {
+        db.collection("notifications")
+                .whereEqualTo("userId", deviceId)
+                .orderBy("timestamp", Query.Direction.DESCENDING)
+                .addSnapshotListener((queryDocumentSnapshots, e) -> {
+                    if (e != null) {
+                        Log.e("Notifications", "Listen failed: ", e);
+                        return;
+                    }
+
+                    if (queryDocumentSnapshots != null) {
+                        for (DocumentSnapshot document : queryDocumentSnapshots.getDocuments()) {
+                            String id = document.getId();
+                            String title = document.getString("title");
+                            String details = document.getString("details");
+                            String location = document.getString("location");
+                            String eventId = document.getString("eventId");
+                            String userId = document.getString("userId");
+                            Boolean received = document.getBoolean("received");
+
+                            Notification notification = new Notification(id,title, details, location, userId, eventId);
+                            if (Boolean.FALSE.equals(received)) {
+                                notification.sendAndroidNotification(this);
+                                notification.changeRecievedStatus(true);
+                            }
+                        }
+                    }
+                });
+    }
 }
