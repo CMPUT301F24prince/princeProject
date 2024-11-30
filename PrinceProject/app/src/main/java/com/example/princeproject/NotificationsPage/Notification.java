@@ -11,7 +11,8 @@ public class Notification {
 
     public String deviceId;
 
-    public String EventId;
+    public String eventId;
+    private String id;
     /**
      * Constructor for the notification object
      * @param name
@@ -40,12 +41,13 @@ public class Notification {
         this.deviceId = userDeviceId;
     }
 
-    public Notification(String name, String details, String location, String userDeviceId, String EventId) {
+    public Notification(String id,String name, String details, String location, String userDeviceId, String eventId) {
         this.name = name;
         this.details = details;
         this.location = location;
         this.deviceId = userDeviceId;
-        this.EventId = EventId;
+        this.eventId = eventId;
+        this.id = id;
     }
 
     /**
@@ -90,5 +92,19 @@ public class Notification {
      * */
     public void setDetails(String details) {
         this.details = details;
+    }
+
+
+
+    public String getDeviceId() {return deviceId;}
+
+    public String getEventId() {return eventId;}
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }

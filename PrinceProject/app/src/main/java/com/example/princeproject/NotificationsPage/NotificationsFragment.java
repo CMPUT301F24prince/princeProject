@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,8 +43,6 @@ public class NotificationsFragment extends Fragment {
     private ListView notificationList;
     private ArrayList<Notification> notificationDataList;
     private NotificationArrayAdapter notificationAdapter;
-    private View thisview;
-    private String targetEventId = "1";
 
     private NotificationPreferenceManager notificationPreferenceManager;
     private EventManager eventManager;
@@ -82,7 +81,7 @@ public class NotificationsFragment extends Fragment {
         db = FirebaseFirestore.getInstance();
 
         notificationToggle = view.findViewById(R.id.notification_toggle);
-        getUser(view);
+        //getUser(view);
         // Get the device ID
         deviceId = Settings.Secure.getString(view.getContext().getContentResolver(), Settings.Secure.ANDROID_ID);
 
@@ -101,9 +100,9 @@ public class NotificationsFragment extends Fragment {
         notificationAdapter = new NotificationArrayAdapter(this.getContext(), notificationDataList);
         notificationList.setAdapter(notificationAdapter);
 
-        notificationList.setOnItemClickListener((parent, v, position, id) -> {
-            new NotificationListFragment(notificationAdapter.getItem(position)).show(getActivity().getSupportFragmentManager(), "Details");
-        });
+
+
+        getNotifications();
 
     }
 
@@ -168,32 +167,33 @@ public class NotificationsFragment extends Fragment {
 
     private void getNotifications() {
         db.collection("notifications")
-                .whereEqualTo("userId", user.getDeviceId())
+                .whereEqualTo("userId", deviceId)
                 .orderBy("timestamp", Query.Direction.DESCENDING)
                 .addSnapshotListener((queryDocumentSnapshots, e) -> {
                     if (e != null) {
-                        System.err.println("Listen failed: " + e);
+                        Log.e("Notifications", "Listen failed: ", e);
                         return;
                     }
 
-                    // Clear the current list and update it with new data
                     notificationDataList.clear();
                     if (queryDocumentSnapshots != null) {
                         for (DocumentSnapshot document : queryDocumentSnapshots.getDocuments()) {
+                            String id = document.getId();
                             String title = document.getString("title");
                             String details = document.getString("details");
                             String location = document.getString("location");
-                            String userId = Settings.Secure.getString(getContext().getContentResolver(), Settings.Secure.ANDROID_ID);
                             String eventId = document.getString("eventId");
+                            String userId = document.getString("userId");
 
-                            Notification notification = new Notification(title, details, location, userId, eventId);
+
+                            Notification notification = new Notification(id,title, details, location, userId, eventId);
                             notificationDataList.add(notification);
-                            sendPushNotification(getContext(), "PRINCE_CHANNEL_ID_NOTIFICATION", notification.hashCode());
                         }
                         notificationAdapter.notifyDataSetChanged();
                     }
                 });
     }
+
 
     private void getUser(View view) {
         deviceId = Settings.Secure.getString(view.getContext().getContentResolver(), Settings.Secure.ANDROID_ID);
