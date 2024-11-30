@@ -35,22 +35,27 @@ android {
 dependencies {
     implementation(platform("com.google.firebase:firebase-bom:33.5.0"))
     implementation("com.google.firebase:firebase-firestore")
-
     implementation("com.google.zxing:core:3.4.1")
     implementation ("com.journeyapps:zxing-android-embedded:4.3.0")
-
 
     implementation ("com.google.protobuf:protobuf-javalite:3.21.12")
     implementation(libs.play.services.location)
 
     testImplementation("junit:junit:4.13.2")
     testImplementation(libs.ext.junit)
+    implementation("com.google.android.material:material:1.10.0")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
-    androidTestImplementation ("androidx.test.espresso:espresso-core:3.4.0")
+    androidTestImplementation ("androidx.test.espresso:espresso-core:3.5.1")
     androidTestImplementation ("androidx.test.espresso:espresso-intents:3.4.0")
-    androidTestImplementation ("androidx.test.espresso:espresso-contrib:3.4.0")
+    //androidTestImplementation ("androidx.test.espresso:espresso-contrib:3.4.0")
 
-    debugImplementation ("androidx.fragment:fragment-testing:1.3.6")
+    val fragment_version = "1.8.5"
+
+    debugImplementation("androidx.fragment:fragment-testing-manifest:$fragment_version")
+
+    androidTestImplementation("androidx.fragment:fragment-testing:$fragment_version")
+
+    //debugImplementation ("androidx.fragment:fragment-testing:1.3.6")
 
     testImplementation ("org.mockito:mockito-core:4.5.1")
 
