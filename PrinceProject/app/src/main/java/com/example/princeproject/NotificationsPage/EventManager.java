@@ -27,6 +27,7 @@ public class EventManager {
         notificationData.put("details", "You've been chosen for the event: "+eventName);
         notificationData.put("timestamp", System.currentTimeMillis());
         notificationData.put("eventId",eventId);
+        notificationData.put("received", false);
 
         // Save the notification in Firestore under the "notifications" collection
         db.collection("notifications").add(notificationData)
