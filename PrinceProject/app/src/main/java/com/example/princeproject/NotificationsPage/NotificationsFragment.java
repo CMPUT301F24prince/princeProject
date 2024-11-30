@@ -45,12 +45,10 @@ public class NotificationsFragment extends Fragment {
     private NotificationArrayAdapter notificationAdapter;
 
     private NotificationPreferenceManager notificationPreferenceManager;
-    private EventManager eventManager;
     private Switch notificationToggle;
 
     private String deviceId;
     private FirebaseFirestore db;
-    private User user;
 
     /**
      * Method to initialize the creation of the Notification page
@@ -107,47 +105,14 @@ public class NotificationsFragment extends Fragment {
     }
 
     /**
-     * Method to handle adding a notification to the listview of a user.
-     * @param notification
-     *      The notification to add
-     * */
-    public void addNotification(Notification notification){
-        //Add notification to local array
-        notificationDataList.add(notification);
-        notificationAdapter.notifyDataSetChanged();
-
-        //Add notification to database
-        Map<String,Object> notif = new HashMap<>();
-        notif.put("deviceId",deviceId);
-        notif.put("title",notification.getName());
-        notif.put("details",notification.getDetails());
-        notif.put("timestamp",System.currentTimeMillis());
-        db.collection("notifications").add(notif);
+     * Gets all the users notifications every time the NotificationsFragment is visible
+     */
+    @Override
+    public void onResume() {
+        super.onResume();
+        getNotifications();
     }
 
-    /**
-     * Method to handle the deletion of a notification from the listview.
-     * @param notification
-     *      The notification to deleted
-     * */
-    public void deleteNotification(Notification notification){
-        notificationDataList.remove(notification);
-        notificationAdapter.notifyDataSetChanged();
-
-        //Delete notification from database
-        db.collection("notifications")
-                .whereEqualTo("deviceId", deviceId)
-                .whereEqualTo("title", notification.getName())
-                .whereEqualTo("details", notification.getDetails())
-                .get()
-                .addOnSuccessListener(queryDocumentSnapshots -> {
-                    if (!queryDocumentSnapshots.isEmpty()){
-                        for (DocumentSnapshot document : queryDocumentSnapshots){
-                            document.getReference().delete();
-                        }
-                    }
-                });
-    }
 
     private String getCurrentUserId() {
         return Settings.Secure.getString(requireContext().getContentResolver(), Settings.Secure.ANDROID_ID);
@@ -198,27 +163,6 @@ public class NotificationsFragment extends Fragment {
                 });
     }
 
-
-    private void getUser(View view) {
-        deviceId = Settings.Secure.getString(view.getContext().getContentResolver(), Settings.Secure.ANDROID_ID);
-        db.collection("users")
-                //Check if device id is in database
-                .document(deviceId)
-                .get()
-                .addOnSuccessListener(document -> {
-                    //If device is already enrolled, do nothing
-                    if (document.exists()) {
-                        //User already exists
-                        user = new User(document.getString("name"),document.getString("email"),document.getString("phone"),document.getString("accountType"), deviceId);
-                        notificationToggle.setChecked(document.getBoolean("Allow Notification"));
-                    }
-                    setupNotificationToggle(view);
-
-                    if (notificationToggle.isChecked()) {
-                        getNotifications();
-                    }
-                });
-    }
 
     public void sendPushNotification(Context context, String channelId, int id) {
         NotificationManager mNotificationManager;

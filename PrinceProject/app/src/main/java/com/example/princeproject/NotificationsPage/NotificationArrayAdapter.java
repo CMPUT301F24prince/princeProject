@@ -79,8 +79,19 @@ public class NotificationArrayAdapter extends ArrayAdapter<Notification> {
         Button acceptButton = view.findViewById(R.id.acceptButton);
         Button declineButton = view.findViewById(R.id.declineButton);
 
-        acceptButton.setOnClickListener(v -> acceptInvitation(notification,position));
-        declineButton.setOnClickListener(v -> declineInvitation(notification, position));
+        if("Sorry!".equals(notification.getName())) {
+            acceptButton.setVisibility(View.INVISIBLE);
+
+            declineButton.setText("Dismiss");
+            declineButton.setOnClickListener(v -> deleteAllNotifications(notification));
+        } else {
+            acceptButton.setVisibility(View.VISIBLE);
+            declineButton.setText("Decline");
+
+            acceptButton.setOnClickListener(v -> acceptInvitation(notification,position));
+            declineButton.setOnClickListener(v -> declineInvitation(notification, position));
+        }
+
 
         return view;
     }
@@ -177,6 +188,33 @@ public class NotificationArrayAdapter extends ArrayAdapter<Notification> {
                 });
     }
 
+    private void deleteAllNotifications(Notification notification) {
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+        // Query to find other notifications with the same eventId and userId
+        db.collection("notifications")
+                .whereEqualTo("eventId", notification.getEventId())
+                .whereEqualTo("userId", notification.getDeviceId())
+                .get()
+                .addOnSuccessListener(querySnapshot -> {
+                    for (DocumentSnapshot document : querySnapshot.getDocuments()) {
+                        // Delete each matching notification
+                        document.getReference().delete()
+                                .addOnSuccessListener(aVoid -> {
+                                    // Remove from the local list and update UI
+                                    notifications.removeIf(n -> n.getId().equals(document.getId()));
+                                    notifyDataSetChanged();
+                                })
+                                .addOnFailureListener(e -> {
+                                    Toast.makeText(context, "Error deleting notification: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                                });
+                    }
+                })
+                .addOnFailureListener(e -> {
+                    Toast.makeText(context, "Error fetching notifications: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                });
+    }
+
     private void deleteNotification(Notification notification) {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         db.collection("notifications")
@@ -195,60 +233,7 @@ public class NotificationArrayAdapter extends ArrayAdapter<Notification> {
 
 
 
-    /**
-     * Method to show the notification dialog that pops up when a user clicks on the notification. Users
-     * can see the name and details of the notification in the dialog, with the option to delete the notification
-     * from here.
-     * @param position
-     *      The position of the notification clicked in the notification array
-     * @param notification
-     *      The notification object being observed
-     * */
-    public void showNotificationDialog(Notification notification, int position){
-        //Create dialog builder
-        AlertDialog.Builder builder = new AlertDialog.Builder(context);
 
-        //Setting the notification title and details
-        builder.setTitle(notification.getName());
-        builder.setMessage(notification.getDetails());
-
-        //Setting the buttons
-        builder.setPositiveButton("OK", (dialog, which) -> dialog.dismiss());
-        builder.setNegativeButton("Delete", (dialog, which) -> {
-            deleteNotification(notification, position);
-            dialog.dismiss();
-        });
-
-        //Show dialog
-        builder.create().show();
-    }
-
-    /**
-     * Method to handle the deletion of a notification from the listview.
-     * @param position
-     *      The position of the notification clicked in the notification array
-     * @param notification
-     *      The notification to delete
-     * */
-    private void deleteNotification(Notification notification, int position){
-        String deviceId = Settings.Secure.getString(context.getContentResolver(), Settings.Secure.ANDROID_ID);
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
-        db.collection("notifications")
-                .whereEqualTo("deviceId", deviceId)
-                .whereEqualTo("title", notification.getName())
-                .whereEqualTo("details", notification.getDetails())
-                .get()
-                .addOnSuccessListener(queryDocumentSnapshots -> {
-                    if (!queryDocumentSnapshots.isEmpty()){
-                        for (DocumentSnapshot document : queryDocumentSnapshots){
-                            document.getReference().delete();
-                            remove(notification);
-                            notifyDataSetChanged();
-                        }
-                    }
-                });
-
-    }
 
 
 }
