@@ -48,6 +48,7 @@ public class AdminEventAdapter extends ArrayAdapter<Event> {
         TextView locationTextView = convertView.findViewById(R.id.location_text);
         Button deleteButton = convertView.findViewById(R.id.delete_button_event);
         ImageView eventPoster = convertView.findViewById(R.id.event_image);
+        TextView removePoster = convertView.findViewById(R.id.remove_picture_text);
 
         Event event = events.get(position);
         titleTextView.setText(event.getTitle());
@@ -73,6 +74,13 @@ public class AdminEventAdapter extends ArrayAdapter<Event> {
             }
         });
 
+        removePoster.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                deletePoster(event.getEventId(),position);
+            }
+        });
+
 
         return convertView;
     }
@@ -84,6 +92,27 @@ public class AdminEventAdapter extends ArrayAdapter<Event> {
                     events.remove(position);
                     notifyDataSetChanged();
                     Toast.makeText(context,"Event deleted",Toast.LENGTH_SHORT).show();
+                });
+    }
+
+    public void deletePoster(String eventId,int position) {
+        db.collection("events").document(eventId).get()
+                .addOnSuccessListener(documentSnapshot -> {
+                    String eventPosterEncode = documentSnapshot.getString("eventPosterEncode");
+                    if (eventPosterEncode != null) {
+                        db.collection("events").document(eventId)
+                                .update("eventPosterEncode",null)
+                                .addOnSuccessListener(x -> {
+                                    Event event = events.get(position);
+                                    event.setImage_encode(null);
+
+                                    notifyDataSetChanged();
+
+                                    Toast.makeText(context,"Poster removed",Toast.LENGTH_SHORT).show();
+                                });
+                    } else {
+                        Toast.makeText(context,"Cannot remove a default event poster",Toast.LENGTH_SHORT).show();
+                    }
                 });
     }
 }

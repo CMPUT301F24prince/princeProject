@@ -64,6 +64,8 @@ id facility_name_text
 id fragment_profile
 id generate_qr_code
 id imageView
+id image_title
+id image_view
 id joinWaitingListButton
 id linearLayout
 id list_view
@@ -97,10 +99,12 @@ id profile_image
 id profile_image_preview
 id profile_image_upload
 id removeButton
+id remove_picture_text
 id root_pager
 id scan_qr_utton
 id submitButton
 id tab_layout
+id tab_layout_admin
 id textView
 id textView10
 id textView11
@@ -118,6 +122,7 @@ id user_list_view
 id user_name_text
 id user_role_text
 id view_pager
+id view_pager_admin
 id waitlistEventsListView
 id waitlistTitle
 id waitlist_view
@@ -143,6 +148,7 @@ layout fragment_events
 layout fragment_list
 layout fragment_notifications
 layout fragment_profile
+layout image_item
 layout manage_event_dialog
 layout map_fragment
 layout new_user

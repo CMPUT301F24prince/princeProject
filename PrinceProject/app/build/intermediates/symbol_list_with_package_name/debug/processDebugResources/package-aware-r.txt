@@ -3439,6 +3439,8 @@ id ignore
 id ignoreRequest
 id image
 id imageView
+id image_title
+id image_view
 id immediateStop
 id included
 id indeterminate
@@ -3611,6 +3613,7 @@ id radio
 id ratio
 id rectangles
 id removeButton
+id remove_picture_text
 id report_drawn
 id reverseSawtooth
 id right
@@ -3685,6 +3688,7 @@ id submit_area
 id supportScrollUp
 id tabMode
 id tab_layout
+id tab_layout_admin
 id tag_accessibility_actions
 id tag_accessibility_clickable_spans
 id tag_accessibility_heading
@@ -3757,6 +3761,7 @@ id user_role_text
 id vertical_only
 id view_offset_helper
 id view_pager
+id view_pager_admin
 id view_transition
 id view_tree_lifecycle_owner
 id view_tree_on_back_pressed_dispatcher_owner
@@ -3943,6 +3948,7 @@ layout fragment_events
 layout fragment_list
 layout fragment_notifications
 layout fragment_profile
+layout image_item
 layout ime_base_split_test_activity
 layout ime_secondary_split_test_activity
 layout m3_alert_dialog

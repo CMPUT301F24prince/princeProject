@@ -101,6 +101,11 @@ public class Event {
         this.image_encode = image_encode;
     }
 
+    public Event(String image_encode, String eventId) {
+        this.eventId = eventId;
+        this.image_encode = image_encode;
+    }
+
     //Blank Constructor
     public Event() {
     }
@@ -184,6 +189,12 @@ public class Event {
 
     public void setOpenForRegistration(boolean openForRegistration) {
         isOpenForRegistration = openForRegistration;
+    }
+
+    public String getImage_encode() {return image_encode;}
+
+    public void setImage_encode(String image_encode){
+        this.image_encode = image_encode;
     }
 
 
