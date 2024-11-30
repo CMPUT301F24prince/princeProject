@@ -31,7 +31,7 @@ public class FirestoreQueryHelper {
     public static void getEntrantListData (
             String arrayField,
             List<String> targetList,
-            ArrayAdapter<String> adapter,
+            EntrantAdapter adapter,
             String eventId
     ) {
         db = FirebaseFirestore.getInstance();

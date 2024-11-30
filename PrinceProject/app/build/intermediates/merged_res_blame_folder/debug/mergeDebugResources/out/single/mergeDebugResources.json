@@ -56,12 +56,12 @@
         "source": "C:\\Users\\Kyle\\.gradle\\daemon\\8.9\\com.example.princeproject.app-main-45:\\layout\\manage_event_dialog.xml"
     },
     {
-        "merged": "C:\\Users\\Kyle\\.gradle\\daemon\\8.9\\com.example.princeproject.app-debug-43:\\layout_activity_waitlist_view.xml.flat",
-        "source": "C:\\Users\\Kyle\\.gradle\\daemon\\8.9\\com.example.princeproject.app-main-45:\\layout\\activity_waitlist_view.xml"
-    },
-    {
         "merged": "C:\\Users\\Kyle\\.gradle\\daemon\\8.9\\com.example.princeproject.app-debug-43:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
         "source": "C:\\Users\\Kyle\\.gradle\\daemon\\8.9\\com.example.princeproject.app-main-45:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\Kyle\\.gradle\\daemon\\8.9\\com.example.princeproject.app-debug-43:\\layout_activity_waitlist_view.xml.flat",
+        "source": "C:\\Users\\Kyle\\.gradle\\daemon\\8.9\\com.example.princeproject.app-main-45:\\layout\\activity_waitlist_view.xml"
     },
     {
         "merged": "C:\\Users\\Kyle\\.gradle\\daemon\\8.9\\com.example.princeproject.app-debug-43:\\layout_notification_dialog_fragment.xml.flat",
@@ -116,6 +116,10 @@
         "source": "C:\\Users\\Kyle\\.gradle\\daemon\\8.9\\com.example.princeproject.app-main-45:\\layout\\activity_admin.xml"
     },
     {
+        "merged": "C:\\Users\\Kyle\\.gradle\\daemon\\8.9\\com.example.princeproject.app-debug-43:\\layout_item_entrant.xml.flat",
+        "source": "C:\\Users\\Kyle\\.gradle\\daemon\\8.9\\com.example.princeproject.app-main-45:\\layout\\item_entrant.xml"
+    },
+    {
         "merged": "C:\\Users\\Kyle\\.gradle\\daemon\\8.9\\com.example.princeproject.app-debug-43:\\layout_activity_facility.xml.flat",
         "source": "C:\\Users\\Kyle\\.gradle\\daemon\\8.9\\com.example.princeproject.app-main-45:\\layout\\activity_facility.xml"
     },
@@ -152,6 +156,10 @@
         "source": "C:\\Users\\Kyle\\.gradle\\daemon\\8.9\\com.example.princeproject.app-main-45:\\layout\\fragment_admin_profile.xml"
     },
     {
+        "merged": "com.example.princeproject.app-debug-43:/layout_item_entrant.xml.flat",
+        "source": "com.example.princeproject.app-main-45:/layout/item_entrant.xml"
+    },
+    {
         "merged": "C:\\Users\\Kyle\\.gradle\\daemon\\8.9\\com.example.princeproject.app-debug-43:\\layout_image_item.xml.flat",
         "source": "C:\\Users\\Kyle\\.gradle\\daemon\\8.9\\com.example.princeproject.app-main-45:\\layout\\image_item.xml"
     },
@@ -170,10 +178,6 @@
     {
         "merged": "C:\\Users\\Kyle\\.gradle\\daemon\\8.9\\com.example.princeproject.app-debug-43:\\mipmap-xxhdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\Kyle\\.gradle\\daemon\\8.9\\com.example.princeproject.app-main-45:\\mipmap-xxhdpi\\ic_launcher.webp"
-    },
-    {
-        "merged": "com.example.princeproject.app-debug-43:/layout_activity_admin.xml.flat",
-        "source": "com.example.princeproject.app-main-45:/layout/activity_admin.xml"
     },
     {
         "merged": "C:\\Users\\Kyle\\.gradle\\daemon\\8.9\\com.example.princeproject.app-debug-43:\\layout_admin_facility_item.xml.flat",

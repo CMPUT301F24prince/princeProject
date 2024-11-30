@@ -3367,6 +3367,7 @@ id end
 id endToStart
 id enterAlways
 id enterAlwaysCollapsed
+id entrant_name
 id entry_event_description
 id entry_event_location
 id entry_event_title
@@ -3951,6 +3952,7 @@ layout fragment_profile
 layout image_item
 layout ime_base_split_test_activity
 layout ime_secondary_split_test_activity
+layout item_entrant
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
 layout m3_alert_dialog_title
