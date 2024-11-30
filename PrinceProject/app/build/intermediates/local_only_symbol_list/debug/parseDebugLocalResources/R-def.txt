@@ -19,7 +19,9 @@ id admin_facilities
 id admin_images
 id admin_profile
 id admin_qrcodes
+id cancel_button
 id create_event_facility_button
+id declineButton
 id delete_button
 id delete_button_event
 id delete_button_facility
@@ -35,6 +37,7 @@ id edit_event_name
 id edit_facility_button
 id emailLabel
 id emailTextView
+id entrant_name
 id entry_event_description
 id entry_event_location
 id entry_event_title
@@ -64,6 +67,8 @@ id facility_name_text
 id fragment_profile
 id generate_qr_code
 id imageView
+id image_title
+id image_view
 id joinWaitingListButton
 id linearLayout
 id list_view
@@ -97,10 +102,12 @@ id profile_image
 id profile_image_preview
 id profile_image_upload
 id removeButton
+id remove_picture_text
 id root_pager
 id scan_qr_utton
 id submitButton
 id tab_layout
+id tab_layout_admin
 id textView
 id textView10
 id textView11
@@ -118,6 +125,7 @@ id user_list_view
 id user_name_text
 id user_role_text
 id view_pager
+id view_pager_admin
 id waitlistEventsListView
 id waitlistTitle
 id waitlist_view
@@ -143,6 +151,8 @@ layout fragment_events
 layout fragment_list
 layout fragment_notifications
 layout fragment_profile
+layout image_item
+layout item_entrant
 layout manage_event_dialog
 layout map_fragment
 layout new_user

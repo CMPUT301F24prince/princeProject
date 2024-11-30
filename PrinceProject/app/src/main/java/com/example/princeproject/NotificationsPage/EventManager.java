@@ -19,13 +19,14 @@ public class EventManager {
      * @param userId
      * deviceId of the
      */
-    public static void sendNotification(String userId) {
+    public static void sendNotification(String userId,String eventName, String eventId) {
         // Create the notification details
         Map<String, Object> notificationData = new HashMap<>();
         notificationData.put("userId", userId);
         notificationData.put("title", "Congratulations!");
-        notificationData.put("details", "You've been chosen for the event!");
+        notificationData.put("details", "You've been chosen for the event: "+eventName);
         notificationData.put("timestamp", System.currentTimeMillis());
+        notificationData.put("eventId",eventId);
 
         // Save the notification in Firestore under the "notifications" collection
         db.collection("notifications").add(notificationData)
@@ -51,32 +52,52 @@ public class EventManager {
                 DocumentSnapshot documentSnapshot = queryDocumentSnapshots.getDocuments().get(0);
                 List<String> waitingList = (List<String>) documentSnapshot.get("waiting");
                 List<String> chosenList = (List<String>) documentSnapshot.get("chosen");
+                List<String> acceptedList = (List<String>) documentSnapshot.get("accepted");
 
-                if (waitingList != null && !waitingList.isEmpty()) {
-                    if (chosenList == null) {
-                        chosenList = new ArrayList<>();
-                    }
+                int maxParticipants = documentSnapshot.getLong("maxParticipants").intValue();
 
-                    Random random = new Random();
-                    int randomIndex = random.nextInt(waitingList.size());
-                    String selectedEntrant = waitingList.get(randomIndex);
-
-                    // Send a notification to the selected entrant
-                    sendNotification(selectedEntrant);
-
-                    waitingList.remove(randomIndex);
-                    chosenList.add(selectedEntrant);
-
-                    documentSnapshot.getReference().update("waiting", waitingList, "chosen", chosenList)
-                            .addOnSuccessListener(aVoid -> {
-                                Toast.makeText(context, "Entrant moved successfully.", Toast.LENGTH_SHORT).show();
-                            })
-                            .addOnFailureListener(e -> {
-                                Toast.makeText(context, "Error moving entrant: " + e.getMessage(), Toast.LENGTH_LONG).show();
-                            });
-                } else {
-                    Toast.makeText(context, "Waiting list is empty.", Toast.LENGTH_SHORT).show();
+                if (chosenList == null) {
+                    chosenList = new ArrayList<>();
                 }
+                if (waitingList == null){
+                    waitingList = new ArrayList<>();
+                }
+                if (acceptedList == null) {
+                    acceptedList = new ArrayList<>();
+                }
+
+                if ((chosenList.size() + acceptedList.size()) >= maxParticipants) {
+                    Toast.makeText(context, "Event is at maximum capacity.", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                if (waitingList.isEmpty()) {
+                    Toast.makeText(context, "Waiting list is empty.", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+
+
+                Random random = new Random();
+                int randomIndex = random.nextInt(waitingList.size());
+                String selectedEntrant = waitingList.get(randomIndex);
+
+                String eventName = documentSnapshot.getString("name");
+
+                // Send a notification to the selected entrant
+                sendNotification(selectedEntrant,eventName,eventId);
+
+                waitingList.remove(randomIndex);
+                chosenList.add(selectedEntrant);
+
+                documentSnapshot.getReference().update("waiting", waitingList, "chosen", chosenList)
+                        .addOnSuccessListener(aVoid -> {
+                            Toast.makeText(context, "Entrant moved successfully.", Toast.LENGTH_SHORT).show();
+                        })
+                        .addOnFailureListener(e -> {
+                            Toast.makeText(context, "Error moving entrant: " + e.getMessage(), Toast.LENGTH_LONG).show();
+                        });
+
             } else {
                 Toast.makeText(context, "No document found with eventId: " + eventId, Toast.LENGTH_SHORT).show();
             }

@@ -20,11 +20,7 @@ public class AdminViewPagerAdapter extends FragmentStateAdapter {
             case 1:
                 return new AdminEventFragment();
             case 2:
-                return new AdminQRCodeFragment();
-            case 3:
                 return new AdminFacilityFragment();
-            case 4:
-                return new AdminImageFragment();
             default:
                 return new AdminProfileFragment();
         }
@@ -32,6 +28,6 @@ public class AdminViewPagerAdapter extends FragmentStateAdapter {
 
     @Override
     public int getItemCount() {
-        return 5;
+        return 3;
     }
 }

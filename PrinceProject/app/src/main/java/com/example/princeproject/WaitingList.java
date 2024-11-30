@@ -45,7 +45,7 @@ public class WaitingList {
                 });
     }
 
-    public void joinChosenList(String eventId, String userId) {
+    public void joinAcceptedList(String eventId, String userId) {
         // Query to find the event document with the specific eventId field value
         eventsRef.whereEqualTo("eventId", eventId)
                 .get()
@@ -54,7 +54,7 @@ public class WaitingList {
                         DocumentReference eventRef = queryDocumentSnapshots.getDocuments().get(0).getReference();
 
                         // Add the user to the waiting list array
-                        eventRef.update("chosen", FieldValue.arrayUnion(userId))
+                        eventRef.update("accepted", FieldValue.arrayUnion(userId))
                                 .addOnSuccessListener(aVoid -> {
                                     System.out.println("User added to waiting list successfully!");
                                 })
