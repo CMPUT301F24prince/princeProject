@@ -103,6 +103,7 @@ public class NewUserActivity extends AppCompatActivity {
             else {
                 //Add user to the database
                 newUser = new User(userName, email, phone, accType, deviceId);
+                newUser.GenerateProfileImage();
                 Map<String, Object> userDb = new HashMap<>();
                 userDb.put("deviceId", deviceId);
                 userDb.put("name", userName);
@@ -110,6 +111,7 @@ public class NewUserActivity extends AppCompatActivity {
                 userDb.put("phone", phone);
                 userDb.put("accountType", accType);
                 userDb.put("Allow Notification",notification);
+                userDb.put("profilePicture", newUser.getProfilePictureEncode());
                 db.collection("users").document(deviceId).set(userDb);
             }
             finish();
