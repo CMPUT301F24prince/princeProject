@@ -1,0 +1,109 @@
+11-30 12:36:24.991 18747 18764 I TestRunner: started: testEditProfileDialog(com.example.princeproject.ProfileUpdateTest)
+11-30 12:36:25.341   642  1261 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET, states=14
+11-30 12:36:25.341   642  1261 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET6, states=14
+11-30 12:36:25.341   642  1261 D InetDiagMessage: Destroyed live tcp sockets for uids={99002} in 1ms
+11-30 12:36:26.379 18747 18764 W e.princeproject: Accessing hidden method Ldalvik/system/BaseDexClassLoader;->addDexPath(Ljava/lang/String;Z)V (unsupported, reflection, allowed)
+11-30 12:36:26.676  8510 18560 W SystemServiceRegistry: No service published for: wifirtt
+11-30 12:36:26.895  8510 18187 W GLSUser : [DeviceKeyStore] Cannot load key: Device key file not found.
+11-30 12:36:27.277   642  2328 D FileUtils: Rounded bytes from 2069696512 to 4000000000
+11-30 12:36:27.378 18747 18764 E e.princeproject: Attempt to load writable dex file: /data/user/0/com.example.princeproject/cache/pPigvqXS.jar
+11-30 12:36:27.379 18747 18764 D CompatChangeReporter: Compat change id reported: 218865702; UID 10242; state: ENABLED
+11-30 12:36:27.403 18747 18764 E TestRunner: failed: testEditProfileDialog(com.example.princeproject.ProfileUpdateTest)
+11-30 12:36:27.414 18747 18764 E TestRunner: ----- begin exception -----
+11-30 12:36:27.414 18747 18764 E TestRunner: org.mockito.exceptions.base.MockitoException:
+11-30 12:36:27.414 18747 18764 E TestRunner: Mockito cannot mock this class: class com.google.firebase.firestore.DocumentReference.
+11-30 12:36:27.414 18747 18764 E TestRunner:
+11-30 12:36:27.414 18747 18764 E TestRunner: Mockito can only mock non-private & non-final classes.
+11-30 12:36:27.414 18747 18764 E TestRunner: If you're not sure why you're getting this error, please report to the mailing list.
+11-30 12:36:27.414 18747 18764 E TestRunner:
+11-30 12:36:27.414 18747 18764 E TestRunner:
+11-30 12:36:27.414 18747 18764 E TestRunner:
+11-30 12:36:27.414 18747 18764 E TestRunner: IMPORTANT INFORMATION FOR ANDROID USERS:
+11-30 12:36:27.414 18747 18764 E TestRunner:
+11-30 12:36:27.414 18747 18764 E TestRunner: The regular Byte Buddy mock makers cannot generate code on an Android VM!
+11-30 12:36:27.414 18747 18764 E TestRunner: To resolve this, please use the 'mockito-android' dependency for your application:
+11-30 12:36:27.414 18747 18764 E TestRunner: https://search.maven.org/artifact/org.mockito/mockito-android
+11-30 12:36:27.414 18747 18764 E TestRunner:
+11-30 12:36:27.414 18747 18764 E TestRunner: Java               : 0.9
+11-30 12:36:27.414 18747 18764 E TestRunner: JVM vendor name    : The Android Project
+11-30 12:36:27.414 18747 18764 E TestRunner: JVM vendor version : 2.1.0
+11-30 12:36:27.414 18747 18764 E TestRunner: JVM name           : Dalvik
+11-30 12:36:27.414 18747 18764 E TestRunner: JVM version        : 0.9
+11-30 12:36:27.414 18747 18764 E TestRunner: JVM info           : null
+11-30 12:36:27.414 18747 18764 E TestRunner: OS name            : Linux
+11-30 12:36:27.414 18747 18764 E TestRunner: OS version         : 6.6.30-android15-7-gbb616d66d8a9-ab11968886
+11-30 12:36:27.414 18747 18764 E TestRunner:
+11-30 12:36:27.414 18747 18764 E TestRunner:
+11-30 12:36:27.414 18747 18764 E TestRunner: Underlying exception : java.lang.IllegalStateException: Cannot invoke BaseDexClassLoader#addDexPath(String, boolean)
+11-30 12:36:27.414 18747 18764 E TestRunner: 	at com.example.princeproject.ProfileUpdateTest.setup(ProfileUpdateTest.java:49)
+11-30 12:36:27.414 18747 18764 E TestRunner: 	at java.lang.reflect.Method.invoke(Native Method)
+11-30 12:36:27.414 18747 18764 E TestRunner: 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+11-30 12:36:27.414 18747 18764 E TestRunner: 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+11-30 12:36:27.414 18747 18764 E TestRunner: 	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+11-30 12:36:27.414 18747 18764 E TestRunner: 	at androidx.test.internal.runner.junit4.statement.RunBefores.evaluate(RunBefores.java:76)
+11-30 12:36:27.414 18747 18764 E TestRunner: 	at androidx.test.internal.runner.junit4.statement.RunAfters.evaluate(RunAfters.java:61)
+11-30 12:36:27.414 18747 18764 E TestRunner: 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+11-30 12:36:27.414 18747 18764 E TestRunner: 	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+11-30 12:36:27.414 18747 18764 E TestRunner: 	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+11-30 12:36:27.414 18747 18764 E TestRunner: 	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+11-30 12:36:27.414 18747 18764 E TestRunner: 	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+11-30 12:36:27.414 18747 18764 E TestRunner: 	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+11-30 12:36:27.414 18747 18764 E TestRunner: 	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+11-30 12:36:27.414 18747 18764 E TestRunner: 	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+11-30 12:36:27.414 18747 18764 E TestRunner: 	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+11-30 12:36:27.414 18747 18764 E TestRunner: 	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+11-30 12:36:27.414 18747 18764 E TestRunner: 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+11-30 12:36:27.414 18747 18764 E TestRunner: 	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+11-30 12:36:27.414 18747 18764 E TestRunner: 	at androidx.test.ext.junit.runners.AndroidJUnit4.run(AndroidJUnit4.java:162)
+11-30 12:36:27.414 18747 18764 E TestRunner: 	at org.junit.runners.Suite.runChild(Suite.java:128)
+11-30 12:36:27.414 18747 18764 E TestRunner: 	at org.junit.runners.Suite.runChild(Suite.java:27)
+11-30 12:36:27.414 18747 18764 E TestRunner: 	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+11-30 12:36:27.414 18747 18764 E TestRunner: 	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+11-30 12:36:27.414 18747 18764 E TestRunner: 	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+11-30 12:36:27.414 18747 18764 E TestRunner: 	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+11-30 12:36:27.414 18747 18764 E TestRunner: 	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+11-30 12:36:27.414 18747 18764 E TestRunner: 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+11-30 12:36:27.414 18747 18764 E TestRunner: 	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+11-30 12:36:27.414 18747 18764 E TestRunner: 	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+11-30 12:36:27.414 18747 18764 E TestRunner: 	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+11-30 12:36:27.414 18747 18764 E TestRunner: 	at androidx.test.internal.runner.TestExecutor.execute(TestExecutor.java:68)
+11-30 12:36:27.414 18747 18764 E TestRunner: 	at androidx.test.internal.runner.TestExecutor.execute(TestExecutor.java:59)
+11-30 12:36:27.414 18747 18764 E TestRunner: 	at androidx.test.runner.AndroidJUnitRunner.onStart(AndroidJUnitRunner.java:463)
+11-30 12:36:27.414 18747 18764 E TestRunner: 	at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2594)
+11-30 12:36:27.414 18747 18764 E TestRunner: Caused by: java.lang.IllegalStateException: Cannot invoke BaseDexClassLoader#addDexPath(String, boolean)
+11-30 12:36:27.414 18747 18764 E TestRunner: 	at net.bytebuddy.android.AndroidClassLoadingStrategy$Injecting$Dispatcher$ForAndroidPVm.loadDex(AndroidClassLoadingStrategy.java:789)
+11-30 12:36:27.414 18747 18764 E TestRunner: 	at net.bytebuddy.android.AndroidClassLoadingStrategy$Injecting.doLoad(AndroidClassLoadingStrategy.java:652)
+11-30 12:36:27.414 18747 18764 E TestRunner: 	at net.bytebuddy.android.AndroidClassLoadingStrategy.load(AndroidClassLoadingStrategy.java:148)
+11-30 12:36:27.420 18747 18764 E TestRunner: 	at net.bytebuddy.android.AndroidClassLoadingStrategy$Injecting.load(AndroidClassLoadingStrategy.java:645)
+11-30 12:36:27.420 18747 18764 E TestRunner: 	at net.bytebuddy.dynamic.TypeResolutionStrategy$Passive.initialize(TypeResolutionStrategy.java:101)
+11-30 12:36:27.420 18747 18764 E TestRunner: 	at net.bytebuddy.dynamic.DynamicType$Default$Unloaded.load(DynamicType.java:6166)
+11-30 12:36:27.420 18747 18764 E TestRunner: 	at org.mockito.internal.creation.bytebuddy.SubclassBytecodeGenerator.mockClass(SubclassBytecodeGenerator.java:289)
+11-30 12:36:27.420 18747 18764 E TestRunner: 	at org.mockito.internal.creation.bytebuddy.TypeCachingBytecodeGenerator.lambda$mockClass$0$org-mockito-internal-creation-bytebuddy-TypeCachingBytecodeGenerator(TypeCachingBytecodeGenerator.java:47)
+11-30 12:36:27.420 18747 18764 E TestRunner: 	at org.mockito.internal.creation.bytebuddy.TypeCachingBytecodeGenerator$$ExternalSyntheticLambda0.call(D8$$SyntheticClass:0)
+11-30 12:36:27.420 18747 18764 E TestRunner: 	at net.bytebuddy.TypeCache.findOrInsert(TypeCache.java:168)
+11-30 12:36:27.420 18747 18764 E TestRunner: 	at net.bytebuddy.TypeCache$WithInlineExpunction.findOrInsert(TypeCache.java:399)
+11-30 12:36:27.420 18747 18764 E TestRunner: 	at net.bytebuddy.TypeCache.findOrInsert(TypeCache.java:190)
+11-30 12:36:27.420 18747 18764 E TestRunner: 	at net.bytebuddy.TypeCache$WithInlineExpunction.findOrInsert(TypeCache.java:410)
+11-30 12:36:27.420 18747 18764 E TestRunner: 	at org.mockito.internal.creation.bytebuddy.TypeCachingBytecodeGenerator.mockClass(TypeCachingBytecodeGenerator.java:40)
+11-30 12:36:27.420 18747 18764 E TestRunner: 	at org.mockito.internal.creation.bytebuddy.SubclassByteBuddyMockMaker.createMockType(SubclassByteBuddyMockMaker.java:77)
+11-30 12:36:27.420 18747 18764 E TestRunner: 	at org.mockito.internal.creation.bytebuddy.SubclassByteBuddyMockMaker.createMock(SubclassByteBuddyMockMaker.java:43)
+11-30 12:36:27.420 18747 18764 E TestRunner: 	at org.mockito.android.internal.creation.AndroidByteBuddyMockMaker.createMock(AndroidByteBuddyMockMaker.java:39)
+11-30 12:36:27.420 18747 18764 E TestRunner: 	at org.mockito.internal.util.MockUtil.createMock(MockUtil.java:53)
+11-30 12:36:27.420 18747 18764 E TestRunner: 	at org.mockito.internal.MockitoCore.mock(MockitoCore.java:96)
+11-30 12:36:27.420 18747 18764 E TestRunner: 	at org.mockito.Mockito.mock(Mockito.java:1965)
+11-30 12:36:27.420 18747 18764 E TestRunner: 	at org.mockito.Mockito.mock(Mockito.java:1880)
+11-30 12:36:27.420 18747 18764 E TestRunner: 	... 35 more
+11-30 12:36:27.420 18747 18764 E TestRunner: Caused by: java.lang.SecurityException: Writable dex file '/data/user/0/com.example.princeproject/cache/pPigvqXS.jar' is not allowed.
+11-30 12:36:27.420 18747 18764 E TestRunner: 	at dalvik.system.DexFile.openDexFileNative(Native Method)
+11-30 12:36:27.420 18747 18764 E TestRunner: 	at dalvik.system.DexFile.openDexFile(DexFile.java:406)
+11-30 12:36:27.420 18747 18764 E TestRunner: 	at dalvik.system.DexFile.<init>(DexFile.java:128)
+11-30 12:36:27.420 18747 18764 E TestRunner: 	at dalvik.system.DexFile.<init>(DexFile.java:101)
+11-30 12:36:27.420 18747 18764 E TestRunner: 	at dalvik.system.DexPathList.loadDexFile(DexPathList.java:438)
+11-30 12:36:27.420 18747 18764 E TestRunner: 	at dalvik.system.DexPathList.makeDexElements(DexPathList.java:397)
+11-30 12:36:27.420 18747 18764 E TestRunner: 	at dalvik.system.DexPathList.addDexPath(DexPathList.java:220)
+11-30 12:36:27.420 18747 18764 E TestRunner: 	at dalvik.system.BaseDexClassLoader.addDexPath(BaseDexClassLoader.java:287)
+11-30 12:36:27.420 18747 18764 E TestRunner: 	at java.lang.reflect.Method.invoke(Native Method)
+11-30 12:36:27.420 18747 18764 E TestRunner: 	at net.bytebuddy.android.AndroidClassLoadingStrategy$Injecting$Dispatcher$ForAndroidPVm.loadDex(AndroidClassLoadingStrategy.java:780)
+11-30 12:36:27.420 18747 18764 E TestRunner: 	... 55 more
+11-30 12:36:27.420 18747 18764 E TestRunner: ----- end exception -----
+11-30 12:36:27.440 18747 18764 I TestRunner: finished: testEditProfileDialog(com.example.princeproject.ProfileUpdateTest)
