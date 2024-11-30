@@ -64,7 +64,7 @@ public class EntrantAdapter extends BaseAdapter {
         } else {
             button.setVisibility(View.GONE);
         }
-        
+
         button.setOnClickListener(v -> {
             cancelEntrant(entrant,position);
         });
