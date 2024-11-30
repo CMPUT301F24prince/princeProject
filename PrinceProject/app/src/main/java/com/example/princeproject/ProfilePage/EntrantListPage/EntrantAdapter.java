@@ -79,7 +79,7 @@ public class EntrantAdapter extends BaseAdapter {
         Map<String, Object> notificationData = new HashMap<>();
         notificationData.put("userId", userId);
         notificationData.put("title", "Sorry!");
-        notificationData.put("details", "Unfortunately the organizer of the event: "+eventName + " decided to cancel your application");
+        notificationData.put("details", "Unfortunately, the organizer cancelled your application to: "+eventName);
         notificationData.put("timestamp", System.currentTimeMillis());
         notificationData.put("eventId",eventId);
         notificationData.put("received", false);
