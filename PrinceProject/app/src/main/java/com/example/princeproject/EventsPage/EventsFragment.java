@@ -114,7 +114,7 @@ public class EventsFragment extends Fragment {
         db.collection("users").document(deviceId).get()
                 .addOnSuccessListener(documentSnapshot -> {
                     String accountType = documentSnapshot.getString("accountType");
-                    if (!accountType.equals("Admin")) {
+                    if (!"Admin".equals(accountType)) {
                         adminPageButton.setVisibility(View.INVISIBLE);
                     }
                 });
