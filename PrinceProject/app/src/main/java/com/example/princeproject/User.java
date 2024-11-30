@@ -3,10 +3,12 @@ package com.example.princeproject;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
 import android.net.Uri;
 import android.os.Environment;
 import android.util.Base64;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.Serializable;
@@ -129,6 +131,19 @@ public class User implements Serializable {
     public void setProfilePictureEncode(String encode) {this.profilePictureEncode = encode;}
 
     public String getProfilePictureEncode() {return this.profilePictureEncode; }
+
+    public void GenerateProfileImage() {
+        // Create profile image
+        Bitmap bitmap = Bitmap.createBitmap(200, 200, Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(bitmap);
+        canvas.drawColor(0xFFFF0000);
+
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.PNG, 100, byteArrayOutputStream);
+        byte[] byteArray = byteArrayOutputStream.toByteArray();
+
+        this.profilePictureEncode = Base64.encodeToString(byteArray, Base64.DEFAULT);
+    }
 
     public android.net.Uri decodeBase64String(Context context) {
         Calendar calendar = Calendar.getInstance();
