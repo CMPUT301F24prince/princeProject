@@ -104,7 +104,7 @@ public class AdminEventAdapter extends ArrayAdapter<Event> {
                                 .update("eventPosterEncode",null)
                                 .addOnSuccessListener(x -> {
                                     Event event = events.get(position);
-                                    event.setImage_encode(null);
+                                    event.setImageEncode(null);
 
                                     notifyDataSetChanged();
 

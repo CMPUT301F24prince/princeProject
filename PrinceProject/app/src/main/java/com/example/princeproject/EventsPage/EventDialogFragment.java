@@ -4,12 +4,16 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.util.Base64;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.Manifest;
 import android.widget.Toast;
@@ -92,6 +96,18 @@ public class EventDialogFragment extends DialogFragment {
         TextView eventName = view.findViewById(R.id.entry_event_title);
         TextView eventDescription = view.findViewById(R.id.entry_event_description);
         TextView eventLocation = view.findViewById(R.id.entry_event_location);
+        ImageView eventImage = view.findViewById(R.id.event_image);
+
+        String image_encode = event.getImageEncode();
+
+        if (image_encode != null && !image_encode.isEmpty()) {
+            // Decode the Base64 string into a Bitmap
+            byte[] decodedBytes = Base64.decode(image_encode, Base64.DEFAULT);
+            Bitmap decodedBitmap = BitmapFactory.decodeByteArray(decodedBytes, 0, decodedBytes.length);
+
+            // Display the decoded image in the ImageView
+            eventImage.setImageBitmap(decodedBitmap);
+        }
 
         eventName.setText(event.getTitle());
         eventDescription.setText(event.getDescription());

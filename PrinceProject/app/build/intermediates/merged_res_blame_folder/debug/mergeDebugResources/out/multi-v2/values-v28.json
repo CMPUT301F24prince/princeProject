@@ -4,7 +4,30 @@
             "outputFile": "com.example.princeproject.app-mergeDebugResources-41:/values-v28/values-v28.xml",
             "map": [
                 {
+<<<<<<< HEAD
                     "source": "C:\\Users\\Kyle\\.gradle\\caches\\8.9\\transforms\\468730fa166204b5b924b6a9e3818896\\transformed\\appcompat-1.7.0\\res\\values-v28\\values-v28.xml",
+=======
+                    "source": "C:\\Users\\Alina Shahid\\.gradle\\caches\\8.9\\transforms\\ed9b5c23b26d41819cc576efd6d5d595\\transformed\\material-1.12.0\\res\\values-v28\\values-v28.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,153,249,344,441,529,617,705,793,880,967,1054,1141",
+                        "endLines": "2,3,4,5,6,7,8,9,10,11,12,13,17",
+                        "endColumns": "97,95,94,96,87,87,87,87,86,86,86,86,10",
+                        "endOffsets": "148,244,339,436,524,612,700,788,875,962,1049,1136,1423"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,24",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,153,249,344,441,529,617,705,793,880,967,1054,1675",
+                        "endLines": "2,3,4,5,6,7,8,9,10,11,12,13,27",
+                        "endColumns": "97,95,94,96,87,87,87,87,86,86,86,86,10",
+                        "endOffsets": "148,244,339,436,524,612,700,788,875,962,1049,1136,1957"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Alina Shahid\\.gradle\\caches\\8.9\\transforms\\468730fa166204b5b924b6a9e3818896\\transformed\\appcompat-1.7.0\\res\\values-v28\\values-v28.xml",
+>>>>>>> ab63713cbe333c29395f1689eb570083f016a58a
                     "from": {
                         "startLines": "2,3,4,8",
                         "startColumns": "4,4,4,4",

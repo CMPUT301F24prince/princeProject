@@ -191,9 +191,9 @@ public class Event {
         isOpenForRegistration = openForRegistration;
     }
 
-    public String getImage_encode() {return image_encode;}
+    public String getImageEncode() {return image_encode;}
 
-    public void setImage_encode(String image_encode){
+    public void setImageEncode(String image_encode){
         this.image_encode = image_encode;
     }
 
@@ -201,6 +201,7 @@ public class Event {
     public String getEventId() {
         return eventId;
     }
+    
 
     /**
      * Decodes the Base64 encoded image string into a Bitmap and stores it as a file.
