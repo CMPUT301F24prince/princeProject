@@ -133,14 +133,6 @@ public class User implements Serializable {
 
     public String getProfilePictureEncode() {return this.profilePictureEncode; }
 
-    private ArrayList<Integer> ArraySubtract(ArrayList<Integer> a, ArrayList<Integer> b) {
-        ArrayList<Integer> c = new ArrayList<Integer>();
-        for (int i = 0; i < 8; i++) {
-            c.add(a.get(i) - b.get(i));
-        }
-        return c;
-    }
-
     public void GenerateProfileImage() {
         // Pick the color based on the username
 
@@ -182,11 +174,6 @@ public class User implements Serializable {
         catch (Exception e) {
             hexValue = 0xFFAAFFAA;
         }
-
-
-
-
-        //ArrayList<Integer> array
 
         // Create profile image
         Bitmap bitmap = Bitmap.createBitmap(200, 200, Bitmap.Config.ARGB_8888);
