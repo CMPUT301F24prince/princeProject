@@ -21,6 +21,7 @@ id admin_profile
 id admin_qrcodes
 id cancel_button
 id create_event_facility_button
+id declineButton
 id delete_button
 id delete_button_event
 id delete_button_facility

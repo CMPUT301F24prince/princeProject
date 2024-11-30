@@ -19,13 +19,14 @@ public class EventManager {
      * @param userId
      * deviceId of the
      */
-    public static void sendNotification(String userId) {
+    public static void sendNotification(String userId,String eventName, String eventId) {
         // Create the notification details
         Map<String, Object> notificationData = new HashMap<>();
         notificationData.put("userId", userId);
         notificationData.put("title", "Congratulations!");
-        notificationData.put("details", "You've been chosen for the event!");
+        notificationData.put("details", "You've been chosen for the event: "+eventName);
         notificationData.put("timestamp", System.currentTimeMillis());
+        notificationData.put("eventId",eventId);
 
         // Save the notification in Firestore under the "notifications" collection
         db.collection("notifications").add(notificationData)
@@ -81,8 +82,10 @@ public class EventManager {
                 int randomIndex = random.nextInt(waitingList.size());
                 String selectedEntrant = waitingList.get(randomIndex);
 
+                String eventName = documentSnapshot.getString("name");
+
                 // Send a notification to the selected entrant
-                sendNotification(selectedEntrant);
+                sendNotification(selectedEntrant,eventName,eventId);
 
                 waitingList.remove(randomIndex);
                 chosenList.add(selectedEntrant);

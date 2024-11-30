@@ -45,6 +45,25 @@
         app:layout_constraintStart_toEndOf="@+id/notif_event_image"
         app:layout_constraintTop_toBottomOf="@+id/notiflocation_text" />
 
+    <Button
+        android:id="@+id/acceptButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="12dp"
+        android:text="Accept"
+        app:layout_constraintEnd_toStartOf="@+id/declineButton"
+        app:layout_constraintTop_toBottomOf="@+id/notifDetailsText" />
+
+    <Button
+        android:id="@+id/declineButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Decline"
+        app:layout_constraintBottom_toBottomOf="@+id/acceptButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
