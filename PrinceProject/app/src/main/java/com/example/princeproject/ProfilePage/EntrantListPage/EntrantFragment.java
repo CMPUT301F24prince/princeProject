@@ -48,7 +48,7 @@ public class EntrantFragment extends Fragment {
         String eventId = getArguments().getString(EVENT_ID);
 
         List<String> chosenApplicants = new ArrayList<>();
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_list_item_1, chosenApplicants);
+        EntrantAdapter adapter = new EntrantAdapter(getContext(),chosenApplicants,type,eventId);
         listView.setAdapter(adapter);
 
         FirestoreQueryHelper.getEntrantListData(type,chosenApplicants,adapter,eventId);

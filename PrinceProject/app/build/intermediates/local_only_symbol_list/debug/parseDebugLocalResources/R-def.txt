@@ -19,6 +19,7 @@ id admin_facilities
 id admin_images
 id admin_profile
 id admin_qrcodes
+id cancel_button
 id create_event_facility_button
 id delete_button
 id delete_button_event
@@ -35,6 +36,7 @@ id edit_event_name
 id edit_facility_button
 id emailLabel
 id emailTextView
+id entrant_name
 id entry_event_description
 id entry_event_location
 id entry_event_title
@@ -149,6 +151,7 @@ layout fragment_list
 layout fragment_notifications
 layout fragment_profile
 layout image_item
+layout item_entrant
 layout manage_event_dialog
 layout map_fragment
 layout new_user
