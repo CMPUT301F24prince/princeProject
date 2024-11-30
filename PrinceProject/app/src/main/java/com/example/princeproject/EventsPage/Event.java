@@ -191,6 +191,8 @@ public class Event {
         return eventId;
     }
 
+    public String getImageEncode(){return image_encode;}
+
     /**
      * Decodes the Base64 encoded image string into a Bitmap and stores it as a file.
      *
