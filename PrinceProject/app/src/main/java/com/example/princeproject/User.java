@@ -4,6 +4,10 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Environment;
 import android.util.Base64;
@@ -143,7 +147,6 @@ public class User implements Serializable {
 
     public void GenerateProfileImage() {
         // Pick the color based on the username
-
         int hexValue = 0;
         try {
             ArrayList<Float> conversionArray = new ArrayList<Float>();
@@ -183,15 +186,19 @@ public class User implements Serializable {
             hexValue = 0xFFAAFFAA;
         }
 
-
-
-
-        //ArrayList<Integer> array
-
         // Create profile image
         Bitmap bitmap = Bitmap.createBitmap(200, 200, Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(bitmap);
         canvas.drawColor(hexValue);
+        String text = String.valueOf(this.name.charAt(0));
+        Paint paintobj = new Paint();
+        paintobj.setColor(Color.WHITE);
+        paintobj.setTypeface(Typeface.DEFAULT);
+        paintobj.setTextSize(180);
+        paintobj.setAntiAlias(true);
+        Rect textBounds = new Rect();
+        paintobj.getTextBounds(text, 0, text.length(), textBounds);
+        canvas.drawText(text, (200 - textBounds.width())/(float)2, (200 + textBounds.height())/(float)2, paintobj);
 
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         bitmap.compress(Bitmap.CompressFormat.PNG, 100, byteArrayOutputStream);
