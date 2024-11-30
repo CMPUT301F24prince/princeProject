@@ -168,7 +168,6 @@ public class MainActivity extends AppCompatActivity {
                             Notification notification = new Notification(id,title, details, location, userId, eventId);
                             if (Boolean.FALSE.equals(received)) {
                                 notification.sendAndroidNotification(this);
-                                notification.changeRecievedStatus(true);
                             }
                         }
                     }

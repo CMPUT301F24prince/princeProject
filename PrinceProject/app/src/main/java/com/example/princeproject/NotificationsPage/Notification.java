@@ -170,5 +170,6 @@ public class Notification {
         }
 
         mNotificationManager.notify(this.hashCode(), mBuilder.build());
+        changeRecievedStatus(true);
     }
 }
