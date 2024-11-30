@@ -1,18 +1,8 @@
-<?xml version='1.0' encoding='UTF-8' ?>
-<testsuite name="com.example.princeproject.WaitingListTest" tests="1" failures="0" errors="0" skipped="0" time="13.71" timestamp="2024-11-30T20:11:50" hostname="localhost">
-  <properties>
-    <property name="device" value="Medium_Phone_API_35(AVD) - 15" />
-    <property name="flavor" value="" />
-    <property name="project" value=":app" />
-  </properties>
-  <testcase name="testJoinWaitlist" classname="com.example.princeproject.WaitingListTest" time="10.22" />
-  <system-err>Test run failed to complete. Instrumentation run failed due to Process crashed.
-Logcat of last crash: 
 Process: com.example.princeproject, PID: 19530
 java.lang.NullPointerException: Attempt to invoke interface method 'boolean java.util.List.contains(java.lang.Object)' on a null object reference
 	at com.example.princeproject.WaitingListTest.lambda$testJoinWaitlist$0(WaitingListTest.java:53)
 	at com.example.princeproject.WaitingListTest$$ExternalSyntheticLambda0.onSuccess(D8$$SyntheticClass:0)
-	at com.google.android.gms.tasks.zzm.run(com.google.android.gms:play-services-tasks&#64;&#64;18.1.0:1)
+	at com.google.android.gms.tasks.zzm.run(com.google.android.gms:play-services-tasks@@18.1.0:1)
 	at android.os.Handler.handleCallback(Handler.java:959)
 	at android.os.Handler.dispatchMessage(Handler.java:100)
 	at android.os.Looper.loopOnce(Looper.java:232)
@@ -21,6 +11,3 @@ java.lang.NullPointerException: Attempt to invoke interface method 'boolean java
 	at java.lang.reflect.Method.invoke(Native Method)
 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:580)
 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:886)
-
-</system-err>
-</testsuite>
