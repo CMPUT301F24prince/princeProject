@@ -328,6 +328,7 @@ public class EventsFragment extends Fragment {
                         eventDb.put("waiting", emptyList);
                         eventDb.put("lotteryDrawn", false);
                         eventDb.put("eventPosterEncode", this.poster_encode);
+                        eventDb.put("qrHashData", eventId);
 
                         db.collection("events").document(eventId).set(eventDb);
 
