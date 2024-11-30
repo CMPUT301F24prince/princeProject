@@ -70,4 +70,11 @@ dependencies {
     testImplementation(libs.junit.jupiter)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+
+    //now
+    testImplementation ("androidx.test.ext:junit:1.1.5")
+    testImplementation ("androidx.test.espresso:espresso-core:3.5.1")
+    testImplementation ("org.mockito:mockito-core:4.5.1")
+    testImplementation ("com.google.firebase:firebase-messaging:23.1.0") // Only if you are using Firebase
+    //
 }
