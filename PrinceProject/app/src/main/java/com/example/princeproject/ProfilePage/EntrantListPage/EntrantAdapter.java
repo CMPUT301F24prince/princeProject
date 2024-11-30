@@ -14,7 +14,9 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class EntrantAdapter extends BaseAdapter {
     private Context context;
@@ -22,6 +24,7 @@ public class EntrantAdapter extends BaseAdapter {
     private LayoutInflater inflater;
     private String type;
     private String eventId;
+    private FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     public EntrantAdapter(Context context, List<String> entrants, String type,String eventId) {
         this.context = context;
@@ -72,8 +75,20 @@ public class EntrantAdapter extends BaseAdapter {
         return convertView;
     }
 
+    public void sendCancelNotification(String userId,String eventName,String eventId) {
+        Map<String, Object> notificationData = new HashMap<>();
+        notificationData.put("userId", userId);
+        notificationData.put("title", "Sorry!");
+        notificationData.put("details", "Unfortunately, the organizer cancelled your application to: "+eventName);
+        notificationData.put("timestamp", System.currentTimeMillis());
+        notificationData.put("eventId",eventId);
+        notificationData.put("received", false);
+
+        // Save the notification in Firestore under the "notifications" collection
+        db.collection("notifications").add(notificationData);
+    }
+
     public void cancelEntrant(String entrant, int position) {
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
 
         DocumentReference eventRef = db.collection("events").document(eventId);
 
@@ -92,11 +107,13 @@ public class EntrantAdapter extends BaseAdapter {
                         declinedList = new ArrayList<>();
                     }
                     declinedList.add(entrant);
+                    String eventName = documentSnapshot.getString("name");
 
                     eventRef.update("chosen", chosenList, "declined", declinedList)
                             .addOnSuccessListener(aVoid -> {
                                 entrants.remove(entrant);
                                 notifyDataSetChanged();
+                                sendCancelNotification(entrant,eventName,eventId);
 
                                 Toast.makeText(context, "Entrant moved to declined", Toast.LENGTH_SHORT).show();
                             })
