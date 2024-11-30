@@ -1,12 +1,20 @@
 package com.example.princeproject.NotificationsPage;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.media.Image;
+import android.net.Uri;
+import android.os.Handler;
+import android.os.Looper;
 import android.provider.Settings;
+import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.content.Context;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.app.AlertDialog;
 import android.widget.Toast;
@@ -14,6 +22,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.example.princeproject.EventsPage.Event;
 import com.example.princeproject.R;
 
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -71,6 +80,7 @@ public class NotificationArrayAdapter extends ArrayAdapter<Notification> {
         TextView notificationTitle = view.findViewById(R.id.notifNameText);
         TextView notificationDetails = view.findViewById(R.id.notifDetailsText);
         TextView notificationLocation = view.findViewById(R.id.notiflocation_text);
+        ImageView notificationImage = view.findViewById(R.id.notif_event_image);
 
         notificationTitle.setText(notification.getName());
         notificationDetails.setText(notification.getDetails());
@@ -78,6 +88,8 @@ public class NotificationArrayAdapter extends ArrayAdapter<Notification> {
 
         Button acceptButton = view.findViewById(R.id.acceptButton);
         Button declineButton = view.findViewById(R.id.declineButton);
+
+        setEventImage(notificationImage, notification.getEventId());
 
         if("Sorry!".equals(notification.getName())) {
             acceptButton.setVisibility(View.INVISIBLE);
@@ -94,6 +106,25 @@ public class NotificationArrayAdapter extends ArrayAdapter<Notification> {
 
 
         return view;
+    }
+
+    private void setEventImage(ImageView image,String eventId) {
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+        db.collection("events").document(eventId).get()
+                .addOnSuccessListener(documentSnapshot -> {
+                    String image_encode = documentSnapshot.getString("eventPosterEncode");
+                    //Event event = new Event(image_encode,eventId);
+
+                    if (image_encode != null && !image_encode.isEmpty()) {
+                        // Decode the Base64 string into a Bitmap
+                        byte[] decodedBytes = Base64.decode(image_encode, Base64.DEFAULT);
+                        Bitmap decodedBitmap = BitmapFactory.decodeByteArray(decodedBytes, 0, decodedBytes.length);
+
+                        // Display the decoded image in the ImageView
+                        image.setImageBitmap(decodedBitmap);
+                    }
+                });
     }
 
     private void declineInvitation(Notification notification, int position) {
