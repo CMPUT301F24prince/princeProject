@@ -18,18 +18,37 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Class that handles the dialog fragment for a selected facility
+ * */
 public class AdminFacilityFragment extends Fragment {
     private ListView facilityListView;
     private List<Facility> facilities;
     private FirebaseFirestore db;
     private AdminFacilityAdapter adminFacilityAdapter;
 
+    /**
+     * Method to handle the creation of the view
+     * @param inflater
+     *      Inflater to help show the fragment layout
+     * @param container
+     *      The container for the layout
+     * @param savedInstanceState
+     *      The current state of the view
+     * */
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_admin_facilities, container, false);
     }
 
+    /**
+     * Method to invoke actions on creation of the view
+     * @param view
+     *      The view being shown
+     * @param savedInstanceState
+     *      The current state of the view
+     * */
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -44,6 +63,9 @@ public class AdminFacilityFragment extends Fragment {
         getFacilities();
     }
 
+    /**
+     * Method to get all facilities from database
+     * */
     public void getFacilities() {
         db.collection("facilities").get()
                 .addOnSuccessListener(queryDocumentSnapshots -> {
@@ -53,8 +75,9 @@ public class AdminFacilityFragment extends Fragment {
                        String facility_desc = (String) doc.get("description");
                        String facility_name = (String) doc.get("name");
                        String facility_location = (String) doc.get("location");
+                       String image_encode = (String) doc.get("image");
 
-                       Facility facility = new Facility(organizer_id,facility_location,facility_name,facility_desc);
+                       Facility facility = new Facility(organizer_id,facility_location,facility_name,facility_desc,image_encode);
                        facilities.add(facility);
                    }
                    adminFacilityAdapter.notifyDataSetChanged();

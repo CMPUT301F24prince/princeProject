@@ -5,6 +5,7 @@
         <item>Organizer</item>
     </string-array>
     <color name="black">#FF000000</color>
+    <color name="light_violet">#FFA0A0FF</color>
     <color name="noticable_grey">#FFF0F0F0</color>
     <color name="white">#FFFFFFFF</color>
     <string name="app_name">Prince Project</string>

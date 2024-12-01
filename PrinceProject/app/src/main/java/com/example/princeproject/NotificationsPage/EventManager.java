@@ -2,7 +2,6 @@ package com.example.princeproject.NotificationsPage;
 import android.content.Context;
 import android.widget.Toast;
 
-import com.example.princeproject.ProfilePage.EntrantListPage.EntrantListActivity;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -83,6 +82,67 @@ public class EventManager {
                 Random random = new Random();
                 int randomIndex = random.nextInt(waitingList.size());
                 String selectedEntrant = waitingList.get(randomIndex);
+
+                String eventName = documentSnapshot.getString("name");
+
+                // Send a notification to the selected entrant
+                sendNotification(selectedEntrant,eventName,eventId);
+
+                waitingList.remove(randomIndex);
+                chosenList.add(selectedEntrant);
+
+                documentSnapshot.getReference().update("waiting", waitingList, "chosen", chosenList)
+                        .addOnSuccessListener(aVoid -> {
+                            Toast.makeText(context, "Entrant moved successfully.", Toast.LENGTH_SHORT).show();
+                        })
+                        .addOnFailureListener(e -> {
+                            Toast.makeText(context, "Error moving entrant: " + e.getMessage(), Toast.LENGTH_LONG).show();
+                        });
+
+            } else {
+                Toast.makeText(context, "No document found with eventId: " + eventId, Toast.LENGTH_SHORT).show();
+            }
+        }).addOnFailureListener(e -> {
+            Toast.makeText(context, "Failed to fetch event data: " + e.getMessage(), Toast.LENGTH_LONG).show();
+        });
+    }
+
+    public static void selectEntrantByDeviceId(Context context, String eventId, String deviceId) {
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        Query query = db.collection("events").whereEqualTo("eventId", eventId);
+
+        query.get().addOnSuccessListener(queryDocumentSnapshots -> {
+            if (!queryDocumentSnapshots.isEmpty()) {
+                DocumentSnapshot documentSnapshot = queryDocumentSnapshots.getDocuments().get(0);
+                List<String> waitingList = (List<String>) documentSnapshot.get("waiting");
+                List<String> chosenList = (List<String>) documentSnapshot.get("chosen");
+                List<String> acceptedList = (List<String>) documentSnapshot.get("accepted");
+
+                int maxParticipants = documentSnapshot.getLong("maxParticipants").intValue();
+
+                if (chosenList == null) {
+                    chosenList = new ArrayList<>();
+                }
+                if (waitingList == null){
+                    waitingList = new ArrayList<>();
+                }
+                if (acceptedList == null) {
+                    acceptedList = new ArrayList<>();
+                }
+
+                if ((chosenList.size() + acceptedList.size()) >= maxParticipants) {
+                    Toast.makeText(context, "Event is at maximum capacity.", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                if (waitingList.isEmpty()) {
+                    Toast.makeText(context, "Waiting list is empty.", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+
+                int randomIndex = waitingList.indexOf(deviceId);
+                String selectedEntrant = deviceId;
 
                 String eventName = documentSnapshot.getString("name");
 
