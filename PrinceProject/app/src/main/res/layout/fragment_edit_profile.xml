@@ -7,12 +7,14 @@
     <ImageView
         android:id="@+id/profile_image_preview"
         android:layout_width="100dp"
-        android:layout_height="100dp" />
-    
+        android:layout_height="100dp"
+        android:layout_marginStart="5dp" />
+
     <Button
         android:id="@+id/profile_image_upload"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="Upload Photo" />
 
     <EditText
         android:id="@+id/editTextName"

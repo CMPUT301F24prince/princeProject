@@ -53,6 +53,17 @@ public class User implements Serializable {
 
     }
 
+    public User(String name, String email, String phone, String account, String deviceId,String profilePictureEncode){
+        this.name = name;
+        this.email = email;
+        this.phone = phone;
+        this.account = account;
+        this.deviceId = deviceId;
+        this.profilePictureEncode = profilePictureEncode;
+
+
+    }
+
     /**
      * Gets the name of the user
      * @return

@@ -9,8 +9,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
 
+import android.os.Handler;
+import android.os.Looper;
 import android.provider.MediaStore;
 import android.util.Base64;
 import android.view.View;
@@ -131,6 +134,20 @@ public class EditProfileFragment extends DialogFragment{
         this.uploadButton = view.findViewById(R.id.profile_image_upload);
         this.profile_preview = view.findViewById((R.id.profile_image_preview));
 
+        Uri poster_uri =  user.decodeBase64String(getContext());
+
+        new Handler(Looper.getMainLooper()).post(new Runnable() {
+            @Override
+            public void run() {
+                if (!(poster_uri == null)) {
+                    profile_preview.setImageURI(null);
+                    profile_preview.setImageURI(poster_uri);
+                }
+            }
+        });
+
+        String initial_image = user.getProfilePictureEncode();
+
         AlertDialog dialog = builder.create();
 
         dialog.setOnShowListener(dialogInterface -> {
@@ -172,12 +189,17 @@ public class EditProfileFragment extends DialogFragment{
                     user.setPhone(phone);
                     user.setAccount(accountTypeDropdown.getSelectedItem().toString());
 
+                    String newImage = user.getProfilePictureEncode();
+
                     DocumentReference docRef = db.collection("users").document(user.getDeviceId());
                     docRef.update("name", name);
                     docRef.update("email", email);
                     docRef.update("phone", phone);
                     docRef.update("accountType", accountTypeDropdown.getSelectedItem().toString());
                     docRef.update("profilePicture", user.getProfilePictureEncode());
+                    if (!newImage.equals(initial_image)) {
+                        docRef.update("defaultImage",false);
+                    }
                 }
                 //Notify listener that profile has been updated, and to update info on main activity
                 listener.setEditProfile(user);

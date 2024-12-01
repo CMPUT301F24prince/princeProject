@@ -71,6 +71,8 @@ public class Facility {
         return this.base64ImageEncode;
     }
 
+    public void setBase64ImageEncode(String base64ImageEncode) {this.base64ImageEncode = base64ImageEncode;}
+
     public static android.net.Uri decodeBase64String(Context context, String facilityImageEncode) {
         Calendar calendar = Calendar.getInstance();
         String hour = Integer.toString(calendar.get(Calendar.HOUR_OF_DAY));

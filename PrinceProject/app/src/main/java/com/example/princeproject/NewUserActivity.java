@@ -112,6 +112,7 @@ public class NewUserActivity extends AppCompatActivity {
                 userDb.put("accountType", accType);
                 userDb.put("Allow Notification",notification);
                 userDb.put("profilePicture", newUser.getProfilePictureEncode());
+                userDb.put("defaultImage",true);
                 db.collection("users").document(deviceId).set(userDb);
             }
             finish();

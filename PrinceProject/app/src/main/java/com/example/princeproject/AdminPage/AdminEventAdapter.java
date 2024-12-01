@@ -20,7 +20,6 @@ import com.example.princeproject.EventsPage.Event;
 import com.example.princeproject.R;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class AdminEventAdapter extends ArrayAdapter<Event> {
@@ -43,12 +42,13 @@ public class AdminEventAdapter extends ArrayAdapter<Event> {
             convertView = LayoutInflater.from(context).inflate(R.layout.admin_event_item, parent, false);
         }
 
-        TextView titleTextView = convertView.findViewById(R.id.title_text);
-        TextView descriptionTextView = convertView.findViewById(R.id.description_text);
-        TextView locationTextView = convertView.findViewById(R.id.location_text);
+        TextView titleTextView = convertView.findViewById(R.id.user_name_text);
+        TextView descriptionTextView = convertView.findViewById(R.id.user_role_text);
+        TextView locationTextView = convertView.findViewById(R.id.user_email_text);
         Button deleteButton = convertView.findViewById(R.id.delete_button_event);
         ImageView eventPoster = convertView.findViewById(R.id.event_image);
         TextView removePoster = convertView.findViewById(R.id.remove_picture_text);
+        TextView removeQR = convertView.findViewById(R.id.remove_qr_text);
 
         Event event = events.get(position);
         titleTextView.setText(event.getTitle());
@@ -81,8 +81,31 @@ public class AdminEventAdapter extends ArrayAdapter<Event> {
             }
         });
 
+        removeQR.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                deleteQR(event.getEventId());
+            }
+        });
+
 
         return convertView;
+    }
+
+    public void deleteQR(String eventId) {
+        db.collection("events").document(eventId).get()
+                .addOnSuccessListener(documentSnapshot -> {
+                    String qrData = documentSnapshot.getString("qrHashData");
+                    if (qrData != null) {
+                        db.collection("events").document(eventId)
+                                .update("qrHashData",null)
+                                .addOnSuccessListener(x -> {
+                                    Toast.makeText(context,"QR Hash Data removed",Toast.LENGTH_SHORT).show();
+                                });
+                    } else {
+                        Toast.makeText(context,"This event does not have hashed data",Toast.LENGTH_SHORT).show();
+                    }
+                });
     }
 
     public void deleteEvent(String eventId,int position) {

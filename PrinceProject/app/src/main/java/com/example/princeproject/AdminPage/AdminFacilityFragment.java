@@ -53,8 +53,9 @@ public class AdminFacilityFragment extends Fragment {
                        String facility_desc = (String) doc.get("description");
                        String facility_name = (String) doc.get("name");
                        String facility_location = (String) doc.get("location");
+                       String image_encode = (String) doc.get("image");
 
-                       Facility facility = new Facility(organizer_id,facility_location,facility_name,facility_desc);
+                       Facility facility = new Facility(organizer_id,facility_location,facility_name,facility_desc,image_encode);
                        facilities.add(facility);
                    }
                    adminFacilityAdapter.notifyDataSetChanged();
