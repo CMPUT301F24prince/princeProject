@@ -22,11 +22,23 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.List;
 
+/**
+ * Class to display the list of facilities for admins to view
+ * */
 public class AdminFacilityAdapter extends ArrayAdapter<Facility> {
     private Context context;
     private List<Facility> facilities;
     private FirebaseFirestore db;
 
+    /**
+     * Constructor for the facility adapte
+     * @param context
+     *      The current context of the facility list
+     * @param facilities
+     *      The list of facilities
+     * @param db
+     *      The database instance
+     * */
     public AdminFacilityAdapter(Context context, List<Facility> facilities, FirebaseFirestore db) {
         super(context,0,facilities);
         this.context = context;
@@ -34,6 +46,15 @@ public class AdminFacilityAdapter extends ArrayAdapter<Facility> {
         this.db = db;
     }
 
+    /**
+     * Get the view of all facility items for an admin
+     * @param position
+     *      The position of the selected facility in the event list
+     * @param convertView
+     *      The view to switch to on selection
+     * @param parent
+     *      The view of the list of facilities
+     * */
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
@@ -84,6 +105,13 @@ public class AdminFacilityAdapter extends ArrayAdapter<Facility> {
         return convertView;
     }
 
+    /**
+     * Method to remove the image associated to a facility
+     * @param organizerId
+     *      The ID of the organizer than created the facility
+     * @param position
+     *      The position of the facility in the list
+     * */
     public void removeImage(String organizerId,int position) {
         db.collection("facilities").document(organizerId).get()
                 .addOnSuccessListener(documentSnapshot -> {
@@ -105,6 +133,13 @@ public class AdminFacilityAdapter extends ArrayAdapter<Facility> {
                 });
     }
 
+    /**
+     * Method to handle the deletion of a facility
+     * @param organizerId
+     *      The ID of the organizer than created the facility
+     * @param position
+     *      The position of the facility in the list
+     * */
     public void deleteFacility(String organizerId, int position){
         db.collection("facilities").document(organizerId)
                 .delete()

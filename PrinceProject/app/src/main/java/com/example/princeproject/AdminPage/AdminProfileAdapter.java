@@ -26,12 +26,23 @@ import org.w3c.dom.Text;
 
 import java.util.List;
 
+/**
+ * This is a class that handles the list of profiles for admins to view and modify
+ * */
 public class AdminProfileAdapter extends ArrayAdapter<User> {
     private Context context;
     private List<User> userList;
     private FirebaseFirestore db;
 
-
+    /**
+     * Constructor for the profile adapter
+     * @param context
+     *      The context of the profile list
+     * @param userList
+     *      The list of users for admins to view
+     * @param db
+     *      The database instance
+     * */
     public AdminProfileAdapter(Context context, List<User> userList, FirebaseFirestore db) {
         super(context,0,userList);
         this.context = context;
@@ -39,6 +50,15 @@ public class AdminProfileAdapter extends ArrayAdapter<User> {
         this.db = db;
     }
 
+    /**
+     * Get the view of each user item for an admin
+     * @param position
+     *      The position of the selected user in the user list
+     * @param convertView
+     *      The view to switch to on selection
+     * @param parent
+     *      The view of the list of user
+     * */
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
@@ -88,6 +108,13 @@ public class AdminProfileAdapter extends ArrayAdapter<User> {
         return convertView;
     }
 
+    /**
+     * Method to handle the deleting of user profile picture of a selected profile
+     * @param userId
+     *      The id of the user
+     * @param position
+     *      The position of the user in the list of users
+     * */
     public void removePicture(String userId, int position) {
         db.collection("users").document(userId).get()
                 .addOnSuccessListener(documentSnapshot -> {
@@ -113,6 +140,13 @@ public class AdminProfileAdapter extends ArrayAdapter<User> {
                 });
     }
 
+    /**
+     * Method to handle the deleting of a user's profile
+     * @param userId
+     *      The id of the user being deleted
+     * @param position
+     *      The position of the user in the list of users
+     * */
     public void deleteUser(String userId,int position) {
         db.collection("users").document(userId)
                 .delete()
