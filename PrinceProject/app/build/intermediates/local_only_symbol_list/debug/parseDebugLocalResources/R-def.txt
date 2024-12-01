@@ -6,6 +6,7 @@ color noticable_grey
 color white
 drawable circle_shape
 drawable edmonton_map
+drawable event_filler_image
 drawable filler_image
 drawable ic_launcher_background
 drawable ic_launcher_foreground

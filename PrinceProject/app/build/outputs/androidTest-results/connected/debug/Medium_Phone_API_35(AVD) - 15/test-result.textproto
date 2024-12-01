@@ -1,0 +1,73 @@
+# 2024-12-01T06:20:45.371481100Z:
+test_suite_meta_data {
+  scheduled_test_case_count: 1
+}
+test_status: FAILED
+test_result {
+  test_case {
+    test_class: "ListTest"
+    test_package: "com.example.princeproject"
+    test_method: "testRemoveUserFromWaitlist"
+    start_time {
+      seconds: 1733034037
+      nanos: 374000000
+    }
+    end_time {
+      seconds: 1733034043
+      nanos: 528000000
+    }
+  }
+  test_status: FAILED
+  error {
+    error_message: "org.mockito.exceptions.base.MockitoException:\nFailed to release mocks\n\nThis should not happen unless you are using a third-party mock maker\nat com.example.princeproject.ListTest.setup(ListTest.java:44)\n... 31 trimmed\nCaused by: org.mockito.exceptions.base.MockitoException:\nMockito cannot mock this class: class com.google.firebase.firestore.CollectionReference.\n\nMockito can only mock non-private & non-final classes.\nIf you\'re not sure why you\'re getting this error, please report to the mailing list.\n\n\n\nIMPORTANT INFORMATION FOR ANDROID USERS:\n\nThe regular Byte Buddy mock makers cannot generate code on an Android VM!\nTo resolve this, please use the \'mockito-android\' dependency for your application:\nhttps://search.maven.org/artifact/org.mockito/mockito-android\n\nJava               : 0.9\nJVM vendor name    : The Android Project\nJVM vendor version : 2.1.0\nJVM name           : Dalvik\nJVM version        : 0.9\nJVM info           : null\nOS name            : Linux\nOS version         : 6.6.30-android15-7-gbb616d66d8a9-ab11968886\n\n\nUnderlying exception : java.lang.IllegalStateException: Cannot invoke BaseDexClassLoader#addDexPath(String, boolean)\n... 33 more\nCaused by: java.lang.IllegalStateException: Cannot invoke BaseDexClassLoader#addDexPath(String, boolean)\nat net.bytebuddy.android.AndroidClassLoadingStrategy$Injecting$Dispatcher$ForAndroidPVm.loadDex(AndroidClassLoadingStrategy.java:789)\nat net.bytebuddy.android.AndroidClassLoadingStrategy$Injecting.doLoad(AndroidClassLoadingStrategy.java:652)\nat net.bytebuddy.android.AndroidClassLoadingStrategy.load(AndroidClassLoadingStrategy.java:148)\nat net.bytebuddy.android.AndroidClassLoadingStrategy$Injecting.load(AndroidClassLoadingStrategy.java:645)\nat net.bytebuddy.dynamic.TypeResolutionStrategy$Passive.initialize(TypeResolutionStrategy.java:101)\nat net.bytebuddy.dynamic.DynamicType$Default$Unloaded.load(DynamicType.java:6166)\nat org.mockito.internal.creation.bytebuddy.SubclassBytecodeGenerator.mockClass(SubclassBytecodeGenerator.java:289)\nat org.mockito.internal.creation.bytebuddy.TypeCachingBytecodeGenerator.lambda$mockClass$0$org-mockito-internal-creation-bytebuddy-TypeCachingBytecodeGenerator(TypeCachingBytecodeGenerator.java:47)\nat org.mockito.internal.creation.bytebuddy.TypeCachingBytecodeGenerator$$ExternalSyntheticLambda0.call(D8$$SyntheticClass:0)\nat net.bytebuddy.TypeCache.findOrInsert(TypeCache.java:168)\nat net.bytebuddy.TypeCache$WithInlineExpunction.findOrInsert(TypeCache.java:399)\nat net.bytebuddy.TypeCache.findOrInsert(TypeCache.java:190)\nat net.bytebuddy.TypeCache$WithInlineExpunction.findOrInsert(TypeCache.java:410)\nat org.mockito.internal.creation.bytebuddy.TypeCachingBytecodeGenerator.mockClass(TypeCachingBytecodeGenerator.java:40)\nat org.mockito.internal.creation.bytebuddy.SubclassByteBuddyMockMaker.createMockType(SubclassByteBuddyMockMaker.java:77)\nat org.mockito.internal.creation.bytebuddy.SubclassByteBuddyMockMaker.createMock(SubclassByteBuddyMockMaker.java:43)\nat org.mockito.android.internal.creation.AndroidByteBuddyMockMaker.createMock(AndroidByteBuddyMockMaker.java:39)\nat org.mockito.internal.util.MockUtil.createMock(MockUtil.java:53)\nat org.mockito.internal.MockitoCore.mock(MockitoCore.java:96)\nat org.mockito.Mockito.mock(Mockito.java:1965)\nat org.mockito.internal.configuration.MockAnnotationProcessor.processAnnotationForMock(MockAnnotationProcessor.java:66)\nat org.mockito.internal.configuration.MockAnnotationProcessor.process(MockAnnotationProcessor.java:27)\nat org.mockito.internal.configuration.MockAnnotationProcessor.process(MockAnnotationProcessor.java:24)\nat org.mockito.internal.configuration.IndependentAnnotationEngine.createMockFor(IndependentAnnotationEngine.java:44)\nat org.mockito.internal.configuration.IndependentAnnotationEngine.process(IndependentAnnotationEngine.java:72)\nat org.mockito.internal.configuration.InjectingAnnotationEngine.processIndependentAnnotations(InjectingAnnotationEngine.java:73)\nat org.mockito.internal.configuration.InjectingAnnotationEngine.process(InjectingAnnotationEngine.java:47)\nat org.mockito.MockitoAnnotations.openMocks(MockitoAnnotations.java:81)\nat org.mockito.MockitoAnnotations.initMocks(MockitoAnnotations.java:99)\n... 33 more\nCaused by: java.lang.SecurityException: Writable dex file \'/data/user/0/com.example.princeproject/cache/a5HviUnx.jar\' is not allowed.\nat dalvik.system.DexFile.openDexFileNative(Native Method)\nat dalvik.system.DexFile.openDexFile(DexFile.java:406)\nat dalvik.system.DexFile.<init>(DexFile.java:128)\nat dalvik.system.DexFile.<init>(DexFile.java:101)\nat dalvik.system.DexPathList.loadDexFile(DexPathList.java:438)\nat dalvik.system.DexPathList.makeDexElements(DexPathList.java:397)\nat dalvik.system.DexPathList.addDexPath(DexPathList.java:220)\nat dalvik.system.BaseDexClassLoader.addDexPath(BaseDexClassLoader.java:287)\nat java.lang.reflect.Method.invoke(Native Method)\nat net.bytebuddy.android.AndroidClassLoadingStrategy$Injecting$Dispatcher$ForAndroidPVm.loadDex(AndroidClassLoadingStrategy.java:780)\n... 61 more\n"
+    error_type: "org.mockito.exceptions.base.MockitoException"
+    stack_trace: "org.mockito.exceptions.base.MockitoException:\nFailed to release mocks\n\nThis should not happen unless you are using a third-party mock maker\nat com.example.princeproject.ListTest.setup(ListTest.java:44)\n... 31 trimmed\nCaused by: org.mockito.exceptions.base.MockitoException:\nMockito cannot mock this class: class com.google.firebase.firestore.CollectionReference.\n\nMockito can only mock non-private & non-final classes.\nIf you\'re not sure why you\'re getting this error, please report to the mailing list.\n\n\n\nIMPORTANT INFORMATION FOR ANDROID USERS:\n\nThe regular Byte Buddy mock makers cannot generate code on an Android VM!\nTo resolve this, please use the \'mockito-android\' dependency for your application:\nhttps://search.maven.org/artifact/org.mockito/mockito-android\n\nJava               : 0.9\nJVM vendor name    : The Android Project\nJVM vendor version : 2.1.0\nJVM name           : Dalvik\nJVM version        : 0.9\nJVM info           : null\nOS name            : Linux\nOS version         : 6.6.30-android15-7-gbb616d66d8a9-ab11968886\n\n\nUnderlying exception : java.lang.IllegalStateException: Cannot invoke BaseDexClassLoader#addDexPath(String, boolean)\n... 33 more\nCaused by: java.lang.IllegalStateException: Cannot invoke BaseDexClassLoader#addDexPath(String, boolean)\nat net.bytebuddy.android.AndroidClassLoadingStrategy$Injecting$Dispatcher$ForAndroidPVm.loadDex(AndroidClassLoadingStrategy.java:789)\nat net.bytebuddy.android.AndroidClassLoadingStrategy$Injecting.doLoad(AndroidClassLoadingStrategy.java:652)\nat net.bytebuddy.android.AndroidClassLoadingStrategy.load(AndroidClassLoadingStrategy.java:148)\nat net.bytebuddy.android.AndroidClassLoadingStrategy$Injecting.load(AndroidClassLoadingStrategy.java:645)\nat net.bytebuddy.dynamic.TypeResolutionStrategy$Passive.initialize(TypeResolutionStrategy.java:101)\nat net.bytebuddy.dynamic.DynamicType$Default$Unloaded.load(DynamicType.java:6166)\nat org.mockito.internal.creation.bytebuddy.SubclassBytecodeGenerator.mockClass(SubclassBytecodeGenerator.java:289)\nat org.mockito.internal.creation.bytebuddy.TypeCachingBytecodeGenerator.lambda$mockClass$0$org-mockito-internal-creation-bytebuddy-TypeCachingBytecodeGenerator(TypeCachingBytecodeGenerator.java:47)\nat org.mockito.internal.creation.bytebuddy.TypeCachingBytecodeGenerator$$ExternalSyntheticLambda0.call(D8$$SyntheticClass:0)\nat net.bytebuddy.TypeCache.findOrInsert(TypeCache.java:168)\nat net.bytebuddy.TypeCache$WithInlineExpunction.findOrInsert(TypeCache.java:399)\nat net.bytebuddy.TypeCache.findOrInsert(TypeCache.java:190)\nat net.bytebuddy.TypeCache$WithInlineExpunction.findOrInsert(TypeCache.java:410)\nat org.mockito.internal.creation.bytebuddy.TypeCachingBytecodeGenerator.mockClass(TypeCachingBytecodeGenerator.java:40)\nat org.mockito.internal.creation.bytebuddy.SubclassByteBuddyMockMaker.createMockType(SubclassByteBuddyMockMaker.java:77)\nat org.mockito.internal.creation.bytebuddy.SubclassByteBuddyMockMaker.createMock(SubclassByteBuddyMockMaker.java:43)\nat org.mockito.android.internal.creation.AndroidByteBuddyMockMaker.createMock(AndroidByteBuddyMockMaker.java:39)\nat org.mockito.internal.util.MockUtil.createMock(MockUtil.java:53)\nat org.mockito.internal.MockitoCore.mock(MockitoCore.java:96)\nat org.mockito.Mockito.mock(Mockito.java:1965)\nat org.mockito.internal.configuration.MockAnnotationProcessor.processAnnotationForMock(MockAnnotationProcessor.java:66)\nat org.mockito.internal.configuration.MockAnnotationProcessor.process(MockAnnotationProcessor.java:27)\nat org.mockito.internal.configuration.MockAnnotationProcessor.process(MockAnnotationProcessor.java:24)\nat org.mockito.internal.configuration.IndependentAnnotationEngine.createMockFor(IndependentAnnotationEngine.java:44)\nat org.mockito.internal.configuration.IndependentAnnotationEngine.process(IndependentAnnotationEngine.java:72)\nat org.mockito.internal.configuration.InjectingAnnotationEngine.processIndependentAnnotations(InjectingAnnotationEngine.java:73)\nat org.mockito.internal.configuration.InjectingAnnotationEngine.process(InjectingAnnotationEngine.java:47)\nat org.mockito.MockitoAnnotations.openMocks(MockitoAnnotations.java:81)\nat org.mockito.MockitoAnnotations.initMocks(MockitoAnnotations.java:99)\n... 33 more\nCaused by: java.lang.SecurityException: Writable dex file \'/data/user/0/com.example.princeproject/cache/a5HviUnx.jar\' is not allowed.\nat dalvik.system.DexFile.openDexFileNative(Native Method)\nat dalvik.system.DexFile.openDexFile(DexFile.java:406)\nat dalvik.system.DexFile.<init>(DexFile.java:128)\nat dalvik.system.DexFile.<init>(DexFile.java:101)\nat dalvik.system.DexPathList.loadDexFile(DexPathList.java:438)\nat dalvik.system.DexPathList.makeDexElements(DexPathList.java:397)\nat dalvik.system.DexPathList.addDexPath(DexPathList.java:220)\nat dalvik.system.BaseDexClassLoader.addDexPath(BaseDexClassLoader.java:287)\nat java.lang.reflect.Method.invoke(Native Method)\nat net.bytebuddy.android.AndroidClassLoadingStrategy$Injecting$Dispatcher$ForAndroidPVm.loadDex(AndroidClassLoadingStrategy.java:780)\n... 61 more\n"
+  }
+  output_artifact {
+    label {
+      label: "logcat"
+      namespace: "android"
+    }
+    source_path {
+      path: "C:\\Users\\Alina Shahid\\Desktop\\CMPUT301\\princeProject\\PrinceProject\\app\\build\\outputs\\androidTest-results\\connected\\debug\\Medium_Phone_API_35(AVD) - 15\\logcat-com.example.princeproject.ListTest-testRemoveUserFromWaitlist.txt"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info"
+      namespace: "android"
+    }
+    source_path {
+      path: "C:\\Users\\Alina Shahid\\Desktop\\CMPUT301\\princeProject\\PrinceProject\\app\\build\\outputs\\androidTest-results\\connected\\debug\\Medium_Phone_API_35(AVD) - 15\\device-info.pb"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.meminfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "C:\\Users\\Alina Shahid\\Desktop\\CMPUT301\\princeProject\\PrinceProject\\app\\build\\outputs\\androidTest-results\\connected\\debug\\Medium_Phone_API_35(AVD) - 15\\meminfo"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.cpuinfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "C:\\Users\\Alina Shahid\\Desktop\\CMPUT301\\princeProject\\PrinceProject\\app\\build\\outputs\\androidTest-results\\connected\\debug\\Medium_Phone_API_35(AVD) - 15\\cpuinfo"
+    }
+  }
+}
+output_artifact {
+  label {
+    label: "test-results.log"
+    namespace: "com.google.testing.platform.runtime.android.driver.AndroidInstrumentationDriver"
+  }
+  source_path {
+    path: "C:\\Users\\Alina Shahid\\Desktop\\CMPUT301\\princeProject\\PrinceProject\\app\\build\\outputs\\androidTest-results\\connected\\debug\\Medium_Phone_API_35(AVD) - 15\\testlog\\test-results.log"
+  }
+  type: TEST_DATA
+  mime_type: "text/plain"
+}

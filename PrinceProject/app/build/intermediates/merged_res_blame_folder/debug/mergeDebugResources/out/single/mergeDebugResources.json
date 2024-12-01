@@ -112,6 +112,10 @@
         "source": "com.example.princeproject.app-main-45:/mipmap-xxxhdpi/ic_launcher.webp"
     },
     {
+        "merged": "com.example.princeproject.app-debug-43:/drawable_event_filler_image.xml.flat",
+        "source": "com.example.princeproject.app-main-45:/drawable/event_filler_image.xml"
+    },
+    {
         "merged": "com.example.princeproject.app-debug-43:/layout_event_list_entry_dialog.xml.flat",
         "source": "com.example.princeproject.app-main-45:/layout/event_list_entry_dialog.xml"
     },
