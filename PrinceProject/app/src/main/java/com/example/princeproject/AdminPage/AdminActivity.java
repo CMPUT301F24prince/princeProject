@@ -9,11 +9,19 @@ import androidx.viewpager2.widget.ViewPager2;
 import com.example.princeproject.R;
 import com.google.android.material.tabs.TabLayout;
 
+/**
+ * This is a class that handles when a admin activity for an admin user
+ * */
 public class AdminActivity extends AppCompatActivity {
     TabLayout navigationBar;
     ViewPager2 rootPager;
     AdminViewPagerAdapter adminViewPagerAdapter;
 
+    /**
+     * Method to handle the creation of the activity
+     * @param savedInstanceState
+     *      The current state of the activity
+     * */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
