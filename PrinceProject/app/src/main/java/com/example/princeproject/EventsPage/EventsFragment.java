@@ -77,11 +77,27 @@ public class EventsFragment extends Fragment {
     private String poster_encode = null;
     private String deviceId;
 
+    /**
+     * Method to create view of the event fragment
+     * @param inflater
+     *      The inflater to display the layout
+     * @param container
+     *      The container for the events
+     * @param savedInstanceState
+     *      The current state of the events listview
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_events, container, false);
     }
 
+    /**
+     * Method to initialize the view of the event fragment
+     * @param view
+     *      The view of the event
+     * @param savedInstanceState
+     *      The current state of the event
+     */
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         deviceId = Settings.Secure.getString(view.getContext().getContentResolver(), Settings.Secure.ANDROID_ID);
@@ -139,6 +155,13 @@ public class EventsFragment extends Fragment {
         getEvents(some_events);
     }
 
+    /**
+     * Check if a facility exists for an organizer. If it doesn't organizer must
+     * create a faciltiy before creating event. If there is an existing facility, then
+     * an event can be created for that facility
+     * @param button
+     *      The button object for organizers to click to create a facility/event
+     * */
     private void checkFacilityStatus(Button button) {
         db.collection("facilities").document(deviceId).get()
                 .addOnSuccessListener(documentSnapshot -> {
@@ -152,6 +175,11 @@ public class EventsFragment extends Fragment {
                 });
     }
 
+    /**
+     * Method to handle the creation of the facility
+     * @param button
+     *      The button object for organizers to click to create a facility
+     * */
     private void createFacility(Button button) {
         LayoutInflater inflater = LayoutInflater.from(requireContext());
         View dialogView = inflater.inflate(R.layout.facility_dialog_fragment, null);
@@ -193,6 +221,13 @@ public class EventsFragment extends Fragment {
                 .show();
     }
 
+    /**
+     * Method to handle adding a created facility to the database
+     * @param facility
+     *      The facility being added
+     * @param button
+     *      The button pressed to create a facility
+     * */
     private void addFacilityToDatabase(Facility facility, Button button) {
         Map<String, Object> facilityDb = new HashMap<>();
 
@@ -505,11 +540,19 @@ public class EventsFragment extends Fragment {
 
     }
 
+    /**
+     * Open the QR code scanner
+     * */
     private void startQrScanner() {
         Intent intent = new Intent(getContext(), CaptureActivity.class);
         startActivityForResult(intent, 1001);
     }
 
+    /**
+     * Open the event dialog based on the scanned QR code
+     * @param scannedData
+     *      The QR hashed data to find the corresponding event
+     * */
     private void openEventDialog(String scannedData) {
         for (Event event : eventList) {
             if (event.getEventId().equals(scannedData)) {

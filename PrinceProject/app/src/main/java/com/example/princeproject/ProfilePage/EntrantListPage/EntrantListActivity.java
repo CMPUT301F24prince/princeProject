@@ -28,6 +28,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Class to handle the activity for entrant lists
+ * */
 public class EntrantListActivity extends AppCompatActivity {
     private Spinner eventSelection;
     private List<String> events = new ArrayList<>();
@@ -37,6 +40,11 @@ public class EntrantListActivity extends AppCompatActivity {
     private PageAdapter adapter;
     private ViewPager2 viewPager;
 
+    /**
+     * Method to invoke actions on creation of the view
+     * @param savedInstanceState
+     *      The current state of the view
+     * */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -80,6 +88,14 @@ public class EntrantListActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Method to check the status of if the lottery is drawn or not
+     * @param button
+     *      The button to modify based on whether the initial lottery
+     *      has been drawn
+     * @param eventId
+     *      The event corresponding to the list of entrants
+     * */
     private void checkLotteryStatus(Button button, String eventId) {
         db.collection("events").document(eventId).get()
                 .addOnSuccessListener(documentSnapshot -> {
@@ -95,6 +111,15 @@ public class EntrantListActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Method to send a notification when a user does not win the lottery
+     * @param userId
+     *      The declined user
+     * @param eventName
+     *      The name of the event
+     * @param eventId
+     *      The id of the event
+     * */
     public void sendLotteryLossNotification(String userId,String eventName,String eventId) {
         Map<String, Object> notificationData = new HashMap<>();
         notificationData.put("userId", userId);

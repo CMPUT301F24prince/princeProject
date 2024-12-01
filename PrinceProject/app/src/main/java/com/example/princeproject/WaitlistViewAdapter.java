@@ -15,6 +15,9 @@ import com.google.firebase.firestore.FieldValue;
 
 import java.util.List;
 
+/**
+ * Adapter class to manage the list view of entrants in the wait list for an event
+ * */
 public class WaitlistViewAdapter extends ArrayAdapter<String> {
 
     private List<String> events;
@@ -37,6 +40,18 @@ public class WaitlistViewAdapter extends ArrayAdapter<String> {
         this.eventIds = eventIds;
     }
 
+    /**
+     * Method to initialize the view of a waitlist, and handling events when a
+     * entrant is clicked
+     * @param position
+     *      The position of the entrant clicked in the waitlist array
+     * @param convertView
+     *      The view when an entrant is clicked
+     * @param parent
+     *      The list view of waiting list
+     * @return
+     *      The view of the waiting list object
+     * */
     @NonNull
     @Override
     public View getView(int position, View convertView, @NonNull ViewGroup parent) {

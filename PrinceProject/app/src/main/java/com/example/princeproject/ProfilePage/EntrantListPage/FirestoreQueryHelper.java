@@ -17,6 +17,9 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Class to help retrieve user data when they are selected for an event
+ * */
 public class FirestoreQueryHelper {
     private static FirebaseFirestore db;
     private static CollectionReference eventsRef;

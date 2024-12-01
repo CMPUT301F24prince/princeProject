@@ -86,16 +86,31 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="de663412-6121-4a3b-a032-0ba525fd3e34" name="Changes" comment="Merging from Main">
+    <list default="true" id="de663412-6121-4a3b-a032-0ba525fd3e34" name="Changes" comment="Adding javadocs">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/princeproject/AdminPage/AdminActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/princeproject/AdminPage/AdminActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/princeproject/AdminPage/AdminEventAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/princeproject/AdminPage/AdminEventAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/princeproject/AdminPage/AdminEventFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/princeproject/AdminPage/AdminEventFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/princeproject/AdminPage/AdminFacilityAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/princeproject/AdminPage/AdminFacilityAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/princeproject/AdminPage/AdminFacilityFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/princeproject/AdminPage/AdminFacilityFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/princeproject/AdminPage/AdminProfileAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/princeproject/AdminPage/AdminProfileAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/princeproject/AdminPage/AdminProfileFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/princeproject/AdminPage/AdminProfileFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/princeproject/AdminPage/AdminViewPagerAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/princeproject/AdminPage/AdminViewPagerAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/princeproject/EventsPage/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/princeproject/EventsPage/Event.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/princeproject/EventsPage/EventArrayAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/princeproject/EventsPage/EventArrayAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/princeproject/EventsPage/EventDialogFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/princeproject/EventsPage/EventDialogFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/princeproject/EventsPage/EventsFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/princeproject/EventsPage/EventsFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/princeproject/Facility.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/princeproject/Facility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/princeproject/FacilityActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/princeproject/FacilityActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/princeproject/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/princeproject/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/princeproject/MainViewPagerAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/princeproject/MainViewPagerAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/princeproject/NotificationsPage/EventManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/princeproject/NotificationsPage/EventManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/princeproject/NotificationsPage/Notification.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/princeproject/NotificationsPage/Notification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/princeproject/NotificationsPage/NotificationArrayAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/princeproject/NotificationsPage/NotificationArrayAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/princeproject/NotificationsPage/NotificationPreferenceManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/princeproject/NotificationsPage/NotificationPreferenceManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/princeproject/NotificationsPage/NotificationsFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/princeproject/NotificationsPage/NotificationsFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/princeproject/ProfilePage/EntrantListPage/EntrantAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/princeproject/ProfilePage/EntrantListPage/EntrantAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/princeproject/ProfilePage/EntrantListPage/EntrantFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/princeproject/ProfilePage/EntrantListPage/EntrantFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/princeproject/ProfilePage/EntrantListPage/EntrantListActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/princeproject/ProfilePage/EntrantListPage/EntrantListActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/princeproject/ProfilePage/EntrantListPage/FirestoreQueryHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/princeproject/ProfilePage/EntrantListPage/FirestoreQueryHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/princeproject/ProfilePage/EntrantListPage/ManageEventsActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/princeproject/ProfilePage/EntrantListPage/ManageEventsActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/princeproject/ProfilePage/EntrantListPage/PageAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/princeproject/ProfilePage/EntrantListPage/PageAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/princeproject/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/princeproject/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/princeproject/WaitingList.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/princeproject/WaitingList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/princeproject/WaitlistViewActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/princeproject/WaitlistViewActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/princeproject/WaitlistViewAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/princeproject/WaitlistViewAdapter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,6 +133,9 @@
         <option value="layoutResourceFile" />
       </list>
     </option>
+  </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="origin/main" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -343,7 +361,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731037155154</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Adding javadocs">
+      <option name="closed" value="true" />
+      <created>1733079681094</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1733079681094</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -372,7 +398,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added JavaDocs and functionality for user to edit their account type in the EditProfileFragment" />
     <MESSAGE value="Merging from Main" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merging from Main" />
+    <MESSAGE value="Adding javadocs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding javadocs" />
     <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
 </project>

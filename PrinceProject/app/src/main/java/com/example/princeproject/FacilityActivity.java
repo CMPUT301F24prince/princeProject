@@ -31,6 +31,9 @@ import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Class to handle the facility activity when creating/viewing a facility
+ * */
 public class FacilityActivity extends AppCompatActivity {
     private FirebaseFirestore db;
     private String deviceId;
@@ -45,6 +48,11 @@ public class FacilityActivity extends AppCompatActivity {
     private final int GALLERY_REQ_CODE = 1000;
 
 
+    /**
+     * Method to handle the creation of the view
+     * @param savedInstanceState
+     *      The current state of the view
+     * */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,6 +74,15 @@ public class FacilityActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Method to handle the facility view on activity updates
+     * @param requestCode
+     *      The request code to send to fragment
+     * @param resultCode
+     *      The result code from the fragment
+     * @param data
+     *      The data passed back from the intent
+     * */
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -87,6 +104,9 @@ public class FacilityActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Method to query existing facility details
+     * */
     private void getFacilityDetails() {
         db.collection("facilities").document(deviceId).get()
                 .addOnSuccessListener(documentSnapshot -> {
@@ -106,6 +126,9 @@ public class FacilityActivity extends AppCompatActivity {
                 });
     }
 
+    /**
+     * Method to show the dialog to edit facility details
+     * */
     private void showEditFacilityDialog() {
         LayoutInflater inflater = LayoutInflater.from(this);
         View dialogView = inflater.inflate(R.layout.facility_dialog_fragment, null);
@@ -159,6 +182,12 @@ public class FacilityActivity extends AppCompatActivity {
         builder.create().show();
     }
 
+    /**
+     * Method to update the location of an event tied to a facility, in the case
+     * where the facility location changes
+     * @param location
+     *      The new location to update events
+     * */
     private void updateEventLocation(String location) {
         db.collection("events").whereEqualTo("organizer",deviceId).get().addOnSuccessListener(queryDocumentSnapshots -> {
            for (DocumentSnapshot doc: queryDocumentSnapshots) {

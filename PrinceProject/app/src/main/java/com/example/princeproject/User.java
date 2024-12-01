@@ -53,6 +53,21 @@ public class User implements Serializable {
 
     }
 
+    /**
+     * This is a constructor for creating a user object including an image
+     * @param deviceId
+     *      The deviceId of the user
+     * @param name
+     *      Name of the user
+     * @param email
+     *      Email of the user
+     * @param phone
+     *      Phone number of the user (Optional, can be null)
+     * @param account
+     *      Type of the account of the user (user, organizer, admin)
+     * @param profilePictureEncode
+     *      The profile picture encoded
+     * */
     public User(String name, String email, String phone, String account, String deviceId,String profilePictureEncode){
         this.name = name;
         this.email = email;
@@ -136,6 +151,11 @@ public class User implements Serializable {
         this.account = account;
     }
 
+    /**
+     * Gets the user's device Id
+     * @return
+     *      deviceId of the user
+     * */
     public String getDeviceId() {
         return deviceId;
     }
@@ -144,8 +164,18 @@ public class User implements Serializable {
         this.deviceId = deviceId;
     }
 
+    /**
+     * Set the user's profile picture
+     * @param encode
+     *      Encoded profile picture
+     * */
     public void setProfilePictureEncode(String encode) {this.profilePictureEncode = encode;}
 
+    /**
+     * Gets the user's profile picture
+     * @return
+     *      Encoded profile picture
+     * */
     public String getProfilePictureEncode() {return this.profilePictureEncode; }
 
     private ArrayList<Integer> ArraySubtract(ArrayList<Integer> a, ArrayList<Integer> b) {
@@ -156,6 +186,9 @@ public class User implements Serializable {
         return c;
     }
 
+    /**
+     * Randomly generate a profile picture for a user, if they do not select one
+     * */
     public void GenerateProfileImage() {
         // Pick the color based on the username
         int hexValue = 0;
@@ -218,6 +251,11 @@ public class User implements Serializable {
         this.profilePictureEncode = Base64.encodeToString(byteArray, Base64.DEFAULT);
     }
 
+    /**
+     * Decode an encoded profile picture string
+     * @param context
+     *      The current context
+     * */
     public android.net.Uri decodeBase64String(Context context) {
         Calendar calendar = Calendar.getInstance();
         String hour = Integer.toString(calendar.get(Calendar.HOUR_OF_DAY));

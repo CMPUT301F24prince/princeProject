@@ -18,6 +18,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * This is a class that handles the list of entrants for an event
+ * */
 public class EntrantAdapter extends BaseAdapter {
     private Context context;
     private List<String> entrants;
@@ -26,6 +29,17 @@ public class EntrantAdapter extends BaseAdapter {
     private String eventId;
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
 
+    /**
+     * Constructor for the event adapter
+     * @param context
+     *      The context of the entrants list
+     * @param entrants
+     *      The list of entrants for an event
+     * @param type
+     *      The type of entrants
+     * @param eventId
+     *      The event id
+     * */
     public EntrantAdapter(Context context, List<String> entrants, String type,String eventId) {
         this.context = context;
         this.entrants = entrants;
@@ -34,21 +48,49 @@ public class EntrantAdapter extends BaseAdapter {
         this.eventId = eventId;
     }
 
+    /**
+     * Test function to get the size of entrants
+     * @return
+     *      The size of the entrants list
+     * */
     @Override
     public int getCount() {
         return entrants.size();
     }
 
+    /**
+     * Test function to get an entrant from the list
+     * @param position
+     *      The position of the selected entrant in the list of entrants
+     * @return
+     *      The entrant selected
+     * */
     @Override
     public Object getItem(int position) {
         return entrants.get(position);
     }
 
+    /**
+     * Test function to get the id of the entrant
+     * @param position
+     *      The position of the selected entrant in the list of entrants
+     * @return
+     *      The entrant selected
+     * */
     @Override
     public long getItemId(int position) {
         return position;
     }
 
+    /**
+     * Get the view of entrants for an event
+     * @param position
+     *      The position of the selected entrant
+     * @param convertView
+     *      The view to switch to on selection
+     * @param parent
+     *      The view of the list of events
+     * */
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         if (convertView == null) {
@@ -75,6 +117,15 @@ public class EntrantAdapter extends BaseAdapter {
         return convertView;
     }
 
+    /**
+     * Send a cancel notification to entrants when an event is cancelled
+     * @param eventId
+     *      The event being cancelled
+     * @param userId
+     *      The userId to send the notification to
+     * @param eventName
+     *      The name of the event
+     * */
     public void sendCancelNotification(String userId,String eventName,String eventId) {
         Map<String, Object> notificationData = new HashMap<>();
         notificationData.put("userId", userId);
@@ -88,6 +139,13 @@ public class EntrantAdapter extends BaseAdapter {
         db.collection("notifications").add(notificationData);
     }
 
+    /**
+     * Cancel an entrant from the list of entrants for an event
+     * @param entrant
+     *      The entrant being removed from the list
+     * @param position
+     *      The position of the entrant in the list
+     * */
     public void cancelEntrant(String entrant, int position) {
 
         DocumentReference eventRef = db.collection("events").document(eventId);

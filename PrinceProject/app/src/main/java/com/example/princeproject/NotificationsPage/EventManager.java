@@ -11,6 +11,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 import java.util.ArrayList;
+
+/**
+ * Class to manage the logic behind events, such as user selection and notification handling
+ */
 public class EventManager {
     private static FirebaseFirestore db = FirebaseFirestore.getInstance();
 
@@ -107,6 +111,15 @@ public class EventManager {
         });
     }
 
+    /**
+     * Select an entrant for an event
+     * @param context
+     *      The current event context
+     * @param eventId
+     *      The event to select and entrant for
+     * @param deviceId
+     *      The device of the user being selected
+     */
     public static void selectEntrantByDeviceId(Context context, String eventId, String deviceId) {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         Query query = db.collection("events").whereEqualTo("eventId", eventId);

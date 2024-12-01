@@ -5,6 +5,11 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
+/**
+ * Class to represent a page for organizers to see lists of users
+ * related to an event. This includes users that were chosen, have
+ * accepted or declined, or waitlisted.
+ * */
 public class PageAdapter extends FragmentStateAdapter {
 
     private String eventId;
@@ -44,6 +49,9 @@ public class PageAdapter extends FragmentStateAdapter {
         }
     }
 
+    /**
+     * Test function to get the count of items on the screen
+     * */
     @Override
     public int getItemCount() {
         return 4;

@@ -37,6 +37,10 @@ import org.jetbrains.annotations.NotNull;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Class to show the dialog for an event when an event is clicked on
+ * in the event list
+ * */
 public class EventDialogFragment extends DialogFragment {
     interface EventDialogListener{
         //void setEditProfile(User user);
@@ -65,6 +69,11 @@ public class EventDialogFragment extends DialogFragment {
         this.username = username;
     }
 
+    /**
+     * Method to attach the dialog to the event
+     * @param context
+     *      The current context of the event
+     * */
     @Override
     public void onAttach(@NotNull Context context){
         super.onAttach(context);
@@ -74,6 +83,11 @@ public class EventDialogFragment extends DialogFragment {
         }
     }
 
+    /**
+     * Method to handle the initialization of the dialog by taking in the passed Event object
+     * @param savedInstanceState
+     *      The current state of the event view
+     * */
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -82,6 +96,11 @@ public class EventDialogFragment extends DialogFragment {
         }
     }
 
+    /**
+     * Method to handle the creation of the dialog for an event
+     * @param savedInstanceState
+     *      The current state of the event view
+     * */
     @NonNull
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
@@ -144,6 +163,9 @@ public class EventDialogFragment extends DialogFragment {
         return dialog;
     }
 
+    /**
+     * Method to get the location of a user when the user joins the waiting list
+     * */
     private void getUserLocation(){
         if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
             fusedLocationClient.getLastLocation()
