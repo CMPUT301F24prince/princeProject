@@ -28,11 +28,19 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 
+/**
+ * Class to handle the list of events tied to an organizer
+ * */
 public class ManageEventsActivity extends AppCompatActivity {
     private String eventId;
     private TextView eventNameText,eventDescriptionText,eventMaxParticipantsText,eventLocationText,eventRegDateText,eventEventDateText;
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
 
+    /**
+     * Method to handle the creation of the view
+     * @param savedInstanceState
+     *      The current state of the view
+     * */
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -92,6 +100,10 @@ public class ManageEventsActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Method to show the event dialog to when an organizer
+     * clicks to edit it
+     * */
     private void showEditEventDialog() {
         LayoutInflater inflater = LayoutInflater.from(this);
         View dialogView = inflater.inflate(R.layout.manage_event_dialog, null);

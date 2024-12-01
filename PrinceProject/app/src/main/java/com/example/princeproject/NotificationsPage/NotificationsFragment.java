@@ -113,11 +113,18 @@ public class NotificationsFragment extends Fragment {
         getNotifications();
     }
 
-
+    /**
+     * Method to get the current user
+     */
     private String getCurrentUserId() {
         return Settings.Secure.getString(requireContext().getContentResolver(), Settings.Secure.ANDROID_ID);
     }
 
+    /**
+     * Method to set up the notification toggle for a user to accept notifications or not
+     * @param view
+     *      The current view
+     */
     private void setupNotificationToggle(View view) {
         // Set up listener for the toggle
         notificationToggle.setOnCheckedChangeListener((buttonView, isChecked) -> {
@@ -130,6 +137,9 @@ public class NotificationsFragment extends Fragment {
         });
     }
 
+    /**
+     * Method to query all existing notifications tied to a user
+     */
     private void getNotifications() {
         db.collection("notifications")
                 .whereEqualTo("userId", deviceId)
@@ -163,7 +173,15 @@ public class NotificationsFragment extends Fragment {
                 });
     }
 
-
+    /**
+     * Method to send push notifications to a user
+     * @param context
+     *      The current context
+     * @param channelId
+     *      The channel ID for the users device
+     * @param id
+     *      The id of the notification object being pushed
+     */
     public void sendPushNotification(Context context, String channelId, int id) {
         NotificationManager mNotificationManager;
 

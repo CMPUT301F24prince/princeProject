@@ -108,6 +108,13 @@ public class NotificationArrayAdapter extends ArrayAdapter<Notification> {
         return view;
     }
 
+    /**
+     * Method to set the image for an event
+     * @param image
+     *      The image for the event
+     * @param eventId
+     *      The id of the event
+     * */
     private void setEventImage(ImageView image,String eventId) {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
@@ -127,6 +134,13 @@ public class NotificationArrayAdapter extends ArrayAdapter<Notification> {
                 });
     }
 
+    /**
+     * Logic for declining a notificiation for event registration
+     * @param notification
+     *      The notification object
+     * @param position
+     *      The position of the notification clicked in the notification array
+     * */
     private void declineInvitation(Notification notification, int position) {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
@@ -174,6 +188,13 @@ public class NotificationArrayAdapter extends ArrayAdapter<Notification> {
                 });
     }
 
+    /**
+     * Logic for accepting a notificiation for event registration
+     * @param notification
+     *      The notification object
+     * @param position
+     *      The position of the notification clicked in the notification array
+     * */
     private void acceptInvitation(Notification notification, int position) {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
@@ -219,6 +240,11 @@ public class NotificationArrayAdapter extends ArrayAdapter<Notification> {
                 });
     }
 
+    /**
+     * Deleting all notifications sent from a particular event
+     * @param notification
+     *      The notification object
+     * */
     private void deleteAllNotifications(Notification notification) {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
@@ -246,6 +272,11 @@ public class NotificationArrayAdapter extends ArrayAdapter<Notification> {
                 });
     }
 
+    /**
+     * Method for deleting a notification on a particular users screen
+     * @param notification
+     *      The notification object
+     * */
     private void deleteNotification(Notification notification) {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         db.collection("notifications")
