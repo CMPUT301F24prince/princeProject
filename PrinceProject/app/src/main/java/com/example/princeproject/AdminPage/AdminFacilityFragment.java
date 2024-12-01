@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment;
 
 import com.example.princeproject.Facility;
 import com.example.princeproject.R;
+import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 
@@ -41,7 +42,29 @@ public class AdminFacilityFragment extends Fragment {
         adminFacilityAdapter = new AdminFacilityAdapter(getContext(),facilities,db);
         facilityListView.setAdapter(adminFacilityAdapter);
 
+        adjustListViewPadding();
         getFacilities();
+    }
+
+    private void adjustListViewPadding() {
+        // Get the TabLayout from the activity
+        TabLayout tabLayout = requireActivity().findViewById(R.id.navigation_bar);
+
+        // Wait for the TabLayout to be laid out to get its height
+        tabLayout.post(() -> {
+            int tabHeight = tabLayout.getHeight();
+
+            // Add a small offset to fully show the last item
+            int additionalPadding = 90;
+
+            // Adjust the ListView's bottom padding dynamically
+            facilityListView.setPadding(
+                    facilityListView.getPaddingLeft(),
+                    facilityListView.getPaddingTop(),
+                    facilityListView.getPaddingRight(),
+                    tabHeight + additionalPadding
+            );
+        });
     }
 
     public void getFacilities() {
