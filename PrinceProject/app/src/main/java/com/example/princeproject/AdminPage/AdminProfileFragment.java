@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment;
 
 import com.example.princeproject.R;
 import com.example.princeproject.User;
+import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 
@@ -62,9 +63,35 @@ public class AdminProfileFragment extends Fragment {
         adminProfileAdapter = new AdminProfileAdapter(getContext(),userList,db);
         userListView.setAdapter(adminProfileAdapter);
 
+        adjustListViewPadding();
+
         getUsers();
 
 
+    }
+
+    /**
+     * Method to adjust the padding of the listview to account for the navigation bar
+     */
+    private void adjustListViewPadding() {
+        // Get the TabLayout from the activity
+        TabLayout tabLayout = requireActivity().findViewById(R.id.navigation_bar);
+
+        // Wait for the TabLayout to be laid out to get its height
+        tabLayout.post(() -> {
+            int tabHeight = tabLayout.getHeight();
+
+            // Add a small offset to fully show the last item
+            int additionalPadding = 90;
+
+            // Adjust the ListView's bottom padding dynamically
+            userListView.setPadding(
+                    userListView.getPaddingLeft(),
+                    userListView.getPaddingTop(),
+                    userListView.getPaddingRight(),
+                    tabHeight + additionalPadding
+            );
+        });
     }
 
     /**
