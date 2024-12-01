@@ -13,6 +13,8 @@ import java.io.FileOutputStream;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+
+import com.example.princeproject.R;
 import com.example.princeproject.User;
 
 public class Event {
@@ -233,7 +235,18 @@ public class Event {
             return Uri.fromFile(outputFile);
         }
         else {
-            return null;
+            Bitmap bitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.event_filler_image);
+
+            File outputFile = new File(context.getExternalFilesDir(Environment.DIRECTORY_PICTURES), "IMG_"+hour+minute+second+milisecond+".png");
+            try {
+                FileOutputStream fos = new FileOutputStream(outputFile);
+                bitmap.compress(Bitmap.CompressFormat.PNG, 100, fos);
+                fos.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+            return Uri.fromFile(outputFile);
         }
     }
 }
