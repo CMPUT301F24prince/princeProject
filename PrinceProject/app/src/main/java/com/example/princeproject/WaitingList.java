@@ -7,7 +7,9 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.CollectionReference;
 
 
-
+/**
+ * Class to represent a waiting list for an event
+ * */
 public class WaitingList {
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     CollectionReference eventsRef = db.collection("events");
@@ -45,6 +47,13 @@ public class WaitingList {
                 });
     }
 
+    /**
+     * Adds a specified user to the accepted list for an event
+     * @param eventId
+     * event whose waiting list will be added to
+     * @param userId
+     * user id that will be added to list
+     */
     public void joinAcceptedList(String eventId, String userId) {
         // Query to find the event document with the specific eventId field value
         eventsRef.whereEqualTo("eventId", eventId)

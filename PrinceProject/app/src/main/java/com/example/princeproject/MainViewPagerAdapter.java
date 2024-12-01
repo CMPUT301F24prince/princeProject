@@ -9,6 +9,10 @@ import com.example.princeproject.EventsPage.EventsFragment;
 import com.example.princeproject.NotificationsPage.NotificationsFragment;
 import com.example.princeproject.ProfilePage.ProfileFragment;
 
+/**
+ * Class to handle the page management for the application, based on the selection
+ * on the taskbard.
+ */
 public class MainViewPagerAdapter extends FragmentStateAdapter {
     /**
      * Constructor for the adapter
@@ -18,6 +22,11 @@ public class MainViewPagerAdapter extends FragmentStateAdapter {
         super(fragmentActivity);
     }
 
+    /**
+     * Showing fragments based on user navigation of the app
+     * @param position
+     *     The position of the button being clicked on the taskbar
+     */
     @NonNull
     @Override
     public Fragment createFragment(int position) {
@@ -33,6 +42,9 @@ public class MainViewPagerAdapter extends FragmentStateAdapter {
         }
     }
 
+    /**
+     * Unit test function to ensure all button are present on the taskbar
+     */
     @Override
     public int getItemCount() {
         return 3;

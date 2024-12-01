@@ -41,13 +41,15 @@ public class Notification {
     }
 
     /**
-     * Constructor for the notification object (with location)
+     * Constructor for the notification object
      * @param name
      *      Name/title of the notification
      * @param details
      *      Details/description of the notification
      * @param location
      *      Location details of the notification
+     * @param userDeviceId
+     *      The deviceId of the user
      * */
     public Notification(String name, String details, String location, String userDeviceId) {
         this.name = name;
@@ -56,6 +58,21 @@ public class Notification {
         this.deviceId = userDeviceId;
     }
 
+    /**
+     * Constructor for the notification object (with event details)
+     * @param id
+     *      The random id for the notification
+     * @param name
+     *      Name/title of the notification
+     * @param details
+     *      Details/description of the notification
+     * @param location
+     *      Location details of the notification
+     * @param userDeviceId
+     *      The deviceId of the user
+     * @param eventId
+     *      The eventId for the notification to be sent for
+     * */
     public Notification(String id,String name, String details, String location, String userDeviceId, String eventId) {
         this.name = name;
         this.details = details;
@@ -109,20 +126,43 @@ public class Notification {
         this.details = details;
     }
 
-
-
+    /**
+     * Getter for the notification deviceid
+     * @return
+     *      The deviceid of the notification
+     * */
     public String getDeviceId() {return deviceId;}
 
+    /**
+     * Getter for the eventId
+     * @return
+     *      The eventId for the notification
+     * */
     public String getEventId() {return eventId;}
 
+    /**
+     * Getter for the notification id
+     * @return
+     *      The id of the notification
+     * */
     public String getId() {
         return id;
     }
 
+    /**
+     * Setter for the notification id
+     * @param id
+     *      The id of the notification
+     * */
     public void setId(String id) {
         this.id = id;
     }
 
+    /**
+     * Change the status on whether a notification is recieved or not
+     * @param newval
+     *      The new flag value
+     * */
     public void changeRecievedStatus(Boolean newval) {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         DocumentReference docRef = db.collection("notifications").document(this.id);
@@ -136,6 +176,11 @@ public class Notification {
         });
     }
 
+    /**
+     * Method to handle the logic for sending notifications to users
+     * @param context
+     *      The current context
+     * */
     public void sendAndroidNotification(Context context) {
         NotificationManager mNotificationManager;
 

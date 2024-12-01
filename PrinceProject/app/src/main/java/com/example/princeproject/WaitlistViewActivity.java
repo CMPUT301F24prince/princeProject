@@ -16,7 +16,9 @@ import java.util.ArrayList;
 
 import java.util.List;
 
-
+/**
+ * Class for the waiting list view for organizers to see
+ */
 public class WaitlistViewActivity extends AppCompatActivity {
 
     private ListView waitlistEventsListView;
@@ -26,6 +28,11 @@ public class WaitlistViewActivity extends AppCompatActivity {
     private FirebaseFirestore db;
     String userId;
 
+    /**
+     * Method to initialize the waiting list view
+     * @param savedInstanceState
+     *      The current state of the view
+     * */
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
