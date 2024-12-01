@@ -70,6 +70,9 @@ public class AdminProfileFragment extends Fragment {
 
     }
 
+    /**
+     * Method to adjust the padding of the listview to account for the navigation bar
+     */
     private void adjustListViewPadding() {
         // Get the TabLayout from the activity
         TabLayout tabLayout = requireActivity().findViewById(R.id.navigation_bar);
