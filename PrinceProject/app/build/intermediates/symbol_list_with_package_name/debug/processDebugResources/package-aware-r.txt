@@ -1452,6 +1452,7 @@ color foreground_material_dark
 color foreground_material_light
 color highlighted_text_material_dark
 color highlighted_text_material_light
+color light_violet
 color m3_appbar_overlay_color
 color m3_assist_chip_icon_tint_color
 color m3_assist_chip_stroke_color
@@ -3446,6 +3447,7 @@ id included
 id indeterminate
 id info
 id invisible
+id invite_button
 id inward
 id italic
 id item_touch_helper_previous_elevation
@@ -3644,6 +3646,7 @@ id search_mag_icon
 id search_plate
 id search_src_text
 id search_voice_btn
+id select_all_button
 id select_dialog_listview
 id selected
 id selection_type

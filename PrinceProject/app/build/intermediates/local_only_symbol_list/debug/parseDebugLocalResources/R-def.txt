@@ -2,6 +2,7 @@ R_DEF: Internal format may change without notice
 local
 array accountTypes
 color black
+color light_violet
 color noticable_grey
 color white
 drawable circle_shape
@@ -67,6 +68,7 @@ id generate_qr_code
 id imageView
 id image_title
 id image_view
+id invite_button
 id joinWaitingListButton
 id linearLayout
 id list_view
@@ -103,6 +105,7 @@ id remove_picture_text
 id remove_qr_text
 id root_pager
 id scan_qr_utton
+id select_all_button
 id submitButton
 id tab_layout
 id tab_layout_admin
