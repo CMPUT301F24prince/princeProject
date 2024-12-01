@@ -3060,6 +3060,7 @@ drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
 drawable edmonton_map
+drawable event_filler_image
 drawable filler_image
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
@@ -3616,6 +3617,7 @@ id ratio
 id rectangles
 id removeButton
 id remove_picture_text
+id remove_qr_text
 id report_drawn
 id reverseSawtooth
 id right

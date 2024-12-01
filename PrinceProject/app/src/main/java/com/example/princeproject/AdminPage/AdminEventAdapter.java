@@ -49,6 +49,7 @@ public class AdminEventAdapter extends ArrayAdapter<Event> {
         Button deleteButton = convertView.findViewById(R.id.delete_button_event);
         ImageView eventPoster = convertView.findViewById(R.id.event_image);
         TextView removePoster = convertView.findViewById(R.id.remove_picture_text);
+        TextView removeQR = convertView.findViewById(R.id.remove_qr_text);
 
         Event event = events.get(position);
         titleTextView.setText(event.getTitle());
@@ -81,8 +82,31 @@ public class AdminEventAdapter extends ArrayAdapter<Event> {
             }
         });
 
+        removeQR.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                deleteQR(event.getEventId());
+            }
+        });
+
 
         return convertView;
+    }
+
+    public void deleteQR(String eventId) {
+        db.collection("events").document(eventId).get()
+                .addOnSuccessListener(documentSnapshot -> {
+                    String qrData = documentSnapshot.getString("qrHashData");
+                    if (qrData != null) {
+                        db.collection("events").document(eventId)
+                                .update("qrHashData",null)
+                                .addOnSuccessListener(x -> {
+                                    Toast.makeText(context,"QR Hash Data removed",Toast.LENGTH_SHORT).show();
+                                });
+                    } else {
+                        Toast.makeText(context,"This event does not have hashed data",Toast.LENGTH_SHORT).show();
+                    }
+                });
     }
 
     public void deleteEvent(String eventId,int position) {

@@ -6,6 +6,7 @@ color noticable_grey
 color white
 drawable circle_shape
 drawable edmonton_map
+drawable event_filler_image
 drawable filler_image
 drawable ic_launcher_background
 drawable ic_launcher_foreground
@@ -103,6 +104,7 @@ id profile_image_preview
 id profile_image_upload
 id removeButton
 id remove_picture_text
+id remove_qr_text
 id root_pager
 id scan_qr_utton
 id submitButton

@@ -3059,6 +3059,7 @@ int drawable design_ic_visibility_off 0x7f080098
 int drawable design_password_eye 0x7f080099
 int drawable design_snackbar_background 0x7f08009a
 int drawable edmonton_map 0x7f08009b
+int drawable event_filler_image 0x7f080100
 int drawable filler_image 0x7f08009c
 int drawable googleg_disabled_color_18 0x7f08009d
 int drawable googleg_standard_color_18 0x7f08009e
@@ -3615,6 +3616,7 @@ int id ratio 0x7f0901c4
 int id rectangles 0x7f0901c5
 int id removeButton 0x7f0901c6
 int id remove_picture_text 0x7f0901c7
+int id remove_qr_text 0x7f09027d
 int id report_drawn 0x7f0901c8
 int id reverseSawtooth 0x7f0901c9
 int id right 0x7f0901ca
