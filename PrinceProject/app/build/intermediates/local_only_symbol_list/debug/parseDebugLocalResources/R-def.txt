@@ -25,8 +25,6 @@ id create_event_facility_button
 id declineButton
 id delete_button
 id delete_button_event
-id delete_button_facility
-id description_text
 id editAccountType
 id editProfileButton
 id editTextEmail
@@ -57,7 +55,6 @@ id event_regDate_text
 id event_spinner
 id facility_description
 id facility_description_text
-id facility_image
 id facility_image_preview
 id facility_image_upload
 id facility_list_view
@@ -73,7 +70,6 @@ id image_view
 id joinWaitingListButton
 id linearLayout
 id list_view
-id location_text
 id lottery_button
 id main
 id main_navigation_bar
@@ -121,8 +117,8 @@ id textView5
 id textView6
 id textView7
 id textView8
-id title_text
 id user_email_text
+id user_image
 id user_list_view
 id user_name_text
 id user_role_text

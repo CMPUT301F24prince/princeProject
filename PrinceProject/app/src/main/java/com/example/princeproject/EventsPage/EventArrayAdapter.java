@@ -44,9 +44,9 @@ public class EventArrayAdapter extends ArrayAdapter<Event> {
         }
 
         // Find the TextViews in eventlist_entry.xml
-        TextView titleTextView = view.findViewById(R.id.title_text);
-        TextView descriptionTextView = view.findViewById(R.id.description_text);
-        TextView locationTextView = view.findViewById(R.id.location_text);
+        TextView titleTextView = view.findViewById(R.id.user_name_text);
+        TextView descriptionTextView = view.findViewById(R.id.user_role_text);
+        TextView locationTextView = view.findViewById(R.id.user_email_text);
         ImageView eventPoster = view.findViewById(R.id.event_image);
 
         // Set the text for the TextViews from the Event object

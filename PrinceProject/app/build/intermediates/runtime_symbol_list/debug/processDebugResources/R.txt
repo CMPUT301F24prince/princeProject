@@ -3318,10 +3318,8 @@ int id decor_content_parent 0x7f09009a
 int id default_activity_button 0x7f09009b
 int id delete_button 0x7f09009c
 int id delete_button_event 0x7f09009d
-int id delete_button_facility 0x7f09009e
 int id deltaRelative 0x7f09009f
 int id dependency_ordering 0x7f0900a0
-int id description_text 0x7f0900a1
 int id design_bottom_sheet 0x7f0900a2
 int id design_menu_item_action_area 0x7f0900a3
 int id design_menu_item_action_area_stub 0x7f0900a4
@@ -3391,7 +3389,6 @@ int id expand_activities_button 0x7f0900e3
 int id expanded_menu 0x7f0900e4
 int id facility_description 0x7f0900e5
 int id facility_description_text 0x7f0900e6
-int id facility_image 0x7f0900e7
 int id facility_image_preview 0x7f0900e8
 int id facility_image_upload 0x7f0900e9
 int id facility_list_view 0x7f0900ea
@@ -3467,7 +3464,6 @@ int id linearLayout 0x7f09012f
 int id listMode 0x7f090130
 int id list_item 0x7f090131
 int id list_view 0x7f090132
-int id location_text 0x7f090133
 int id lottery_button 0x7f090134
 int id m3_side_sheet 0x7f090135
 int id main 0x7f090136
@@ -3736,7 +3732,6 @@ int id time 0x7f09023b
 int id title 0x7f09023c
 int id titleDividerNoCustom 0x7f09023d
 int id title_template 0x7f09023e
-int id title_text 0x7f09023f
 int id toggle 0x7f090240
 int id top 0x7f090241
 int id topPanel 0x7f090242
@@ -3758,6 +3753,7 @@ int id unlabeled 0x7f090251
 int id up 0x7f090252
 int id useLogo 0x7f090253
 int id user_email_text 0x7f090254
+int id user_image 0x7f09027e
 int id user_list_view 0x7f090255
 int id user_name_text 0x7f090256
 int id user_role_text 0x7f090257

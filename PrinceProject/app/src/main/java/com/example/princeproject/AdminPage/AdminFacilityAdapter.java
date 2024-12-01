@@ -16,7 +16,6 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.example.princeproject.EventsPage.Event;
 import com.example.princeproject.Facility;
 import com.example.princeproject.R;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -42,11 +41,11 @@ public class AdminFacilityAdapter extends ArrayAdapter<Facility> {
             convertView = LayoutInflater.from(context).inflate(R.layout.admin_facility_item,parent,false);
         }
 
-        TextView titleTextView = convertView.findViewById(R.id.title_text);
-        TextView descriptionTextView = convertView.findViewById(R.id.description_text);
-        TextView locationTextView = convertView.findViewById(R.id.location_text);
-        Button deleteButton = convertView.findViewById(R.id.delete_button_facility);
-        ImageView image = convertView.findViewById(R.id.facility_image);
+        TextView titleTextView = convertView.findViewById(R.id.user_name_text);
+        TextView descriptionTextView = convertView.findViewById(R.id.user_role_text);
+        TextView locationTextView = convertView.findViewById(R.id.user_email_text);
+        Button deleteButton = convertView.findViewById(R.id.delete_button);
+        ImageView image = convertView.findViewById(R.id.user_image);
         TextView deleteImage = convertView.findViewById(R.id.remove_picture_text);
 
         Facility facility = facilities.get(position);

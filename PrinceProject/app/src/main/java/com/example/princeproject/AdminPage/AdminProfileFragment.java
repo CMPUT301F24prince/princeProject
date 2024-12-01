@@ -58,8 +58,9 @@ public class AdminProfileFragment extends Fragment {
                         String user_role = (String) doc.get("accountType");
                         String user_email = (String) doc.get("email");
                         String user_phone = (String) doc.get("phone");
+                        String image_encode = (String) doc.get("profilePicture");
 
-                        User user = new User(user_name,user_email,user_phone,user_role,user_id);
+                        User user = new User(user_name,user_email,user_phone,user_role,user_id,image_encode);
                         userList.add(user);
                     }
                     adminProfileAdapter.notifyDataSetChanged();
