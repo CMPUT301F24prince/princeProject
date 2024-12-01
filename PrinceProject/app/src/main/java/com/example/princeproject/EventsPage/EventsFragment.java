@@ -74,7 +74,7 @@ public class EventsFragment extends Fragment {
     private FirebaseFirestore db;
     private String username;
     private ImageView preview;
-    private String poster_encode;
+    private String poster_encode = null;
     private String deviceId;
 
     @Override
@@ -160,6 +160,18 @@ public class EventsFragment extends Fragment {
         EditText facilityLocation = dialogView.findViewById(R.id.facility_location);
         EditText facilityDescription = dialogView.findViewById(R.id.facility_description);
 
+        Button uploadButton = dialogView.findViewById(R.id.facility_image_upload);
+        preview = dialogView.findViewById((R.id.facility_image_preview));
+
+        uploadButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent iGallery = new Intent(Intent.ACTION_PICK) ;
+                iGallery.setData(MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                startActivityForResult(iGallery, GALLERY_REQ_CODE);
+            }
+        });
+
         new AlertDialog.Builder(requireContext())
                 .setTitle("Create Facility")
                 .setView(dialogView)
@@ -171,7 +183,7 @@ public class EventsFragment extends Fragment {
                     if (name.isEmpty() || location.isEmpty()) {
                         Toast.makeText(requireContext(), "Please fill in all required fields!", Toast.LENGTH_SHORT).show();
                     } else {
-                        Facility facility = new Facility(deviceId,location,name,description);
+                        Facility facility = new Facility(deviceId,location,name,description, this.poster_encode);
                         addFacilityToDatabase(facility,button);
                         dialog.dismiss();
                     }
@@ -188,10 +200,13 @@ public class EventsFragment extends Fragment {
         facilityDb.put("location",facility.getLocation());
         facilityDb.put("name",facility.getName());
         facilityDb.put("description",facility.getDescription());
+        facilityDb.put("image", this.poster_encode);
 
         db.collection("facilities").document(facility.getOrganizer_id()).set(facilityDb)
                 .addOnSuccessListener(x -> {
                     checkFacilityStatus(button);
+                }).addOnFailureListener(e -> {
+                    e.getMessage();
                 });
 
     }
@@ -340,7 +355,6 @@ public class EventsFragment extends Fragment {
         builder.setNegativeButton("Cancel", (dialog, which) -> dialog.cancel());
         builder.show();
     }
-
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
