@@ -22,11 +22,23 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.List;
 
+/**
+ * This is a class that handles the list of events for admins to view and modify
+ * */
 public class AdminEventAdapter extends ArrayAdapter<Event> {
     private Context context;
     private List<Event> events;
     private FirebaseFirestore db;
 
+    /**
+     * Constructor for the event adapter
+     * @param context
+     *      The context of the event list
+     * @param events
+     *      The list of events for admins to view
+     * @param db
+     *      The database instance
+     * */
     public AdminEventAdapter(Context context, List<Event> events, FirebaseFirestore db) {
         super(context, 0, events);
         this.context = context;
@@ -34,6 +46,15 @@ public class AdminEventAdapter extends ArrayAdapter<Event> {
         this.db = db;
     }
 
+    /**
+     * Get the view of each event item for an admin
+     * @param position
+     *      The position of the selected event in the event list
+     * @param convertView
+     *      The view to switch to on selection
+     * @param parent
+     *      The view of the list of events
+     * */
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
@@ -92,6 +113,11 @@ public class AdminEventAdapter extends ArrayAdapter<Event> {
         return convertView;
     }
 
+    /**
+     * Method to handle the deleting of QR hash data of a selected event
+     * @param eventId
+     *      The id of the event being modified
+     * */
     public void deleteQR(String eventId) {
         db.collection("events").document(eventId).get()
                 .addOnSuccessListener(documentSnapshot -> {
@@ -108,6 +134,13 @@ public class AdminEventAdapter extends ArrayAdapter<Event> {
                 });
     }
 
+    /**
+     * Method to handle the deleting of a selected event
+     * @param eventId
+     *      The id of the event being modified
+     * @param position
+     *      The position of the selected event in the list of events
+     * */
     public void deleteEvent(String eventId,int position) {
         db.collection("events").document(eventId)
                 .delete()
@@ -118,6 +151,13 @@ public class AdminEventAdapter extends ArrayAdapter<Event> {
                 });
     }
 
+    /**
+     * Method to handle the deleting of picture of a selected event
+     * @param eventId
+     *      The id of the event being modified
+     * @param position
+     *      The position of the selected event in the list of events
+     * */
     public void deletePoster(String eventId,int position) {
         db.collection("events").document(eventId).get()
                 .addOnSuccessListener(documentSnapshot -> {

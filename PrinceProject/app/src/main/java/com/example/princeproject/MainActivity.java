@@ -29,6 +29,9 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreSettings;
 import com.google.firebase.firestore.Query;
 
+/**
+ * Main activity class for the app
+ * */
 public class MainActivity extends AppCompatActivity {
     //UI properties
     TabLayout mainNavigationBar;
@@ -144,7 +147,9 @@ public class MainActivity extends AppCompatActivity {
             }
     );
 
-
+    /**
+     * Method to retrieve notifications tied to a user
+     */
     private void getNotifications() {
         db.collection("notifications")
                 .whereEqualTo("userId", deviceId)

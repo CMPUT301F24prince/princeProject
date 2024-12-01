@@ -49,6 +49,15 @@ public class EntrantFragment extends Fragment {
         this.type = type;
     }
 
+    /**
+     * Method to handle the creation of the view
+     * @param inflater
+     *      Inflater to help show the fragment layout
+     * @param container
+     *      The container for the layout
+     * @param savedInstanceState
+     *      The current state of the view
+     * */
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -104,6 +113,7 @@ public class EntrantFragment extends Fragment {
 
         return view;
     }
+
 
     private void selectListViewItem(View v, String user_device) {
         TypedValue typedValue = new TypedValue();

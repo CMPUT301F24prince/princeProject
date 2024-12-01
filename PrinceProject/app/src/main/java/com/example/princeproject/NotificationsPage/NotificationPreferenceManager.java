@@ -2,6 +2,9 @@ package com.example.princeproject.NotificationsPage;
 
 import com.google.firebase.firestore.FirebaseFirestore;
 
+/**
+ * Class to handle the permissions for a user to recieve notifications
+ */
 public class NotificationPreferenceManager {
     private FirebaseFirestore db;
 

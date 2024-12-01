@@ -20,18 +20,37 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Class that handles the dialog fragment for a selected profile
+ * */
 public class AdminProfileFragment extends Fragment {
     private ListView userListView;
     private List<User> userList;
     private FirebaseFirestore db;
     private AdminProfileAdapter adminProfileAdapter;
 
+    /**
+     * Method to handle the creation of the view
+     * @param inflater
+     *      Inflater to help show the fragment layout
+     * @param container
+     *      The container for the layout
+     * @param savedInstanceState
+     *      The current state of the view
+     * */
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_admin_profile, container, false);
     }
 
+    /**
+     * Method to invoke actions on creation of the view
+     * @param view
+     *      The view being shown
+     * @param savedInstanceState
+     *      The current state of the view
+     * */
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -72,6 +91,9 @@ public class AdminProfileFragment extends Fragment {
         });
     }
 
+    /**
+     * Method to get all users from database
+     * */
     private void getUsers() {
         db.collection("users").get()
                 .addOnSuccessListener(queryDocumentSnapshots -> {

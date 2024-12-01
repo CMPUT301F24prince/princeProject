@@ -18,6 +18,9 @@ import com.example.princeproject.R;
 
 import java.util.ArrayList;
 
+/**
+ * Class to handle an array of events to display the list of events
+ * */
 public class EventArrayAdapter extends ArrayAdapter<Event> {
     /**
      *
@@ -30,6 +33,15 @@ public class EventArrayAdapter extends ArrayAdapter<Event> {
         super(context, 0, events);
     }
 
+    /**
+     * Get the view of each event item
+     * @param position
+     *      The position of the selected event in the event list
+     * @param convertView
+     *      The view to switch to on selection
+     * @param parent
+     *      The view of the list of events
+     * */
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {

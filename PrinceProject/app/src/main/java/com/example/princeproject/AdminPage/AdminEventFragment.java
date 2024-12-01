@@ -20,19 +20,37 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * Class that handles the dialog fragment for a selected event
+ * */
 public class AdminEventFragment extends Fragment {
     private ListView eventListView;
     private List<Event> events;
     private FirebaseFirestore db;
     private AdminEventAdapter adminEventAdapter;
 
-
+    /**
+     * Method to handle the creation of the view
+     * @param inflater
+     *      Inflater to help show the fragment layout
+     * @param container
+     *      The container for the layout
+     * @param savedInstanceState
+     *      The current state of the view
+     * */
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_admin_events, container, false);
     }
 
+    /**
+     * Method to invoke actions on creation of the view
+     * @param view
+     *      The view being shown
+     * @param savedInstanceState
+     *      The current state of the view
+     * */
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -69,7 +87,9 @@ public class AdminEventFragment extends Fragment {
             );
         });
     }
-
+    /**
+     * Method to get all events from database
+     * */
     public void getEvents() {
         db.collection("events").get()
                 .addOnSuccessListener(queryDocumentSnapshots -> {
