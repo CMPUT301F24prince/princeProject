@@ -362,6 +362,7 @@ public class EventsFragment extends Fragment {
         if (resultCode==RESULT_OK) {
             if (requestCode==GALLERY_REQ_CODE) {
                 android.net.Uri imageUri = data.getData();
+
                 preview.setImageURI(imageUri);
 
                 InputStream imageStream = null;
@@ -370,6 +371,8 @@ public class EventsFragment extends Fragment {
                 } catch (FileNotFoundException e) {
                 }
                 Bitmap bitmap = BitmapFactory.decodeStream(imageStream);
+                // Compress the image to fixed size
+                bitmap =  Bitmap.createScaledBitmap(bitmap, 125, 125, true);
                 ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
                 bitmap.compress(Bitmap.CompressFormat.PNG, 100, byteArrayOutputStream);
                 byte[] byteArray = byteArrayOutputStream.toByteArray();
