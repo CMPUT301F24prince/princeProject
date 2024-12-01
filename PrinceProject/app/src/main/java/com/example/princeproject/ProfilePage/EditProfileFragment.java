@@ -197,8 +197,10 @@ public class EditProfileFragment extends DialogFragment{
                     docRef.update("phone", phone);
                     docRef.update("accountType", accountTypeDropdown.getSelectedItem().toString());
                     docRef.update("profilePicture", user.getProfilePictureEncode());
-                    if (!newImage.equals(initial_image)) {
-                        docRef.update("defaultImage",false);
+                    if (initial_image != null){
+                        if (!newImage.equals(initial_image)) {
+                            docRef.update("defaultImage",false);
+                        }
                     }
                 }
                 //Notify listener that profile has been updated, and to update info on main activity

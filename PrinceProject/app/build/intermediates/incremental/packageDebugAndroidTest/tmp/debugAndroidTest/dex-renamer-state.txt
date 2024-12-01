@@ -1,7 +1,7 @@
-#Sat Nov 30 01:53:51 MST 2024
-base.0=C\:\\Users\\Kyle\\Documents\\GitHub\\princeProject2\\PrinceProject\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeExtDexDebugAndroidTest\\classes.dex
-base.1=C\:\\Users\\Kyle\\Documents\\GitHub\\princeProject2\\PrinceProject\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeProjectDexDebugAndroidTest\\0\\classes.dex
-base.2=C\:\\Users\\Kyle\\Documents\\GitHub\\princeProject2\\PrinceProject\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeProjectDexDebugAndroidTest\\11\\classes.dex
+#Sun Dec 01 16:21:32 MST 2024
+base.0=C\:\\Users\\mikha\\AndroidStudioProjects\\princeProject1\\PrinceProject\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeExtDexDebugAndroidTest\\classes.dex
+base.1=C\:\\Users\\mikha\\AndroidStudioProjects\\princeProject1\\PrinceProject\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeProjectDexDebugAndroidTest\\0\\classes.dex
+base.2=C\:\\Users\\mikha\\AndroidStudioProjects\\princeProject1\\PrinceProject\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeProjectDexDebugAndroidTest\\11\\classes.dex
 path.0=classes.dex
 path.1=0/classes.dex
 path.2=11/classes.dex
