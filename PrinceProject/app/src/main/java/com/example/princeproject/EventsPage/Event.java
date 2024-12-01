@@ -13,6 +13,8 @@ import java.io.FileOutputStream;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+
+import com.example.princeproject.R;
 import com.example.princeproject.User;
 
 public class Event {
@@ -101,6 +103,11 @@ public class Event {
         this.image_encode = image_encode;
     }
 
+    public Event(String image_encode, String eventId) {
+        this.eventId = eventId;
+        this.image_encode = image_encode;
+    }
+
     //Blank Constructor
     public Event() {
     }
@@ -186,12 +193,17 @@ public class Event {
         isOpenForRegistration = openForRegistration;
     }
 
+    public String getImageEncode() {return image_encode;}
+
+    public void setImageEncode(String image_encode){
+        this.image_encode = image_encode;
+    }
+
 
     public String getEventId() {
         return eventId;
     }
-
-    public String getImageEncode(){return image_encode;}
+    
 
     /**
      * Decodes the Base64 encoded image string into a Bitmap and stores it as a file.
@@ -223,7 +235,18 @@ public class Event {
             return Uri.fromFile(outputFile);
         }
         else {
-            return null;
+            Bitmap bitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.event_filler_image);
+
+            File outputFile = new File(context.getExternalFilesDir(Environment.DIRECTORY_PICTURES), "IMG_"+hour+minute+second+milisecond+".png");
+            try {
+                FileOutputStream fos = new FileOutputStream(outputFile);
+                bitmap.compress(Bitmap.CompressFormat.PNG, 100, fos);
+                fos.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+            return Uri.fromFile(outputFile);
         }
     }
 }

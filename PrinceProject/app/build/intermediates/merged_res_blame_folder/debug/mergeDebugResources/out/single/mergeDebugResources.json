@@ -84,6 +84,10 @@
         "source": "com.example.princeproject.app-main-45:/layout/profile_item.xml"
     },
     {
+        "merged": "com.example.princeproject.app-debug-43:/layout_image_item.xml.flat",
+        "source": "com.example.princeproject.app-main-45:/layout/image_item.xml"
+    },
+    {
         "merged": "com.example.princeproject.app-debug-43:/drawable-xxxhdpi_filler_image.png.flat",
         "source": "com.example.princeproject.app-main-45:/drawable-xxxhdpi/filler_image.png"
     },
@@ -154,6 +158,10 @@
     {
         "merged": "com.example.princeproject.app-debug-43:/layout_profile_clickables_entry.xml.flat",
         "source": "com.example.princeproject.app-main-45:/layout/profile_clickables_entry.xml"
+    },
+    {
+        "merged": "com.example.princeproject.app-debug-43:/layout_item_entrant.xml.flat",
+        "source": "com.example.princeproject.app-main-45:/layout/item_entrant.xml"
     },
     {
         "merged": "com.example.princeproject.app-debug-43:/layout_admin_facility_item.xml.flat",

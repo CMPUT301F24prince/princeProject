@@ -3,13 +3,20 @@ package com.example.princeproject;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Environment;
 import android.util.Base64;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Calendar;
 
 /**
@@ -129,6 +136,76 @@ public class User implements Serializable {
     public void setProfilePictureEncode(String encode) {this.profilePictureEncode = encode;}
 
     public String getProfilePictureEncode() {return this.profilePictureEncode; }
+
+    private ArrayList<Integer> ArraySubtract(ArrayList<Integer> a, ArrayList<Integer> b) {
+        ArrayList<Integer> c = new ArrayList<Integer>();
+        for (int i = 0; i < 8; i++) {
+            c.add(a.get(i) - b.get(i));
+        }
+        return c;
+    }
+
+    public void GenerateProfileImage() {
+        // Pick the color based on the username
+        int hexValue = 0;
+        try {
+            ArrayList<Float> conversionArray = new ArrayList<Float>();
+            for (int i = 0; i < this.name.length(); i++) {
+                if ((float) this.name.toUpperCase().charAt(i) >= (float) 'Z') {
+                    conversionArray.add((float) 'Z' - (float) 'A');
+                } else if ((int) this.name.toUpperCase().charAt(i) <= (int) 'A') {
+                    conversionArray.add((float) 'A' - (float) 'A');
+                } else {
+                    conversionArray.add((float) this.name.toUpperCase().charAt(i) - (float) 'A');
+                }
+            }
+
+            while (conversionArray.size() < 8) {
+                conversionArray.add((float) 0);
+            }
+
+            Float transformation = 15 / ((float) 'Z' - (float) 'A');
+
+            for (int i = 0; i < conversionArray.size(); i++) {
+                conversionArray.set(i, conversionArray.get(i) * transformation);
+            }
+
+            ArrayList<Integer> conversionArrayInts = new ArrayList<>();
+            for (int i = 0; i < conversionArray.size(); i++) {
+                conversionArrayInts.add((int) Math.floor(conversionArray.get(i)));
+            }
+            conversionArrayInts.set(0, 15);
+            conversionArrayInts.set(1, 15);
+
+            hexValue = 0;
+            for (int i = 0; i < conversionArrayInts.size(); i++) {
+                hexValue = (hexValue << 4) | (conversionArrayInts.get(i) & 0xF);
+            }
+        }
+        catch (Exception e) {
+            hexValue = 0xFFAAFFAA;
+        }
+
+        // Create profile image
+        Bitmap bitmap = Bitmap.createBitmap(200, 200, Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(bitmap);
+        canvas.drawColor(hexValue);
+        String text = String.valueOf(this.name.charAt(0));
+        Paint paintobj = new Paint();
+        paintobj.setColor(Color.WHITE);
+        paintobj.setTypeface(Typeface.DEFAULT);
+        paintobj.setTextSize(180);
+        paintobj.setAntiAlias(true);
+        Rect textBounds = new Rect();
+        paintobj.getTextBounds(text, 0, text.length(), textBounds);
+        canvas.drawText(text, (200 - textBounds.width())/(float)2, (200 + textBounds.height())/(float)2, paintobj);
+
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.PNG, 100, byteArrayOutputStream);
+        byte[] byteArray = byteArrayOutputStream.toByteArray();
+
+        this.profilePictureEncode = Base64.encodeToString(byteArray, Base64.DEFAULT);
+    }
 
     public android.net.Uri decodeBase64String(Context context) {
         Calendar calendar = Calendar.getInstance();

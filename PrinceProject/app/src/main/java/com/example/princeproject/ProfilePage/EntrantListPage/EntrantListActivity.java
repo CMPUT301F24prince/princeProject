@@ -24,7 +24,9 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class EntrantListActivity extends AppCompatActivity {
     private Spinner eventSelection;
@@ -32,6 +34,8 @@ public class EntrantListActivity extends AppCompatActivity {
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private String deviceId;
     private String eventId;
+    private PageAdapter adapter;
+    private ViewPager2 viewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,6 +95,19 @@ public class EntrantListActivity extends AppCompatActivity {
 
     }
 
+    public void sendLotteryLossNotification(String userId,String eventName,String eventId) {
+        Map<String, Object> notificationData = new HashMap<>();
+        notificationData.put("userId", userId);
+        notificationData.put("title", "Sorry!");
+        notificationData.put("details", "Unfortunately, you have lost the lottery for the event: "+eventName);
+        notificationData.put("timestamp", System.currentTimeMillis());
+        notificationData.put("eventId",eventId);
+        notificationData.put("received", false);
+
+        // Save the notification in Firestore under the "notifications" collection
+        db.collection("notifications").add(notificationData);
+    }
+
 
     /**
      * Performs the lottery selection and updates the database accordingly.
@@ -116,6 +133,18 @@ public class EntrantListActivity extends AppCompatActivity {
                                 handler.postDelayed(() -> EventManager.selectRandomEntrant(context,eventId), delay);
                             }
 
+                            db.collection("events").document(eventId).get()
+                                    .addOnSuccessListener(updatedDoc -> {
+                                        List<String> newWaitingList = (List<String>) updatedDoc.get("waiting");
+                                        String eventName = updatedDoc.getString("name");
+                                        if (newWaitingList != null && !newWaitingList.isEmpty()) {
+                                            // Send a notification to each user in the new waiting list
+                                            for (String userId : newWaitingList) {
+                                                sendLotteryLossNotification(userId, eventName,eventId );
+                                            }
+                                        }
+                                    });
+
                             Toast.makeText(context, "Successfully sampled " + iterations + " entrants!", Toast.LENGTH_SHORT).show();
                             db.collection("events").document(eventId).update("lotteryDrawn", true);
                             checkLotteryStatus(button,eventId);
@@ -132,28 +161,30 @@ public class EntrantListActivity extends AppCompatActivity {
      * Updates the fragments to change the list being shown to match the given eventId
      * @param eventId eventId of the given event
      */
-    private void updateFragment(String eventId) {
-        PageAdapter adapter = new PageAdapter(this, eventId);
-        ViewPager2 viewPager = findViewById(R.id.view_pager);
+    public void updateFragment(String eventId) {
+
+        adapter = new PageAdapter(this, eventId);
+        viewPager = findViewById(R.id.view_pager);
         viewPager.setAdapter(adapter);
 
 
         TabLayout tabLayout = findViewById(R.id.tab_layout);
         new TabLayoutMediator(tabLayout, viewPager, (tab, position) -> {
             switch (position) {
-                case 0:
-                    tab.setText("Chosen");
-                    break;
-                case 1:
-                    tab.setText("Declined");
-                    break;
-                case 2:
-                    tab.setText("Accepted");
-                    break;
-                case 3:
-                    tab.setText("Waiting");
-                    break;
-            }
-        }).attach();
+                    case 0:
+                        tab.setText("Chosen");
+                        break;
+                    case 1:
+                        tab.setText("Declined");
+                        break;
+                    case 2:
+                        tab.setText("Accepted");
+                        break;
+                    case 3:
+                        tab.setText("Waiting");
+                        break;
+                }
+            }).attach();
+
     }
 }

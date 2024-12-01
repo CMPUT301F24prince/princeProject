@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,16 +43,12 @@ public class NotificationsFragment extends Fragment {
     private ListView notificationList;
     private ArrayList<Notification> notificationDataList;
     private NotificationArrayAdapter notificationAdapter;
-    private View thisview;
-    private String targetEventId = "1";
 
     private NotificationPreferenceManager notificationPreferenceManager;
-    private EventManager eventManager;
     private Switch notificationToggle;
 
     private String deviceId;
     private FirebaseFirestore db;
-    private User user;
 
     /**
      * Method to initialize the creation of the Notification page
@@ -82,7 +79,7 @@ public class NotificationsFragment extends Fragment {
         db = FirebaseFirestore.getInstance();
 
         notificationToggle = view.findViewById(R.id.notification_toggle);
-        getUser(view);
+        //getUser(view);
         // Get the device ID
         deviceId = Settings.Secure.getString(view.getContext().getContentResolver(), Settings.Secure.ANDROID_ID);
 
@@ -101,54 +98,21 @@ public class NotificationsFragment extends Fragment {
         notificationAdapter = new NotificationArrayAdapter(this.getContext(), notificationDataList);
         notificationList.setAdapter(notificationAdapter);
 
-        notificationList.setOnItemClickListener((parent, v, position, id) -> {
-            new NotificationListFragment(notificationAdapter.getItem(position)).show(getActivity().getSupportFragmentManager(), "Details");
-        });
+
+
+        getNotifications();
 
     }
 
     /**
-     * Method to handle adding a notification to the listview of a user.
-     * @param notification
-     *      The notification to add
-     * */
-    public void addNotification(Notification notification){
-        //Add notification to local array
-        notificationDataList.add(notification);
-        notificationAdapter.notifyDataSetChanged();
-
-        //Add notification to database
-        Map<String,Object> notif = new HashMap<>();
-        notif.put("deviceId",deviceId);
-        notif.put("title",notification.getName());
-        notif.put("details",notification.getDetails());
-        notif.put("timestamp",System.currentTimeMillis());
-        db.collection("notifications").add(notif);
+     * Gets all the users notifications every time the NotificationsFragment is visible
+     */
+    @Override
+    public void onResume() {
+        super.onResume();
+        getNotifications();
     }
 
-    /**
-     * Method to handle the deletion of a notification from the listview.
-     * @param notification
-     *      The notification to deleted
-     * */
-    public void deleteNotification(Notification notification){
-        notificationDataList.remove(notification);
-        notificationAdapter.notifyDataSetChanged();
-
-        //Delete notification from database
-        db.collection("notifications")
-                .whereEqualTo("deviceId", deviceId)
-                .whereEqualTo("title", notification.getName())
-                .whereEqualTo("details", notification.getDetails())
-                .get()
-                .addOnSuccessListener(queryDocumentSnapshots -> {
-                    if (!queryDocumentSnapshots.isEmpty()){
-                        for (DocumentSnapshot document : queryDocumentSnapshots){
-                            document.getReference().delete();
-                        }
-                    }
-                });
-    }
 
     private String getCurrentUserId() {
         return Settings.Secure.getString(requireContext().getContentResolver(), Settings.Secure.ANDROID_ID);
@@ -168,53 +132,37 @@ public class NotificationsFragment extends Fragment {
 
     private void getNotifications() {
         db.collection("notifications")
-                .whereEqualTo("userId", user.getDeviceId())
+                .whereEqualTo("userId", deviceId)
                 .orderBy("timestamp", Query.Direction.DESCENDING)
                 .addSnapshotListener((queryDocumentSnapshots, e) -> {
                     if (e != null) {
-                        System.err.println("Listen failed: " + e);
+                        Log.e("Notifications", "Listen failed: ", e);
                         return;
                     }
 
-                    // Clear the current list and update it with new data
                     notificationDataList.clear();
                     if (queryDocumentSnapshots != null) {
                         for (DocumentSnapshot document : queryDocumentSnapshots.getDocuments()) {
+                            String id = document.getId();
                             String title = document.getString("title");
                             String details = document.getString("details");
                             String location = document.getString("location");
-                            String userId = Settings.Secure.getString(getContext().getContentResolver(), Settings.Secure.ANDROID_ID);
                             String eventId = document.getString("eventId");
+                            String userId = document.getString("userId");
+                            Boolean recieved = document.getBoolean("recieved");
 
-                            Notification notification = new Notification(title, details, location, userId, eventId);
+
+                            Notification notification = new Notification(id,title, details, location, userId, eventId);
                             notificationDataList.add(notification);
-                            sendPushNotification(getContext(), "PRINCE_CHANNEL_ID_NOTIFICATION", notification.hashCode());
+                            //if (Boolean.FALSE.equals(recieved)) {
+                            //    notification.sendAndroidNotification(getContext());
+                            //}
                         }
                         notificationAdapter.notifyDataSetChanged();
                     }
                 });
     }
 
-    private void getUser(View view) {
-        deviceId = Settings.Secure.getString(view.getContext().getContentResolver(), Settings.Secure.ANDROID_ID);
-        db.collection("users")
-                //Check if device id is in database
-                .document(deviceId)
-                .get()
-                .addOnSuccessListener(document -> {
-                    //If device is already enrolled, do nothing
-                    if (document.exists()) {
-                        //User already exists
-                        user = new User(document.getString("name"),document.getString("email"),document.getString("phone"),document.getString("accountType"), deviceId);
-                        notificationToggle.setChecked(document.getBoolean("Allow Notification"));
-                    }
-                    setupNotificationToggle(view);
-
-                    if (notificationToggle.isChecked()) {
-                        getNotifications();
-                    }
-                });
-    }
 
     public void sendPushNotification(Context context, String channelId, int id) {
         NotificationManager mNotificationManager;

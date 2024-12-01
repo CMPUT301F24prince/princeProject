@@ -32,17 +32,8 @@
         <com.google.android.material.tabs.TabItem
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:text="QR Codes" />
-
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="80dp"
-            android:layout_height="80dp"
             android:text="Facilities" />
 
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:text="Images" />
 
 
     </com.google.android.material.tabs.TabLayout>
