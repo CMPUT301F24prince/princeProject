@@ -56,24 +56,13 @@ public class FacilityActivity extends AppCompatActivity {
         facilityName = findViewById(R.id.facility_name_text);
         facilityDescription = findViewById(R.id.facility_description_text);
         facilityLocation = findViewById(R.id.facility_location_text);
+        profile_preview = findViewById(R.id.imageView);
         getFacilityDetails();
 
         editFacilityButton = findViewById(R.id.edit_facility_button);
 
         editFacilityButton.setOnClickListener(v -> {
             showEditFacilityDialog();
-        });
-
-        this.uploadButton = this.findViewById(R.id.facility_image_upload);
-        this.profile_preview = this.findViewById((R.id.facility_image_preview));
-
-        uploadButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent iGallery = new Intent(Intent.ACTION_PICK) ;
-                iGallery.setData(MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                startActivityForResult(iGallery, GALLERY_REQ_CODE);
-            }
         });
     }
 
@@ -105,10 +94,13 @@ public class FacilityActivity extends AppCompatActivity {
                         String name = documentSnapshot.getString("name");
                         String location = documentSnapshot.getString("location");
                         String description = documentSnapshot.getString("description");
+                        String imageEncode = documentSnapshot.getString("image");
 
                         facilityName.setText(name);
                         facilityLocation.setText(location);
                         facilityDescription.setText(description);
+                        profile_preview.setImageURI(Facility.decodeBase64String(this, imageEncode));
+
 
                     }
                 });
