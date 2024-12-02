@@ -13,6 +13,9 @@ import static org.hamcrest.CoreMatchers.anything;
 import static org.hamcrest.CoreMatchers.not;
 import static org.mockito.Mockito.mock;
 
+import android.content.Context;
+import android.view.LayoutInflater;
+
 import androidx.fragment.app.testing.FragmentScenario;
 import androidx.test.core.app.ActivityScenario;
 import androidx.test.espresso.assertion.ViewAssertions;
@@ -30,9 +33,9 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
+import org.mockito.Mock;
 
 public class AdminPageTest {
-
 
     @Before
     public void setUp() {
