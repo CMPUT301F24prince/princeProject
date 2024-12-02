@@ -8,6 +8,15 @@
       <SelectionState runConfigName="testMyEventsButtonLaunchesEntrantListActivity()">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
+      <SelectionState runConfigName="testManageEventButtonLaunchesManageEventsActivity()">
+        <option name="selectionMode" value="DROPDOWN" />
+      </SelectionState>
+      <SelectionState runConfigName="testEditButtonOpensEventEditDialog()">
+        <option name="selectionMode" value="DROPDOWN" />
+      </SelectionState>
+      <SelectionState runConfigName="AdminEventAdapterTest">
+        <option name="selectionMode" value="DROPDOWN" />
+      </SelectionState>
     </selectionStates>
   </component>
 </project>
