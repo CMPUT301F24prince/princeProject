@@ -26,6 +26,7 @@ import org.junit.runner.RunWith;
 import java.util.HashMap;
 import java.util.Map;
 //checking the notification preference US 01.04.03
+//From chatgpt, openai, "write a java UI test case of US 01.04.03 As an entrant I want to opt out of receiving notifications from organizers and admin", 2024-12-02
 @RunWith(AndroidJUnit4.class)
 public class NotificationPreferenceManagerTest {
 

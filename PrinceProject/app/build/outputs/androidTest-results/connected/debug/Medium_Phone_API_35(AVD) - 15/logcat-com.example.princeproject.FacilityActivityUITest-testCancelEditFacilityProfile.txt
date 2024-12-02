@@ -1,0 +1,444 @@
+12-02 14:46:28.684  4995  5012 I TestRunner: started: testCancelEditFacilityProfile(com.example.princeproject.FacilityActivityUITest)
+12-02 14:46:28.726   642  2502 D WifiNl80211Manager: Scan result ready event
+12-02 14:46:28.730  4995  5012 W Settings: Setting always_finish_activities has moved from android.provider.Settings.System to android.provider.Settings.Global, returning read-only value.
+12-02 14:46:28.731   642  2502 D WifiNative: Scan result ready event
+12-02 14:46:28.806   642  1250 I HalDevMgr: bestIfaceCreationProposal is null, requestIface=STA, existingIface=[name=wlan0 type=STA]
+12-02 14:46:28.817   642  2502 V GrammaticalInflectionUtils: AttributionSource: android.content.AttributionSource@dcd4645e does not have READ_SYSTEM_GRAMMATICAL_GENDER permission.
+12-02 14:46:28.928  1653  1653 W SplitSelectStateCtor: Missing session instanceIds
+12-02 14:46:28.928  1653  1653 D StatsLog: LAUNCHER_SPLIT_SELECTION_EXIT_INTERRUPTED
+12-02 14:46:28.942   451   451 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+12-02 14:46:28.975  1653  1653 I TopTaskTracker: onTaskMovedToFront: (moved taskInfo to front) taskId=54, baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.princeproject/.FacilityActivity }
+12-02 14:46:29.108  1653  2295 D EGL_emulation: app_time_stats: avg=704.64ms min=2.12ms max=14607.75ms count=21
+12-02 14:46:29.188  4995  4995 D AppCompatDelegate: Checking for metadata for AppLocalesMetadataHolderService : Service not found
+12-02 14:46:29.255  4995  4995 D LifecycleMonitor: Lifecycle status change: com.example.princeproject.FacilityActivity@5342e29 in: PRE_ON_CREATE
+12-02 14:46:29.258  4995  4995 V ActivityScenario: Activity lifecycle changed event received but ignored because the reported transition was not ON_CREATE while the last known transition was PRE_ON_CREATE
+12-02 14:46:29.267   642  1261 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET, states=14
+12-02 14:46:29.267   642  1261 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET6, states=14
+12-02 14:46:29.267   642  1261 D InetDiagMessage: Destroyed live tcp sockets for uids={10143} in 0ms
+12-02 14:46:29.268   642  1261 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET, states=14
+12-02 14:46:29.269   642  1261 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET6, states=14
+12-02 14:46:29.269   642  1261 D InetDiagMessage: Destroyed live tcp sockets for uids={20143} in 1ms
+12-02 14:46:29.614  4995  4995 W e.princeproject: Accessing hidden method Landroid/view/ViewGroup;->makeOptionalFitsSystemWindows()V (unsupported, reflection, allowed)
+12-02 14:46:29.691  1653  2295 D EGL_emulation: app_time_stats: avg=28843.85ms min=6.33ms max=316875.81ms count=11
+12-02 14:46:29.894  1360  1499 D EGL_emulation: app_time_stats: avg=29787.25ms min=29787.25ms max=29787.25ms count=1
+12-02 14:46:29.939  1653  1653 D VRI[NexusLauncherActivity]: visibilityChanged oldVisibility=true newVisibility=false
+12-02 14:46:29.948  1653  1653 D NexusLauncherModelDelegate: notifySmartspaceEvent: SmartspaceTargetEvent{mSmartspaceTarget=null, mSmartspaceActionId='null', mEventType=7}
+12-02 14:46:30.054  4995  4999 I e.princeproject: Compiler allocated 4219KB to compile void android.widget.TextView.<init>(android.content.Context, android.util.AttributeSet, int, int)
+12-02 14:46:30.401   642  2510 D ConnectivityService: requestNetwork for uid/pid:10303/4995 activeRequest: null callbackRequest: 553 [NetworkRequest [ REQUEST id=554, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10303 RequestorUid: 10303 RequestorPkg: com.example.princeproject UnderlyingNetworks: Null] ]] callback flags: 0 order: 2147483647 isUidTracked: false
+12-02 14:46:30.420   642  1261 D ConnectivityService: NetReassign [554 : null → 110] [c 3] [a 7] [i 4]
+12-02 14:46:30.424   642  1250 D OemPaidWifiNetworkFactory: got request NetworkRequest [ REQUEST id=554, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10303 RequestorUid: 10303 RequestorPkg: com.example.princeproject UnderlyingNetworks: Null] ]
+12-02 14:46:30.428   642  1250 D MultiInternetWifiNetworkFactory: got request NetworkRequest [ REQUEST id=554, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10303 RequestorUid: 10303 RequestorPkg: com.example.princeproject UnderlyingNetworks: Null] ]
+12-02 14:46:30.430   642  1250 D WifiNetworkFactory: got request NetworkRequest [ REQUEST id=554, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10303 RequestorUid: 10303 RequestorPkg: com.example.princeproject UnderlyingNetworks: Null] ]
+12-02 14:46:30.432   642  1250 D UntrustedWifiNetworkFactory: got request NetworkRequest [ REQUEST id=554, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10303 RequestorUid: 10303 RequestorPkg: com.example.princeproject UnderlyingNetworks: Null] ]
+12-02 14:46:30.452  4995  5020 W DynamiteModule: Local module descriptor class for com.google.android.gms.providerinstaller.dynamite not found.
+12-02 14:46:30.507   642  1261 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET, states=14
+12-02 14:46:30.511   642  1261 D InetDiagMessage: Destroyed 1 sockets, proto=IPPROTO_TCP, family=AF_INET6, states=14
+12-02 14:46:30.512   642  1261 D InetDiagMessage: Destroyed live tcp sockets for uids={10141} in 5ms
+12-02 14:46:30.524  4995  4995 D LifecycleMonitor: Lifecycle status change: com.example.princeproject.FacilityActivity@5342e29 in: CREATED
+12-02 14:46:30.525  4995  4995 V ActivityScenario: Update currentActivityStage to CREATED, currentActivity=com.example.princeproject.FacilityActivity@5342e29
+12-02 14:46:30.540  8510  8520 W ProviderHelper: Unknown dynamite feature providerinstaller.dynamite
+12-02 14:46:30.548  4995  5020 I DynamiteModule: Considering local module com.google.android.gms.providerinstaller.dynamite:0 and remote module com.google.android.gms.providerinstaller.dynamite:0
+12-02 14:46:30.548  4995  5020 W ProviderInstaller: Failed to load providerinstaller module: No acceptable module com.google.android.gms.providerinstaller.dynamite found. Local version is 0 and remote version is 0.
+12-02 14:46:30.550  4995  4995 D LifecycleMonitor: Lifecycle status change: com.example.princeproject.FacilityActivity@5342e29 in: STARTED
+12-02 14:46:30.550  4995  4995 V ActivityScenario: Update currentActivityStage to STARTED, currentActivity=com.example.princeproject.FacilityActivity@5342e29
+12-02 14:46:30.555  4995  5020 D ApplicationLoaders: Returning zygote-cached class loader: /system/framework/org.apache.http.legacy.jar
+12-02 14:46:30.562  4995  4995 D LifecycleMonitor: Lifecycle status change: com.example.princeproject.FacilityActivity@5342e29 in: RESUMED
+12-02 14:46:30.562  4995  4995 V ActivityScenario: Update currentActivityStage to RESUMED, currentActivity=com.example.princeproject.FacilityActivity@5342e29
+12-02 14:46:30.590  4995  5020 D nativeloader: Configuring clns-10 for other apk /system/framework/com.android.media.remotedisplay.jar. target_sdk_version=35, uses_libraries=ALL, library_path=/data/app/~~AdJZxdpeoklbM7Ln4lpKkg==/com.google.android.gms-23km1wcPcSFC9sf3ori-Mg==/lib/x86_64:/data/app/~~AdJZxdpeoklbM7Ln4lpKkg==/com.google.android.gms-23km1wcPcSFC9sf3ori-Mg==/base.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.google.android.gms
+12-02 14:46:30.616  4995  4995 W HWUI    : Unknown dataspace 0
+12-02 14:46:30.618  4995  5020 D nativeloader: Configuring clns-11 for other apk /system/framework/com.android.location.provider.jar. target_sdk_version=35, uses_libraries=ALL, library_path=/data/app/~~AdJZxdpeoklbM7Ln4lpKkg==/com.google.android.gms-23km1wcPcSFC9sf3ori-Mg==/lib/x86_64:/data/app/~~AdJZxdpeoklbM7Ln4lpKkg==/com.google.android.gms-23km1wcPcSFC9sf3ori-Mg==/base.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.google.android.gms
+12-02 14:46:30.625  4995  5020 D ApplicationLoaders: Returning zygote-cached class loader: /system_ext/framework/androidx.window.extensions.jar
+12-02 14:46:30.625  4995  5020 D ApplicationLoaders: Returning zygote-cached class loader: /system_ext/framework/androidx.window.sidecar.jar
+12-02 14:46:30.692  4995  5020 W e.princeproject: Loading /data/app/~~AdJZxdpeoklbM7Ln4lpKkg==/com.google.android.gms-23km1wcPcSFC9sf3ori-Mg==/oat/x86_64/base.odex non-executable as it requires an image which we failed to load
+12-02 14:46:30.727  4995  5020 D nativeloader: Configuring clns-12 for other apk /data/app/~~AdJZxdpeoklbM7Ln4lpKkg==/com.google.android.gms-23km1wcPcSFC9sf3ori-Mg==/base.apk. target_sdk_version=35, uses_libraries=, library_path=/data/app/~~AdJZxdpeoklbM7Ln4lpKkg==/com.google.android.gms-23km1wcPcSFC9sf3ori-Mg==/lib/x86_64:/data/app/~~AdJZxdpeoklbM7Ln4lpKkg==/com.google.android.gms-23km1wcPcSFC9sf3ori-Mg==/base.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.google.android.gms
+12-02 14:46:30.928  4995  5020 W ProviderInstaller: Failed to report request stats: com.google.android.gms.common.security.ProviderInstallerImpl.reportRequestStats [class android.content.Context, long, long]
+12-02 14:46:31.054   451   546 W ServiceManagerCppClient: Permission failure: android.permission.ACCESS_SURFACE_FLINGER from uid=10303 pid=0
+12-02 14:46:31.054   451   546 D PermissionCache: checking android.permission.ACCESS_SURFACE_FLINGER for uid=10303 => denied (376 us)
+12-02 14:46:31.056   451   546 W ServiceManagerCppClient: Permission failure: android.permission.ROTATE_SURFACE_FLINGER from uid=10303 pid=0
+12-02 14:46:31.056   451   546 D PermissionCache: checking android.permission.ROTATE_SURFACE_FLINGER for uid=10303 => denied (2350 us)
+12-02 14:46:31.057   451   546 W ServiceManagerCppClient: Permission failure: android.permission.INTERNAL_SYSTEM_WINDOW from uid=10303 pid=0
+12-02 14:46:31.057   451   546 D PermissionCache: checking android.permission.INTERNAL_SYSTEM_WINDOW for uid=10303 => denied (292 us)
+12-02 14:46:31.059   451   465 W ServiceManagerCppClient: Permission failure: android.permission.ROTATE_SURFACE_FLINGER from uid=10303 pid=4995
+12-02 14:46:31.059   451   465 D PermissionCache: checking android.permission.ROTATE_SURFACE_FLINGER for uid=10303 => denied (2787 us)
+12-02 14:46:31.062  4995  5014 I EGL_emulation: Opening libGLESv1_CM_emulation.so
+12-02 14:46:31.071  4995  5014 I EGL_emulation: Opening libGLESv2_emulation.so
+12-02 14:46:31.152  5068  5195 I BugleRcsEngine: handleMessage processing message:[NOTIFY_UPTIME_IGNORE_STATE_CHANGED] with [non-null]:RcsEngineImpl reference [CONTEXT log_prefix="RcsEngineImpl[DUAL_REG]:[32a2d061-98a1]>Handler" thread_id=63 ]
+12-02 14:46:31.155  5068  5139 I BugleRcsEngine: Connected state: [1], networkType: [WIFI] [CONTEXT thread_id=57 ]
+12-02 14:46:31.162   642  1261 W IPCThreadState: Sending oneway calls to frozen process.
+12-02 14:46:31.163   642  1261 W IPCThreadState: Sending oneway calls to frozen process.
+12-02 14:46:31.163   642  1261 W IPCThreadState: Sending oneway calls to frozen process.
+12-02 14:46:31.164   642  1261 W IPCThreadState: Sending oneway calls to frozen process.
+12-02 14:46:31.165   642  1261 W IPCThreadState: Sending oneway calls to frozen process.
+12-02 14:46:31.165   642  1261 W IPCThreadState: Sending oneway calls to frozen process.
+12-02 14:46:31.165   642  1261 W IPCThreadState: Sending oneway calls to frozen process.
+12-02 14:46:31.174  8510  8520 I ChimeraSrvcProxy: NullBinder for android.net.action.RECOMMEND_NETWORKS triggering remote TransactionTooLargeException due to Service without Chimera impl
+12-02 14:46:31.174  8510  8520 W .gms.persistent: Large reply transaction of 1056768 bytes, interface descriptor , code 1
+12-02 14:46:31.195  5068  5195 I BugleRcsEngine: No RCS Configuration was found in Bugle for simID: redacted-pii:sim_id[chars:20,last3:897] [CONTEXT log_prefix="ProvisioningEngineDataRetriever" thread_id=63 ]
+12-02 14:46:31.202  4995  5014 W HWUI    : Failed to choose config with EGL_SWAP_BEHAVIOR_PRESERVED, retrying without...
+12-02 14:46:31.202  4995  5014 W HWUI    : Failed to initialize 101010-2 format, error = EGL_SUCCESS
+12-02 14:46:31.431   158   158 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device VINTF manifest.
+12-02 14:46:31.434  4995  5014 I Gralloc4: mapper 4.x is not supported
+12-02 14:46:31.463  4995  5020 D nativeloader: Load /data/app/~~AdJZxdpeoklbM7Ln4lpKkg==/com.google.android.gms-23km1wcPcSFC9sf3ori-Mg==/base.apk!/lib/x86_64/libconscrypt_gmscore_jni.so using ns clns-12 from class loader (caller=/data/app/~~AdJZxdpeoklbM7Ln4lpKkg==/com.google.android.gms-23km1wcPcSFC9sf3ori-Mg==/base.apk!classes3.dex): ok
+12-02 14:46:31.501  4995  5020 V NativeCrypto: Registering com/google/android/gms/org/conscrypt/NativeCrypto's 305 native methods...
+12-02 14:46:31.698  4995  5028 W e.princeproject: Accessing hidden method Ldalvik/system/VMStack;->getStackClass2()Ljava/lang/Class; (unsupported, reflection, allowed)
+12-02 14:46:31.770   642  2502 W ServiceManagerCppClient: Permission failure: android.permission.ACCESS_SURFACE_FLINGER from uid=10303 pid=0
+12-02 14:46:31.772  4995  4995 I Choreographer: Skipped 65 frames!  The application may be doing too much work on its main thread.
+12-02 14:46:31.773   642  2502 D PermissionCache: checking android.permission.ACCESS_SURFACE_FLINGER for uid=10303 => denied (2815 us)
+12-02 14:46:31.776   642  2502 W ServiceManagerCppClient: Permission failure: android.permission.ROTATE_SURFACE_FLINGER from uid=10303 pid=0
+12-02 14:46:31.776   642  2502 D PermissionCache: checking android.permission.ROTATE_SURFACE_FLINGER for uid=10303 => denied (497 us)
+12-02 14:46:31.776   642  2502 W ServiceManagerCppClient: Permission failure: android.permission.INTERNAL_SYSTEM_WINDOW from uid=10303 pid=0
+12-02 14:46:31.776   642  2502 D PermissionCache: checking android.permission.INTERNAL_SYSTEM_WINDOW for uid=10303 => denied (186 us)
+12-02 14:46:31.785   642   674 W ziparchive: Unable to open '/data/app/~~k3ch-xeDsQ7Q57iSy-GDfA==/com.example.princeproject-cOCSLERfL4K0ad70Hh0tRg==/base.dm': No such file or directory
+12-02 14:46:31.795  4995  5006 I HWUI    : Davey! duration=1144ms; Flags=1, FrameTimelineVsyncId=219115, IntendedVsync=62852155412926, Vsync=62852155412926, InputEventId=0, HandleInputStart=62852169774020, AnimationStart=62852169797820, PerformTraversalsStart=62852169875520, DrawStart=62853070766120, FrameDeadline=62852172079592, FrameInterval=62852169753320, FrameStartTime=16666666, SyncQueued=62853106598020, SyncStart=62853107875920, IssueDrawCommandsStart=62853121132720, SwapBuffers=62853274255620, FrameCompleted=62853300995220, DequeueBufferDuration=51700, QueueBufferDuration=972600, GpuCompleted=62853300995220, SwapBuffersCompleted=62853281029420, DisplayPresentTime=0, CommandSubmissionCompleted=62853274255620,
+12-02 14:46:31.799  4995  5028 I eksm.a  : Unable to retrieve flag snapshot for com.google.android.gms.providerinstaller#com.google.android.gms, using defaults.
+12-02 14:46:31.804   642   674 I ActivityTaskManager: Displayed com.example.princeproject/.FacilityActivity for user 0: +3s5ms
+12-02 14:46:31.816  4995  5004 I HWUI    : Davey! duration=1134ms; Flags=0, FrameTimelineVsyncId=219130, IntendedVsync=62852188746258, Vsync=62853272079548, InputEventId=0, HandleInputStart=62853294071920, AnimationStart=62853294118420, PerformTraversalsStart=62853297892220, DrawStart=62853298693520, FrameDeadline=62853322079546, FrameInterval=62853287240720, FrameStartTime=16666666, SyncQueued=62853299228820, SyncStart=62853299559220, IssueDrawCommandsStart=62853299601720, SwapBuffers=62853301438520, FrameCompleted=62853324005720, DequeueBufferDuration=294600, QueueBufferDuration=346600, GpuCompleted=62853324005720, SwapBuffersCompleted=62853303368120, DisplayPresentTime=0, CommandSubmissionCompleted=62853301438520,
+12-02 14:46:31.834  4995  5020 W e.princeproject: Accessing hidden method Ljava/security/spec/ECParameterSpec;->getCurveName()Ljava/lang/String; (unsupported, reflection, allowed)
+12-02 14:46:31.852  8510  8520 I FontLog : (REDACTED) Received query %s, URI %s
+12-02 14:46:31.854   642   936 I ImeTracker: com.example.princeproject:3e1670a9: onRequestHide at ORIGIN_SERVER reason HIDE_UNSPECIFIED_WINDOW fromUser false
+12-02 14:46:31.860  8510  8520 I FontLog : (REDACTED) Query [%s] resolved to %s
+12-02 14:46:31.862   642   936 I ImeTracker: com.example.princeproject:3e1670a9: onCancelled at PHASE_SERVER_SHOULD_HIDE
+12-02 14:46:31.868  4995  5024 E GoogleApiManager: Failed to get service from broker.
+12-02 14:46:31.868  4995  5024 E GoogleApiManager: java.lang.SecurityException: Unknown calling package name 'com.google.android.gms'.
+12-02 14:46:31.868  4995  5024 E GoogleApiManager: 	at android.os.Parcel.createExceptionOrNull(Parcel.java:3242)
+12-02 14:46:31.868  4995  5024 E GoogleApiManager: 	at android.os.Parcel.createException(Parcel.java:3226)
+12-02 14:46:31.868  4995  5024 E GoogleApiManager: 	at android.os.Parcel.readException(Parcel.java:3209)
+12-02 14:46:31.868  4995  5024 E GoogleApiManager: 	at android.os.Parcel.readException(Parcel.java:3151)
+12-02 14:46:31.868  4995  5024 E GoogleApiManager: 	at anfm.a(:com.google.android.gms@244534038@24.45.34 (260800-699214190):36)
+12-02 14:46:31.868  4995  5024 E GoogleApiManager: 	at andt.z(:com.google.android.gms@244534038@24.45.34 (260800-699214190):143)
+12-02 14:46:31.868  4995  5024 E GoogleApiManager: 	at amlc.run(:com.google.android.gms@244534038@24.45.34 (260800-699214190):54)
+12-02 14:46:31.868  4995  5024 E GoogleApiManager: 	at android.os.Handler.handleCallback(Handler.java:959)
+12-02 14:46:31.868  4995  5024 E GoogleApiManager: 	at android.os.Handler.dispatchMessage(Handler.java:100)
+12-02 14:46:31.868  4995  5024 E GoogleApiManager: 	at btaq.mI(:com.google.android.gms@244534038@24.45.34 (260800-699214190):1)
+12-02 14:46:31.868  4995  5024 E GoogleApiManager: 	at btaq.dispatchMessage(:com.google.android.gms@244534038@24.45.34 (260800-699214190):5)
+12-02 14:46:31.868  4995  5024 E GoogleApiManager: 	at android.os.Looper.loopOnce(Looper.java:232)
+12-02 14:46:31.868  4995  5024 E GoogleApiManager: 	at android.os.Looper.loop(Looper.java:317)
+12-02 14:46:31.868  4995  5024 E GoogleApiManager: 	at android.os.HandlerThread.run(HandlerThread.java:85)
+12-02 14:46:31.898  8510  8520 I FontLog : (REDACTED) Fetch %s end status %s
+12-02 14:46:31.919  4995  4999 I e.princeproject: Compiler allocated 5174KB to compile void android.view.ViewRootImpl.performTraversals()
+12-02 14:46:31.919  8510  8520 I FontLog : (REDACTED) Pulling font file for id = %d, cache size = %d
+12-02 14:46:31.967  1653  1653 D BaseDepthController: setSurface:
+12-02 14:46:31.967  1653  1653 D BaseDepthController: 	mWaitingOnSurfaceValidity: false
+12-02 14:46:31.967  1653  1653 D BaseDepthController: 	mSurface: null
+12-02 14:46:31.974  1653  1653 D BaseDepthController: mSurface is null and mCurrentBlur is: 0
+12-02 14:46:31.979  8510  8520 I FontLog : (REDACTED) Pulling font file for id = %d, cache size = %d
+12-02 14:46:31.991  4995  5023 W CondFlagRegistrar: Failed to register com.google.android.gms.providerinstaller#com.google.android.gms
+12-02 14:46:31.991  4995  5023 W CondFlagRegistrar: eksv: 17: 17: API: Phenotype.API is not available on this device. Connection failed with: ConnectionResult{statusCode=DEVELOPER_ERROR, resolution=null, message=null}
+12-02 14:46:31.991  4995  5023 W CondFlagRegistrar: 	at eksx.a(:com.google.android.gms@244534038@24.45.34 (260800-699214190):13)
+12-02 14:46:31.991  4995  5023 W CondFlagRegistrar: 	at febx.d(:com.google.android.gms@244534038@24.45.34 (260800-699214190):3)
+12-02 14:46:31.991  4995  5023 W CondFlagRegistrar: 	at febz.run(:com.google.android.gms@244534038@24.45.34 (260800-699214190):130)
+12-02 14:46:31.991  4995  5023 W CondFlagRegistrar: 	at feds.execute(:com.google.android.gms@244534038@24.45.34 (260800-699214190):1)
+12-02 14:46:31.991  4995  5023 W CondFlagRegistrar: 	at feca.h(:com.google.android.gms@244534038@24.45.34 (260800-699214190):1)
+12-02 14:46:31.991  4995  5023 W CondFlagRegistrar: 	at feca.l(:com.google.android.gms@244534038@24.45.34 (260800-699214190):101)
+12-02 14:46:31.991  4995  5023 W CondFlagRegistrar: 	at feca.p(:com.google.android.gms@244534038@24.45.34 (260800-699214190):19)
+12-02 14:46:31.991  4995  5023 W CondFlagRegistrar: 	at ecwz.hJ(:com.google.android.gms@244534038@24.45.34 (260800-699214190):35)
+12-02 14:46:31.991  4995  5023 W CondFlagRegistrar: 	at dsjy.run(:com.google.android.gms@244534038@24.45.34 (260800-699214190):14)
+12-02 14:46:31.991  4995  5023 W CondFlagRegistrar: 	at feds.execute(:com.google.android.gms@244534038@24.45.34 (260800-699214190):1)
+12-02 14:46:31.991  4995  5023 W CondFlagRegistrar: 	at dsjz.b(:com.google.android.gms@244534038@24.45.34 (260800-699214190):18)
+12-02 14:46:31.991  4995  5023 W CondFlagRegistrar: 	at dsko.b(:com.google.android.gms@244534038@24.45.34 (260800-699214190):36)
+12-02 14:46:31.991  4995  5023 W CondFlagRegistrar: 	at dskq.c(:com.google.android.gms@244534038@24.45.34 (260800-699214190):26)
+12-02 14:46:31.991  4995  5023 W CondFlagRegistrar: 	at amik.c(:com.google.android.gms@244534038@24.45.34 (260800-699214190):9)
+12-02 14:46:31.991  4995  5023 W CondFlagRegistrar: 	at amla.q(:com.google.android.gms@244534038@24.45.34 (260800-699214190):48)
+12-02 14:46:31.991  4995  5023 W CondFlagRegistrar: 	at amla.d(:com.google.android.gms@244534038@24.45.34 (260800-699214190):10)
+12-02 14:46:31.991  4995  5023 W CondFlagRegistrar: 	at amla.g(:com.google.android.gms@244534038@24.45.34 (260800-699214190):211)
+12-02 14:46:31.991  4995  5023 W CondFlagRegistrar: 	at amla.onConnectionFailed(:com.google.android.gms@244534038@24.45.34 (260800-699214190):2)
+12-02 14:46:31.991  4995  5023 W CondFlagRegistrar: 	at amlc.run(:com.google.android.gms@244534038@24.45.34 (260800-699214190):82)
+12-02 14:46:31.991  4995  5023 W CondFlagRegistrar: 	at android.os.Handler.handleCallback(Handler.java:959)
+12-02 14:46:31.991  4995  5023 W CondFlagRegistrar: 	at android.os.Handler.dispatchMessage(Handler.java:100)
+12-02 14:46:31.991  4995  5023 W CondFlagRegistrar: 	at btaq.mI(:com.google.android.gms@244534038@24.45.34 (260800-699214190):1)
+12-02 14:46:31.991  4995  5023 W CondFlagRegistrar: 	at btaq.dispatchMessage(:com.google.android.gms@244534038@24.45.34 (260800-699214190):5)
+12-02 14:46:31.991  4995  5023 W CondFlagRegistrar: 	at android.os.Looper.loopOnce(Looper.java:232)
+12-02 14:46:31.991  4995  5023 W CondFlagRegistrar: 	at android.os.Looper.loop(Looper.java:317)
+12-02 14:46:31.991  4995  5023 W CondFlagRegistrar: 	at android.os.HandlerThread.run(HandlerThread.java:85)
+12-02 14:46:31.991  4995  5023 W CondFlagRegistrar: Caused by: amhc: 17: API: Phenotype.API is not available on this device. Connection failed with: ConnectionResult{statusCode=DEVELOPER_ERROR, resolution=null, message=null}
+12-02 14:46:31.991  4995  5023 W CondFlagRegistrar: 	at andf.a(:com.google.android.gms@244534038@24.45.34 (260800-699214190):15)
+12-02 14:46:31.991  4995  5023 W CondFlagRegistrar: 	at amin.a(:com.google.android.gms@244534038@24.45.34 (260800-699214190):1)
+12-02 14:46:31.991  4995  5023 W CondFlagRegistrar: 	at amik.c(:com.google.android.gms@244534038@24.45.34 (260800-699214190):5)
+12-02 14:46:31.991  4995  5023 W CondFlagRegistrar: 	... 12 more
+12-02 14:46:32.018  1653  1653 D StateManager: goToState - fromState: Normal, toState: Normal, partial trace:
+12-02 14:46:32.018  1653  1653 D StateManager: 	at com.android.launcher3.statemanager.StateManager.moveToRestState(go/retraceme 2855a437b73635ce9cad76b9289087e631bbb67fc90008a0da13d343a00e5041:4)
+12-02 14:46:32.018  1653  1653 D StateManager: 	at com.android.launcher3.statemanager.StateManager.moveToRestState(go/retraceme 2855a437b73635ce9cad76b9289087e631bbb67fc90008a0da13d343a00e5041:1)
+12-02 14:46:32.018  1653  1653 D StateManager: 	at com.android.launcher3.statemanager.StatefulActivity.onStop(go/retraceme 2855a437b73635ce9cad76b9289087e631bbb67fc90008a0da13d343a00e5041:34)
+12-02 14:46:32.023  1653  1653 D StatsLog: LAUNCHER_ONSTOP
+12-02 14:46:32.040  4995  5012 W FileTestStorage: Output properties is not supported.
+12-02 14:46:32.050  4995  5012 E AndroidXTracer: enableTracing failed. You may need to upgrade your androidx.tracing:tracing version
+12-02 14:46:32.050  4995  5012 E AndroidXTracer: java.lang.NoSuchMethodError: No static method forceEnableAppTracing()V in class Landroidx/tracing/Trace; or its super classes (declaration of 'androidx.tracing.Trace' appears in /data/app/~~k3ch-xeDsQ7Q57iSy-GDfA==/com.example.princeproject-cOCSLERfL4K0ad70Hh0tRg==/base.apk)
+12-02 14:46:32.050  4995  5012 E AndroidXTracer: 	at androidx.test.platform.tracing.AndroidXTracer.enableTracing(AndroidXTracer.java:57)
+12-02 14:46:32.050  4995  5012 E AndroidXTracer: 	at androidx.test.platform.tracing.Tracing.<init>(Tracing.java:53)
+12-02 14:46:32.050  4995  5012 E AndroidXTracer: 	at androidx.test.platform.tracing.Tracing.<clinit>(Tracing.java:49)
+12-02 14:46:32.050  4995  5012 E AndroidXTracer: 	at androidx.test.espresso.base.BaseLayerModule.providesTracing(BaseLayerModule.java:190)
+12-02 14:46:32.050  4995  5012 E AndroidXTracer: 	at androidx.test.espresso.base.BaseLayerModule_ProvidesTracingFactory.providesTracing(BaseLayerModule_ProvidesTracingFactory.java:37)
+12-02 14:46:32.050  4995  5012 E AndroidXTracer: 	at androidx.test.espresso.base.BaseLayerModule_ProvidesTracingFactory.get(BaseLayerModule_ProvidesTracingFactory.java:29)
+12-02 14:46:32.050  4995  5012 E AndroidXTracer: 	at androidx.test.espresso.base.BaseLayerModule_ProvidesTracingFactory.get(BaseLayerModule_ProvidesTracingFactory.java:11)
+12-02 14:46:32.050  4995  5012 E AndroidXTracer: 	at androidx.test.espresso.core.internal.deps.dagger.internal.DoubleCheck.get(DoubleCheck.java:47)
+12-02 14:46:32.050  4995  5012 E AndroidXTracer: 	at androidx.test.espresso.base.IdlingResourceRegistry_Factory.get(IdlingResourceRegistry_Factory.java:34)
+12-02 14:46:32.050  4995  5012 E AndroidXTracer: 	at androidx.test.espresso.base.IdlingResourceRegistry_Factory.get(IdlingResourceRegistry_Factory.java:12)
+12-02 14:46:32.050  4995  5012 E AndroidXTracer: 	at androidx.test.espresso.core.internal.deps.dagger.internal.DoubleCheck.get(DoubleCheck.java:47)
+12-02 14:46:32.050  4995  5012 E AndroidXTracer: 	at androidx.test.espresso.DaggerBaseLayerComponent$BaseLayerComponentImpl.idlingResourceRegistry(DaggerBaseLayerComponent.java:275)
+12-02 14:46:32.050  4995  5012 E AndroidXTracer: 	at androidx.test.espresso.Espresso.<clinit>(Espresso.java:64)
+12-02 14:46:32.050  4995  5012 E AndroidXTracer: 	at com.example.princeproject.FacilityActivityUITest.testCancelEditFacilityProfile(FacilityActivityUITest.java:28)
+12-02 14:46:32.050  4995  5012 E AndroidXTracer: 	at java.lang.reflect.Method.invoke(Native Method)
+12-02 14:46:32.050  4995  5012 E AndroidXTracer: 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+12-02 14:46:32.050  4995  5012 E AndroidXTracer: 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+12-02 14:46:32.050  4995  5012 E AndroidXTracer: 	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+12-02 14:46:32.050  4995  5012 E AndroidXTracer: 	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+12-02 14:46:32.050  4995  5012 E AndroidXTracer: 	at org.junit.rules.ExternalResource$1.evaluate(ExternalResource.java:54)
+12-02 14:46:32.050  4995  5012 E AndroidXTracer: 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+12-02 14:46:32.050  4995  5012 E AndroidXTracer: 	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+12-02 14:46:32.050  4995  5012 E AndroidXTracer: 	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+12-02 14:46:32.050  4995  5012 E AndroidXTracer: 	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+12-02 14:46:32.050  4995  5012 E AndroidXTracer: 	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+12-02 14:46:32.050  4995  5012 E AndroidXTracer: 	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+12-02 14:46:32.050  4995  5012 E AndroidXTracer: 	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+12-02 14:46:32.050  4995  5012 E AndroidXTracer: 	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+12-02 14:46:32.050  4995  5012 E AndroidXTracer: 	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+12-02 14:46:32.050  4995  5012 E AndroidXTracer: 	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+12-02 14:46:32.050  4995  5012 E AndroidXTracer: 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+12-02 14:46:32.050  4995  5012 E AndroidXTracer: 	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+12-02 14:46:32.050  4995  5012 E AndroidXTracer: 	at androidx.test.ext.junit.runners.AndroidJUnit4.run(AndroidJUnit4.java:162)
+12-02 14:46:32.050  4995  5012 E AndroidXTracer: 	at org.junit.runners.Suite.runChild(Suite.java:128)
+12-02 14:46:32.050  4995  5012 E AndroidXTracer: 	at org.junit.runners.Suite.runChild(Suite.java:27)
+12-02 14:46:32.050  4995  5012 E AndroidXTracer: 	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+12-02 14:46:32.050  4995  5012 E AndroidXTracer: 	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+12-02 14:46:32.050  4995  5012 E AndroidXTracer: 	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+12-02 14:46:32.050  4995  5012 E AndroidXTracer: 	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+12-02 14:46:32.050  4995  5012 E AndroidXTracer: 	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+12-02 14:46:32.050  4995  5012 E AndroidXTracer: 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+12-02 14:46:32.050  4995  5012 E AndroidXTracer: 	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+12-02 14:46:32.050  4995  5012 E AndroidXTracer: 	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+12-02 14:46:32.050  4995  5012 E AndroidXTracer: 	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+12-02 14:46:32.050  4995  5012 E AndroidXTracer: 	at androidx.test.internal.runner.TestExecutor.execute(TestExecutor.java:68)
+12-02 14:46:32.052  4995  5012 E AndroidXTracer: 	at androidx.test.internal.runner.TestExecutor.execute(TestExecutor.java:59)
+12-02 14:46:32.052  4995  5012 E AndroidXTracer: 	at androidx.test.runner.AndroidJUnitRunner.onStart(AndroidJUnitRunner.java:463)
+12-02 14:46:32.052  4995  5012 E AndroidXTracer: 	at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2594)
+12-02 14:46:32.052  1653  2334 D OneSearchSuggestProvider: Shut down the binder channel
+12-02 14:46:32.053  4995  5012 I Tracing : Tracer added: class androidx.test.platform.tracing.AndroidXTracer
+12-02 14:46:32.067  1653  1653 D StatsLog: LAUNCHER_GOOGLE_SEARCH_RESTORE_LIST_SIZE_AFTER_ACTIVITY_RESTART
+12-02 14:46:32.084  4995  5012 D CompatChangeReporter: Compat change id reported: 247079863; UID 10303; state: ENABLED
+12-02 14:46:32.113  1360  1452 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@b46fa81
+12-02 14:46:32.123   642  2502 W InputManager-JNI: Input channel object 'c840a09 Splash Screen com.example.princeproject (client)' was disposed without first being removed with the input manager!
+12-02 14:46:32.136  4995  5012 D EventInjectionStrategy: Creating injection strategy with input manager.
+12-02 14:46:32.139  4995  5012 W e.princeproject: Accessing hidden method Landroid/hardware/input/InputManager;->getInstance()Landroid/hardware/input/InputManager; (unsupported, reflection, allowed)
+12-02 14:46:32.151  4995  5012 W e.princeproject: Accessing hidden method Landroid/hardware/input/InputManager;->injectInputEvent(Landroid/view/InputEvent;I)Z (unsupported, reflection, allowed)
+12-02 14:46:32.152  1360  1452 W FrameTracker: Missed App frame:UNKNOWN: 24, 219194, 26773974, CUJ=J<SPLASHSCREEN_EXIT_ANIM>
+12-02 14:46:32.152  1360  1452 W FrameTracker: Missed SF frame:UNKNOWN: 24, 219194, 26773974, CUJ=J<SPLASHSCREEN_EXIT_ANIM>
+12-02 14:46:32.152  1360  1452 W FrameTracker: Missed SF frame:UNKNOWN: 80, 219202, 27222208, CUJ=J<SPLASHSCREEN_EXIT_ANIM>
+12-02 14:46:32.153  1360  1452 W FrameTracker: Missed SF frame:UNKNOWN: 80, 219217, 22955842, CUJ=J<SPLASHSCREEN_EXIT_ANIM>
+12-02 14:46:32.153  1360  1452 W FrameTracker: Missed SF frame:UNKNOWN: 80, 219232, 35554276, CUJ=J<SPLASHSCREEN_EXIT_ANIM>
+12-02 14:46:32.153  1360  1452 W FrameTracker: Missed App frame:UNKNOWN: 88, 219247, 0, CUJ=J<SPLASHSCREEN_EXIT_ANIM>
+12-02 14:46:32.153  1360  1452 W FrameTracker: Missed SF frame:UNKNOWN: 88, 219247, 0, CUJ=J<SPLASHSCREEN_EXIT_ANIM>
+12-02 14:46:32.153  1360  1452 W FrameTracker: Missing HWUI jank callback for vsyncId: 219247, CUJ=J<SPLASHSCREEN_EXIT_ANIM>
+12-02 14:46:32.153  1360  1452 W FrameTracker: Missed SF frame:UNKNOWN: 80, 219262, 43063944, CUJ=J<SPLASHSCREEN_EXIT_ANIM>
+12-02 14:46:32.154  1360  1452 W FrameTracker: Missed SF frame:UNKNOWN: 80, 219277, 0, CUJ=J<SPLASHSCREEN_EXIT_ANIM>
+12-02 14:46:32.154  1360  1452 W FrameTracker: Missing HWUI jank callback for vsyncId: 219277, CUJ=J<SPLASHSCREEN_EXIT_ANIM>
+12-02 14:46:32.154  1360  1452 W FrameTracker: Missed SF frame:UNKNOWN: 80, 219292, 45624612, CUJ=J<SPLASHSCREEN_EXIT_ANIM>
+12-02 14:46:32.155  1360  1452 W FrameTracker: Missed SF frame:UNKNOWN: 80, 219315, 28031380, CUJ=J<SPLASHSCREEN_EXIT_ANIM>
+12-02 14:46:32.155  4995  5012 W e.princeproject: Accessing hidden field Landroid/hardware/input/InputManager;->INJECT_INPUT_EVENT_MODE_WAIT_FOR_FINISH:I (unsupported, reflection, allowed)
+12-02 14:46:32.155  1360  1452 W FrameTracker: Missed SF frame:UNKNOWN: 80, 219330, 0, CUJ=J<SPLASHSCREEN_EXIT_ANIM>
+12-02 14:46:32.155  1360  1452 W FrameTracker: Missing HWUI jank callback for vsyncId: 219330, CUJ=J<SPLASHSCREEN_EXIT_ANIM>
+12-02 14:46:32.156  1360  1452 W FrameTracker: Missed SF frame:UNKNOWN: 80, 219338, 25739548, CUJ=J<SPLASHSCREEN_EXIT_ANIM>
+12-02 14:46:32.156  1360  1452 W FrameTracker: Missed SF frame:UNKNOWN: 80, 219346, 25943982, CUJ=J<SPLASHSCREEN_EXIT_ANIM>
+12-02 14:46:32.156  1360  1452 W FrameTracker: Missed SF frame:UNKNOWN: 80, 219354, 25325816, CUJ=J<SPLASHSCREEN_EXIT_ANIM>
+12-02 14:46:32.157  1360  1452 W FrameTracker: Missed SF frame:UNKNOWN: 80, 219362, 26012950, CUJ=J<SPLASHSCREEN_EXIT_ANIM>
+12-02 14:46:32.157  1360  1452 W FrameTracker: Missed SF frame:UNKNOWN: 80, 219370, 0, CUJ=J<SPLASHSCREEN_EXIT_ANIM>
+12-02 14:46:32.157  1360  1452 W FrameTracker: Missing HWUI jank callback for vsyncId: 219370, CUJ=J<SPLASHSCREEN_EXIT_ANIM>
+12-02 14:46:32.169  8695  8695 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():3157
+12-02 14:46:32.175  1653  2295 D EGL_emulation: app_time_stats: avg=130.05ms min=1.58ms max=2131.50ms count=18
+12-02 14:46:32.221  4995  4995 W e.princeproject: Accessing hidden method Landroid/os/MessageQueue;->next()Landroid/os/Message; (unsupported, reflection, allowed)
+12-02 14:46:32.222  4995  4995 W e.princeproject: Accessing hidden field Landroid/os/MessageQueue;->mMessages:Landroid/os/Message; (unsupported, reflection, allowed)
+12-02 14:46:32.224  4995  4995 W e.princeproject: Accessing hidden method Landroid/os/Message;->recycleUnchecked()V (unsupported, reflection, allowed)
+12-02 14:46:32.246  8695  8695 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2248 repeatCheckTimes = 0, locked = false
+12-02 14:46:32.256  8695  8695 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1986 onStartInput(EditorInfo{EditorInfo{packageName=com.example.princeproject, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+12-02 14:46:32.261  4995  5020 I ProviderInstaller: Installed default security provider GmsCore_OpenSSL
+12-02 14:46:32.262  8695  8695 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2248 repeatCheckTimes = 1, locked = false
+12-02 14:46:32.281  8558  8558 D BoundBrokerSvc: onUnbind: Intent { act=com.google.android.gms.feedback.internal.IFeedbackService dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsBoundBrokerService }
+12-02 14:46:32.299  8695  8695 I AndroidIME: InputBundleManager.loadActiveInputBundleId():450 loadActiveInputBundleId: und-Latn-x-password, password
+12-02 14:46:32.338  1360  1499 D EGL_emulation: app_time_stats: avg=603.72ms min=4.31ms max=2390.81ms count=4
+12-02 14:46:32.554  4995  5020 I e.princeproject: Waiting for a blocking GC ClassLinker
+12-02 14:46:32.562  4995  5000 I e.princeproject: Background concurrent mark compact GC freed 5832KB AllocSpace bytes, 2(104KB) LOS objects, 49% free, 5741KB/11MB, paused 2.614ms,4.332ms total 298.822ms
+12-02 14:46:32.563  4995  5020 I e.princeproject: WaitForGcToComplete blocked ClassLinker on Background for 9.069ms
+12-02 14:46:32.636   642  2502 D ConnectivityService: requestNetwork for uid/pid:10303/4995 activeRequest: null callbackRequest: 555 [NetworkRequest [ REQUEST id=556, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10303 RequestorUid: 10303 RequestorPkg: com.example.princeproject UnderlyingNetworks: Null] ]] callback flags: 0 order: 2147483647 isUidTracked: false
+12-02 14:46:32.637   642  1250 D OemPaidWifiNetworkFactory: got request NetworkRequest [ REQUEST id=556, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10303 RequestorUid: 10303 RequestorPkg: com.example.princeproject UnderlyingNetworks: Null] ]
+12-02 14:46:32.637   642  1250 D MultiInternetWifiNetworkFactory: got request NetworkRequest [ REQUEST id=556, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10303 RequestorUid: 10303 RequestorPkg: com.example.princeproject UnderlyingNetworks: Null] ]
+12-02 14:46:32.638   642  1250 D WifiNetworkFactory: got request NetworkRequest [ REQUEST id=556, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10303 RequestorUid: 10303 RequestorPkg: com.example.princeproject UnderlyingNetworks: Null] ]
+12-02 14:46:32.638   642  1250 D UntrustedWifiNetworkFactory: got request NetworkRequest [ REQUEST id=556, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10303 RequestorUid: 10303 RequestorPkg: com.example.princeproject UnderlyingNetworks: Null] ]
+12-02 14:46:32.639   642  1261 D ConnectivityService: NetReassign [556 : null → 110] [c 0] [a 0] [i 3]
+12-02 14:46:32.680  4995  4995 I ViewInteraction: Checking 'MatchesViewAssertion{viewMatcher=an instance of android.widget.TextView and view.getText() with or without transformation to match: is "Facility Name"}' assertion on view view.getId() is <2131296492/com.example.princeproject:id/facility_name_text>
+12-02 14:46:32.707  4995  4995 I ViewInteraction: Checking 'MatchesViewAssertion{viewMatcher=an instance of android.widget.TextView and view.getText() with or without transformation to match: is "Description"}' assertion on view view.getId() is <2131296485/com.example.princeproject:id/facility_description_text>
+12-02 14:46:32.719  4995  4995 I ViewInteraction: Checking 'MatchesViewAssertion{viewMatcher=an instance of android.widget.TextView and view.getText() with or without transformation to match: is "Location"}' assertion on view view.getId() is <2131296490/com.example.princeproject:id/facility_location_text>
+12-02 14:46:32.742  4995  5012 W e.princeproject: Accessing hidden method Landroid/view/ViewConfiguration;->getDoubleTapMinTime()I (unsupported, reflection, allowed)
+12-02 14:46:32.758  4995  4995 I ViewInteraction: Performing 'single click' action on view view.getId() is <2131296452/com.example.princeproject:id/edit_facility_button>
+12-02 14:46:32.929  4995  5014 D EGL_emulation: app_time_stats: avg=99.30ms min=3.19ms max=933.89ms count=11
+12-02 14:46:33.174   445  4278 D audioserver: logFgsApiBegin: FGS Logger Transaction failed, -129
+12-02 14:46:33.176   642  2502 W AS.PlaybackActivityMon: No piid assigned for invalid/internal port id 15
+12-02 14:46:33.291   445   552 D AudioFlinger: mixer(0x7f258919d8e0) throttle end: throttle time(39)
+12-02 14:46:33.454   445   552 D audioserver: logFgsApiEnd: FGS Logger Transaction failed, -129
+12-02 14:46:33.840  4995  5051 D ProfileInstaller: Installing profile for com.example.princeproject
+12-02 14:46:33.858   642   936 I ImeTracker: com.example.princeproject:8f86cc5: onRequestHide at ORIGIN_SERVER reason HIDE_UNSPECIFIED_WINDOW fromUser false
+12-02 14:46:33.858   642   936 I ImeTracker: com.example.princeproject:8f86cc5: onCancelled at PHASE_SERVER_SHOULD_HIDE
+12-02 14:46:33.864  8695  8695 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():3157
+12-02 14:46:33.870  8695  8695 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2248 repeatCheckTimes = 0, locked = false
+12-02 14:46:33.873  8695  8695 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1986 onStartInput(EditorInfo{EditorInfo{packageName=com.example.princeproject, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+12-02 14:46:33.876  8695  8695 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2248 repeatCheckTimes = 1, locked = false
+12-02 14:46:33.880  8695  8695 I AndroidIME: InputBundleManager.loadActiveInputBundleId():450 loadActiveInputBundleId: und-Latn-x-password, password
+12-02 14:46:33.964  4995  5014 D EGL_emulation: app_time_stats: avg=17.64ms min=2.77ms max=88.72ms count=51
+12-02 14:46:34.178  4995  4995 I ViewInteraction: Performing 'replace text(Temporary Name)' action on view view.getId() is <2131296491/com.example.princeproject:id/facility_name>
+12-02 14:46:34.546  4995  4995 I AssistStructure: Flattened final assist data: 4748 bytes, containing 2 windows, 29 views
+12-02 14:46:34.582  4995  4995 I ViewInteraction: Performing 'replace text(Temporary Location)' action on view view.getId() is <2131296489/com.example.princeproject:id/facility_location>
+12-02 14:46:34.648  4995  4995 I ViewInteraction: Performing 'replace text(Temporary Description)' action on view view.getId() is <2131296484/com.example.princeproject:id/facility_description>
+12-02 14:46:34.744  4995  4995 I ViewInteraction: Performing 'close keyboard' action on view view.getRootView() to equal view
+12-02 14:46:34.782  4995  4995 D IdlingRegistry: Registering idling resources: [androidx.test.espresso.action.CloseKeyboardAction$CloseKeyboardIdlingResult@45317b]
+12-02 14:46:34.788  4995  4995 I ImeTracker: com.example.princeproject:8631c233: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT fromUser false
+12-02 14:46:34.806  8695  8695 W AndroidSpellCheckerService: AndroidSpellCheckerService.initialize():73 initialize...
+12-02 14:46:34.809   642   936 I ImeTracker: com.example.princeproject:8631c233: onCancelled at PHASE_SERVER_SHOULD_HIDE
+12-02 14:46:34.843  8695  8695 I ShortcutsDataManager: ShortcutsDataManager.onContentChanged():72 onContentChanged()
+12-02 14:46:34.846  8695  8695 I ContactsDataManager: ContactsDataManager.onContentChanged():159 onContentChanged()
+12-02 14:46:34.857  8695  8695 W AndroidSpellCheckerService: AndroidSpellCheckerService.initialize():83 initialize...done
+12-02 14:46:34.998  4995  5014 D EGL_emulation: app_time_stats: avg=88.31ms min=3.72ms max=489.02ms count=14
+12-02 14:46:35.019  8695  8706 I AndroidSpellCheckerService: AndroidSpellCheckerService.createSession():139 com.google.android.keyboard.client.delight5.LanguageIdentifier@4e08ade is created
+12-02 14:46:35.043  8695  9368 I AndroidSpellCheckerService: AndroidSpellCheckerService.createSession():139 com.google.android.keyboard.client.delight5.LanguageIdentifier@3fa978c is created
+12-02 14:46:35.053  8695  8707 I AndroidSpellCheckerService: AndroidSpellCheckerService.createSession():139 com.google.android.keyboard.client.delight5.LanguageIdentifier@36676ea is created
+12-02 14:46:35.261  4995  4995 D IdlingRegistry: Unregistering idling resources: [androidx.test.espresso.action.CloseKeyboardAction$CloseKeyboardIdlingResult@45317b]
+12-02 14:46:35.266  4995  4995 I ViewInteraction: Performing 'single click' action on view an instance of android.widget.TextView and view.getText() with or without transformation to match: is "Cancel"
+12-02 14:46:35.335   445  4278 D audioserver: logFgsApiBegin: FGS Logger Transaction failed, -129
+12-02 14:46:35.335   642  2502 W AS.PlaybackActivityMon: No piid assigned for invalid/internal port id 15
+12-02 14:46:35.346  4995  4995 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@10ca9a
+12-02 14:46:35.350   445   552 D AudioFlinger: mixer(0x7f258919d8e0) throttle end: throttle time(43)
+12-02 14:46:35.355  8695  8707 I SpellCheckerSession: SpellCheckerSession.onClose():676 com.google.android.keyboard.client.delight5.LanguageIdentifier@4e08ade is closed
+12-02 14:46:35.363  8695  9368 I SpellCheckerSession: SpellCheckerSession.onClose():676 com.google.android.keyboard.client.delight5.LanguageIdentifier@36676ea is closed
+12-02 14:46:35.364  8695  8706 I SpellCheckerSession: SpellCheckerSession.onClose():676 com.google.android.keyboard.client.delight5.LanguageIdentifier@3fa978c is closed
+12-02 14:46:35.366  4995  5014 D HWUI    : endAllActiveAnimators on 0x792ae2bc4f40 (RippleDrawable) with handle 0x792bf2bd9ef0
+12-02 14:46:35.371   642  2502 W InputManager-JNI: Input channel object '597d9da com.example.princeproject/com.example.princeproject.FacilityActivity (client)' was disposed without first being removed with the input manager!
+12-02 14:46:35.399  8558  8570 W gle.android.gms: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~k3ch-xeDsQ7Q57iSy-GDfA==/com.example.princeproject-cOCSLERfL4K0ad70Hh0tRg==/base.apk' with 1 weak references
+12-02 14:46:35.414   642   936 I ImeTracker: com.example.princeproject:20894099: onRequestHide at ORIGIN_SERVER reason HIDE_UNSPECIFIED_WINDOW fromUser false
+12-02 14:46:35.414   642   936 I ImeTracker: com.example.princeproject:20894099: onCancelled at PHASE_SERVER_SHOULD_HIDE
+12-02 14:46:35.416  8695  8695 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():3157
+12-02 14:46:35.420  8695  8695 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2248 repeatCheckTimes = 0, locked = false
+12-02 14:46:35.436  8695  8695 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1986 onStartInput(EditorInfo{EditorInfo{packageName=com.example.princeproject, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+12-02 14:46:35.437  4995  5014 D EGL_emulation: app_time_stats: avg=146.99ms min=13.34ms max=1304.75ms count=10
+12-02 14:46:35.437  8695  8695 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2248 repeatCheckTimes = 1, locked = false
+12-02 14:46:35.439  8695  8695 I AndroidIME: InputBundleManager.loadActiveInputBundleId():450 loadActiveInputBundleId: und-Latn-x-password, password
+12-02 14:46:35.444  8695  8695 I ShortcutsDataManager: AbstractContentDataManager.startImportContentTask():240 startImportContentTask()
+12-02 14:46:35.458  8695  8807 I ShortcutsDataManager: AbstractContentDataManager$ImportContentTask.doInBackground():255 doInBackground()
+12-02 14:46:35.471  8695  8807 I PersonalDictionaryDataHandler: PersonalDictionaryDataHandler.beginProcess():114 LanguageTags = [en-US]
+12-02 14:46:35.481   642  2386 V GrammaticalInflectionUtils: AttributionSource: android.content.AttributionSource@731100b2 does not have READ_SYSTEM_GRAMMATICAL_GENDER permission.
+12-02 14:46:35.554   445   552 D audioserver: logFgsApiEnd: FGS Logger Transaction failed, -129
+12-02 14:46:35.569   382   382 D Zygote  : Forked child process 5052
+12-02 14:46:35.619  4995  4995 I ViewInteraction: Checking 'MatchesViewAssertion{viewMatcher=an instance of android.widget.TextView and view.getText() with or without transformation to match: is "Facility Name"}' assertion on view view.getId() is <2131296492/com.example.princeproject:id/facility_name_text>
+12-02 14:46:35.626  4995  4995 I ViewInteraction: Checking 'MatchesViewAssertion{viewMatcher=an instance of android.widget.TextView and view.getText() with or without transformation to match: is "Description"}' assertion on view view.getId() is <2131296485/com.example.princeproject:id/facility_description_text>
+12-02 14:46:35.630  4995  4995 I ViewInteraction: Checking 'MatchesViewAssertion{viewMatcher=an instance of android.widget.TextView and view.getText() with or without transformation to match: is "Location"}' assertion on view view.getId() is <2131296490/com.example.princeproject:id/facility_location_text>
+12-02 14:46:35.642   642  2502 V GrammaticalInflectionUtils: AttributionSource: android.content.AttributionSource@dcd4645e does not have READ_SYSTEM_GRAMMATICAL_GENDER permission.
+12-02 14:46:35.654  4995  4995 D LifecycleMonitor: Lifecycle status change: com.example.princeproject.FacilityActivity@5342e29 in: PAUSED
+12-02 14:46:35.654  4995  4995 V ActivityScenario: Update currentActivityStage to PAUSED, currentActivity=com.example.princeproject.FacilityActivity@5342e29
+12-02 14:46:35.658   451   451 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+12-02 14:46:35.679  5052  5052 I d.process.acore: Using CollectorTypeCMC GC.
+12-02 14:46:35.682  5052  5052 W d.process.acore: Unexpected CPU variant for x86: x86_64.
+12-02 14:46:35.682  5052  5052 W d.process.acore: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, goldmont-without-sha-xsaves, tremont, kabylake, default
+12-02 14:46:35.699  4995  4995 D LifecycleMonitor: Lifecycle status change: androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity@7af2761 in: PRE_ON_CREATE
+12-02 14:46:35.700  4995  4995 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.princeproject/.FacilityActivity }, activity.getIntent()=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10000000 cmp=com.example.princeproject/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity }, activity=androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity@7af2761
+12-02 14:46:35.711  5052  5052 E d.process.acore: Not starting debugger since process cannot load the jdwp agent.
+12-02 14:46:35.723  4995  4995 D LifecycleMonitor: Lifecycle status change: androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity@7af2761 in: CREATED
+12-02 14:46:35.723  4995  4995 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.princeproject/.FacilityActivity }, activity.getIntent()=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10000000 cmp=com.example.princeproject/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity }, activity=androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity@7af2761
+12-02 14:46:35.725  4995  4995 D LifecycleMonitor: Lifecycle status change: androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity@7af2761 in: STARTED
+12-02 14:46:35.726  4995  4995 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.princeproject/.FacilityActivity }, activity.getIntent()=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10000000 cmp=com.example.princeproject/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity }, activity=androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity@7af2761
+12-02 14:46:35.729  4995  4995 D LifecycleMonitor: Lifecycle status change: androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity@7af2761 in: RESUMED
+12-02 14:46:35.730  4995  4995 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.princeproject/.FacilityActivity }, activity.getIntent()=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10000000 cmp=com.example.princeproject/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity }, activity=androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity@7af2761
+12-02 14:46:35.735  5052  5052 D nativeloader: Load libframework-connectivity-tiramisu-jni.so using APEX ns com_android_tethering for caller /apex/com.android.tethering/javalib/framework-connectivity-t.jar: ok
+12-02 14:46:35.940   642   674 I ActivityTaskManager: Displayed com.example.princeproject/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity for user 0: +295ms
+12-02 14:46:35.981  5052  5052 D nativeloader: Configuring clns-shared-7 for other apk /system/priv-app/UserDictionaryProvider/UserDictionaryProvider.apk. target_sdk_version=35, uses_libraries=, library_path=/system/priv-app/UserDictionaryProvider/lib/x86_64:/system/lib64:/system_ext/lib64, permitted_path=/data:/mnt/expand:/data/user/0/com.android.providers.userdictionary:/system/priv-app/UserDictionaryProvider:/system/lib64:/system_ext/lib64
+12-02 14:46:35.984  5052  5052 D CompatChangeReporter: Compat change id reported: 202956589; UID 10091; state: ENABLED
+12-02 14:46:35.996  1653  1653 I TopTaskTracker: onTaskMovedToFront: (moved taskInfo to front) taskId=7, baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.HOME] flg=0x10000100 cmp=com.google.android.apps.nexuslauncher/.NexusLauncherActivity }
+12-02 14:46:36.001  4995  4995 D LifecycleMonitor: Lifecycle status change: androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity@7af2761 in: PAUSED
+12-02 14:46:36.003  4995  4995 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.princeproject/.FacilityActivity }, activity.getIntent()=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10000000 cmp=com.example.princeproject/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity }, activity=androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity@7af2761
+12-02 14:46:36.015  5052  5052 V GraphicsEnvironment: Currently set values for:
+12-02 14:46:36.016  5052  5052 V GraphicsEnvironment:   angle_gl_driver_selection_pkgs=[]
+12-02 14:46:36.016  5052  5052 V GraphicsEnvironment:   angle_gl_driver_selection_values=[]
+12-02 14:46:36.016  5052  5052 V GraphicsEnvironment: Global.Settings values are invalid: number of packages: 0, number of values: 0
+12-02 14:46:36.016  5052  5052 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+12-02 14:46:36.030  4995  4995 D VRI[FacilityActivity]: visibilityChanged oldVisibility=true newVisibility=false
+12-02 14:46:36.041   451   451 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+12-02 14:46:36.063  1653  1653 D NexusLauncherModelDelegate: notifySmartspaceEvent: SmartspaceTargetEvent{mSmartspaceTarget=null, mSmartspaceActionId='null', mEventType=6}
+12-02 14:46:36.084  1653  1653 D BaseDepthController: setSurface:
+12-02 14:46:36.084  1653  1653 D BaseDepthController: 	mWaitingOnSurfaceValidity: false
+12-02 14:46:36.084  1653  1653 D BaseDepthController: 	mSurface: Surface(name=com.google.android.apps.nexuslauncher/com.google.android.apps.nexuslauncher.NexusLauncherActivity)/@0x77623df
+12-02 14:46:36.098  5052  5052 D nativeloader: Configuring clns-shared-8 for other apk /system/priv-app/BlockedNumberProvider/BlockedNumberProvider.apk. target_sdk_version=35, uses_libraries=, library_path=/system/priv-app/BlockedNumberProvider/lib/x86_64:/system/lib64:/system_ext/lib64, permitted_path=/data:/mnt/expand:/data/user_de/0/com.android.providers.blockednumber:/system/priv-app/BlockedNumberProvider:/system/lib64:/system_ext/lib64
+12-02 14:46:36.172   642  1261 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET, states=14
+12-02 14:46:36.174   642  1261 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET6, states=14
+12-02 14:46:36.180   642  1261 D InetDiagMessage: Destroyed live tcp sockets for uids={10187} in 9ms
+12-02 14:46:36.206  5052  5052 D nativeloader: Configuring clns-shared-9 for other apk /system/priv-app/ContactsProvider/ContactsProvider.apk. target_sdk_version=35, uses_libraries=, library_path=/system/priv-app/ContactsProvider/lib/x86_64:/system/lib64:/system_ext/lib64, permitted_path=/data:/mnt/expand:/data/user/0/com.android.providers.contacts:/system/priv-app/ContactsProvider:/system/lib64:/system_ext/lib64
+12-02 14:46:36.215  1653  1653 D StatsLog: LAUNCHER_ONRESUME
+12-02 14:46:36.242  5052  5052 I ContactsPerf: VoicemailContentProvider.onCreate start
+12-02 14:46:36.301  1653  1686 D QuickstepModelDelegate: notifyAppTargetEvent action=1 launchLocation=workspace/0/[-1,-1]/[1,1]
+12-02 14:46:36.322  5052  5052 I ContactsPerf: VoicemailContentProvider.onCreate finish
+12-02 14:46:36.339  1653  2295 D EGL_emulation: app_time_stats: avg=583.64ms min=1.79ms max=4059.54ms count=7
+12-02 14:46:36.364   642   936 I ImeTracker: com.google.android.apps.nexuslauncher:a57143fc: onRequestHide at ORIGIN_SERVER reason HIDE_UNSPECIFIED_WINDOW fromUser false
+12-02 14:46:36.367   642   936 I ImeTracker: com.google.android.apps.nexuslauncher:a57143fc: onCancelled at PHASE_SERVER_SHOULD_HIDE
+12-02 14:46:36.375   642  1971 W AppSearchIcing: icing-search-engine.cc:321: Error: 5, Message: Document (com.google.android.googlequicksearchbox$OneSearchZeroStateGoogleSuggestions/default, zp) not found.
+12-02 14:46:36.403  1935  2107 I AiAiEcho: Predicting[0]:  [CONTEXT sampling_count=5 ]
+12-02 14:46:36.412  8695  8695 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():3157
+12-02 14:46:36.414  8695  8695 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2248 repeatCheckTimes = 0, locked = false
+12-02 14:46:36.415  8695  8695 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1986 onStartInput(EditorInfo{EditorInfo{packageName=com.google.android.apps.nexuslauncher, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+12-02 14:46:36.416  8695  8695 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2248 repeatCheckTimes = 1, locked = false
+12-02 14:46:36.418  8695  8695 I AndroidIME: InputBundleManager.loadActiveInputBundleId():450 loadActiveInputBundleId: und-Latn-x-password, password
+12-02 14:46:36.419  1935  2107 I AiAiEcho: EchoTargets:
+12-02 14:46:36.419  1935  2107 I AiAiEcho: Filtered by AiAi flag check:
+12-02 14:46:36.419  1935  2107 I AiAiEcho: [CONTEXT ratelimit_period="10 SECONDS" ]
+12-02 14:46:36.422  1935  2107 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:  [CONTEXT ratelimit_period="10 SECONDS" ]
+12-02 14:46:36.424  1653  1653 D StateManager: createAtomicAnimation - fromState: Background, toState: Normal, partial trace:
+12-02 14:46:36.424  1653  1653 D StateManager: 	at com.android.quickstep.util.StaggeredWorkspaceAnim.prepareToAnimate(go/retraceme 2855a437b73635ce9cad76b9289087e631bbb67fc90008a0da13d343a00e5041:22)
+12-02 14:46:36.424  1653  1653 D StateManager: 	at com.android.quickstep.util.StaggeredWorkspaceAnim.<init>(go/retraceme 2855a437b73635ce9cad76b9289087e631bbb67fc90008a0da13d343a00e5041:4)
+12-02 14:46:36.424  1653  1653 D StateManager: 	at com.android.quickstep.util.StaggeredWorkspaceAnim.<init>(go/retraceme 2855a437b73635ce9cad76b9289087e631bbb67fc90008a0da13d343a00e5041:1)
+12-02 14:46:36.440  1653  2334 D OneSearchSuggestProvider: AppSearch 0-state cache not available, fallback to AGA
+12-02 14:46:36.440  1653  2334 D OneSearchSuggestProvider: java.util.concurrent.CompletionException: java.util.NoSuchElementException: No value present
+12-02 14:46:36.440  1653  2334 D OneSearchSuggestProvider: 	at java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:308)
+12-02 14:46:36.440  1653  2334 D OneSearchSuggestProvider: 	at java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:323)
+12-02 14:46:36.440  1653  2334 D OneSearchSuggestProvider: 	at java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:684)
+12-02 14:46:36.440  1653  2334 D OneSearchSuggestProvider: 	at java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:486)
+12-02 14:46:36.440  1653  2334 D OneSearchSuggestProvider: 	at java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2138)
+12-02 14:46:36.440  1653  2334 D OneSearchSuggestProvider: 	at com.google.android.apps.nexuslauncher.allapps.E0.onResult(go/retraceme 2855a437b73635ce9cad76b9289087e631bbb67fc90008a0da13d343a00e5041:67)
+12-02 14:46:36.440  1653  2334 D OneSearchSuggestProvider: 	at android.app.appsearch.SearchSessionUtil$1.lambda$onResult$0(go/retraceme 64eee9e9f568ff45978879ad2ff83146f2618ee8a88278736fbdf5fae931976e:144)
+12-02 14:46:36.440  1653  2334 D OneSearchSuggestProvider: 	at android.app.appsearch.SearchSessionUtil$1.$r8$lambda$CEk3q8sDAQVhU3rQwVueB8FAj_M(go/retraceme 64eee9e9f568ff45978879ad2ff83146f2618ee8a88278736fbdf5fae931976e:1)
+12-02 14:46:36.440  1653  2334 D OneSearchSuggestProvider: 	at android.app.appsearch.SearchSessionUtil$1$$ExternalSyntheticLambda0.run(go/retraceme 64eee9e9f568ff45978879ad2ff83146f2618ee8a88278736fbdf5fae931976e:22)
+12-02 14:46:36.440  1653  2334 D OneSearchSuggestProvider: 	at android.os.Handler.handleCallback(Handler.java:959)
+12-02 14:46:36.440  1653  2334 D OneSearchSuggestProvider: 	at android.os.Handler.dispatchMessage(Handler.java:100)
+12-02 14:46:36.440  1653  2334 D OneSearchSuggestProvider: 	at android.os.Looper.loopOnce(Looper.java:232)
+12-02 14:46:36.440  1653  2334 D OneSearchSuggestProvider: 	at android.os.Looper.loop(Looper.java:317)
+12-02 14:46:36.440  1653  2334 D OneSearchSuggestProvider: 	at android.os.HandlerThread.run(HandlerThread.java:85)
+12-02 14:46:36.440  1653  2334 D OneSearchSuggestProvider: Caused by: java.util.NoSuchElementException: No value present
+12-02 14:46:36.440  1653  2334 D OneSearchSuggestProvider: 	at java.util.Optional.get(Optional.java:143)
+12-02 14:46:36.440  1653  2334 D OneSearchSuggestProvider: 	at com.google.android.apps.nexuslauncher.allapps.E0.onResult(go/retraceme 2855a437b73635ce9cad76b9289087e631bbb67fc90008a0da13d343a00e5041:28)
+12-02 14:46:36.440  1653  2334 D OneSearchSuggestProvider: 	... 8 more
+12-02 14:46:36.445  5052  5052 D nativeloader: Configuring clns-shared-10 for other apk /system/priv-app/E2eeContactKeysProvider/E2eeContactKeysProvider.apk. target_sdk_version=35, uses_libraries=, library_path=/system/priv-app/E2eeContactKeysProvider/lib/x86_64:/system/lib64:/system_ext/lib64, permitted_path=/data:/mnt/expand:/data/user/0/com.android.providers.contactkeys:/system/priv-app/E2eeContactKeysProvider:/system/lib64:/system_ext/lib64
+12-02 14:46:36.447  1935  2107 I AiAiEcho: #remoteViewsTwiddler: feature disabled.
+12-02 14:46:36.472  1935  2107 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface home with targets# 0 (types=[])
+12-02 14:46:36.490  5052  5069 I PhoneAccountHandleMigrationUtils_CallLogDatabaseHelper: updatePhoneAccountHandleMigrationPendingStatus false
+12-02 14:46:36.498  5052  5080 I PhoneAccountHandleMigrationUtils_CallLogDatabaseHelper: updatePhoneAccountHandleMigrationPendingStatus false
+12-02 14:46:36.499  1653  2334 D OneSearchSuggestProvider: Created the binder channel successfully for end point service =com.google.android.apps.search.googleapp.search.suggest.plugins.onesearch.server.OneSearchSuggestService , mChannel=i1{delegate=f{logId=177, target=directaddress:///AndroidComponentAddress%5BIntent%20%7B%20act=grpc.io.action.BIND%20cmp=com.google.android.googlequicksearchbox/com.google.android.apps.search.googleapp.search.suggest.plugins.onesearch.server.OneSearchSuggestService%20%7D%5D}} , mOneSearchConnection=l2.Z@8d479df
+12-02 14:46:36.619  5052  5052 I ContactsDatabaseHelper: updateUseStrictPhoneNumberComparison: US
+12-02 14:46:36.672  5052  5069 I CallLogProvider: syncEntriesFrom: fromUserId=0, srcIsShadow=true, forAllUsers=false; previousTimeStamp=0, newTimeStamp=0, entries=0
+12-02 14:46:36.693  5052  5085 D ContactsDatabaseHelper: WAL enabled for contacts2.db: true
+12-02 14:46:36.699   797   797 I A       : (REDACTED) Created gRPC endpoint for service %s
+12-02 14:46:36.717  5052  5052 I ContactsDatabaseHelper: updateUseStrictPhoneNumberComparison: US
+12-02 14:46:36.741  5052  5069 I CallLogProvider: delete uid/pid=10091/5052, uri=content://call_log_shadow/calls, numChanged=0
+12-02 14:46:36.743  5052  5085 I PhoneAccountHandleMigrationUtils_ContactsDatabaseHelper: updatePhoneAccountHandleMigrationPendingStatus false
+12-02 14:46:36.753   451   547 W VsyncModulator: setTransactionSchedule: Unexpected EarlyEnd
+12-02 14:46:36.771  5052  5085 D CompatChangeReporter: Compat change id reported: 291868760; UID 10091; state: ENABLED
+12-02 14:46:36.804  8695  8807 I ShortcutsDataManager: AbstractContentDataManager.importRecords():345 importRecords() : Success : Count = 0
+12-02 14:46:36.832  5052  5069 I CallLogProvider: Syncing call composer pics -- source user=0, isShadow=true, forAllUser=false
+12-02 14:46:36.832  5052  5069 I CallLogProvider: Fetching list of Uris to sync
+12-02 14:46:36.838  5052  5069 I CallLogProvider: Will sync following Uris:[]
+12-02 14:46:36.838  5052  5069 I CallLogProvider: Syncing call composer pics -- got []
+12-02 14:46:36.860  8695  8807 I ShortcutsDataManager: AbstractContentDataManager.importContentData():295 importContentData() : Ending import process
+12-02 14:46:36.920  8695  8795 I Delight5Decoder: Delight5DecoderWrapper.unloadLanguageModel():943 unloadLanguageModel() : 4, version [n/a]
+12-02 14:46:37.048  1653  1653 D SsBaseTemplateCard: No text view can be set up
+12-02 14:46:37.051  1653  1653 D SsBaseTemplateCard: Passed-in item info is null
+12-02 14:46:37.052  1653  1653 D SsBaseTemplateCard: Passed-in item info is null
+12-02 14:46:37.052  1653  1653 D SsBaseTemplateCard: Passed-in item info is null
+12-02 14:46:37.052  1653  1653 I SsBaseTemplateCard: Secondary card pane is null
+12-02 14:46:37.085  4995  4995 D VRI[InstrumentationActivityInvoker$EmptyActivity]: visibilityChanged oldVisibility=true newVisibility=false
+12-02 14:46:37.124  4995  4995 D LifecycleMonitor: Lifecycle status change: com.example.princeproject.FacilityActivity@5342e29 in: STOPPED
+12-02 14:46:37.139  4995  4995 V ActivityScenario: Update currentActivityStage to STOPPED, currentActivity=com.example.princeproject.FacilityActivity@5342e29
+12-02 14:46:37.163  4995  4995 D LifecycleMonitor: Lifecycle status change: com.example.princeproject.FacilityActivity@5342e29 in: DESTROYED
+12-02 14:46:37.169  4995  4995 V ActivityScenario: Update currentActivityStage to DESTROYED, currentActivity=null
+12-02 14:46:37.174  4995  4995 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@eec8039
+12-02 14:46:37.180  4995  5012 I TestRunner: finished: testCancelEditFacilityProfile(com.example.princeproject.FacilityActivityUITest)
