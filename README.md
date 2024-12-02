@@ -8,7 +8,7 @@
 7. UI mockups and storyboard is up to date and reflects similar to the view of the finished app
 8. Sprint Planning and Reviews: See ProjectPart4 directory for Excel spreadsheet documenting this.
 9. Demonstration: To be conducted Dec 4th during lab
-10. Tool use: Github (for product backlog, storyboard, codebase), Figma (for UI mockups), Google Drawings (for storyboard sequences and CRC cards), UMLet for UML diagrams, Firebase for database functionality, Excel for sprint documentation, and Discord for communication
+10. Tool use: Github (for product backlog, storyboard, codebase), Figma (for UI mockups), Google Drawings (for storyboard sequences and CRC cards), UMLet for UML diagrams, Firebase for database functionality, Excel for sprint documentation, Google Docs for test case tracking, and Discord for communication
    
 
 **Part 3 Submission -----------------------------------**
