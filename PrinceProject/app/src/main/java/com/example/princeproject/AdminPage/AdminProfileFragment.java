@@ -77,21 +77,23 @@ public class AdminProfileFragment extends Fragment {
         // Get the TabLayout from the activity
         TabLayout tabLayout = requireActivity().findViewById(R.id.navigation_bar);
 
-        // Wait for the TabLayout to be laid out to get its height
-        tabLayout.post(() -> {
-            int tabHeight = tabLayout.getHeight();
+        if (tabLayout != null) {
+            // Wait for the TabLayout to be laid out to get its height
+            tabLayout.post(() -> {
+                int tabHeight = tabLayout.getHeight();
 
-            // Add a small offset to fully show the last item
-            int additionalPadding = 90;
+                // Add a small offset to fully show the last item
+                int additionalPadding = 90;
 
-            // Adjust the ListView's bottom padding dynamically
-            userListView.setPadding(
-                    userListView.getPaddingLeft(),
-                    userListView.getPaddingTop(),
-                    userListView.getPaddingRight(),
-                    tabHeight + additionalPadding
-            );
-        });
+                // Adjust the ListView's bottom padding dynamically
+                userListView.setPadding(
+                        userListView.getPaddingLeft(),
+                        userListView.getPaddingTop(),
+                        userListView.getPaddingRight(),
+                        tabHeight + additionalPadding
+                );
+            });
+        }
     }
 
     /**

@@ -1,0 +1,380 @@
+# 2024-12-02T01:59:29.135912900Z:
+test_suite_meta_data {
+  scheduled_test_case_count: 7
+}
+test_status: PASSED
+test_result {
+  test_case {
+    test_class: "AdminPageTest"
+    test_package: "com.example.princeproject"
+    test_method: "testAdminPageButtonLaunchesAdminActivity"
+    start_time {
+      seconds: 1733104707
+      nanos: 187000000
+    }
+    end_time {
+      seconds: 1733104710
+      nanos: 26000000
+    }
+  }
+  test_status: PASSED
+  output_artifact {
+    label {
+      label: "logcat"
+      namespace: "android"
+    }
+    source_path {
+      path: "C:\\Users\\Kyle\\Documents\\GitHub\\princeProject2\\PrinceProject\\app\\build\\outputs\\androidTest-results\\connected\\debug\\Medium_Phone_API_35(AVD) - 15\\logcat-com.example.princeproject.AdminPageTest-testAdminPageButtonLaunchesAdminActivity.txt"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info"
+      namespace: "android"
+    }
+    source_path {
+      path: "C:\\Users\\Kyle\\Documents\\GitHub\\princeProject2\\PrinceProject\\app\\build\\outputs\\androidTest-results\\connected\\debug\\Medium_Phone_API_35(AVD) - 15\\device-info.pb"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.meminfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "C:\\Users\\Kyle\\Documents\\GitHub\\princeProject2\\PrinceProject\\app\\build\\outputs\\androidTest-results\\connected\\debug\\Medium_Phone_API_35(AVD) - 15\\meminfo"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.cpuinfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "C:\\Users\\Kyle\\Documents\\GitHub\\princeProject2\\PrinceProject\\app\\build\\outputs\\androidTest-results\\connected\\debug\\Medium_Phone_API_35(AVD) - 15\\cpuinfo"
+    }
+  }
+}
+test_result {
+  test_case {
+    test_class: "AdminPageTest"
+    test_package: "com.example.princeproject"
+    test_method: "testListViewPopulatedInAdminEventFragment"
+    start_time {
+      seconds: 1733104710
+      nanos: 855000000
+    }
+    end_time {
+      seconds: 1733104720
+      nanos: 623000000
+    }
+  }
+  test_status: PASSED
+  output_artifact {
+    label {
+      label: "logcat"
+      namespace: "android"
+    }
+    source_path {
+      path: "C:\\Users\\Kyle\\Documents\\GitHub\\princeProject2\\PrinceProject\\app\\build\\outputs\\androidTest-results\\connected\\debug\\Medium_Phone_API_35(AVD) - 15\\logcat-com.example.princeproject.AdminPageTest-testListViewPopulatedInAdminEventFragment.txt"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info"
+      namespace: "android"
+    }
+    source_path {
+      path: "C:\\Users\\Kyle\\Documents\\GitHub\\princeProject2\\PrinceProject\\app\\build\\outputs\\androidTest-results\\connected\\debug\\Medium_Phone_API_35(AVD) - 15\\device-info.pb"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.meminfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "C:\\Users\\Kyle\\Documents\\GitHub\\princeProject2\\PrinceProject\\app\\build\\outputs\\androidTest-results\\connected\\debug\\Medium_Phone_API_35(AVD) - 15\\meminfo"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.cpuinfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "C:\\Users\\Kyle\\Documents\\GitHub\\princeProject2\\PrinceProject\\app\\build\\outputs\\androidTest-results\\connected\\debug\\Medium_Phone_API_35(AVD) - 15\\cpuinfo"
+    }
+  }
+}
+test_result {
+  test_case {
+    test_class: "AdminPageTest"
+    test_package: "com.example.princeproject"
+    test_method: "testRemovalButtonsEvent"
+    start_time {
+      seconds: 1733104721
+      nanos: 410000000
+    }
+    end_time {
+      seconds: 1733104741
+      nanos: 466000000
+    }
+  }
+  test_status: PASSED
+  output_artifact {
+    label {
+      label: "logcat"
+      namespace: "android"
+    }
+    source_path {
+      path: "C:\\Users\\Kyle\\Documents\\GitHub\\princeProject2\\PrinceProject\\app\\build\\outputs\\androidTest-results\\connected\\debug\\Medium_Phone_API_35(AVD) - 15\\logcat-com.example.princeproject.AdminPageTest-testRemovalButtonsEvent.txt"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info"
+      namespace: "android"
+    }
+    source_path {
+      path: "C:\\Users\\Kyle\\Documents\\GitHub\\princeProject2\\PrinceProject\\app\\build\\outputs\\androidTest-results\\connected\\debug\\Medium_Phone_API_35(AVD) - 15\\device-info.pb"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.meminfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "C:\\Users\\Kyle\\Documents\\GitHub\\princeProject2\\PrinceProject\\app\\build\\outputs\\androidTest-results\\connected\\debug\\Medium_Phone_API_35(AVD) - 15\\meminfo"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.cpuinfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "C:\\Users\\Kyle\\Documents\\GitHub\\princeProject2\\PrinceProject\\app\\build\\outputs\\androidTest-results\\connected\\debug\\Medium_Phone_API_35(AVD) - 15\\cpuinfo"
+    }
+  }
+}
+test_result {
+  test_case {
+    test_class: "AdminPageTest"
+    test_package: "com.example.princeproject"
+    test_method: "testRemovalButtonsProfile"
+    start_time {
+      seconds: 1733104742
+      nanos: 246000000
+    }
+    end_time {
+      seconds: 1733104747
+      nanos: 855000000
+    }
+  }
+  test_status: PASSED
+  output_artifact {
+    label {
+      label: "logcat"
+      namespace: "android"
+    }
+    source_path {
+      path: "C:\\Users\\Kyle\\Documents\\GitHub\\princeProject2\\PrinceProject\\app\\build\\outputs\\androidTest-results\\connected\\debug\\Medium_Phone_API_35(AVD) - 15\\logcat-com.example.princeproject.AdminPageTest-testRemovalButtonsProfile.txt"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info"
+      namespace: "android"
+    }
+    source_path {
+      path: "C:\\Users\\Kyle\\Documents\\GitHub\\princeProject2\\PrinceProject\\app\\build\\outputs\\androidTest-results\\connected\\debug\\Medium_Phone_API_35(AVD) - 15\\device-info.pb"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.meminfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "C:\\Users\\Kyle\\Documents\\GitHub\\princeProject2\\PrinceProject\\app\\build\\outputs\\androidTest-results\\connected\\debug\\Medium_Phone_API_35(AVD) - 15\\meminfo"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.cpuinfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "C:\\Users\\Kyle\\Documents\\GitHub\\princeProject2\\PrinceProject\\app\\build\\outputs\\androidTest-results\\connected\\debug\\Medium_Phone_API_35(AVD) - 15\\cpuinfo"
+    }
+  }
+}
+test_result {
+  test_case {
+    test_class: "AdminPageTest"
+    test_package: "com.example.princeproject"
+    test_method: "testRemovalButtonsFacility"
+    start_time {
+      seconds: 1733104748
+      nanos: 627000000
+    }
+    end_time {
+      seconds: 1733104754
+      nanos: 344000000
+    }
+  }
+  test_status: PASSED
+  output_artifact {
+    label {
+      label: "logcat"
+      namespace: "android"
+    }
+    source_path {
+      path: "C:\\Users\\Kyle\\Documents\\GitHub\\princeProject2\\PrinceProject\\app\\build\\outputs\\androidTest-results\\connected\\debug\\Medium_Phone_API_35(AVD) - 15\\logcat-com.example.princeproject.AdminPageTest-testRemovalButtonsFacility.txt"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info"
+      namespace: "android"
+    }
+    source_path {
+      path: "C:\\Users\\Kyle\\Documents\\GitHub\\princeProject2\\PrinceProject\\app\\build\\outputs\\androidTest-results\\connected\\debug\\Medium_Phone_API_35(AVD) - 15\\device-info.pb"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.meminfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "C:\\Users\\Kyle\\Documents\\GitHub\\princeProject2\\PrinceProject\\app\\build\\outputs\\androidTest-results\\connected\\debug\\Medium_Phone_API_35(AVD) - 15\\meminfo"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.cpuinfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "C:\\Users\\Kyle\\Documents\\GitHub\\princeProject2\\PrinceProject\\app\\build\\outputs\\androidTest-results\\connected\\debug\\Medium_Phone_API_35(AVD) - 15\\cpuinfo"
+    }
+  }
+}
+test_result {
+  test_case {
+    test_class: "AdminPageTest"
+    test_package: "com.example.princeproject"
+    test_method: "testListViewPopulatedInAdminFacilityFragment"
+    start_time {
+      seconds: 1733104755
+      nanos: 125000000
+    }
+    end_time {
+      seconds: 1733104760
+      nanos: 943000000
+    }
+  }
+  test_status: PASSED
+  output_artifact {
+    label {
+      label: "logcat"
+      namespace: "android"
+    }
+    source_path {
+      path: "C:\\Users\\Kyle\\Documents\\GitHub\\princeProject2\\PrinceProject\\app\\build\\outputs\\androidTest-results\\connected\\debug\\Medium_Phone_API_35(AVD) - 15\\logcat-com.example.princeproject.AdminPageTest-testListViewPopulatedInAdminFacilityFragment.txt"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info"
+      namespace: "android"
+    }
+    source_path {
+      path: "C:\\Users\\Kyle\\Documents\\GitHub\\princeProject2\\PrinceProject\\app\\build\\outputs\\androidTest-results\\connected\\debug\\Medium_Phone_API_35(AVD) - 15\\device-info.pb"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.meminfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "C:\\Users\\Kyle\\Documents\\GitHub\\princeProject2\\PrinceProject\\app\\build\\outputs\\androidTest-results\\connected\\debug\\Medium_Phone_API_35(AVD) - 15\\meminfo"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.cpuinfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "C:\\Users\\Kyle\\Documents\\GitHub\\princeProject2\\PrinceProject\\app\\build\\outputs\\androidTest-results\\connected\\debug\\Medium_Phone_API_35(AVD) - 15\\cpuinfo"
+    }
+  }
+}
+test_result {
+  test_case {
+    test_class: "AdminPageTest"
+    test_package: "com.example.princeproject"
+    test_method: "testListViewPopulatedInAdminProfileFragment"
+    start_time {
+      seconds: 1733104761
+      nanos: 704000000
+    }
+    end_time {
+      seconds: 1733104767
+      nanos: 566000000
+    }
+  }
+  test_status: PASSED
+  output_artifact {
+    label {
+      label: "logcat"
+      namespace: "android"
+    }
+    source_path {
+      path: "C:\\Users\\Kyle\\Documents\\GitHub\\princeProject2\\PrinceProject\\app\\build\\outputs\\androidTest-results\\connected\\debug\\Medium_Phone_API_35(AVD) - 15\\logcat-com.example.princeproject.AdminPageTest-testListViewPopulatedInAdminProfileFragment.txt"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info"
+      namespace: "android"
+    }
+    source_path {
+      path: "C:\\Users\\Kyle\\Documents\\GitHub\\princeProject2\\PrinceProject\\app\\build\\outputs\\androidTest-results\\connected\\debug\\Medium_Phone_API_35(AVD) - 15\\device-info.pb"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.meminfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "C:\\Users\\Kyle\\Documents\\GitHub\\princeProject2\\PrinceProject\\app\\build\\outputs\\androidTest-results\\connected\\debug\\Medium_Phone_API_35(AVD) - 15\\meminfo"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.cpuinfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "C:\\Users\\Kyle\\Documents\\GitHub\\princeProject2\\PrinceProject\\app\\build\\outputs\\androidTest-results\\connected\\debug\\Medium_Phone_API_35(AVD) - 15\\cpuinfo"
+    }
+  }
+}
+output_artifact {
+  label {
+    label: "test-results.log"
+    namespace: "com.google.testing.platform.runtime.android.driver.AndroidInstrumentationDriver"
+  }
+  source_path {
+    path: "C:\\Users\\Kyle\\Documents\\GitHub\\princeProject2\\PrinceProject\\app\\build\\outputs\\androidTest-results\\connected\\debug\\Medium_Phone_API_35(AVD) - 15\\testlog\\test-results.log"
+  }
+  type: TEST_DATA
+  mime_type: "text/plain"
+}
