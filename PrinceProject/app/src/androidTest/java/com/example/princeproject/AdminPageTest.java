@@ -234,6 +234,6 @@ public class AdminPageTest {
 
     @After
     public void tearDown() {
-        Intents.release(); 
+        Intents.release();
     }
 }
