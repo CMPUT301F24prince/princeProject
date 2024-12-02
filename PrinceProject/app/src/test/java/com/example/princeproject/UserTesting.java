@@ -7,7 +7,7 @@ import org.robolectric.RobolectricTestRunner;
 import org.robolectric.annotation.Config;
 
 import static org.junit.Assert.*;
-
+//From chatgpt, openai, "write a java Unit test case for the user class", 2024-12-02
 @RunWith(RobolectricTestRunner.class)
 @Config(sdk = {28}) // Set the target SDK level
 public class UserTesting {

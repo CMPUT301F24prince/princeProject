@@ -16,6 +16,7 @@ import static androidx.test.espresso.assertion.ViewAssertions.matches;
 
 import com.example.princeproject.NewUserActivity;
 //test this US 01.02.01 As an entrant, I want to provide my personal information such as name, email and optional phone number in the app
+//From chatgpt, openai, "write a java UI test case of US 01.02.01 As an entrant, I want to provide my personal information such as name, email and optional phone number in the app", 2024-12-02
 @RunWith(AndroidJUnit4.class)
 public class NewUserActivityTest {
 

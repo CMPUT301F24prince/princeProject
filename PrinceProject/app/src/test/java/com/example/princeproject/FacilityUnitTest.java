@@ -4,7 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
-
+//From chatgpt, openai, "write a java Unit test case for the facility class", 2024-12-02
 public class FacilityUnitTest {
 
     private Facility facility;

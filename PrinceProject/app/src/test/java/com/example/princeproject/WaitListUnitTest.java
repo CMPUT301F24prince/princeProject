@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Map;
 
 import static org.junit.Assert.*;
-
+//From chatgpt, openai, "write a java Unit test case for the waitlist class", 2024-12-02
 @RunWith(RobolectricTestRunner.class)
 @Config(sdk = {28}) // Target Android SDK level
 public class WaitListUnitTest {
