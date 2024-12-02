@@ -119,9 +119,10 @@ public class FacilityActivity extends AppCompatActivity {
                         facilityName.setText(name);
                         facilityLocation.setText(location);
                         facilityDescription.setText(description);
-                        profile_preview.setImageURI(Facility.decodeBase64String(this, imageEncode));
 
-
+                        if (imageEncode != null) {
+                            profile_preview.setImageURI(Facility.decodeBase64String(this, imageEncode));
+                        }
                     }
                 });
     }
