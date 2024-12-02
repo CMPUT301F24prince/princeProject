@@ -1,0 +1,73 @@
+# 2024-12-01T23:22:17.772299100Z:
+test_suite_meta_data {
+  scheduled_test_case_count: 1
+}
+test_status: FAILED
+test_result {
+  test_case {
+    test_class: "EditProfileActivityTest"
+    test_package: "com.example.princeproject"
+    test_method: "testUserInformationSubmission"
+    start_time {
+      seconds: 1733095319
+      nanos: 205000000
+    }
+    end_time {
+      seconds: 1733095332
+      nanos: 430000000
+    }
+  }
+  test_status: FAILED
+  error {
+    error_message: "androidx.test.espresso.PerformException: Error performing \'single click - At Coordinates: 1141, 1639 and precision: 16, 16\' on view \'Animations or transitions are enabled on the target device.\nFor more info check: https://developer.android.com/training/testing/espresso/setup#set-up-environment\n\nan instance of android.widget.TextView and view.getText() with or without transformation to match: is \"Confirm\"\'.\nat androidx.test.espresso.PerformException$Builder.build(PerformException.java:86)\nat androidx.test.espresso.base.PerformExceptionHandler.handleSafely(PerformExceptionHandler.java:56)\nat androidx.test.espresso.base.PerformExceptionHandler.handleSafely(PerformExceptionHandler.java:31)\nat androidx.test.espresso.base.DefaultFailureHandler$TypedFailureHandler.handle(DefaultFailureHandler.java:158)\nat androidx.test.espresso.base.DefaultFailureHandler.handle(DefaultFailureHandler.java:120)\nat androidx.test.espresso.ViewInteraction.waitForAndHandleInteractionResults(ViewInteraction.java:385)\nat androidx.test.espresso.ViewInteraction.desugaredPerform(ViewInteraction.java:212)\nat androidx.test.espresso.ViewInteraction.perform(ViewInteraction.java:140)\nat com.example.princeproject.EditProfileActivityTest.testUserInformationSubmission(EditProfileActivityTest.java:47)\n... 32 trimmed\nCaused by: java.lang.NullPointerException: Attempt to invoke virtual method \'boolean java.lang.String.equals(java.lang.Object)\' on a null object reference\nat com.example.princeproject.ProfilePage.EditProfileFragment.lambda$onCreateDialog$0$com-example-princeproject-ProfilePage-EditProfileFragment(EditProfileFragment.java:200)\nat com.example.princeproject.ProfilePage.EditProfileFragment$$ExternalSyntheticLambda0.onClick(D8$$SyntheticClass:0)\nat android.view.View.performClick(View.java:7792)\nat android.widget.TextView.performClick(TextView.java:16112)\nat com.google.android.material.button.MaterialButton.performClick(MaterialButton.java:1218)\nat android.view.View.performClickInternal(View.java:7769)\nat android.view.View.access$3800(View.java:910)\nat android.view.View$PerformClick.run(View.java:30218)\nat android.os.Handler.handleCallback(Handler.java:938)\nat android.os.Handler.dispatchMessage(Handler.java:99)\nat androidx.test.espresso.base.Interrogator.loopAndInterrogate(Interrogator.java:156)\nat androidx.test.espresso.base.UiControllerImpl.loopUntil(UiControllerImpl.java:510)\nat androidx.test.espresso.base.UiControllerImpl.loopUntil(UiControllerImpl.java:468)\nat androidx.test.espresso.base.UiControllerImpl.injectMotionEvent(UiControllerImpl.java:234)\nat androidx.test.espresso.action.MotionEvents.sendUp(MotionEvents.java:175)\nat androidx.test.espresso.action.MotionEvents.sendUp(MotionEvents.java:138)\nat androidx.test.espresso.action.Tap.sendSingleTap(Tap.java:168)\nat androidx.test.espresso.action.Tap.access$100(Tap.java:30)\nat androidx.test.espresso.action.Tap$1.sendTap(Tap.java:46)\nat androidx.test.espresso.action.GeneralClickAction.perform(GeneralClickAction.java:134)\nat androidx.test.espresso.ViewInteraction$SingleExecutionViewAction.perform(ViewInteraction.java:429)\nat androidx.test.espresso.ViewInteraction.doPerform(ViewInteraction.java:297)\nat androidx.test.espresso.ViewInteraction.access$300(ViewInteraction.java:70)\nat androidx.test.espresso.ViewInteraction$1.call(ViewInteraction.java:193)\nat androidx.test.espresso.ViewInteraction$1.call(ViewInteraction.java:182)\nat java.util.concurrent.FutureTask.run(FutureTask.java:266)\nat android.os.Handler.handleCallback(Handler.java:938)\nat android.os.Handler.dispatchMessage(Handler.java:99)\nat android.os.Looper.loopOnce(Looper.java:226)\nat android.os.Looper.loop(Looper.java:313)\nat android.app.ActivityThread.main(ActivityThread.java:8663)\nat java.lang.reflect.Method.invoke(Native Method)\nat com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:567)\nat com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1135)\n"
+    error_type: "java.lang.NullPointerException"
+    stack_trace: "androidx.test.espresso.PerformException: Error performing \'single click - At Coordinates: 1141, 1639 and precision: 16, 16\' on view \'Animations or transitions are enabled on the target device.\nFor more info check: https://developer.android.com/training/testing/espresso/setup#set-up-environment\n\nan instance of android.widget.TextView and view.getText() with or without transformation to match: is \"Confirm\"\'.\nat androidx.test.espresso.PerformException$Builder.build(PerformException.java:86)\nat androidx.test.espresso.base.PerformExceptionHandler.handleSafely(PerformExceptionHandler.java:56)\nat androidx.test.espresso.base.PerformExceptionHandler.handleSafely(PerformExceptionHandler.java:31)\nat androidx.test.espresso.base.DefaultFailureHandler$TypedFailureHandler.handle(DefaultFailureHandler.java:158)\nat androidx.test.espresso.base.DefaultFailureHandler.handle(DefaultFailureHandler.java:120)\nat androidx.test.espresso.ViewInteraction.waitForAndHandleInteractionResults(ViewInteraction.java:385)\nat androidx.test.espresso.ViewInteraction.desugaredPerform(ViewInteraction.java:212)\nat androidx.test.espresso.ViewInteraction.perform(ViewInteraction.java:140)\nat com.example.princeproject.EditProfileActivityTest.testUserInformationSubmission(EditProfileActivityTest.java:47)\n... 32 trimmed\nCaused by: java.lang.NullPointerException: Attempt to invoke virtual method \'boolean java.lang.String.equals(java.lang.Object)\' on a null object reference\nat com.example.princeproject.ProfilePage.EditProfileFragment.lambda$onCreateDialog$0$com-example-princeproject-ProfilePage-EditProfileFragment(EditProfileFragment.java:200)\nat com.example.princeproject.ProfilePage.EditProfileFragment$$ExternalSyntheticLambda0.onClick(D8$$SyntheticClass:0)\nat android.view.View.performClick(View.java:7792)\nat android.widget.TextView.performClick(TextView.java:16112)\nat com.google.android.material.button.MaterialButton.performClick(MaterialButton.java:1218)\nat android.view.View.performClickInternal(View.java:7769)\nat android.view.View.access$3800(View.java:910)\nat android.view.View$PerformClick.run(View.java:30218)\nat android.os.Handler.handleCallback(Handler.java:938)\nat android.os.Handler.dispatchMessage(Handler.java:99)\nat androidx.test.espresso.base.Interrogator.loopAndInterrogate(Interrogator.java:156)\nat androidx.test.espresso.base.UiControllerImpl.loopUntil(UiControllerImpl.java:510)\nat androidx.test.espresso.base.UiControllerImpl.loopUntil(UiControllerImpl.java:468)\nat androidx.test.espresso.base.UiControllerImpl.injectMotionEvent(UiControllerImpl.java:234)\nat androidx.test.espresso.action.MotionEvents.sendUp(MotionEvents.java:175)\nat androidx.test.espresso.action.MotionEvents.sendUp(MotionEvents.java:138)\nat androidx.test.espresso.action.Tap.sendSingleTap(Tap.java:168)\nat androidx.test.espresso.action.Tap.access$100(Tap.java:30)\nat androidx.test.espresso.action.Tap$1.sendTap(Tap.java:46)\nat androidx.test.espresso.action.GeneralClickAction.perform(GeneralClickAction.java:134)\nat androidx.test.espresso.ViewInteraction$SingleExecutionViewAction.perform(ViewInteraction.java:429)\nat androidx.test.espresso.ViewInteraction.doPerform(ViewInteraction.java:297)\nat androidx.test.espresso.ViewInteraction.access$300(ViewInteraction.java:70)\nat androidx.test.espresso.ViewInteraction$1.call(ViewInteraction.java:193)\nat androidx.test.espresso.ViewInteraction$1.call(ViewInteraction.java:182)\nat java.util.concurrent.FutureTask.run(FutureTask.java:266)\nat android.os.Handler.handleCallback(Handler.java:938)\nat android.os.Handler.dispatchMessage(Handler.java:99)\nat android.os.Looper.loopOnce(Looper.java:226)\nat android.os.Looper.loop(Looper.java:313)\nat android.app.ActivityThread.main(ActivityThread.java:8663)\nat java.lang.reflect.Method.invoke(Native Method)\nat com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:567)\nat com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1135)\n"
+  }
+  output_artifact {
+    label {
+      label: "logcat"
+      namespace: "android"
+    }
+    source_path {
+      path: "C:\\Users\\mikha\\AndroidStudioProjects\\princeProject1\\PrinceProject\\app\\build\\outputs\\androidTest-results\\connected\\debug\\SM-G973W - 12\\logcat-com.example.princeproject.EditProfileActivityTest-testUserInformationSubmission.txt"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info"
+      namespace: "android"
+    }
+    source_path {
+      path: "C:\\Users\\mikha\\AndroidStudioProjects\\princeProject1\\PrinceProject\\app\\build\\outputs\\androidTest-results\\connected\\debug\\SM-G973W - 12\\device-info.pb"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.meminfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "C:\\Users\\mikha\\AndroidStudioProjects\\princeProject1\\PrinceProject\\app\\build\\outputs\\androidTest-results\\connected\\debug\\SM-G973W - 12\\meminfo"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.cpuinfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "C:\\Users\\mikha\\AndroidStudioProjects\\princeProject1\\PrinceProject\\app\\build\\outputs\\androidTest-results\\connected\\debug\\SM-G973W - 12\\cpuinfo"
+    }
+  }
+}
+output_artifact {
+  label {
+    label: "test-results.log"
+    namespace: "com.google.testing.platform.runtime.android.driver.AndroidInstrumentationDriver"
+  }
+  source_path {
+    path: "C:\\Users\\mikha\\AndroidStudioProjects\\princeProject1\\PrinceProject\\app\\build\\outputs\\androidTest-results\\connected\\debug\\SM-G973W - 12\\testlog\\test-results.log"
+  }
+  type: TEST_DATA
+  mime_type: "text/plain"
+}

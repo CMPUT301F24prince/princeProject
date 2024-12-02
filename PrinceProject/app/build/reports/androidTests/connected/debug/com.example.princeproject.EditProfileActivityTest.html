@@ -1,0 +1,149 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Test results - Class com.example.princeproject.EditProfileActivityTest</title>
+<link href="css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="css/style.css" rel="stylesheet" type="text/css"/>
+<script src="js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>Class com.example.princeproject.EditProfileActivityTest</h1>
+<div class="breadcrumbs">
+<a href="index.html">all</a> &gt; 
+<a href="com.example.princeproject.html">com.example.princeproject</a> &gt; EditProfileActivityTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">1</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">1</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="skipped">
+<div class="counter">0</div>
+<p>skipped</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">13.203s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox failures" id="successRate">
+<div class="percent">0%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Failed tests</a>
+</li>
+<li>
+<a href="#tab1">Tests</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Failed tests</h2>
+<div class="test">
+<a name="testUserInformationSubmission"></a>
+<h3 class="failures">testUserInformationSubmission</h3>
+<span class="code">
+<pre>androidx.test.espresso.PerformException: Error performing 'single click - At Coordinates: 1141, 1639 and precision: 16, 16' on view 'Animations or transitions are enabled on the target device.
+For more info check: https://developer.android.com/training/testing/espresso/setup#set-up-environment
+
+an instance of android.widget.TextView and view.getText() with or without transformation to match: is &quot;Confirm&quot;'.
+at androidx.test.espresso.PerformException$Builder.build(PerformException.java:86)
+at androidx.test.espresso.base.PerformExceptionHandler.handleSafely(PerformExceptionHandler.java:56)
+at androidx.test.espresso.base.PerformExceptionHandler.handleSafely(PerformExceptionHandler.java:31)
+at androidx.test.espresso.base.DefaultFailureHandler$TypedFailureHandler.handle(DefaultFailureHandler.java:158)
+at androidx.test.espresso.base.DefaultFailureHandler.handle(DefaultFailureHandler.java:120)
+at androidx.test.espresso.ViewInteraction.waitForAndHandleInteractionResults(ViewInteraction.java:385)
+at androidx.test.espresso.ViewInteraction.desugaredPerform(ViewInteraction.java:212)
+at androidx.test.espresso.ViewInteraction.perform(ViewInteraction.java:140)
+at com.example.princeproject.EditProfileActivityTest.testUserInformationSubmission(EditProfileActivityTest.java:47)
+... 32 trimmed
+Caused by: java.lang.NullPointerException: Attempt to invoke virtual method 'boolean java.lang.String.equals(java.lang.Object)' on a null object reference
+at com.example.princeproject.ProfilePage.EditProfileFragment.lambda$onCreateDialog$0$com-example-princeproject-ProfilePage-EditProfileFragment(EditProfileFragment.java:200)
+at com.example.princeproject.ProfilePage.EditProfileFragment$$ExternalSyntheticLambda0.onClick(D8$$SyntheticClass:0)
+at android.view.View.performClick(View.java:7792)
+at android.widget.TextView.performClick(TextView.java:16112)
+at com.google.android.material.button.MaterialButton.performClick(MaterialButton.java:1218)
+at android.view.View.performClickInternal(View.java:7769)
+at android.view.View.access$3800(View.java:910)
+at android.view.View$PerformClick.run(View.java:30218)
+at android.os.Handler.handleCallback(Handler.java:938)
+at android.os.Handler.dispatchMessage(Handler.java:99)
+at androidx.test.espresso.base.Interrogator.loopAndInterrogate(Interrogator.java:156)
+at androidx.test.espresso.base.UiControllerImpl.loopUntil(UiControllerImpl.java:510)
+at androidx.test.espresso.base.UiControllerImpl.loopUntil(UiControllerImpl.java:468)
+at androidx.test.espresso.base.UiControllerImpl.injectMotionEvent(UiControllerImpl.java:234)
+at androidx.test.espresso.action.MotionEvents.sendUp(MotionEvents.java:175)
+at androidx.test.espresso.action.MotionEvents.sendUp(MotionEvents.java:138)
+at androidx.test.espresso.action.Tap.sendSingleTap(Tap.java:168)
+at androidx.test.espresso.action.Tap.access$100(Tap.java:30)
+at androidx.test.espresso.action.Tap$1.sendTap(Tap.java:46)
+at androidx.test.espresso.action.GeneralClickAction.perform(GeneralClickAction.java:134)
+at androidx.test.espresso.ViewInteraction$SingleExecutionViewAction.perform(ViewInteraction.java:429)
+at androidx.test.espresso.ViewInteraction.doPerform(ViewInteraction.java:297)
+at androidx.test.espresso.ViewInteraction.access$300(ViewInteraction.java:70)
+at androidx.test.espresso.ViewInteraction$1.call(ViewInteraction.java:193)
+at androidx.test.espresso.ViewInteraction$1.call(ViewInteraction.java:182)
+at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+at android.os.Handler.handleCallback(Handler.java:938)
+at android.os.Handler.dispatchMessage(Handler.java:99)
+at android.os.Looper.loopOnce(Looper.java:226)
+at android.os.Looper.loop(Looper.java:313)
+at android.app.ActivityThread.main(ActivityThread.java:8663)
+at java.lang.reflect.Method.invoke(Native Method)
+at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:567)
+at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1135)
+</pre>
+</span>
+</div>
+</div>
+<div id="tab1" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>SM-G973W - 12</th>
+</tr>
+</thead>
+<tr>
+<td>testUserInformationSubmission</td>
+<td class="failures">failed (13.203s)</td>
+</tr>
+</table>
+</div>
+</div>
+<div id="footer">
+<p>Generated by 
+<a href="http://www.gradle.org">Gradle 8.9</a> at Dec 1, 2024, 4:22:18 p.m.</p>
+</div>
+</div>
+</body>
