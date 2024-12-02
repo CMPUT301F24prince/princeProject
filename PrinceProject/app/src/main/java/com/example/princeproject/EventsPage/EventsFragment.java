@@ -332,14 +332,19 @@ public class EventsFragment extends Fragment {
             String maxParticipantsStr = maxParticipantsEditText.getText().toString().trim();
 
             if (title.isEmpty() || description.isEmpty() || registerDateStr.equals("Select Register Deadline") ||
-                    eventDateStr.equals("Select Event Date") || maxParticipantsStr.isEmpty()) {
+                    eventDateStr.equals("Select Event Date")) {
                 Toast.makeText(getContext(), "All fields must be filled", Toast.LENGTH_SHORT).show();
                 return;
             }
 
             int maxParticipants;
             try {
-                maxParticipants = Integer.parseInt(maxParticipantsStr);
+                if  (maxParticipantsStr.isEmpty()) {
+                    maxParticipants = 2147483647;
+                }
+                else {
+                    maxParticipants = Integer.parseInt(maxParticipantsStr);
+                }
             } catch (NumberFormatException e) {
                 Toast.makeText(getContext(), "Max participants must be a valid number", Toast.LENGTH_SHORT).show();
                 return;
