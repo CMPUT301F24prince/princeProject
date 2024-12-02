@@ -27,7 +27,7 @@
                 android:layout_height="?attr/actionBarSize"
                 android:background="?attr/colorPrimary"
                 android:title="Profile"
-                android:titleTextColor="@android:color/black" />
+                 />
 
 
             <ImageView

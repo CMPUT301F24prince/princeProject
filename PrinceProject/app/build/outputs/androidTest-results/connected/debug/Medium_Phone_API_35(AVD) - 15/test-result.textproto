@@ -1,342 +1,35 @@
-# 2024-12-02T01:59:29.135912900Z:
+# 2024-12-02T04:53:22.479648600Z:
 test_suite_meta_data {
-  scheduled_test_case_count: 7
+  scheduled_test_case_count: 1
 }
-test_status: PASSED
+test_status: FAILED
 test_result {
   test_case {
-    test_class: "AdminPageTest"
+    test_class: "EntrantListUITest"
     test_package: "com.example.princeproject"
-    test_method: "testAdminPageButtonLaunchesAdminActivity"
+    test_method: "testMyEventsButtonLaunchesEntrantListActivity"
     start_time {
-      seconds: 1733104707
-      nanos: 187000000
+      seconds: 1733115189
+      nanos: 748000000
     }
     end_time {
-      seconds: 1733104710
-      nanos: 26000000
+      seconds: 1733115191
+      nanos: 587000000
     }
   }
-  test_status: PASSED
+  test_status: FAILED
+  error {
+    error_message: "android.view.InflateException: Binary XML file line #30 in com.example.princeproject:layout/fragment_profile: Binary XML file line #30 in com.example.princeproject:layout/fragment_profile: Error inflating class <unknown>\nCaused by: android.view.InflateException: Binary XML file line #30 in com.example.princeproject:layout/fragment_profile: Error inflating class <unknown>\nCaused by: java.lang.reflect.InvocationTargetException\nat java.lang.reflect.Constructor.newInstance0(Native Method)\nat java.lang.reflect.Constructor.newInstance(Constructor.java:343)\nat android.view.LayoutInflater.createView(LayoutInflater.java:742)\nat android.view.LayoutInflater.createViewFromTag(LayoutInflater.java:894)\nat android.view.LayoutInflater.createViewFromTag(LayoutInflater.java:849)\nat android.view.LayoutInflater.rInflate(LayoutInflater.java:1011)\nat android.view.LayoutInflater.rInflateChildren(LayoutInflater.java:972)\nat android.view.LayoutInflater.rInflate(LayoutInflater.java:1014)\nat android.view.LayoutInflater.rInflateChildren(LayoutInflater.java:972)\nat android.view.LayoutInflater.rInflate(LayoutInflater.java:1014)\nat android.view.LayoutInflater.rInflateChildren(LayoutInflater.java:972)\nat android.view.LayoutInflater.inflate(LayoutInflater.java:570)\nat android.view.LayoutInflater.inflate(LayoutInflater.java:462)\nat com.example.princeproject.ProfilePage.ProfileFragment.onCreateView(ProfileFragment.java:93)\nat androidx.fragment.app.Fragment.performCreateView(Fragment.java:3119)\nat androidx.fragment.app.FragmentStateManager.createView(FragmentStateManager.java:577)\nat androidx.fragment.app.FragmentStateManager.moveToExpectedState(FragmentStateManager.java:286)\nat androidx.fragment.app.FragmentStore.moveToExpectedState(FragmentStore.java:114)\nat androidx.fragment.app.FragmentManager.moveToState(FragmentManager.java:1685)\nat androidx.fragment.app.FragmentManager.dispatchStateChange(FragmentManager.java:3319)\nat androidx.fragment.app.FragmentManager.dispatchPause(FragmentManager.java:3255)\nat androidx.fragment.app.FragmentController.dispatchPause(FragmentController.java:296)\nat androidx.fragment.app.FragmentActivity.onPause(FragmentActivity.java:284)\nat android.app.Activity.performPause(Activity.java:9207)\nat android.app.Instrumentation.callActivityOnPause(Instrumentation.java:1776)\nat androidx.test.runner.MonitoringInstrumentation.callActivityOnPause(MonitoringInstrumentation.java:804)\nat android.app.ActivityThread.performPauseActivityIfNeeded(ActivityThread.java:5598)\nat android.app.ActivityThread.performPauseActivity(ActivityThread.java:5559)\nat android.app.ActivityThread.handlePauseActivity(ActivityThread.java:5511)\nat android.app.servertransaction.PauseActivityItem.execute(PauseActivityItem.java:47)\nat android.app.servertransaction.ActivityTransactionItem.execute(ActivityTransactionItem.java:60)\nat android.app.servertransaction.TransactionExecutor.executeLifecycleItem(TransactionExecutor.java:225)\nat android.app.servertransaction.TransactionExecutor.executeTransactionItems(TransactionExecutor.java:107)\nat android.app.servertransaction.TransactionExecutor.execute(TransactionExecutor.java:81)\nat android.app.ActivityThread$H.handleMessage(ActivityThread.java:2636)\nat android.os.Handler.dispatchMessage(Handler.java:107)\nat android.os.Looper.loopOnce(Looper.java:232)\nat android.os.Looper.loop(Looper.java:317)\nat android.app.ActivityThread.main(ActivityThread.java:8705)\nat java.lang.reflect.Method.invoke(Native Method)\nat com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:580)\nat com.android.internal.os.ZygoteInit.main(ZygoteInit.java:886)\nCaused by: java.lang.UnsupportedOperationException: Failed to resolve attribute at index 13: TypedValue{t=0x2/d=0x7f040115 a=-1}, theme={InheritanceMap=[id=0x7f130123com.example.princeproject:style/FragmentScenarioEmptyFragmentActivityTheme, id=0x1030069android:style/Theme.WithActionBar, id=0x1030005android:style/Theme], Themes=[com.example.princeproject:style/FragmentScenarioEmptyFragmentActivityTheme, forced, android:style/Theme.DeviceDefault.Light.DarkActionBar, forced]}\nat android.content.res.TypedArray.getDrawableForDensity(TypedArray.java:1011)\nat android.content.res.TypedArray.getDrawable(TypedArray.java:995)\nat android.view.View.<init>(View.java:6017)\nat android.view.ViewGroup.<init>(ViewGroup.java:703)\nat android.view.ViewGroup.<init>(ViewGroup.java:699)\nat androidx.appcompat.widget.Toolbar.<init>(Toolbar.java:265)\nat androidx.appcompat.widget.Toolbar.<init>(Toolbar.java:261)\n... 42 more\n"
+    error_type: "android.view.InflateException"
+    stack_trace: "android.view.InflateException: Binary XML file line #30 in com.example.princeproject:layout/fragment_profile: Binary XML file line #30 in com.example.princeproject:layout/fragment_profile: Error inflating class <unknown>\nCaused by: android.view.InflateException: Binary XML file line #30 in com.example.princeproject:layout/fragment_profile: Error inflating class <unknown>\nCaused by: java.lang.reflect.InvocationTargetException\nat java.lang.reflect.Constructor.newInstance0(Native Method)\nat java.lang.reflect.Constructor.newInstance(Constructor.java:343)\nat android.view.LayoutInflater.createView(LayoutInflater.java:742)\nat android.view.LayoutInflater.createViewFromTag(LayoutInflater.java:894)\nat android.view.LayoutInflater.createViewFromTag(LayoutInflater.java:849)\nat android.view.LayoutInflater.rInflate(LayoutInflater.java:1011)\nat android.view.LayoutInflater.rInflateChildren(LayoutInflater.java:972)\nat android.view.LayoutInflater.rInflate(LayoutInflater.java:1014)\nat android.view.LayoutInflater.rInflateChildren(LayoutInflater.java:972)\nat android.view.LayoutInflater.rInflate(LayoutInflater.java:1014)\nat android.view.LayoutInflater.rInflateChildren(LayoutInflater.java:972)\nat android.view.LayoutInflater.inflate(LayoutInflater.java:570)\nat android.view.LayoutInflater.inflate(LayoutInflater.java:462)\nat com.example.princeproject.ProfilePage.ProfileFragment.onCreateView(ProfileFragment.java:93)\nat androidx.fragment.app.Fragment.performCreateView(Fragment.java:3119)\nat androidx.fragment.app.FragmentStateManager.createView(FragmentStateManager.java:577)\nat androidx.fragment.app.FragmentStateManager.moveToExpectedState(FragmentStateManager.java:286)\nat androidx.fragment.app.FragmentStore.moveToExpectedState(FragmentStore.java:114)\nat androidx.fragment.app.FragmentManager.moveToState(FragmentManager.java:1685)\nat androidx.fragment.app.FragmentManager.dispatchStateChange(FragmentManager.java:3319)\nat androidx.fragment.app.FragmentManager.dispatchPause(FragmentManager.java:3255)\nat androidx.fragment.app.FragmentController.dispatchPause(FragmentController.java:296)\nat androidx.fragment.app.FragmentActivity.onPause(FragmentActivity.java:284)\nat android.app.Activity.performPause(Activity.java:9207)\nat android.app.Instrumentation.callActivityOnPause(Instrumentation.java:1776)\nat androidx.test.runner.MonitoringInstrumentation.callActivityOnPause(MonitoringInstrumentation.java:804)\nat android.app.ActivityThread.performPauseActivityIfNeeded(ActivityThread.java:5598)\nat android.app.ActivityThread.performPauseActivity(ActivityThread.java:5559)\nat android.app.ActivityThread.handlePauseActivity(ActivityThread.java:5511)\nat android.app.servertransaction.PauseActivityItem.execute(PauseActivityItem.java:47)\nat android.app.servertransaction.ActivityTransactionItem.execute(ActivityTransactionItem.java:60)\nat android.app.servertransaction.TransactionExecutor.executeLifecycleItem(TransactionExecutor.java:225)\nat android.app.servertransaction.TransactionExecutor.executeTransactionItems(TransactionExecutor.java:107)\nat android.app.servertransaction.TransactionExecutor.execute(TransactionExecutor.java:81)\nat android.app.ActivityThread$H.handleMessage(ActivityThread.java:2636)\nat android.os.Handler.dispatchMessage(Handler.java:107)\nat android.os.Looper.loopOnce(Looper.java:232)\nat android.os.Looper.loop(Looper.java:317)\nat android.app.ActivityThread.main(ActivityThread.java:8705)\nat java.lang.reflect.Method.invoke(Native Method)\nat com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:580)\nat com.android.internal.os.ZygoteInit.main(ZygoteInit.java:886)\nCaused by: java.lang.UnsupportedOperationException: Failed to resolve attribute at index 13: TypedValue{t=0x2/d=0x7f040115 a=-1}, theme={InheritanceMap=[id=0x7f130123com.example.princeproject:style/FragmentScenarioEmptyFragmentActivityTheme, id=0x1030069android:style/Theme.WithActionBar, id=0x1030005android:style/Theme], Themes=[com.example.princeproject:style/FragmentScenarioEmptyFragmentActivityTheme, forced, android:style/Theme.DeviceDefault.Light.DarkActionBar, forced]}\nat android.content.res.TypedArray.getDrawableForDensity(TypedArray.java:1011)\nat android.content.res.TypedArray.getDrawable(TypedArray.java:995)\nat android.view.View.<init>(View.java:6017)\nat android.view.ViewGroup.<init>(ViewGroup.java:703)\nat android.view.ViewGroup.<init>(ViewGroup.java:699)\nat androidx.appcompat.widget.Toolbar.<init>(Toolbar.java:265)\nat androidx.appcompat.widget.Toolbar.<init>(Toolbar.java:261)\n... 42 more\n"
+  }
   output_artifact {
     label {
       label: "logcat"
       namespace: "android"
     }
     source_path {
-      path: "C:\\Users\\Kyle\\Documents\\GitHub\\princeProject2\\PrinceProject\\app\\build\\outputs\\androidTest-results\\connected\\debug\\Medium_Phone_API_35(AVD) - 15\\logcat-com.example.princeproject.AdminPageTest-testAdminPageButtonLaunchesAdminActivity.txt"
-    }
-  }
-  output_artifact {
-    label {
-      label: "device-info"
-      namespace: "android"
-    }
-    source_path {
-      path: "C:\\Users\\Kyle\\Documents\\GitHub\\princeProject2\\PrinceProject\\app\\build\\outputs\\androidTest-results\\connected\\debug\\Medium_Phone_API_35(AVD) - 15\\device-info.pb"
-    }
-  }
-  output_artifact {
-    label {
-      label: "device-info.meminfo"
-      namespace: "android"
-    }
-    source_path {
-      path: "C:\\Users\\Kyle\\Documents\\GitHub\\princeProject2\\PrinceProject\\app\\build\\outputs\\androidTest-results\\connected\\debug\\Medium_Phone_API_35(AVD) - 15\\meminfo"
-    }
-  }
-  output_artifact {
-    label {
-      label: "device-info.cpuinfo"
-      namespace: "android"
-    }
-    source_path {
-      path: "C:\\Users\\Kyle\\Documents\\GitHub\\princeProject2\\PrinceProject\\app\\build\\outputs\\androidTest-results\\connected\\debug\\Medium_Phone_API_35(AVD) - 15\\cpuinfo"
-    }
-  }
-}
-test_result {
-  test_case {
-    test_class: "AdminPageTest"
-    test_package: "com.example.princeproject"
-    test_method: "testListViewPopulatedInAdminEventFragment"
-    start_time {
-      seconds: 1733104710
-      nanos: 855000000
-    }
-    end_time {
-      seconds: 1733104720
-      nanos: 623000000
-    }
-  }
-  test_status: PASSED
-  output_artifact {
-    label {
-      label: "logcat"
-      namespace: "android"
-    }
-    source_path {
-      path: "C:\\Users\\Kyle\\Documents\\GitHub\\princeProject2\\PrinceProject\\app\\build\\outputs\\androidTest-results\\connected\\debug\\Medium_Phone_API_35(AVD) - 15\\logcat-com.example.princeproject.AdminPageTest-testListViewPopulatedInAdminEventFragment.txt"
-    }
-  }
-  output_artifact {
-    label {
-      label: "device-info"
-      namespace: "android"
-    }
-    source_path {
-      path: "C:\\Users\\Kyle\\Documents\\GitHub\\princeProject2\\PrinceProject\\app\\build\\outputs\\androidTest-results\\connected\\debug\\Medium_Phone_API_35(AVD) - 15\\device-info.pb"
-    }
-  }
-  output_artifact {
-    label {
-      label: "device-info.meminfo"
-      namespace: "android"
-    }
-    source_path {
-      path: "C:\\Users\\Kyle\\Documents\\GitHub\\princeProject2\\PrinceProject\\app\\build\\outputs\\androidTest-results\\connected\\debug\\Medium_Phone_API_35(AVD) - 15\\meminfo"
-    }
-  }
-  output_artifact {
-    label {
-      label: "device-info.cpuinfo"
-      namespace: "android"
-    }
-    source_path {
-      path: "C:\\Users\\Kyle\\Documents\\GitHub\\princeProject2\\PrinceProject\\app\\build\\outputs\\androidTest-results\\connected\\debug\\Medium_Phone_API_35(AVD) - 15\\cpuinfo"
-    }
-  }
-}
-test_result {
-  test_case {
-    test_class: "AdminPageTest"
-    test_package: "com.example.princeproject"
-    test_method: "testRemovalButtonsEvent"
-    start_time {
-      seconds: 1733104721
-      nanos: 410000000
-    }
-    end_time {
-      seconds: 1733104741
-      nanos: 466000000
-    }
-  }
-  test_status: PASSED
-  output_artifact {
-    label {
-      label: "logcat"
-      namespace: "android"
-    }
-    source_path {
-      path: "C:\\Users\\Kyle\\Documents\\GitHub\\princeProject2\\PrinceProject\\app\\build\\outputs\\androidTest-results\\connected\\debug\\Medium_Phone_API_35(AVD) - 15\\logcat-com.example.princeproject.AdminPageTest-testRemovalButtonsEvent.txt"
-    }
-  }
-  output_artifact {
-    label {
-      label: "device-info"
-      namespace: "android"
-    }
-    source_path {
-      path: "C:\\Users\\Kyle\\Documents\\GitHub\\princeProject2\\PrinceProject\\app\\build\\outputs\\androidTest-results\\connected\\debug\\Medium_Phone_API_35(AVD) - 15\\device-info.pb"
-    }
-  }
-  output_artifact {
-    label {
-      label: "device-info.meminfo"
-      namespace: "android"
-    }
-    source_path {
-      path: "C:\\Users\\Kyle\\Documents\\GitHub\\princeProject2\\PrinceProject\\app\\build\\outputs\\androidTest-results\\connected\\debug\\Medium_Phone_API_35(AVD) - 15\\meminfo"
-    }
-  }
-  output_artifact {
-    label {
-      label: "device-info.cpuinfo"
-      namespace: "android"
-    }
-    source_path {
-      path: "C:\\Users\\Kyle\\Documents\\GitHub\\princeProject2\\PrinceProject\\app\\build\\outputs\\androidTest-results\\connected\\debug\\Medium_Phone_API_35(AVD) - 15\\cpuinfo"
-    }
-  }
-}
-test_result {
-  test_case {
-    test_class: "AdminPageTest"
-    test_package: "com.example.princeproject"
-    test_method: "testRemovalButtonsProfile"
-    start_time {
-      seconds: 1733104742
-      nanos: 246000000
-    }
-    end_time {
-      seconds: 1733104747
-      nanos: 855000000
-    }
-  }
-  test_status: PASSED
-  output_artifact {
-    label {
-      label: "logcat"
-      namespace: "android"
-    }
-    source_path {
-      path: "C:\\Users\\Kyle\\Documents\\GitHub\\princeProject2\\PrinceProject\\app\\build\\outputs\\androidTest-results\\connected\\debug\\Medium_Phone_API_35(AVD) - 15\\logcat-com.example.princeproject.AdminPageTest-testRemovalButtonsProfile.txt"
-    }
-  }
-  output_artifact {
-    label {
-      label: "device-info"
-      namespace: "android"
-    }
-    source_path {
-      path: "C:\\Users\\Kyle\\Documents\\GitHub\\princeProject2\\PrinceProject\\app\\build\\outputs\\androidTest-results\\connected\\debug\\Medium_Phone_API_35(AVD) - 15\\device-info.pb"
-    }
-  }
-  output_artifact {
-    label {
-      label: "device-info.meminfo"
-      namespace: "android"
-    }
-    source_path {
-      path: "C:\\Users\\Kyle\\Documents\\GitHub\\princeProject2\\PrinceProject\\app\\build\\outputs\\androidTest-results\\connected\\debug\\Medium_Phone_API_35(AVD) - 15\\meminfo"
-    }
-  }
-  output_artifact {
-    label {
-      label: "device-info.cpuinfo"
-      namespace: "android"
-    }
-    source_path {
-      path: "C:\\Users\\Kyle\\Documents\\GitHub\\princeProject2\\PrinceProject\\app\\build\\outputs\\androidTest-results\\connected\\debug\\Medium_Phone_API_35(AVD) - 15\\cpuinfo"
-    }
-  }
-}
-test_result {
-  test_case {
-    test_class: "AdminPageTest"
-    test_package: "com.example.princeproject"
-    test_method: "testRemovalButtonsFacility"
-    start_time {
-      seconds: 1733104748
-      nanos: 627000000
-    }
-    end_time {
-      seconds: 1733104754
-      nanos: 344000000
-    }
-  }
-  test_status: PASSED
-  output_artifact {
-    label {
-      label: "logcat"
-      namespace: "android"
-    }
-    source_path {
-      path: "C:\\Users\\Kyle\\Documents\\GitHub\\princeProject2\\PrinceProject\\app\\build\\outputs\\androidTest-results\\connected\\debug\\Medium_Phone_API_35(AVD) - 15\\logcat-com.example.princeproject.AdminPageTest-testRemovalButtonsFacility.txt"
-    }
-  }
-  output_artifact {
-    label {
-      label: "device-info"
-      namespace: "android"
-    }
-    source_path {
-      path: "C:\\Users\\Kyle\\Documents\\GitHub\\princeProject2\\PrinceProject\\app\\build\\outputs\\androidTest-results\\connected\\debug\\Medium_Phone_API_35(AVD) - 15\\device-info.pb"
-    }
-  }
-  output_artifact {
-    label {
-      label: "device-info.meminfo"
-      namespace: "android"
-    }
-    source_path {
-      path: "C:\\Users\\Kyle\\Documents\\GitHub\\princeProject2\\PrinceProject\\app\\build\\outputs\\androidTest-results\\connected\\debug\\Medium_Phone_API_35(AVD) - 15\\meminfo"
-    }
-  }
-  output_artifact {
-    label {
-      label: "device-info.cpuinfo"
-      namespace: "android"
-    }
-    source_path {
-      path: "C:\\Users\\Kyle\\Documents\\GitHub\\princeProject2\\PrinceProject\\app\\build\\outputs\\androidTest-results\\connected\\debug\\Medium_Phone_API_35(AVD) - 15\\cpuinfo"
-    }
-  }
-}
-test_result {
-  test_case {
-    test_class: "AdminPageTest"
-    test_package: "com.example.princeproject"
-    test_method: "testListViewPopulatedInAdminFacilityFragment"
-    start_time {
-      seconds: 1733104755
-      nanos: 125000000
-    }
-    end_time {
-      seconds: 1733104760
-      nanos: 943000000
-    }
-  }
-  test_status: PASSED
-  output_artifact {
-    label {
-      label: "logcat"
-      namespace: "android"
-    }
-    source_path {
-      path: "C:\\Users\\Kyle\\Documents\\GitHub\\princeProject2\\PrinceProject\\app\\build\\outputs\\androidTest-results\\connected\\debug\\Medium_Phone_API_35(AVD) - 15\\logcat-com.example.princeproject.AdminPageTest-testListViewPopulatedInAdminFacilityFragment.txt"
-    }
-  }
-  output_artifact {
-    label {
-      label: "device-info"
-      namespace: "android"
-    }
-    source_path {
-      path: "C:\\Users\\Kyle\\Documents\\GitHub\\princeProject2\\PrinceProject\\app\\build\\outputs\\androidTest-results\\connected\\debug\\Medium_Phone_API_35(AVD) - 15\\device-info.pb"
-    }
-  }
-  output_artifact {
-    label {
-      label: "device-info.meminfo"
-      namespace: "android"
-    }
-    source_path {
-      path: "C:\\Users\\Kyle\\Documents\\GitHub\\princeProject2\\PrinceProject\\app\\build\\outputs\\androidTest-results\\connected\\debug\\Medium_Phone_API_35(AVD) - 15\\meminfo"
-    }
-  }
-  output_artifact {
-    label {
-      label: "device-info.cpuinfo"
-      namespace: "android"
-    }
-    source_path {
-      path: "C:\\Users\\Kyle\\Documents\\GitHub\\princeProject2\\PrinceProject\\app\\build\\outputs\\androidTest-results\\connected\\debug\\Medium_Phone_API_35(AVD) - 15\\cpuinfo"
-    }
-  }
-}
-test_result {
-  test_case {
-    test_class: "AdminPageTest"
-    test_package: "com.example.princeproject"
-    test_method: "testListViewPopulatedInAdminProfileFragment"
-    start_time {
-      seconds: 1733104761
-      nanos: 704000000
-    }
-    end_time {
-      seconds: 1733104767
-      nanos: 566000000
-    }
-  }
-  test_status: PASSED
-  output_artifact {
-    label {
-      label: "logcat"
-      namespace: "android"
-    }
-    source_path {
-      path: "C:\\Users\\Kyle\\Documents\\GitHub\\princeProject2\\PrinceProject\\app\\build\\outputs\\androidTest-results\\connected\\debug\\Medium_Phone_API_35(AVD) - 15\\logcat-com.example.princeproject.AdminPageTest-testListViewPopulatedInAdminProfileFragment.txt"
+      path: "C:\\Users\\Kyle\\Documents\\GitHub\\princeProject2\\PrinceProject\\app\\build\\outputs\\androidTest-results\\connected\\debug\\Medium_Phone_API_35(AVD) - 15\\logcat-com.example.princeproject.EntrantListUITest-testMyEventsButtonLaunchesEntrantListActivity.txt"
     }
   }
   output_artifact {
@@ -377,4 +70,17 @@ output_artifact {
   }
   type: TEST_DATA
   mime_type: "text/plain"
+}
+issue {
+  namespace {
+    namespace: "com.google.testing.platform.runtime.android.driver.AndroidInstrumentationDriver"
+  }
+  severity: SEVERE
+  code: 1
+  name: "INSTRUMENTATION_FAILED"
+  message: "Test run failed to complete. Instrumentation run failed due to Process crashed."
+}
+issue {
+  severity: SEVERE
+  message: "Logcat of last crash: \nProcess: com.example.princeproject, PID: 696\r\njava.lang.RuntimeException: Unable to pause activity {com.example.princeproject/androidx.fragment.app.testing.EmptyFragmentActivity}: android.view.InflateException: Binary XML file line #30 in com.example.princeproject:layout/fragment_profile: Binary XML file line #30 in com.example.princeproject:layout/fragment_profile: Error inflating class <unknown>\r\n\tat android.app.ActivityThread.performPauseActivityIfNeeded(ActivityThread.java:5608)\r\n\tat android.app.ActivityThread.performPauseActivity(ActivityThread.java:5559)\r\n\tat android.app.ActivityThread.handlePauseActivity(ActivityThread.java:5511)\r\n\tat android.app.servertransaction.PauseActivityItem.execute(PauseActivityItem.java:47)\r\n\tat android.app.servertransaction.ActivityTransactionItem.execute(ActivityTransactionItem.java:60)\r\n\tat android.app.servertransaction.TransactionExecutor.executeLifecycleItem(TransactionExecutor.java:225)\r\n\tat android.app.servertransaction.TransactionExecutor.executeTransactionItems(TransactionExecutor.java:107)\r\n\tat android.app.servertransaction.TransactionExecutor.execute(TransactionExecutor.java:81)\r\n\tat android.app.ActivityThread$H.handleMessage(ActivityThread.java:2636)\r\n\tat android.os.Handler.dispatchMessage(Handler.java:107)\r\n\tat android.os.Looper.loopOnce(Looper.java:232)\r\n\tat android.os.Looper.loop(Looper.java:317)\r\n\tat android.app.ActivityThread.main(ActivityThread.java:8705)\r\n\tat java.lang.reflect.Method.invoke(Native Method)\r\n\tat com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:580)\r\n\tat com.android.internal.os.ZygoteInit.main(ZygoteInit.java:886)\r\nCaused by: android.view.InflateException: Binary XML file line #30 in com.example.princeproject:layout/fragment_profile: Binary XML file line #30 in com.example.princeproject:layout/fragment_profile: Error inflating class <unknown>\r\nCaused by: android.view.InflateException: Binary XML file line #30 in com.example.princeproject:layout/fragment_profile: Error inflating class <unknown>\r\nCaused by: java.lang.reflect.InvocationTargetException\r\n\tat java.lang.reflect.Constructor.newInstance0(Native Method)\r\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:343)\r\n\tat android.view.LayoutInflater.createView(LayoutInflater.java:742)\r\n\tat android.view.LayoutInflater.createViewFromTag(LayoutInflater.java:894)\r\n\tat android.view.LayoutInflater.createViewFromTag(LayoutInflater.java:849)\r\n\tat android.view.LayoutInflater.rInflate(LayoutInflater.java:1011)\r\n\tat android.view.LayoutInflater.rInflateChildren(LayoutInflater.java:972)\r\n\tat android.view.LayoutInflater.rInflate(LayoutInflater.java:1014)\r\n\tat android.view.LayoutInflater.rInflateChildren(LayoutInflater.java:972)\r\n\tat android.view.LayoutInflater.rInflate(LayoutInflater.java:1014)\r\n\tat android.view.LayoutInflater.rInflateChildren(LayoutInflater.java:972)\r\n\tat android.view.LayoutInflater.inflate(LayoutInflater.java:570)\r\n\tat android.view.LayoutInflater.inflate(LayoutInflater.java:462)\r\n\tat com.example.princeproject.ProfilePage.ProfileFragment.onCreateView(ProfileFragment.java:93)\r\n\tat androidx.fragment.app.Fragment.performCreateView(Fragment.java:3119)\r\n\tat androidx.fragment.app.FragmentStateManager.createView(FragmentStateManager.java:577)\r\n\tat androidx.fragment.app.FragmentStateManager.moveToExpectedState(FragmentStateManager.java:286)\r\n\tat androidx.fragment.app.FragmentStore.moveToExpectedState(FragmentStore.java:114)\r\n\tat androidx.fragment.app.FragmentManager.moveToState(FragmentManager.java:1685)\r\n\tat androidx.fragment.app.FragmentManager.dispatchStateChange(FragmentManager.java:3319)\r\n\tat androidx.fragment.app.FragmentManager.dispatchPause(FragmentManager.java:3255)\r\n\tat androidx.fragment.app.FragmentController.dispatchPause(FragmentController.java:296)\r\n\tat androidx.fragment.app.FragmentActivity.onPause(FragmentActivity.java:284)\r\n\tat android.app.Activity.performPause(Activity.java:9207)\r\n\tat android.app.Instrumentation.callActivityOnPause(Instrumentation.java:1776)\r\n\tat androidx.test.runner.MonitoringInstrumentation.callActivityOnPause(MonitoringInstrumentation.java:804)\r\n\tat android.app.ActivityThread.performPauseActivityIfNeeded(ActivityThread.java:5598)\r\n\tat android.app.ActivityThread.performPauseActivity(ActivityThread.java:5559)\r\n\tat android.app.ActivityThread.handlePauseActivity(ActivityThread.java:5511)\r\n\tat android.app.servertransaction.PauseActivityItem.execute(PauseActivityItem.java:47)\r\n\tat android.app.servertransaction.ActivityTransactionItem.execute(ActivityTransactionItem.java:60)\r\n\tat android.app.servertransaction.TransactionExecutor.executeLifecycleItem(TransactionExecutor.java:225)\r\n\tat android.app.servertransaction.TransactionExecutor.executeTransactionItems(TransactionExecutor.java:107)\r\n\tat android.app.servertransaction.TransactionExecutor.execute(TransactionExecutor.java:81)\r\n\tat android.app.ActivityThread$H.handleMessage(ActivityThread.java:2636)\r\n\tat android.os.Handler.dispatchMessage(Handler.java:107)\r\n\tat android.os.Looper.loopOnce(Looper.java:232)\r\n\tat android.os.Looper.loop(Looper.java:317)\r\n\tat android.app.ActivityThread.main(ActivityThread.java:8705)\r\n\tat java.lang.reflect.Method.invoke(Native Method)\r\n\tat com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:580)\r\n\tat com.android.internal.os.ZygoteInit.main(ZygoteInit.java:886)\r\nCaused by: java.lang.UnsupportedOperationException: Failed to resolve attribute at index 13: TypedValue{t=0x2/d=0x7f040115 a=-1}, theme={InheritanceMap=[id=0x7f130123com.example.princeproject:style/FragmentScenarioEmptyFragmentActivityTheme, id=0x1030069android:style/Theme.WithActionBar, id=0x1030005android:style/Theme], Themes=[com.example.princeproject:style/FragmentScenarioEmptyFragmentActivityTheme, forced, android:style/Theme.DeviceDefault.Light.DarkActionBar, forced]}\r\n\tat android.content.res.TypedArray.getDrawableForDensity(TypedArray.java:1011)\r\n\tat android.content.res.TypedArray.getDrawable(TypedArray.java:995)\r\n\tat android.view.View.<init>(View.java:6017)\r\n\tat android.view.ViewGroup.<init>(ViewGroup.java:703)\r\n\tat android.view.ViewGroup.<init>(ViewGroup.java:699)\r\n\tat androidx.appcompat.widget.Toolbar.<init>(Toolbar.java:265)\r\n\tat androidx.appcompat.widget.Toolbar.<init>(Toolbar.java:261)\r\n\t... 42 more\r\n"
 }
