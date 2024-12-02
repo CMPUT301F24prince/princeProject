@@ -25,6 +25,7 @@ import android.view.LayoutInflater;
 
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -61,6 +62,7 @@ public class EditProfileFragment extends DialogFragment{
     private String account;
     private ImageView profile_preview;
     private Button uploadButton;
+    private Button removePictureButton;
     private final int GALLERY_REQ_CODE = 1000;
 
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -132,6 +134,7 @@ public class EditProfileFragment extends DialogFragment{
                 .setPositiveButton("Confirm", null);
 
         this.uploadButton = view.findViewById(R.id.profile_image_upload);
+        this.removePictureButton = view.findViewById(R.id.delete_profile_image);
         this.profile_preview = view.findViewById((R.id.profile_image_preview));
 
         Uri poster_uri =  user.decodeBase64String(getContext());
@@ -160,6 +163,30 @@ public class EditProfileFragment extends DialogFragment{
                     startActivityForResult(iGallery, GALLERY_REQ_CODE);
                 }
             });
+
+            removePictureButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    db.collection("users").document(user.getDeviceId()).get()
+                            .addOnSuccessListener(documentSnapshot -> {
+                                String image = documentSnapshot.getString("profilePicture");
+                                boolean defaultImage = Boolean.TRUE.equals(documentSnapshot.getBoolean("default"));
+                                if(image != null && !defaultImage) {
+                                    user.GenerateProfileImage();
+                                    db.collection("users").document(user.getDeviceId())
+                                            .update("profilePicture",user.getProfilePictureEncode())
+                                            .addOnSuccessListener(x ->{
+                                                profile_preview.setImageURI(user.decodeBase64String(getContext()));
+                                            });
+                                    db.collection("users").document(user.getDeviceId())
+                                            .update("defaultImage",true);
+                                } else {
+                                    Toast.makeText(getContext(), "Cannot remove a default image",Toast.LENGTH_SHORT).show();
+                                }
+                            });
+                }
+            });
+
 
             Button confirm = dialog.getButton(AlertDialog.BUTTON_POSITIVE);
             confirm.setOnClickListener(v ->{
