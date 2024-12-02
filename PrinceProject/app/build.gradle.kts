@@ -77,5 +77,5 @@ dependencies {
     testImplementation ("androidx.test.espresso:espresso-core:3.5.1")
     testImplementation ("org.mockito:mockito-core:4.5.1")
     testImplementation ("com.google.firebase:firebase-messaging:23.1.0") // Only if you are using Firebase
-    //
+    testImplementation ("org.robolectric:robolectric:4.10.3")
 }
