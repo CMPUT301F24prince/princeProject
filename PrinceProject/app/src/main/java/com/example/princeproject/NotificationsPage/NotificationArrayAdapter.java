@@ -91,12 +91,13 @@ public class NotificationArrayAdapter extends ArrayAdapter<Notification> {
 
         setEventImage(notificationImage, notification.getEventId());
 
-        if("Sorry!".equals(notification.getName())) {
+        if("Sorry!".equals(notification.getName()) || !notification.isInvite) {
             acceptButton.setVisibility(View.INVISIBLE);
 
             declineButton.setText("Dismiss");
             declineButton.setOnClickListener(v -> deleteAllNotifications(notification));
-        } else {
+        }
+        else {
             acceptButton.setVisibility(View.VISIBLE);
             declineButton.setText("Decline");
 
