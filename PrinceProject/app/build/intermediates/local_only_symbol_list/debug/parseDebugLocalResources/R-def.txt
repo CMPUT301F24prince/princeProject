@@ -26,6 +26,7 @@ id create_event_facility_button
 id declineButton
 id delete_button
 id delete_button_event
+id delete_profile_image
 id editAccountType
 id editProfileButton
 id editTextEmail
