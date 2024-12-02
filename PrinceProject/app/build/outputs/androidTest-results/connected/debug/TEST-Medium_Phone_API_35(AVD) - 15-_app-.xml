@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<testsuite name="com.example.princeproject.AdminPageTest" tests="7" failures="0" errors="0" skipped="0" time="61.917" timestamp="2024-12-02T01:59:29" hostname="localhost">
+  <properties>
+    <property name="device" value="Medium_Phone_API_35(AVD) - 15" />
+    <property name="flavor" value="" />
+    <property name="project" value=":app" />
+  </properties>
+  <testcase name="testAdminPageButtonLaunchesAdminActivity" classname="com.example.princeproject.AdminPageTest" time="2.837" />
+  <testcase name="testListViewPopulatedInAdminEventFragment" classname="com.example.princeproject.AdminPageTest" time="9.768" />
+  <testcase name="testRemovalButtonsEvent" classname="com.example.princeproject.AdminPageTest" time="20.055" />
+  <testcase name="testRemovalButtonsProfile" classname="com.example.princeproject.AdminPageTest" time="5.609" />
+  <testcase name="testRemovalButtonsFacility" classname="com.example.princeproject.AdminPageTest" time="5.717" />
+  <testcase name="testListViewPopulatedInAdminFacilityFragment" classname="com.example.princeproject.AdminPageTest" time="5.818" />
+  <testcase name="testListViewPopulatedInAdminProfileFragment" classname="com.example.princeproject.AdminPageTest" time="5.862" />
+</testsuite>

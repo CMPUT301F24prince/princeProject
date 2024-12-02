@@ -1,0 +1,326 @@
+12-01 18:58:25.391 24390 24407 I TestRunner: started: testAdminPageButtonLaunchesAdminActivity(com.example.princeproject.AdminPageTest)
+12-01 18:58:25.408 24390 24407 W Settings: Setting always_finish_activities has moved from android.provider.Settings.System to android.provider.Settings.Global, returning read-only value.
+12-01 18:58:25.430   609  1451 V GrammaticalInflectionUtils: AttributionSource: android.content.AttributionSource@c1cd9a86 does not have READ_SYSTEM_GRAMMATICAL_GENDER permission.
+12-01 18:58:25.438  1355  1355 W SplitSelectStateCtor: Missing session instanceIds
+12-01 18:58:25.438  1355  1355 D StatsLog: LAUNCHER_SPLIT_SELECTION_EXIT_INTERRUPTED
+12-01 18:58:25.449  1355  1355 I TopTaskTracker: onTaskMovedToFront: (moved taskInfo to front) taskId=113, baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.princeproject/.AdminPage.AdminActivity }
+12-01 18:58:25.471   466   466 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+12-01 18:58:25.517  1355  1761 D EGL_emulation: app_time_stats: avg=121.92ms min=11.82ms max=2440.51ms count=23
+12-01 18:58:25.558 24390 24390 D AppCompatDelegate: Checking for metadata for AppLocalesMetadataHolderService : Service not found
+12-01 18:58:25.560  1096  1228 D EGL_emulation: app_time_stats: avg=25534.03ms min=25534.03ms max=25534.03ms count=1
+12-01 18:58:25.563  1355  1761 D EGL_emulation: app_time_stats: avg=40748.05ms min=12.98ms max=773836.94ms count=19
+12-01 18:58:25.581 24390 24390 D LifecycleMonitor: Lifecycle status change: com.example.princeproject.AdminPage.AdminActivity@7a40a1 in: PRE_ON_CREATE
+12-01 18:58:25.582 24390 24390 V ActivityScenario: Activity lifecycle changed event received but ignored because the reported transition was not ON_CREATE while the last known transition was PRE_ON_CREATE
+12-01 18:58:25.702 24390 24390 W e.princeproject: Accessing hidden method Landroid/view/ViewGroup;->makeOptionalFitsSystemWindows()V (unsupported, reflection, allowed)
+12-01 18:58:25.811  1355  1355 D VRI[NexusLauncherActivity]: visibilityChanged oldVisibility=true newVisibility=false
+12-01 18:58:25.821  1355  1355 D NexusLauncherModelDelegate: notifySmartspaceEvent: SmartspaceTargetEvent{mSmartspaceTarget=null, mSmartspaceActionId='null', mEventType=7}
+12-01 18:58:25.976 24390 24394 I e.princeproject: Compiler allocated 4219KB to compile void android.widget.TextView.<init>(android.content.Context, android.util.AttributeSet, int, int)
+12-01 18:58:26.005 24390 24390 D LifecycleMonitor: Lifecycle status change: com.example.princeproject.AdminPage.AdminActivity@7a40a1 in: CREATED
+12-01 18:58:26.007 24390 24390 V ActivityScenario: Update currentActivityStage to CREATED, currentActivity=com.example.princeproject.AdminPage.AdminActivity@7a40a1
+12-01 18:58:26.017 24390 24390 D LifecycleMonitor: Lifecycle status change: com.example.princeproject.AdminPage.AdminActivity@7a40a1 in: STARTED
+12-01 18:58:26.018 24390 24390 V ActivityScenario: Update currentActivityStage to STARTED, currentActivity=com.example.princeproject.AdminPage.AdminActivity@7a40a1
+12-01 18:58:26.025 24390 24390 D LifecycleMonitor: Lifecycle status change: com.example.princeproject.AdminPage.AdminActivity@7a40a1 in: RESUMED
+12-01 18:58:26.025 24390 24390 V ActivityScenario: Update currentActivityStage to RESUMED, currentActivity=com.example.princeproject.AdminPage.AdminActivity@7a40a1
+12-01 18:58:26.041 24390 24390 W HWUI    : Unknown dataspace 0
+12-01 18:58:26.192 24390 24394 I e.princeproject: Compiler allocated 5174KB to compile void android.view.ViewRootImpl.performTraversals()
+12-01 18:58:26.256   609  1211 D ConnectivityService: requestNetwork for uid/pid:10260/24390 activeRequest: null callbackRequest: 519 [NetworkRequest [ REQUEST id=520, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10260 RequestorUid: 10260 RequestorPkg: com.example.princeproject UnderlyingNetworks: Null] ]] callback flags: 0 order: 2147483647 isUidTracked: false
+12-01 18:58:26.262   609  1007 D OemPaidWifiNetworkFactory: got request NetworkRequest [ REQUEST id=520, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10260 RequestorUid: 10260 RequestorPkg: com.example.princeproject UnderlyingNetworks: Null] ]
+12-01 18:58:26.267   609  1014 D ConnectivityService: NetReassign [520 : null → 100] [c 3] [a 1] [i 0]
+12-01 18:58:26.267   609  1007 D MultiInternetWifiNetworkFactory: got request NetworkRequest [ REQUEST id=520, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10260 RequestorUid: 10260 RequestorPkg: com.example.princeproject UnderlyingNetworks: Null] ]
+12-01 18:58:26.274   609  1007 D WifiNetworkFactory: got request NetworkRequest [ REQUEST id=520, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10260 RequestorUid: 10260 RequestorPkg: com.example.princeproject UnderlyingNetworks: Null] ]
+12-01 18:58:26.277   609  1007 D UntrustedWifiNetworkFactory: got request NetworkRequest [ REQUEST id=520, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10260 RequestorUid: 10260 RequestorPkg: com.example.princeproject UnderlyingNetworks: Null] ]
+12-01 18:58:26.278   466   619 W ServiceManagerCppClient: Permission failure: android.permission.ACCESS_SURFACE_FLINGER from uid=10260 pid=0
+12-01 18:58:26.278   466   619 D PermissionCache: checking android.permission.ACCESS_SURFACE_FLINGER for uid=10260 => denied (1554 us)
+12-01 18:58:26.280   466   619 W ServiceManagerCppClient: Permission failure: android.permission.ROTATE_SURFACE_FLINGER from uid=10260 pid=0
+12-01 18:58:26.280   466   619 D PermissionCache: checking android.permission.ROTATE_SURFACE_FLINGER for uid=10260 => denied (1912 us)
+12-01 18:58:26.281   466   740 W ServiceManagerCppClient: Permission failure: android.permission.INTERNAL_SYSTEM_WINDOW from uid=10260 pid=24390
+12-01 18:58:26.281   466   740 D PermissionCache: checking android.permission.INTERNAL_SYSTEM_WINDOW for uid=10260 => denied (391 us)
+12-01 18:58:26.282   466   619 W ServiceManagerCppClient: Permission failure: android.permission.INTERNAL_SYSTEM_WINDOW from uid=10260 pid=0
+12-01 18:58:26.283   466   619 D PermissionCache: checking android.permission.INTERNAL_SYSTEM_WINDOW for uid=10260 => denied (2197 us)
+12-01 18:58:26.285 24390 24409 I EGL_emulation: Opening libGLESv1_CM_emulation.so
+12-01 18:58:26.287 24390 24409 I EGL_emulation: Opening libGLESv2_emulation.so
+12-01 18:58:26.287 24390 24416 W DynamiteModule: Local module descriptor class for com.google.android.gms.providerinstaller.dynamite not found.
+12-01 18:58:26.299 24390 24409 W HWUI    : Failed to choose config with EGL_SWAP_BEHAVIOR_PRESERVED, retrying without...
+12-01 18:58:26.300 24390 24409 W HWUI    : Failed to initialize 101010-2 format, error = EGL_SUCCESS
+12-01 18:58:26.313  6901  7516 W ProviderHelper: Unknown dynamite feature providerinstaller.dynamite
+12-01 18:58:26.320 24390 24416 I DynamiteModule: Considering local module com.google.android.gms.providerinstaller.dynamite:0 and remote module com.google.android.gms.providerinstaller.dynamite:0
+12-01 18:58:26.321 24390 24416 W ProviderInstaller: Failed to load providerinstaller module: No acceptable module com.google.android.gms.providerinstaller.dynamite found. Local version is 0 and remote version is 0.
+12-01 18:58:26.327 24390 24416 D ApplicationLoaders: Returning zygote-cached class loader: /system/framework/org.apache.http.legacy.jar
+12-01 18:58:26.348 24390 24416 D nativeloader: Configuring clns-10 for other apk /system/framework/com.android.media.remotedisplay.jar. target_sdk_version=35, uses_libraries=ALL, library_path=/data/app/~~7o7S81hbEIevx1lck80tCA==/com.google.android.gms-lyL2nauH-4vEtEPc-2lgPg==/lib/x86_64:/data/app/~~7o7S81hbEIevx1lck80tCA==/com.google.android.gms-lyL2nauH-4vEtEPc-2lgPg==/base.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.google.android.gms
+12-01 18:58:26.357 24390 24416 D nativeloader: Configuring clns-11 for other apk /system/framework/com.android.location.provider.jar. target_sdk_version=35, uses_libraries=ALL, library_path=/data/app/~~7o7S81hbEIevx1lck80tCA==/com.google.android.gms-lyL2nauH-4vEtEPc-2lgPg==/lib/x86_64:/data/app/~~7o7S81hbEIevx1lck80tCA==/com.google.android.gms-lyL2nauH-4vEtEPc-2lgPg==/base.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.google.android.gms
+12-01 18:58:26.361   186   186 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device VINTF manifest.
+12-01 18:58:26.361 24390 24409 I Gralloc4: mapper 4.x is not supported
+12-01 18:58:26.367 24390 24416 D ApplicationLoaders: Returning zygote-cached class loader: /system_ext/framework/androidx.window.extensions.jar
+12-01 18:58:26.367 24390 24416 D ApplicationLoaders: Returning zygote-cached class loader: /system_ext/framework/androidx.window.sidecar.jar
+12-01 18:58:26.394 24390 24416 W e.princeproject: Loading /data/app/~~7o7S81hbEIevx1lck80tCA==/com.google.android.gms-lyL2nauH-4vEtEPc-2lgPg==/oat/x86_64/base.odex non-executable as it requires an image which we failed to load
+12-01 18:58:26.405 24390 24416 D nativeloader: Configuring clns-12 for other apk /data/app/~~7o7S81hbEIevx1lck80tCA==/com.google.android.gms-lyL2nauH-4vEtEPc-2lgPg==/base.apk. target_sdk_version=35, uses_libraries=, library_path=/data/app/~~7o7S81hbEIevx1lck80tCA==/com.google.android.gms-lyL2nauH-4vEtEPc-2lgPg==/lib/x86_64:/data/app/~~7o7S81hbEIevx1lck80tCA==/com.google.android.gms-lyL2nauH-4vEtEPc-2lgPg==/base.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.google.android.gms
+12-01 18:58:26.476 24390 24416 W ProviderInstaller: Failed to report request stats: com.google.android.gms.common.security.ProviderInstallerImpl.reportRequestStats [class android.content.Context, long, long]
+12-01 18:58:26.480   609  1211 W ServiceManagerCppClient: Permission failure: android.permission.ACCESS_SURFACE_FLINGER from uid=10260 pid=0
+12-01 18:58:26.480   609  1211 D PermissionCache: checking android.permission.ACCESS_SURFACE_FLINGER for uid=10260 => denied (916 us)
+12-01 18:58:26.481   609  1211 W ServiceManagerCppClient: Permission failure: android.permission.ROTATE_SURFACE_FLINGER from uid=10260 pid=0
+12-01 18:58:26.481   609  1211 D PermissionCache: checking android.permission.ROTATE_SURFACE_FLINGER for uid=10260 => denied (273 us)
+12-01 18:58:26.481   609  1211 W ServiceManagerCppClient: Permission failure: android.permission.INTERNAL_SYSTEM_WINDOW from uid=10260 pid=0
+12-01 18:58:26.481   609  1211 D PermissionCache: checking android.permission.INTERNAL_SYSTEM_WINDOW for uid=10260 => denied (385 us)
+12-01 18:58:26.484   609   635 W ziparchive: Unable to open '/data/app/~~W6UVKpxwvgPFY2_Txi99VA==/com.example.princeproject-HDLZ7rwzKw7RyTdT7HIT-Q==/base.dm': No such file or directory
+12-01 18:58:26.490   609   635 I ActivityTaskManager: Displayed com.example.princeproject/.AdminPage.AdminActivity for user 0: +1s57ms
+12-01 18:58:26.510  1355  1355 D BaseDepthController: setSurface:
+12-01 18:58:26.510  1355  1355 D BaseDepthController: 	mWaitingOnSurfaceValidity: false
+12-01 18:58:26.510  1355  1355 D BaseDepthController: 	mSurface: null
+12-01 18:58:26.510  1355  1355 D BaseDepthController: mSurface is null and mCurrentBlur is: 0
+12-01 18:58:26.513  1355  1355 D StateManager: goToState - fromState: Normal, toState: Normal, partial trace:
+12-01 18:58:26.513  1355  1355 D StateManager: 	at com.android.launcher3.statemanager.StateManager.moveToRestState(go/retraceme 2855a437b73635ce9cad76b9289087e631bbb67fc90008a0da13d343a00e5041:4)
+12-01 18:58:26.513  1355  1355 D StateManager: 	at com.android.launcher3.statemanager.StateManager.moveToRestState(go/retraceme 2855a437b73635ce9cad76b9289087e631bbb67fc90008a0da13d343a00e5041:1)
+12-01 18:58:26.513  1355  1355 D StateManager: 	at com.android.launcher3.statemanager.StatefulActivity.onStop(go/retraceme 2855a437b73635ce9cad76b9289087e631bbb67fc90008a0da13d343a00e5041:34)
+12-01 18:58:26.513  1355  1355 D StatsLog: LAUNCHER_ONSTOP
+12-01 18:58:26.516  1355  1355 D StatsLog: LAUNCHER_GOOGLE_SEARCH_RESTORE_LIST_SIZE_AFTER_ACTIVITY_RESTART
+12-01 18:58:26.517  1355  2135 D OneSearchSuggestProvider: Shut down the binder channel
+12-01 18:58:26.530   609   750 I ImeTracker: com.example.princeproject:8f4cec1a: onRequestHide at ORIGIN_SERVER reason HIDE_UNSPECIFIED_WINDOW fromUser false
+12-01 18:58:26.530   609   750 I ImeTracker: com.example.princeproject:8f4cec1a: onCancelled at PHASE_SERVER_SHOULD_HIDE
+12-01 18:58:26.535 24390 24407 W Settings: Setting always_finish_activities has moved from android.provider.Settings.System to android.provider.Settings.Global, returning read-only value.
+12-01 18:58:26.544  7324  7324 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():3157
+12-01 18:58:26.549  7324  7324 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2248 repeatCheckTimes = 0, locked = false
+12-01 18:58:26.549  7324  7324 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1986 onStartInput(EditorInfo{EditorInfo{packageName=com.example.princeproject, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+12-01 18:58:26.552  7324  7324 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2248 repeatCheckTimes = 1, locked = false
+12-01 18:58:26.556  7324  7324 I AndroidIME: InputBundleManager.loadActiveInputBundleId():450 loadActiveInputBundleId: und-Latn-x-password, password
+12-01 18:58:26.571   609  1451 V GrammaticalInflectionUtils: AttributionSource: android.content.AttributionSource@c1cd9a86 does not have READ_SYSTEM_GRAMMATICAL_GENDER permission.
+12-01 18:58:26.594  6901  7516 I FontLog : (REDACTED) Received query %s, URI %s
+12-01 18:58:26.594  6901  7516 I FontLog : (REDACTED) Query [%s] resolved to %s
+12-01 18:58:26.606   466   466 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+12-01 18:58:26.612  6901  7516 I FontLog : (REDACTED) Fetch %s end status %s
+12-01 18:58:26.614 24390 24390 D LifecycleMonitor: Lifecycle status change: com.example.princeproject.AdminPage.AdminActivity@7a40a1 in: PAUSED
+12-01 18:58:26.614 24390 24390 V ActivityScenario: Update currentActivityStage to PAUSED, currentActivity=com.example.princeproject.AdminPage.AdminActivity@7a40a1
+12-01 18:58:26.614 24390 24390 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.princeproject/androidx.fragment.app.testing.EmptyFragmentActivity (has extras) }, activity.getIntent()=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.princeproject/.AdminPage.AdminActivity }, activity=com.example.princeproject.AdminPage.AdminActivity@7a40a1
+12-01 18:58:26.614  1355  1355 I TopTaskTracker: onTaskMovedToFront: (moved taskInfo to front) taskId=114, baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.princeproject/androidx.fragment.app.testing.EmptyFragmentActivity }
+12-01 18:58:26.633  6901  7515 I FontLog : (REDACTED) Pulling font file for id = %d, cache size = %d
+12-01 18:58:26.643 24390 24390 D LifecycleMonitor: Lifecycle status change: androidx.fragment.app.testing.EmptyFragmentActivity@21eafc9 in: PRE_ON_CREATE
+12-01 18:58:26.644 24390 24390 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.princeproject/.AdminPage.AdminActivity }, activity.getIntent()=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.princeproject/androidx.fragment.app.testing.EmptyFragmentActivity (has extras) }, activity=androidx.fragment.app.testing.EmptyFragmentActivity@21eafc9
+12-01 18:58:26.644 24390 24390 V ActivityScenario: Activity lifecycle changed event received but ignored because the reported transition was not ON_CREATE while the last known transition was PRE_ON_CREATE
+12-01 18:58:26.654  6901  7515 I FontLog : (REDACTED) Pulling font file for id = %d, cache size = %d
+12-01 18:58:26.709 24390 24416 D nativeloader: Load /data/app/~~7o7S81hbEIevx1lck80tCA==/com.google.android.gms-lyL2nauH-4vEtEPc-2lgPg==/base.apk!/lib/x86_64/libconscrypt_gmscore_jni.so using ns clns-12 from class loader (caller=/data/app/~~7o7S81hbEIevx1lck80tCA==/com.google.android.gms-lyL2nauH-4vEtEPc-2lgPg==/base.apk!classes3.dex): ok
+12-01 18:58:26.749 24390 24390 D LifecycleMonitor: Lifecycle status change: androidx.fragment.app.testing.EmptyFragmentActivity@21eafc9 in: CREATED
+12-01 18:58:26.750 24390 24416 V NativeCrypto: Registering com/google/android/gms/org/conscrypt/NativeCrypto's 305 native methods...
+12-01 18:58:26.753 24390 24390 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.princeproject/.AdminPage.AdminActivity }, activity.getIntent()=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.princeproject/androidx.fragment.app.testing.EmptyFragmentActivity (has extras) }, activity=androidx.fragment.app.testing.EmptyFragmentActivity@21eafc9
+12-01 18:58:26.756 24390 24390 V ActivityScenario: Update currentActivityStage to CREATED, currentActivity=androidx.fragment.app.testing.EmptyFragmentActivity@21eafc9
+12-01 18:58:26.761 24390 24390 D LifecycleMonitor: Lifecycle status change: androidx.fragment.app.testing.EmptyFragmentActivity@21eafc9 in: STARTED
+12-01 18:58:26.762 24390 24390 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.princeproject/.AdminPage.AdminActivity }, activity.getIntent()=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.princeproject/androidx.fragment.app.testing.EmptyFragmentActivity (has extras) }, activity=androidx.fragment.app.testing.EmptyFragmentActivity@21eafc9
+12-01 18:58:26.764 24390 24390 V ActivityScenario: Update currentActivityStage to STARTED, currentActivity=androidx.fragment.app.testing.EmptyFragmentActivity@21eafc9
+12-01 18:58:26.778 24390 24390 D LifecycleMonitor: Lifecycle status change: androidx.fragment.app.testing.EmptyFragmentActivity@21eafc9 in: RESUMED
+12-01 18:58:26.778 24390 24390 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.princeproject/.AdminPage.AdminActivity }, activity.getIntent()=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.princeproject/androidx.fragment.app.testing.EmptyFragmentActivity (has extras) }, activity=androidx.fragment.app.testing.EmptyFragmentActivity@21eafc9
+12-01 18:58:26.779 24390 24390 V ActivityScenario: Update currentActivityStage to RESUMED, currentActivity=androidx.fragment.app.testing.EmptyFragmentActivity@21eafc9
+12-01 18:58:26.790  1096  1170 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@5ae5428
+12-01 18:58:26.803   609  2275 W InputManager-JNI: Input channel object 'fd3a6f5 Splash Screen com.example.princeproject (client)' was disposed without first being removed with the input manager!
+12-01 18:58:26.832  1096  1228 D EGL_emulation: app_time_stats: avg=127.01ms min=14.29ms max=1123.61ms count=10
+12-01 18:58:26.870 24390 24429 W e.princeproject: Accessing hidden method Ldalvik/system/VMStack;->getStackClass2()Ljava/lang/Class; (unsupported, reflection, allowed)
+12-01 18:58:26.922   609   635 I ActivityTaskManager: Displayed com.example.princeproject/androidx.fragment.app.testing.EmptyFragmentActivity for user 0: +354ms
+12-01 18:58:26.934 24390 24429 I eksm.a  : Unable to retrieve flag snapshot for com.google.android.gms.providerinstaller#com.google.android.gms, using defaults.
+12-01 18:58:26.945  1355  1761 D EGL_emulation: app_time_stats: avg=54.78ms min=1.12ms max=970.64ms count=24
+12-01 18:58:26.949 24390 24416 W e.princeproject: Accessing hidden method Ljava/security/spec/ECParameterSpec;->getCurveName()Ljava/lang/String; (unsupported, reflection, allowed)
+12-01 18:58:26.966 24390 24428 E GoogleApiManager: Failed to get service from broker.
+12-01 18:58:26.966 24390 24428 E GoogleApiManager: java.lang.SecurityException: Unknown calling package name 'com.google.android.gms'.
+12-01 18:58:26.966 24390 24428 E GoogleApiManager: 	at android.os.Parcel.createExceptionOrNull(Parcel.java:3242)
+12-01 18:58:26.966 24390 24428 E GoogleApiManager: 	at android.os.Parcel.createException(Parcel.java:3226)
+12-01 18:58:26.966 24390 24428 E GoogleApiManager: 	at android.os.Parcel.readException(Parcel.java:3209)
+12-01 18:58:26.966 24390 24428 E GoogleApiManager: 	at android.os.Parcel.readException(Parcel.java:3151)
+12-01 18:58:26.966 24390 24428 E GoogleApiManager: 	at anfm.a(:com.google.android.gms@244534038@24.45.34 (260800-699214190):36)
+12-01 18:58:26.966 24390 24428 E GoogleApiManager: 	at andt.z(:com.google.android.gms@244534038@24.45.34 (260800-699214190):143)
+12-01 18:58:26.966 24390 24428 E GoogleApiManager: 	at amlc.run(:com.google.android.gms@244534038@24.45.34 (260800-699214190):54)
+12-01 18:58:26.966 24390 24428 E GoogleApiManager: 	at android.os.Handler.handleCallback(Handler.java:959)
+12-01 18:58:26.966 24390 24428 E GoogleApiManager: 	at android.os.Handler.dispatchMessage(Handler.java:100)
+12-01 18:58:26.966 24390 24428 E GoogleApiManager: 	at btaq.mI(:com.google.android.gms@244534038@24.45.34 (260800-699214190):1)
+12-01 18:58:26.966 24390 24428 E GoogleApiManager: 	at btaq.dispatchMessage(:com.google.android.gms@244534038@24.45.34 (260800-699214190):5)
+12-01 18:58:26.966 24390 24428 E GoogleApiManager: 	at android.os.Looper.loopOnce(Looper.java:232)
+12-01 18:58:26.966 24390 24428 E GoogleApiManager: 	at android.os.Looper.loop(Looper.java:317)
+12-01 18:58:26.966 24390 24428 E GoogleApiManager: 	at android.os.HandlerThread.run(HandlerThread.java:85)
+12-01 18:58:26.972   609   750 I ImeTracker: com.example.princeproject:c04f09f0: onRequestHide at ORIGIN_SERVER reason HIDE_UNSPECIFIED_WINDOW fromUser false
+12-01 18:58:26.973   609   750 I ImeTracker: com.example.princeproject:c04f09f0: onCancelled at PHASE_SERVER_SHOULD_HIDE
+12-01 18:58:26.976  7324  7324 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():3157
+12-01 18:58:26.978  7324  7324 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2248 repeatCheckTimes = 0, locked = false
+12-01 18:58:26.978  7324  7324 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1986 onStartInput(EditorInfo{EditorInfo{packageName=com.example.princeproject, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+12-01 18:58:26.979  7324  7324 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2248 repeatCheckTimes = 1, locked = false
+12-01 18:58:26.980  7324  7324 I AndroidIME: InputBundleManager.loadActiveInputBundleId():450 loadActiveInputBundleId: und-Latn-x-password, password
+12-01 18:58:26.986 24390 24425 W CondFlagRegistrar: Failed to register com.google.android.gms.providerinstaller#com.google.android.gms
+12-01 18:58:26.986 24390 24425 W CondFlagRegistrar: eksv: 17: 17: API: Phenotype.API is not available on this device. Connection failed with: ConnectionResult{statusCode=DEVELOPER_ERROR, resolution=null, message=null}
+12-01 18:58:26.986 24390 24425 W CondFlagRegistrar: 	at eksx.a(:com.google.android.gms@244534038@24.45.34 (260800-699214190):13)
+12-01 18:58:26.986 24390 24425 W CondFlagRegistrar: 	at febx.d(:com.google.android.gms@244534038@24.45.34 (260800-699214190):3)
+12-01 18:58:26.986 24390 24425 W CondFlagRegistrar: 	at febz.run(:com.google.android.gms@244534038@24.45.34 (260800-699214190):130)
+12-01 18:58:26.986 24390 24425 W CondFlagRegistrar: 	at feds.execute(:com.google.android.gms@244534038@24.45.34 (260800-699214190):1)
+12-01 18:58:26.986 24390 24425 W CondFlagRegistrar: 	at feca.h(:com.google.android.gms@244534038@24.45.34 (260800-699214190):1)
+12-01 18:58:26.986 24390 24425 W CondFlagRegistrar: 	at feca.l(:com.google.android.gms@244534038@24.45.34 (260800-699214190):101)
+12-01 18:58:26.986 24390 24425 W CondFlagRegistrar: 	at feca.p(:com.google.android.gms@244534038@24.45.34 (260800-699214190):19)
+12-01 18:58:26.986 24390 24425 W CondFlagRegistrar: 	at ecwz.hJ(:com.google.android.gms@244534038@24.45.34 (260800-699214190):35)
+12-01 18:58:26.986 24390 24425 W CondFlagRegistrar: 	at dsjy.run(:com.google.android.gms@244534038@24.45.34 (260800-699214190):14)
+12-01 18:58:26.986 24390 24425 W CondFlagRegistrar: 	at feds.execute(:com.google.android.gms@244534038@24.45.34 (260800-699214190):1)
+12-01 18:58:26.986 24390 24425 W CondFlagRegistrar: 	at dsjz.b(:com.google.android.gms@244534038@24.45.34 (260800-699214190):18)
+12-01 18:58:26.986 24390 24425 W CondFlagRegistrar: 	at dsko.b(:com.google.android.gms@244534038@24.45.34 (260800-699214190):36)
+12-01 18:58:26.986 24390 24425 W CondFlagRegistrar: 	at dskq.c(:com.google.android.gms@244534038@24.45.34 (260800-699214190):26)
+12-01 18:58:26.986 24390 24425 W CondFlagRegistrar: 	at amik.c(:com.google.android.gms@244534038@24.45.34 (260800-699214190):9)
+12-01 18:58:26.986 24390 24425 W CondFlagRegistrar: 	at amla.q(:com.google.android.gms@244534038@24.45.34 (260800-699214190):48)
+12-01 18:58:26.986 24390 24425 W CondFlagRegistrar: 	at amla.d(:com.google.android.gms@244534038@24.45.34 (260800-699214190):10)
+12-01 18:58:26.986 24390 24425 W CondFlagRegistrar: 	at amla.g(:com.google.android.gms@244534038@24.45.34 (260800-699214190):211)
+12-01 18:58:26.986 24390 24425 W CondFlagRegistrar: 	at amla.onConnectionFailed(:com.google.android.gms@244534038@24.45.34 (260800-699214190):2)
+12-01 18:58:26.986 24390 24425 W CondFlagRegistrar: 	at amlc.run(:com.google.android.gms@244534038@24.45.34 (260800-699214190):82)
+12-01 18:58:26.986 24390 24425 W CondFlagRegistrar: 	at android.os.Handler.handleCallback(Handler.java:959)
+12-01 18:58:26.986 24390 24425 W CondFlagRegistrar: 	at android.os.Handler.dispatchMessage(Handler.java:100)
+12-01 18:58:26.986 24390 24425 W CondFlagRegistrar: 	at btaq.mI(:com.google.android.gms@244534038@24.45.34 (260800-699214190):1)
+12-01 18:58:26.986 24390 24425 W CondFlagRegistrar: 	at btaq.dispatchMessage(:com.google.android.gms@244534038@24.45.34 (260800-699214190):5)
+12-01 18:58:26.986 24390 24425 W CondFlagRegistrar: 	at android.os.Looper.loopOnce(Looper.java:232)
+12-01 18:58:26.986 24390 24425 W CondFlagRegistrar: 	at android.os.Looper.loop(Looper.java:317)
+12-01 18:58:26.986 24390 24425 W CondFlagRegistrar: 	at android.os.HandlerThread.run(HandlerThread.java:85)
+12-01 18:58:26.986 24390 24425 W CondFlagRegistrar: Caused by: amhc: 17: API: Phenotype.API is not available on this device. Connection failed with: ConnectionResult{statusCode=DEVELOPER_ERROR, resolution=null, message=null}
+12-01 18:58:26.986 24390 24425 W CondFlagRegistrar: 	at andf.a(:com.google.android.gms@244534038@24.45.34 (260800-699214190):15)
+12-01 18:58:26.986 24390 24425 W CondFlagRegistrar: 	at amin.a(:com.google.android.gms@244534038@24.45.34 (260800-699214190):1)
+12-01 18:58:26.986 24390 24425 W CondFlagRegistrar: 	at amik.c(:com.google.android.gms@244534038@24.45.34 (260800-699214190):5)
+12-01 18:58:26.986 24390 24425 W CondFlagRegistrar: 	... 12 more
+12-01 18:58:27.031 24390 24416 I ProviderInstaller: Installed default security provider GmsCore_OpenSSL
+12-01 18:58:27.164   609  1211 D ConnectivityService: requestNetwork for uid/pid:10260/24390 activeRequest: null callbackRequest: 521 [NetworkRequest [ REQUEST id=522, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10260 RequestorUid: 10260 RequestorPkg: com.example.princeproject UnderlyingNetworks: Null] ]] callback flags: 0 order: 2147483647 isUidTracked: false
+12-01 18:58:27.166   609  1014 D ConnectivityService: NetReassign [522 : null → 100] [c 1] [a 0] [i 1]
+12-01 18:58:27.166   609  1007 D OemPaidWifiNetworkFactory: got request NetworkRequest [ REQUEST id=522, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10260 RequestorUid: 10260 RequestorPkg: com.example.princeproject UnderlyingNetworks: Null] ]
+12-01 18:58:27.166   609  1007 D MultiInternetWifiNetworkFactory: got request NetworkRequest [ REQUEST id=522, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10260 RequestorUid: 10260 RequestorPkg: com.example.princeproject UnderlyingNetworks: Null] ]
+12-01 18:58:27.167   609  1007 D WifiNetworkFactory: got request NetworkRequest [ REQUEST id=522, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10260 RequestorUid: 10260 RequestorPkg: com.example.princeproject UnderlyingNetworks: Null] ]
+12-01 18:58:27.167   609  1007 D UntrustedWifiNetworkFactory: got request NetworkRequest [ REQUEST id=522, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10260 RequestorUid: 10260 RequestorPkg: com.example.princeproject UnderlyingNetworks: Null] ]
+12-01 18:58:27.209  1096  1170 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@aefa607
+12-01 18:58:27.209   609  1186 W InputManager-JNI: Input channel object 'ada413e Splash Screen com.example.princeproject (client)' was disposed without first being removed with the input manager!
+12-01 18:58:27.246 24390 24390 D VRI[AdminActivity]: visibilityChanged oldVisibility=true newVisibility=false
+12-01 18:58:27.254 24390 24390 D LifecycleMonitor: Lifecycle status change: com.example.princeproject.AdminPage.AdminActivity@7a40a1 in: STOPPED
+12-01 18:58:27.254 24390 24390 V ActivityScenario: Update currentActivityStage to STOPPED, currentActivity=com.example.princeproject.AdminPage.AdminActivity@7a40a1
+12-01 18:58:27.255 24390 24390 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.princeproject/androidx.fragment.app.testing.EmptyFragmentActivity (has extras) }, activity.getIntent()=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.princeproject/.AdminPage.AdminActivity }, activity=com.example.princeproject.AdminPage.AdminActivity@7a40a1
+12-01 18:58:27.281 24390 24442 D TrafficStats: tagSocket(121) with statsTag=0xffffffff, statsUid=-1
+12-01 18:58:27.310 24390 24442 W e.princeproject: Accessing hidden field Ljava/net/Socket;->impl:Ljava/net/SocketImpl; (unsupported, reflection, allowed)
+12-01 18:58:27.402 24390 24407 W FileTestStorage: Output properties is not supported.
+12-01 18:58:27.408 24390 24407 E AndroidXTracer: enableTracing failed. You may need to upgrade your androidx.tracing:tracing version
+12-01 18:58:27.408 24390 24407 E AndroidXTracer: java.lang.NoSuchMethodError: No static method forceEnableAppTracing()V in class Landroidx/tracing/Trace; or its super classes (declaration of 'androidx.tracing.Trace' appears in /data/app/~~W6UVKpxwvgPFY2_Txi99VA==/com.example.princeproject-HDLZ7rwzKw7RyTdT7HIT-Q==/base.apk)
+12-01 18:58:27.408 24390 24407 E AndroidXTracer: 	at androidx.test.platform.tracing.AndroidXTracer.enableTracing(AndroidXTracer.java:57)
+12-01 18:58:27.408 24390 24407 E AndroidXTracer: 	at androidx.test.platform.tracing.Tracing.<init>(Tracing.java:53)
+12-01 18:58:27.408 24390 24407 E AndroidXTracer: 	at androidx.test.platform.tracing.Tracing.<clinit>(Tracing.java:49)
+12-01 18:58:27.408 24390 24407 E AndroidXTracer: 	at androidx.test.espresso.base.BaseLayerModule.providesTracing(BaseLayerModule.java:190)
+12-01 18:58:27.408 24390 24407 E AndroidXTracer: 	at androidx.test.espresso.base.BaseLayerModule_ProvidesTracingFactory.providesTracing(BaseLayerModule_ProvidesTracingFactory.java:37)
+12-01 18:58:27.408 24390 24407 E AndroidXTracer: 	at androidx.test.espresso.base.BaseLayerModule_ProvidesTracingFactory.get(BaseLayerModule_ProvidesTracingFactory.java:29)
+12-01 18:58:27.408 24390 24407 E AndroidXTracer: 	at androidx.test.espresso.base.BaseLayerModule_ProvidesTracingFactory.get(BaseLayerModule_ProvidesTracingFactory.java:11)
+12-01 18:58:27.408 24390 24407 E AndroidXTracer: 	at androidx.test.espresso.core.internal.deps.dagger.internal.DoubleCheck.get(DoubleCheck.java:47)
+12-01 18:58:27.408 24390 24407 E AndroidXTracer: 	at androidx.test.espresso.base.IdlingResourceRegistry_Factory.get(IdlingResourceRegistry_Factory.java:34)
+12-01 18:58:27.408 24390 24407 E AndroidXTracer: 	at androidx.test.espresso.base.IdlingResourceRegistry_Factory.get(IdlingResourceRegistry_Factory.java:12)
+12-01 18:58:27.408 24390 24407 E AndroidXTracer: 	at androidx.test.espresso.core.internal.deps.dagger.internal.DoubleCheck.get(DoubleCheck.java:47)
+12-01 18:58:27.408 24390 24407 E AndroidXTracer: 	at androidx.test.espresso.DaggerBaseLayerComponent$BaseLayerComponentImpl.idlingResourceRegistry(DaggerBaseLayerComponent.java:275)
+12-01 18:58:27.408 24390 24407 E AndroidXTracer: 	at androidx.test.espresso.Espresso.<clinit>(Espresso.java:64)
+12-01 18:58:27.408 24390 24407 E AndroidXTracer: 	at com.example.princeproject.AdminPageTest.testAdminPageButtonLaunchesAdminActivity(AdminPageTest.java:239)
+12-01 18:58:27.408 24390 24407 E AndroidXTracer: 	at java.lang.reflect.Method.invoke(Native Method)
+12-01 18:58:27.408 24390 24407 E AndroidXTracer: 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+12-01 18:58:27.408 24390 24407 E AndroidXTracer: 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+12-01 18:58:27.408 24390 24407 E AndroidXTracer: 	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+12-01 18:58:27.408 24390 24407 E AndroidXTracer: 	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+12-01 18:58:27.408 24390 24407 E AndroidXTracer: 	at androidx.test.internal.runner.junit4.statement.RunBefores.evaluate(RunBefores.java:80)
+12-01 18:58:27.408 24390 24407 E AndroidXTracer: 	at androidx.test.internal.runner.junit4.statement.RunAfters.evaluate(RunAfters.java:61)
+12-01 18:58:27.408 24390 24407 E AndroidXTracer: 	at org.junit.rules.ExternalResource$1.evaluate(ExternalResource.java:54)
+12-01 18:58:27.408 24390 24407 E AndroidXTracer: 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+12-01 18:58:27.408 24390 24407 E AndroidXTracer: 	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+12-01 18:58:27.408 24390 24407 E AndroidXTracer: 	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+12-01 18:58:27.408 24390 24407 E AndroidXTracer: 	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+12-01 18:58:27.408 24390 24407 E AndroidXTracer: 	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+12-01 18:58:27.408 24390 24407 E AndroidXTracer: 	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+12-01 18:58:27.408 24390 24407 E AndroidXTracer: 	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+12-01 18:58:27.408 24390 24407 E AndroidXTracer: 	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+12-01 18:58:27.408 24390 24407 E AndroidXTracer: 	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+12-01 18:58:27.408 24390 24407 E AndroidXTracer: 	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+12-01 18:58:27.408 24390 24407 E AndroidXTracer: 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+12-01 18:58:27.408 24390 24407 E AndroidXTracer: 	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+12-01 18:58:27.408 24390 24407 E AndroidXTracer: 	at org.junit.runners.Suite.runChild(Suite.java:128)
+12-01 18:58:27.408 24390 24407 E AndroidXTracer: 	at org.junit.runners.Suite.runChild(Suite.java:27)
+12-01 18:58:27.408 24390 24407 E AndroidXTracer: 	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+12-01 18:58:27.408 24390 24407 E AndroidXTracer: 	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+12-01 18:58:27.408 24390 24407 E AndroidXTracer: 	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+12-01 18:58:27.408 24390 24407 E AndroidXTracer: 	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+12-01 18:58:27.408 24390 24407 E AndroidXTracer: 	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+12-01 18:58:27.408 24390 24407 E AndroidXTracer: 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+12-01 18:58:27.408 24390 24407 E AndroidXTracer: 	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+12-01 18:58:27.408 24390 24407 E AndroidXTracer: 	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+12-01 18:58:27.408 24390 24407 E AndroidXTracer: 	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+12-01 18:58:27.410 24390 24407 E AndroidXTracer: 	at androidx.test.internal.runner.TestExecutor.execute(TestExecutor.java:68)
+12-01 18:58:27.410 24390 24407 E AndroidXTracer: 	at androidx.test.internal.runner.TestExecutor.execute(TestExecutor.java:59)
+12-01 18:58:27.410 24390 24407 E AndroidXTracer: 	at androidx.test.runner.AndroidJUnitRunner.onStart(AndroidJUnitRunner.java:463)
+12-01 18:58:27.410 24390 24407 E AndroidXTracer: 	at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2594)
+12-01 18:58:27.410 24390 24407 I Tracing : Tracer added: class androidx.test.platform.tracing.AndroidXTracer
+12-01 18:58:27.423 24390 24407 D CompatChangeReporter: Compat change id reported: 247079863; UID 10260; state: ENABLED
+12-01 18:58:27.429 24390 24442 W e.princeproject: Accessing hidden method Ljava/security/spec/ECParameterSpec;->setCurveName(Ljava/lang/String;)V (unsupported, reflection, allowed)
+12-01 18:58:27.433 24390 24407 D EventInjectionStrategy: Creating injection strategy with input manager.
+12-01 18:58:27.436 24390 24407 W e.princeproject: Accessing hidden method Landroid/hardware/input/InputManager;->getInstance()Landroid/hardware/input/InputManager; (unsupported, reflection, allowed)
+12-01 18:58:27.436 24390 24407 W e.princeproject: Accessing hidden method Landroid/hardware/input/InputManager;->injectInputEvent(Landroid/view/InputEvent;I)Z (unsupported, reflection, allowed)
+12-01 18:58:27.437 24390 24407 W e.princeproject: Accessing hidden field Landroid/hardware/input/InputManager;->INJECT_INPUT_EVENT_MODE_WAIT_FOR_FINISH:I (unsupported, reflection, allowed)
+12-01 18:58:27.460 24390 24407 W e.princeproject: Accessing hidden method Landroid/view/ViewConfiguration;->getDoubleTapMinTime()I (unsupported, reflection, allowed)
+12-01 18:58:27.472 24390 24390 W e.princeproject: Accessing hidden method Landroid/os/MessageQueue;->next()Landroid/os/Message; (unsupported, reflection, allowed)
+12-01 18:58:27.472 24390 24390 W e.princeproject: Accessing hidden field Landroid/os/MessageQueue;->mMessages:Landroid/os/Message; (unsupported, reflection, allowed)
+12-01 18:58:27.473 24390 24390 W e.princeproject: Accessing hidden method Landroid/os/Message;->recycleUnchecked()V (unsupported, reflection, allowed)
+12-01 18:58:27.486 24390 24390 I ViewInteraction: Performing 'single click' action on view view.getId() is <2131296332/com.example.princeproject:id/admin_button>
+12-01 18:58:27.553   609  2275 V GrammaticalInflectionUtils: AttributionSource: android.content.AttributionSource@c1cd9a86 does not have READ_SYSTEM_GRAMMATICAL_GENDER permission.
+12-01 18:58:27.569 24390 24390 D LifecycleMonitor: Lifecycle status change: androidx.fragment.app.testing.EmptyFragmentActivity@21eafc9 in: PAUSED
+12-01 18:58:27.571 24390 24390 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.princeproject/.AdminPage.AdminActivity }, activity.getIntent()=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.princeproject/androidx.fragment.app.testing.EmptyFragmentActivity (has extras) }, activity=androidx.fragment.app.testing.EmptyFragmentActivity@21eafc9
+12-01 18:58:27.571 24390 24390 V ActivityScenario: Update currentActivityStage to PAUSED, currentActivity=androidx.fragment.app.testing.EmptyFragmentActivity@21eafc9
+12-01 18:58:27.572   466   466 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+12-01 18:58:27.584   455 24157 D audioserver: logFgsApiBegin: FGS Logger Transaction failed, -129
+12-01 18:58:27.589 24390 24390 D LifecycleMonitor: Lifecycle status change: com.example.princeproject.AdminPage.AdminActivity@cc1bb52 in: PRE_ON_CREATE
+12-01 18:58:27.589 24390 24390 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.princeproject/.AdminPage.AdminActivity }, activity.getIntent()=Intent { cmp=com.example.princeproject/.AdminPage.AdminActivity }, activity=com.example.princeproject.AdminPage.AdminActivity@cc1bb52
+12-01 18:58:27.589 24390 24390 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.princeproject/androidx.fragment.app.testing.EmptyFragmentActivity (has extras) }, activity.getIntent()=Intent { cmp=com.example.princeproject/.AdminPage.AdminActivity }, activity=com.example.princeproject.AdminPage.AdminActivity@cc1bb52
+12-01 18:58:27.593   609  2275 W AS.PlaybackActivityMon: No piid assigned for invalid/internal port id 15
+12-01 18:58:27.601   455   548 D AudioFlinger: mixer(0x79a252abe8e0) throttle end: throttle time(43)
+12-01 18:58:27.616 24390 24390 D LifecycleMonitor: Lifecycle status change: com.example.princeproject.AdminPage.AdminActivity@cc1bb52 in: CREATED
+12-01 18:58:27.616 24390 24390 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.princeproject/.AdminPage.AdminActivity }, activity.getIntent()=Intent { cmp=com.example.princeproject/.AdminPage.AdminActivity }, activity=com.example.princeproject.AdminPage.AdminActivity@cc1bb52
+12-01 18:58:27.616 24390 24390 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.princeproject/androidx.fragment.app.testing.EmptyFragmentActivity (has extras) }, activity.getIntent()=Intent { cmp=com.example.princeproject/.AdminPage.AdminActivity }, activity=com.example.princeproject.AdminPage.AdminActivity@cc1bb52
+12-01 18:58:27.619 24390 24390 D LifecycleMonitor: Lifecycle status change: com.example.princeproject.AdminPage.AdminActivity@cc1bb52 in: STARTED
+12-01 18:58:27.620 24390 24390 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.princeproject/.AdminPage.AdminActivity }, activity.getIntent()=Intent { cmp=com.example.princeproject/.AdminPage.AdminActivity }, activity=com.example.princeproject.AdminPage.AdminActivity@cc1bb52
+12-01 18:58:27.621 24390 24390 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.princeproject/androidx.fragment.app.testing.EmptyFragmentActivity (has extras) }, activity.getIntent()=Intent { cmp=com.example.princeproject/.AdminPage.AdminActivity }, activity=com.example.princeproject.AdminPage.AdminActivity@cc1bb52
+12-01 18:58:27.625 24390 24390 D LifecycleMonitor: Lifecycle status change: com.example.princeproject.AdminPage.AdminActivity@cc1bb52 in: RESUMED
+12-01 18:58:27.625 24390 24390 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.princeproject/.AdminPage.AdminActivity }, activity.getIntent()=Intent { cmp=com.example.princeproject/.AdminPage.AdminActivity }, activity=com.example.princeproject.AdminPage.AdminActivity@cc1bb52
+12-01 18:58:27.627 24390 24390 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.princeproject/androidx.fragment.app.testing.EmptyFragmentActivity (has extras) }, activity.getIntent()=Intent { cmp=com.example.princeproject/.AdminPage.AdminActivity }, activity=com.example.princeproject.AdminPage.AdminActivity@cc1bb52
+12-01 18:58:27.696   609   635 I ActivityTaskManager: Displayed com.example.princeproject/.AdminPage.AdminActivity for user 0: +142ms
+12-01 18:58:27.762   455   548 D audioserver: logFgsApiEnd: FGS Logger Transaction failed, -129
+12-01 18:58:27.840  1096  1228 D EGL_emulation: app_time_stats: avg=46.95ms min=1.22ms max=736.73ms count=18
+12-01 18:58:27.912   609   750 I ImeTracker: com.example.princeproject:f698d9d1: onRequestHide at ORIGIN_SERVER reason HIDE_UNSPECIFIED_WINDOW fromUser false
+12-01 18:58:27.912   609   750 I ImeTracker: com.example.princeproject:f698d9d1: onCancelled at PHASE_SERVER_SHOULD_HIDE
+12-01 18:58:27.913  7324  7324 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():3157
+12-01 18:58:27.916  7324  7324 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2248 repeatCheckTimes = 0, locked = false
+12-01 18:58:27.916  7324  7324 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1986 onStartInput(EditorInfo{EditorInfo{packageName=com.example.princeproject, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+12-01 18:58:27.917  7324  7324 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2248 repeatCheckTimes = 1, locked = false
+12-01 18:58:27.918  7324  7324 I AndroidIME: InputBundleManager.loadActiveInputBundleId():450 loadActiveInputBundleId: und-Latn-x-password, password
+12-01 18:58:27.962 24390 24390 I ViewInteraction: Checking 'androidx.test.espresso.intent.Intents$2@8a76b55' assertion on view view.getRootView() to equal view
+12-01 18:58:27.980   609  1186 V GrammaticalInflectionUtils: AttributionSource: android.content.AttributionSource@c1cd9a86 does not have READ_SYSTEM_GRAMMATICAL_GENDER permission.
+12-01 18:58:27.990  1355  1355 I TopTaskTracker: onTaskMovedToFront: (moved taskInfo to front) taskId=113, baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.princeproject/.AdminPage.AdminActivity }
+12-01 18:58:27.993 24390 24390 D LifecycleMonitor: Lifecycle status change: com.example.princeproject.AdminPage.AdminActivity@cc1bb52 in: PAUSED
+12-01 18:58:27.994 24390 24390 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.princeproject/.AdminPage.AdminActivity }, activity.getIntent()=Intent { cmp=com.example.princeproject/.AdminPage.AdminActivity }, activity=com.example.princeproject.AdminPage.AdminActivity@cc1bb52
+12-01 18:58:27.996 24390 24390 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.princeproject/androidx.fragment.app.testing.EmptyFragmentActivity (has extras) }, activity.getIntent()=Intent { cmp=com.example.princeproject/.AdminPage.AdminActivity }, activity=com.example.princeproject.AdminPage.AdminActivity@cc1bb52
+12-01 18:58:28.010 24390 24390 D LifecycleMonitor: Lifecycle status change: androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity@6500a3c in: PRE_ON_CREATE
+12-01 18:58:28.010 24390 24390 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.princeproject/.AdminPage.AdminActivity }, activity.getIntent()=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10400000 cmp=com.example.princeproject/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity }, activity=androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity@6500a3c
+12-01 18:58:28.010 24390 24390 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.princeproject/androidx.fragment.app.testing.EmptyFragmentActivity (has extras) }, activity.getIntent()=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10400000 cmp=com.example.princeproject/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity }, activity=androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity@6500a3c
+12-01 18:58:28.017 24390 24390 D LifecycleMonitor: Lifecycle status change: androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity@6500a3c in: CREATED
+12-01 18:58:28.017 24390 24390 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.princeproject/.AdminPage.AdminActivity }, activity.getIntent()=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10400000 cmp=com.example.princeproject/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity }, activity=androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity@6500a3c
+12-01 18:58:28.017 24390 24390 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.princeproject/androidx.fragment.app.testing.EmptyFragmentActivity (has extras) }, activity.getIntent()=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10400000 cmp=com.example.princeproject/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity }, activity=androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity@6500a3c
+12-01 18:58:28.020 24390 24390 D LifecycleMonitor: Lifecycle status change: androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity@6500a3c in: STARTED
+12-01 18:58:28.022 24390 24390 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.princeproject/.AdminPage.AdminActivity }, activity.getIntent()=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10400000 cmp=com.example.princeproject/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity }, activity=androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity@6500a3c
+12-01 18:58:28.022 24390 24390 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.princeproject/androidx.fragment.app.testing.EmptyFragmentActivity (has extras) }, activity.getIntent()=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10400000 cmp=com.example.princeproject/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity }, activity=androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity@6500a3c
+12-01 18:58:28.024 24390 24390 D LifecycleMonitor: Lifecycle status change: androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity@6500a3c in: RESUMED
+12-01 18:58:28.024 24390 24390 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.princeproject/.AdminPage.AdminActivity }, activity.getIntent()=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10400000 cmp=com.example.princeproject/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity }, activity=androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity@6500a3c
+12-01 18:58:28.024 24390 24390 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.princeproject/androidx.fragment.app.testing.EmptyFragmentActivity (has extras) }, activity.getIntent()=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10400000 cmp=com.example.princeproject/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity }, activity=androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity@6500a3c
+12-01 18:58:28.055  1355  1761 D EGL_emulation: app_time_stats: avg=150.27ms min=1.11ms max=997.26ms count=7
+12-01 18:58:28.094   609   635 I ActivityTaskManager: Displayed com.example.princeproject/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity for user 0: +115ms
+12-01 18:58:28.098 24390 24390 D VRI[EmptyFragmentActivity]: visibilityChanged oldVisibility=true newVisibility=false
+12-01 18:58:28.133   609   750 I ImeTracker: com.example.princeproject:9379c3f7: onRequestHide at ORIGIN_SERVER reason HIDE_UNSPECIFIED_WINDOW fromUser false
+12-01 18:58:28.135   609   750 I ImeTracker: com.example.princeproject:9379c3f7: onCancelled at PHASE_SERVER_SHOULD_HIDE
+12-01 18:58:28.143  7324  7324 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():3157
+12-01 18:58:28.146  7324  7324 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2248 repeatCheckTimes = 0, locked = false
+12-01 18:58:28.146  7324  7324 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1986 onStartInput(EditorInfo{EditorInfo{packageName=com.example.princeproject, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+12-01 18:58:28.147  7324  7324 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2248 repeatCheckTimes = 1, locked = false
+12-01 18:58:28.147 24390 24390 D LifecycleMonitor: Lifecycle status change: com.example.princeproject.AdminPage.AdminActivity@7a40a1 in: DESTROYED
+12-01 18:58:28.147  7324  7324 I AndroidIME: InputBundleManager.loadActiveInputBundleId():450 loadActiveInputBundleId: und-Latn-x-password, password
+12-01 18:58:28.147 24390 24390 V ActivityScenario: Update currentActivityStage to DESTROYED, currentActivity=null
+12-01 18:58:28.147 24390 24390 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.princeproject/androidx.fragment.app.testing.EmptyFragmentActivity (has extras) }, activity.getIntent()=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.princeproject/.AdminPage.AdminActivity }, activity=com.example.princeproject.AdminPage.AdminActivity@7a40a1
+12-01 18:58:28.147 24390 24390 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@4e9405b
+12-01 18:58:28.152   609  1186 W InputManager-JNI: Input channel object '8a950c7 com.example.princeproject/com.example.princeproject.AdminPage.AdminActivity (client)' was disposed without first being removed with the input manager!
+12-01 18:58:28.163  1355  1355 I TopTaskTracker: onTaskMovedToFront: (moved taskInfo to front) taskId=114, baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.princeproject/androidx.fragment.app.testing.EmptyFragmentActivity }
+12-01 18:58:28.170 24390 24390 D LifecycleMonitor: Lifecycle status change: androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity@6500a3c in: PAUSED
+12-01 18:58:28.170 24390 24390 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.princeproject/.AdminPage.AdminActivity }, activity.getIntent()=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10400000 cmp=com.example.princeproject/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity }, activity=androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity@6500a3c
+12-01 18:58:28.170 24390 24390 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.princeproject/androidx.fragment.app.testing.EmptyFragmentActivity (has extras) }, activity.getIntent()=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10400000 cmp=com.example.princeproject/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity }, activity=androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity@6500a3c
+12-01 18:58:28.195 24390 24390 D LifecycleMonitor: Lifecycle status change: com.example.princeproject.AdminPage.AdminActivity@cc1bb52 in: RESUMED
+12-01 18:58:28.195 24390 24390 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.princeproject/.AdminPage.AdminActivity }, activity.getIntent()=Intent { cmp=com.example.princeproject/.AdminPage.AdminActivity }, activity=com.example.princeproject.AdminPage.AdminActivity@cc1bb52
+12-01 18:58:28.195 24390 24390 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.princeproject/androidx.fragment.app.testing.EmptyFragmentActivity (has extras) }, activity.getIntent()=Intent { cmp=com.example.princeproject/.AdminPage.AdminActivity }, activity=com.example.princeproject.AdminPage.AdminActivity@cc1bb52
+12-01 18:58:28.205 24390 24390 D LifecycleMonitor: Lifecycle status change: androidx.fragment.app.testing.EmptyFragmentActivity@21eafc9 in: STOPPED
+12-01 18:58:28.206 24390 24390 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.princeproject/.AdminPage.AdminActivity }, activity.getIntent()=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.princeproject/androidx.fragment.app.testing.EmptyFragmentActivity (has extras) }, activity=androidx.fragment.app.testing.EmptyFragmentActivity@21eafc9
+12-01 18:58:28.206 24390 24390 V ActivityScenario: Update currentActivityStage to STOPPED, currentActivity=androidx.fragment.app.testing.EmptyFragmentActivity@21eafc9
+12-01 18:58:28.221 24390 24407 I TestRunner: finished: testAdminPageButtonLaunchesAdminActivity(com.example.princeproject.AdminPageTest)
