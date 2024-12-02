@@ -58,35 +58,37 @@ public class ManageEventsActivity extends AppCompatActivity {
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
 
-        db.collection("events").document(eventId).get()
-                .addOnSuccessListener(documentSnapshot -> {
-                    if (documentSnapshot.exists()) {
-                        String name = documentSnapshot.getString("name");
-                        String description = documentSnapshot.getString("description");
-                        int maxParticipants = ((Number) documentSnapshot.get("maxParticipants")).intValue();
-                        String location = documentSnapshot.getString("location");
-                        Date registerDate = ((com.google.firebase.Timestamp) documentSnapshot.get("registerDate")).toDate();
-                        Date eventDate = ((com.google.firebase.Timestamp) documentSnapshot.get("eventDate")).toDate();
-                        String image_encode = (String) documentSnapshot.get("eventPosterEncode");
+        if (eventId != null) {
 
-                        eventNameText.setText(name);
-                        eventDescriptionText.setText(description);
-                        eventMaxParticipantsText.setText(String.valueOf(maxParticipants));
-                        eventLocationText.setText(location);
-                        eventRegDateText.setText(dateFormat.format(registerDate));
-                        eventEventDateText.setText(dateFormat.format(eventDate));
+            db.collection("events").document(eventId).get()
+                    .addOnSuccessListener(documentSnapshot -> {
+                        if (documentSnapshot.exists()) {
+                            String name = documentSnapshot.getString("name");
+                            String description = documentSnapshot.getString("description");
+                            int maxParticipants = ((Number) documentSnapshot.get("maxParticipants")).intValue();
+                            String location = documentSnapshot.getString("location");
+                            Date registerDate = ((com.google.firebase.Timestamp) documentSnapshot.get("registerDate")).toDate();
+                            Date eventDate = ((com.google.firebase.Timestamp) documentSnapshot.get("eventDate")).toDate();
+                            String image_encode = (String) documentSnapshot.get("eventPosterEncode");
 
-                        if (image_encode != null && !image_encode.isEmpty()) {
-                            // Decode the Base64 string into a Bitmap
-                            byte[] decodedBytes = Base64.decode(image_encode, Base64.DEFAULT);
-                            Bitmap decodedBitmap = BitmapFactory.decodeByteArray(decodedBytes, 0, decodedBytes.length);
+                            eventNameText.setText(name);
+                            eventDescriptionText.setText(description);
+                            eventMaxParticipantsText.setText(String.valueOf(maxParticipants));
+                            eventLocationText.setText(location);
+                            eventRegDateText.setText(dateFormat.format(registerDate));
+                            eventEventDateText.setText(dateFormat.format(eventDate));
 
-                            // Display the decoded image in the ImageView
-                            eventPoster.setImageBitmap(decodedBitmap);
+                            if (image_encode != null && !image_encode.isEmpty()) {
+                                // Decode the Base64 string into a Bitmap
+                                byte[] decodedBytes = Base64.decode(image_encode, Base64.DEFAULT);
+                                Bitmap decodedBitmap = BitmapFactory.decodeByteArray(decodedBytes, 0, decodedBytes.length);
+
+                                // Display the decoded image in the ImageView
+                                eventPoster.setImageBitmap(decodedBitmap);
+                            }
                         }
-                    }
-                });
-
+                    });
+        }
 
 
         Button editButton = findViewById(R.id.manage_events_button);
