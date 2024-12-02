@@ -160,9 +160,12 @@ public class NotificationsFragment extends Fragment {
                             String eventId = document.getString("eventId");
                             String userId = document.getString("userId");
                             Boolean recieved = document.getBoolean("recieved");
+                            Boolean isInvite = document.getBoolean("isInvite");
+                            if (isInvite == null) {
+                                isInvite = true;
+                            }
 
-
-                            Notification notification = new Notification(id,title, details, location, userId, eventId);
+                            Notification notification = new Notification(id,title, details, location, userId, eventId, isInvite);
                             notificationDataList.add(notification);
                             //if (Boolean.FALSE.equals(recieved)) {
                             //    notification.sendAndroidNotification(getContext());

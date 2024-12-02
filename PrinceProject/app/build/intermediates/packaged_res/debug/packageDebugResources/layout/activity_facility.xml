@@ -13,7 +13,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/filler_image" />
+        app:srcCompat="@drawable/ic_android_black_24dp" />
 
     <TextView
         android:id="@+id/facility_name_text"
