@@ -2,6 +2,11 @@ package com.example.princeproject.NotificationsPage;
 import android.content.Context;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -32,6 +37,7 @@ public class EventManager {
         notificationData.put("timestamp", System.currentTimeMillis());
         notificationData.put("eventId",eventId);
         notificationData.put("received", false);
+        notificationData.put("isInvite", true);
 
         // Save the notification in Firestore under the "notifications" collection
         db.collection("notifications").add(notificationData)
@@ -41,6 +47,43 @@ public class EventManager {
                 .addOnFailureListener(e -> {
                     System.err.println("Failed to send notification: " + e.getMessage());
                 });
+    }
+
+    public static void sendCustomNotification(String userId, String eventId, String message) {
+        DocumentReference df = db.collection("events").document(eventId);
+        df.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    DocumentSnapshot document = task.getResult();
+                    if (document.exists()) {
+
+                        String event_name = document.getString("name");
+
+
+                        // Create the notification details
+                        Map<String, Object> notificationData = new HashMap<>();
+                        notificationData.put("userId", userId);
+                        notificationData.put("title", "Message from " + event_name);
+                        notificationData.put("details", message);
+                        notificationData.put("timestamp", System.currentTimeMillis());
+                        notificationData.put("eventId",eventId);
+                        notificationData.put("received", false);
+                        notificationData.put("isInvite", false);
+
+                        // Save the notification in Firestore under the "notifications" collection
+                        db.collection("notifications").add(notificationData)
+                                .addOnSuccessListener(documentReference -> {
+                                })
+                                .addOnFailureListener(e -> {
+                                    System.err.println("Failed to send notification: " + e.getMessage());
+                                });
+                    }
+                }
+            }
+        });
+
+
     }
 
     /**

@@ -28,6 +28,7 @@ public class Notification {
 
     public String eventId;
     private String id;
+    public Boolean isInvite;
     /**
      * Constructor for the notification object
      * @param name
@@ -80,6 +81,17 @@ public class Notification {
         this.deviceId = userDeviceId;
         this.eventId = eventId;
         this.id = id;
+        this.isInvite = true;
+    }
+
+    public Notification(String id,String name, String details, String location, String userDeviceId, String eventId, Boolean isInvite) {
+        this.name = name;
+        this.details = details;
+        this.location = location;
+        this.deviceId = userDeviceId;
+        this.eventId = eventId;
+        this.id = id;
+        this.isInvite = isInvite;
     }
 
     /**
