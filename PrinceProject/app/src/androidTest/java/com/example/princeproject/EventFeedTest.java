@@ -43,7 +43,23 @@ public class EventFeedTest {
                 .perform(click());
 
         onView(withId(R.id.joinWaitingListButton)).perform(click());
-        onView(withId(R.id.waitlist_view)).perform(click());
 
+
+    }
+
+    @Test
+    public void CreateEvent() throws InterruptedException {
+        Thread.sleep(4000);
+        onView(withId(R.id.create_event_facility_button)).perform(click());
+    }
+
+    @Test
+    public void viewUsersWaitLists() throws InterruptedException {
+        onView(withId(R.id.waitlist_view)).perform(click());
+    }
+
+    @Test
+    public void ScanQRCode() throws InterruptedException {
+        onView(withId(R.id.scan_qr_utton)).perform(click());
     }
 }

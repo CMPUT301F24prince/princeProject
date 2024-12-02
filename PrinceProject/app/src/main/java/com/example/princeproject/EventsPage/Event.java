@@ -345,18 +345,7 @@ public class Event {
             return Uri.fromFile(outputFile);
         }
         else {
-            Bitmap bitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.filler_image);
-
-            File outputFile = new File(context.getExternalFilesDir(Environment.DIRECTORY_PICTURES), "IMG_"+hour+minute+second+milisecond+".png");
-            try {
-                FileOutputStream fos = new FileOutputStream(outputFile);
-                bitmap.compress(Bitmap.CompressFormat.PNG, 100, fos);
-                fos.close();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-
-            return Uri.fromFile(outputFile);
+            return null;
         }
     }
 }

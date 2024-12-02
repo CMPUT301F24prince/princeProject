@@ -57,10 +57,11 @@ dependencies {
 
     //debugImplementation ("androidx.fragment:fragment-testing:1.3.6")
 
-    testImplementation ("org.mockito:mockito-core:4.5.1")
+    testImplementation ("org.mockito:mockito-core:5.6.0")
+    testImplementation ("org.mockito:mockito-android:5.6.0")
 
     // Mockito for Android (Android Instrumentation tests)
-    androidTestImplementation ("org.mockito:mockito-android:4.5.1")
+    androidTestImplementation ("org.mockito:mockito-android:5.6.0")
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)
@@ -74,7 +75,7 @@ dependencies {
     //now
     testImplementation ("androidx.test.ext:junit:1.1.5")
     testImplementation ("androidx.test.espresso:espresso-core:3.5.1")
-    testImplementation ("org.mockito:mockito-core:4.5.1")
+    testImplementation ("org.mockito:mockito-core:5.6.0")
     testImplementation ("com.google.firebase:firebase-messaging:23.1.0") // Only if you are using Firebase
     //
 }
