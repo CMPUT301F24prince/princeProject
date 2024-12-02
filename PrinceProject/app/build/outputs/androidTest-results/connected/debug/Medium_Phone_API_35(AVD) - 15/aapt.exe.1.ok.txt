@@ -1,7 +1,7 @@
 EXECUTING: C:\Users\Kyle\AppData\Local\Android\Sdk\build-tools\34.0.0\aapt.exe dump badging C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject\app\build\intermediates\apk\debug\app-debug.apk
 CURRENT_WORKING_DIRECTORY: C:\Users\Kyle\Documents\GitHub\princeProject2\PrinceProject
-START_TIME: 2024-12-01 18:59:28.589
-START_TIME-NANOS: 2024-12-01 18:59:28.589449600
+START_TIME: 2024-12-01 21:53:21.898
+START_TIME-NANOS: 2024-12-01 21:53:21.898648200
 ENVIRONMENT:
 
 *****************************************
@@ -135,7 +135,7 @@ supports-any-density: 'true'
 locales: '--_--' 'af' 'am' 'ar' 'as' 'az' 'be' 'bg' 'bn' 'bs' 'ca' 'cs' 'da' 'de' 'el' 'en-AU' 'en-CA' 'en-GB' 'en-IN' 'en-XC' 'es' 'es-419' 'es-US' 'et' 'eu' 'fa' 'fi' 'fr' 'fr-CA' 'gl' 'gu' 'he' 'hi' 'hr' 'hu' 'hy' 'id' 'in' 'is' 'it' 'iw' 'ja' 'ka' 'kk' 'km' 'kn' 'ko' 'ky' 'lo' 'lt' 'lv' 'mk' 'ml' 'mn' 'mr' 'ms' 'my' 'nb' 'ne' 'nl' 'or' 'pa' 'pl' 'pt' 'pt-BR' 'pt-PT' 'ro' 'ru' 'si' 'sk' 'sl' 'sq' 'sr' 'sr-Latn' 'sv' 'sw' 'ta' 'te' 'th' 'tl' 'tr' 'uk' 'ur' 'uz' 'vi' 'zh-CN' 'zh-HK' 'zh-TW' 'zu'
 densities: '120' '160' '240' '320' '480' '640' '65534'
 ===================
-END_TIME: 2024-12-01 18:59:28.631
-END_TIME-NANOS: 2024-12-01 18:59:28.631126000
-DURATION: 41ms
+END_TIME: 2024-12-01 21:53:21.990
+END_TIME-NANOS: 2024-12-01 21:53:21.990647400
+DURATION: 91ms
 EXIT CODE: 0
