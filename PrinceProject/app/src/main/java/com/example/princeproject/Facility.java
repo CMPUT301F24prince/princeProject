@@ -180,7 +180,7 @@ public class Facility {
             return Uri.fromFile(outputFile);
         }
         else {
-            Bitmap bitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.event_filler_image);
+            Bitmap bitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.ic_android_black_24dp);
 
             File outputFile = new File(context.getExternalFilesDir(Environment.DIRECTORY_PICTURES), "IMG_"+hour+minute+second+milisecond+".png");
             try {
