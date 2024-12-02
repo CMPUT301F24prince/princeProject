@@ -2,8 +2,10 @@ package com.example.princeproject;
 
 import com.example.princeproject.EventsPage.Event;
 
-import org.junit.jupiter.api.Test;
+import static org.junit.Assert.assertEquals;
 import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.Test;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
